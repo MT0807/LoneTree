@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 360" role="img" aria-labelledby="title desc">
+  <title id="title">LoneTree logo draft</title>
+  <desc id="desc">A hand-drawn oval logo with a light line-art elm tree.</desc>
+  <defs>
+    <filter id="roughen">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="12" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.4"/>
+    </filter>
+    <clipPath id="left-crown">
+      <path d="M104 139 C107 96 151 76 205 86 C247 94 275 124 263 159 C251 195 205 207 157 198 C119 190 99 170 104 139Z"/>
+    </clipPath>
+    <clipPath id="right-crown">
+      <path d="M244 132 C254 93 299 75 349 85 C397 95 430 125 420 162 C410 199 365 212 313 203 C269 196 235 169 244 132Z"/>
+    </clipPath>
+  </defs>
+
+  <g fill="none" stroke="#050505" stroke-linecap="round" stroke-linejoin="round" filter="url(#roughen)">
+    <path
+      d="M61 179
+         C58 89 141 37 257 35
+         C376 33 454 91 459 174
+         C464 258 384 317 258 322
+         C134 326 65 264 61 179Z"
+      stroke-width="12"
+    />
+    <path
+      d="M80 178
+         C78 103 151 54 258 52
+         C363 50 438 100 442 175
+         C446 248 371 301 259 305
+         C149 309 83 248 80 178Z"
+      stroke-width="3.5"
+      opacity="0.75"
+    />
+
+    <path
+      d="M104 139
+         C107 96 151 76 205 86
+         C247 94 275 124 263 159
+         C251 195 205 207 157 198
+         C119 190 99 170 104 139Z"
+      stroke-width="8"
+    />
+    <path
+      d="M244 132
+         C254 93 299 75 349 85
+         C397 95 430 125 420 162
+         C410 199 365 212 313 203
+         C269 196 235 169 244 132Z"
+      stroke-width="8"
+    />
+
+    <g clip-path="url(#left-crown)" stroke-width="7">
+      <path d="M116 145 C133 127 156 125 169 142 C183 159 168 177 144 174 C121 172 111 160 116 145Z"/>
+      <path d="M151 112 C171 96 201 104 207 128 C212 151 188 159 167 149 C145 139 137 124 151 112Z"/>
+      <path d="M198 103 C220 97 244 113 242 136 C240 158 214 162 196 149 C177 136 178 110 198 103Z"/>
+      <path d="M118 166 C139 157 162 165 169 185"/>
+      <path d="M176 180 C194 158 222 159 243 177"/>
+      <path d="M133 131 C157 151 184 124 208 141"/>
+      <path d="M213 118 C224 133 234 142 256 145"/>
+      <path d="M126 184 C146 190 169 187 188 174"/>
+    </g>
+
+    <g clip-path="url(#right-crown)" stroke-width="7">
+      <path d="M265 139 C278 116 309 112 324 131 C339 150 323 172 297 170 C272 169 257 154 265 139Z"/>
+      <path d="M318 105 C339 92 371 104 374 130 C377 155 350 161 331 148 C310 134 302 115 318 105Z"/>
+      <path d="M366 120 C388 109 413 127 410 151 C407 174 380 181 361 165 C343 149 346 130 366 120Z"/>
+      <path d="M265 171 C292 158 318 168 329 194"/>
+      <path d="M331 179 C350 158 386 163 407 183"/>
+      <path d="M283 125 C304 145 331 119 355 139"/>
+      <path d="M352 102 C365 119 382 130 411 134"/>
+      <path d="M291 193 C316 197 340 193 362 178"/>
+    </g>
+
+    <path
+      d="M251 265
+         C251 234 254 211 248 190
+         C243 174 235 166 222 154
+         C238 160 251 172 260 191
+         C267 170 284 153 307 139
+         C289 160 277 183 272 211
+         C268 232 268 250 271 266"
+      stroke-width="12"
+    />
+    <path d="M251 265 C258 271 266 271 272 265" stroke-width="8"/>
+    <path d="M159 273 C197 267 232 270 258 276 C287 282 328 275 376 273" stroke-width="9"/>
+    <path d="M218 198 C195 183 171 177 141 181" stroke-width="6"/>
+    <path d="M276 202 C306 183 334 178 372 181" stroke-width="6"/>
+  </g>
+</svg>

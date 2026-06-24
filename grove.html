@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <title>Grove | LoneTree</title>
+    <link rel="icon" href="assets/lonetree-logo.png">
+    <link rel="stylesheet" href="styles.css?v=20260624-1">
+    <link rel="stylesheet" href="grove.css?v=20260624-1">
+    <script src="grove.js?v=20260624-1" defer></script>
+  </head>
+  <body class="grove-body">
+    <div class="loader" aria-hidden="true">
+      <img class="loader-logo" src="assets/lonetree-logo.png" alt="">
+    </div>
+    <div class="transition-overlay grove-transition" aria-hidden="true"></div>
+
+    <main class="grove-page">
+      <a class="grove-back" href="index.html" aria-label="返回首页">
+        <span class="back-line" aria-hidden="true"></span>
+        <span>返回</span>
+      </a>
+
+      <section class="grove-grid" aria-label="Grove login">
+        <div class="grove-title-wrap reveal-title">
+          <h1 class="grove-title">Grove</h1>
+        </div>
+
+        <div class="grove-message reveal-copy">
+          <p class="grove-message-en">A space for ideas to grow.</p>
+          <p class="grove-message-cn" lang="zh-CN">灵感生长之地</p>
+        </div>
+
+        <form class="grove-form reveal-copy" novalidate>
+          <label class="grove-field">
+            <span lang="zh-CN">账号：</span>
+            <input name="username" type="email" autocomplete="username" aria-label="账号" required>
+          </label>
+          <label class="grove-field">
+            <span lang="zh-CN">密码：</span>
+            <input name="password" type="password" autocomplete="current-password" aria-label="密码" required>
+          </label>
+          <button class="grove-submit" type="submit"><span class="nav-dot"></span>进入</button>
+          <p class="grove-auth-error" role="alert" data-grove-auth-error hidden>账号或密码不正确。</p>
+        </form>
+
+        <p class="grove-signature reveal-copy">LoneTree / Grove</p>
+      </section>
+
+      <section class="grove-board" aria-label="Grove board" hidden>
+        <header class="board-header">
+          <label class="board-search">
+            <span class="search-icon" aria-hidden="true"></span>
+            <input type="search" placeholder="搜索品牌、项目或灵感" aria-label="搜索品牌、项目或灵感">
+          </label>
+
+          <div class="profile-wrap">
+            <button class="profile-button" type="button" aria-label="打开个人菜单" aria-expanded="false">
+              <span class="profile-avatar">L</span>
+              <span class="profile-chevron" aria-hidden="true"></span>
+            </button>
+            <div class="profile-menu" hidden>
+              <strong>LoneTree</strong>
+              <span>Grove library</span>
+              <button class="sign-out-button" type="button">退出</button>
+            </div>
+          </div>
+        </header>
+
+        <div class="board-hero">
+          <div>
+            <p class="board-kicker">Grove / Brand Library</p>
+            <h1>按品牌收藏灵感</h1>
+          </div>
+          <button class="create-button" type="button">创建</button>
+        </div>
+
+        <nav class="brand-tabs" aria-label="品牌分类">
+          <button class="brand-tab is-active" type="button" data-brand-filter="all">全部</button>
+          <button class="brand-tab" type="button" data-brand-filter="LoneTree">LoneTree</button>
+          <button class="brand-tab" type="button" data-brand-filter="Dom Pérignon">Dom Pérignon</button>
+          <button class="brand-tab" type="button" data-brand-filter="Louis Vuitton">Louis Vuitton</button>
+          <button class="brand-tab" type="button" data-brand-filter="Hermès">Hermès</button>
+        </nav>
+
+        <div class="brand-sections">
+          <section class="brand-section" data-brand="LoneTree" data-keywords="LoneTree strategy creative direction poster identity cgi ai">
+            <div class="brand-heading">
+              <h2>LoneTree</h2>
+              <span>4 boards</span>
+            </div>
+            <div class="brand-grid">
+              <article class="brand-card">
+                <img src="assets/book.webp" alt="LoneTree book visuals">
+                <h3>Brand System</h3>
+                <p>24 pins</p>
+              </article>
+              <article class="brand-card">
+                <img src="assets/squad.png" alt="LoneTree portrait direction">
+                <h3>Portrait Direction</h3>
+                <p>18 pins</p>
+              </article>
+              <article class="brand-card">
+                <img src="assets/dom-summer.webp" alt="LoneTree seasonal campaign">
+                <h3>Campaign Mood</h3>
+                <p>31 pins</p>
+              </article>
+              <article class="brand-card">
+                <img src="assets/paris-berlin.jpeg" alt="LoneTree layout references">
+                <h3>Editorial Layout</h3>
+                <p>16 pins</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="brand-section" data-brand="Dom Pérignon" data-keywords="Dom Pérignon champagne luxury summer winter campaign flower">
+            <div class="brand-heading">
+              <h2>Dom Pérignon</h2>
+              <span>4 boards</span>
+            </div>
+            <div class="brand-grid">
+              <article class="brand-card">
+                <img src="assets/dom-summer.webp" alt="Dom Pérignon summer campaign">
+                <h3>Summer Ritual</h3>
+                <p>42 pins</p>
+              </article>
+              <article class="brand-card">
+                <img src="assets/dom-winter.jpg" alt="Dom Pérignon winter campaign">
+                <h3>Winter Table</h3>
+                <p>28 pins</p>
+              </article>
+              <article class="brand-card">
+                <img src="assets/taittinger-i.webp" alt="Champagne object study">
+                <h3>Object Study</h3>
+                <p>19 pins</p>
+              </article>
+              <article class="brand-card">
+                <img src="assets/taittinger-ii.webp" alt="Champagne visual references">
+                <h3>Atmosphere</h3>
+                <p>36 pins</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="brand-section" data-brand="Louis Vuitton" data-keywords="Louis Vuitton LV travel grasse asnieres luxury cgi">
+            <div class="brand-heading">
+              <h2>Louis Vuitton</h2>
+              <span>4 boards</span>
+            </div>
+            <div class="brand-grid">
+              <article class="brand-card">
+                <img src="assets/lv-grasse.webp" alt="Louis Vuitton Grasse">
+                <h3>Grasse</h3>
+                <p>33 pins</p>
+              </article>
+              <article class="brand-card">
+                <img src="assets/lv-asnieres.webp" alt="Louis Vuitton Asnieres">
+                <h3>Asnières</h3>
+                <p>27 pins</p>
+              </article>
+              <article class="brand-card">
+                <img src="assets/marly.webp" alt="Luxury product direction">
+                <h3>Maison Detail</h3>
+                <p>21 pins</p>
+              </article>
+              <article class="brand-card">
+                <img src="assets/hermes.webp" alt="Luxury color references">
+                <h3>Color Reference</h3>
+                <p>14 pins</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="brand-section" data-brand="Hermès" data-keywords="Hermès Hermes craft textile color orange fashion">
+            <div class="brand-heading">
+              <h2>Hermès</h2>
+              <span>4 boards</span>
+            </div>
+            <div class="brand-grid">
+              <article class="brand-card">
+                <img src="assets/hermes.webp" alt="Hermes product image">
+                <h3>Craft Texture</h3>
+                <p>48 pins</p>
+              </article>
+              <article class="brand-card">
+                <img src="assets/ojai.webp" alt="Textile and landscape references">
+                <h3>Textile Mood</h3>
+                <p>25 pins</p>
+              </article>
+              <article class="brand-card">
+                <img src="assets/la-mer.webp" alt="Soft material references">
+                <h3>Material Light</h3>
+                <p>30 pins</p>
+              </article>
+              <article class="brand-card">
+                <img src="assets/charlie.webp" alt="Fashion portrait references">
+                <h3>Human Gesture</h3>
+                <p>17 pins</p>
+              </article>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

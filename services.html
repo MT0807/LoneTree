@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <title>Services | LoneTree</title>
+    <link rel="icon" href="assets/lonetree-logo.png">
+    <link rel="stylesheet" href="styles.css?v=20260624-1">
+    <link rel="stylesheet" href="pages.css?v=20260610-5">
+    <script src="pages.js" defer></script>
+    <script src="services-tree.js?v=20260610-1" defer></script>
+  </head>
+  <body class="subpage-body">
+    <div class="loader" aria-hidden="true"><img class="loader-logo" src="assets/lonetree-logo.png" alt=""></div>
+    <div class="transition-overlay" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary">
+        <div class="nav-group">
+          <a class="brand" href="index.html" aria-label="LoneTree home"><img src="assets/lonetree-logo.png" alt=""></a>
+          <a class="nav-link desktop-link" href="talents.html"><span class="nav-dot"></span><span class="bilingual" data-cn="关于我们">About us</span></a>
+          <a class="nav-link desktop-link" href="projects.html"><span class="nav-dot"></span><span class="bilingual" data-cn="项目">Projects</span></a>
+        </div>
+        <div class="nav-group nav-group-right">
+          <a class="nav-link desktop-link is-current" href="services.html"><span class="nav-dot"></span><span class="bilingual" data-cn="服务">Services</span></a>
+          <a class="nav-link desktop-link" href="insights.html"><span class="nav-dot"></span><span class="bilingual" data-cn="模特图册">Modle BOOK</span></a>
+          <a class="nav-link desktop-link" href="contact.html"><span class="nav-dot"></span><span class="bilingual" data-cn="联系">Contact</span></a>
+          <a class="nav-link desktop-link" href="grove.html"><span class="nav-dot"></span><span class="bilingual" data-cn="灵感库">Grove</span></a>
+        </div>
+      </nav>
+    </header>
+
+    <nav class="mobile-bottom-nav" aria-label="Mobile primary navigation">
+      <a class="bilingual" data-cn="关于我们" href="talents.html">About us</a>
+      <a class="bilingual" data-cn="项目" href="projects.html">Projects</a>
+      <a class="bilingual" data-cn="服务" href="services.html">Services</a>
+      <a class="bilingual" data-cn="模特图册" href="insights.html">Modle BOOK</a>
+      <a class="bilingual" data-cn="联系" href="contact.html">Contact</a>
+      <a class="bilingual" data-cn="灵感库" href="grove.html">Grove</a>
+    </nav>
+
+    <main class="page-shell">
+      <section class="page-hero">
+        <div class="reveal-title">
+          <p class="page-kicker bilingual" data-cn="服务能力">LoneTree services</p>
+          <h1 class="page-title">Services</h1>
+        </div>
+        <p class="page-lede reveal-copy">
+          Building content systems for brands that need speed, control and taste.
+          <span class="page-lede-cn">以策略为根，用 AI、CGI 与创意指导生产可持续扩展的品牌内容。</span>
+        </p>
+      </section>
+
+      <section class="service-tree-panel reveal-copy" aria-label="Interactive service tree">
+        <div class="service-tree-meta">
+          <p>Move through the canopy. Numbers become leaves. Roots reveal what we build with.</p>
+          <p lang="zh-CN">移动鼠标穿过树冠，数字会变成叶片；靠近树根，服务能力会显现。</p>
+        </div>
+
+        <div class="service-tree-stage" data-service-tree>
+          <svg class="service-tree-svg" viewBox="0 0 1000 760" role="img" aria-labelledby="service-tree-title service-tree-desc">
+            <title id="service-tree-title">LoneTree service tree</title>
+            <desc id="service-tree-desc">A monochrome interactive tree diagram with numbered digital leaves and service roots.</desc>
+            <defs>
+              <filter id="roughen">
+                <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="16" result="noise"/>
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.8"/>
+              </filter>
+            </defs>
+
+            <g class="tree-rings" data-tree-rings aria-hidden="true">
+              <ellipse cx="508" cy="488" rx="38" ry="12"/>
+              <ellipse cx="508" cy="488" rx="28" ry="8"/>
+              <ellipse cx="508" cy="488" rx="16" ry="5"/>
+              <path d="M477 488 C492 481 520 481 540 488"/>
+              <path d="M486 494 C503 498 526 497 535 492"/>
+            </g>
+
+            <g class="tree-wood" aria-hidden="true">
+              <path class="service-trunk" data-trunk d="M495 682 C485 620 484 560 497 507 C506 469 522 434 548 398 C573 364 591 327 604 282"/>
+              <path class="service-trunk service-trunk-shadow" d="M520 684 C514 626 514 566 526 512 C536 466 553 426 584 382"/>
+              <path class="service-branch branch-heavy" d="M513 508 C464 458 415 429 348 418 C293 409 239 419 184 445"/>
+              <path class="service-branch" d="M473 464 C423 419 371 388 302 380 C244 373 193 385 139 414"/>
+              <path class="service-branch branch-fine" d="M333 420 C296 397 259 384 214 383"/>
+              <path class="service-branch branch-fine" d="M279 384 C241 356 203 343 156 347"/>
+              <path class="service-branch branch-heavy" d="M522 445 C482 383 436 337 375 314 C324 294 273 294 214 317"/>
+              <path class="service-branch" d="M486 383 C448 326 411 282 360 257 C318 236 279 232 236 244"/>
+              <path class="service-branch branch-fine" d="M376 315 C335 294 296 284 250 291"/>
+              <path class="service-branch branch-fine" d="M360 257 C333 224 301 206 260 198"/>
+              <path class="service-branch branch-heavy" d="M552 407 C611 356 671 322 742 313 C802 305 856 322 908 356"/>
+              <path class="service-branch" d="M579 366 C625 306 674 267 737 251 C790 237 839 245 888 274"/>
+              <path class="service-branch branch-fine" d="M742 313 C789 299 831 300 874 318"/>
+              <path class="service-branch branch-fine" d="M737 251 C765 219 801 201 844 196"/>
+              <path class="service-branch branch-heavy" d="M535 514 C591 474 653 452 727 454 C789 456 842 478 896 518"/>
+              <path class="service-branch" d="M575 485 C626 455 683 440 746 447"/>
+              <path class="service-branch branch-fine" d="M727 454 C766 434 806 429 850 438"/>
+              <path class="service-branch branch-fine" d="M746 447 C790 455 826 474 862 504"/>
+              <path class="service-branch branch-heavy" d="M568 356 C574 295 573 239 551 181 C535 139 509 106 472 78"/>
+              <path class="service-branch" d="M589 325 C618 279 638 236 637 184"/>
+              <path class="service-branch branch-fine" d="M551 181 C522 154 488 139 449 135"/>
+              <path class="service-branch branch-fine" d="M637 184 C661 153 692 134 728 126"/>
+            </g>
+
+            <g class="service-nodes" data-service-nodes aria-label="Numbered service leaves"></g>
+
+            <g class="service-roots" data-service-roots aria-hidden="true">
+              <path d="M500 674 C443 701 384 708 306 718"/>
+              <path d="M515 681 C475 722 421 739 344 747"/>
+              <path d="M530 677 C594 708 671 717 780 722"/>
+              <path d="M541 681 C604 730 678 744 790 746"/>
+              <path d="M510 681 C499 722 480 742 448 754"/>
+              <path d="M529 681 C548 721 576 744 622 754"/>
+              <text x="213" y="720">Strategy</text>
+              <text x="286" y="752">AI Creative</text>
+              <text x="373" y="752">Visual System</text>
+              <text x="644" y="752">Campaign</text>
+              <text x="790" y="725">Content</text>
+              <text x="792" y="752">Production</text>
+            </g>
+
+            <circle class="service-cursor" data-service-cursor cx="-100" cy="-100" r="46"/>
+          </svg>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

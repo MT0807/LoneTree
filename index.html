@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <title>LoneTree | Creative Direction</title>
+    <meta
+      name="description"
+      content="Detroit is an AI production house in Paris crafting visual culture for luxury brands."
+    >
+    <link rel="icon" href="assets/lonetree-logo.png">
+    <link rel="stylesheet" href="styles.css?v=20260603-2">
+    <script src="app.js?v=20260612-2" defer></script>
+  </head>
+  <body>
+    <div class="loader" aria-hidden="true">
+      <img class="loader-logo" src="assets/lonetree-logo.png" alt="">
+    </div>
+    <div class="transition-overlay" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary">
+        <div class="nav-group">
+          <a class="brand" href="index.html" aria-label="LoneTree home">
+            <img src="assets/lonetree-logo.png" alt="">
+          </a>
+          <a class="nav-link desktop-link" href="talents.html"><span class="nav-dot"></span><span class="bilingual" data-cn="关于我们">About us</span></a>
+          <a class="nav-link desktop-link" href="projects.html"><span class="nav-dot"></span><span class="bilingual" data-cn="项目">Projects</span></a>
+        </div>
+        <div class="nav-group nav-group-right">
+          <a class="nav-link desktop-link" href="services.html"><span class="nav-dot"></span><span class="bilingual" data-cn="服务">Services</span></a>
+          <a class="nav-link desktop-link" href="insights.html"><span class="nav-dot"></span><span class="bilingual" data-cn="模特图册">Modle BOOK</span></a>
+          <a class="nav-link desktop-link" href="contact.html"><span class="nav-dot"></span><span class="bilingual" data-cn="联系">Contact</span></a>
+          <a class="nav-link desktop-link" href="grove.html"><span class="nav-dot"></span><span class="bilingual" data-cn="灵感库">Grove</span></a>
+          <button class="menu-toggle" type="button" aria-controls="menu" aria-expanded="false">menu</button>
+        </div>
+      </nav>
+    </header>
+
+    <aside class="book-card">
+      <a class="book-link" href="insights.html" aria-label="A Comparative Analysis of Carbon Impact in Production">
+        <img src="assets/book.webp" alt="">
+        <span class="book-copy">
+          <strong class="bilingual" data-cn="近期书籍">Our recent book</strong>
+          <span class="bilingual" data-cn="生产碳影响比较分析">A Comparative Analysis of Carbon Impact in Production</span>
+        </span>
+        <span class="arrow" aria-hidden="true">&#8599;</span>
+      </a>
+    </aside>
+
+    <div class="mobile-menu" id="menu" aria-hidden="true">
+      <div class="mobile-menu-top">
+        <a class="brand" href="index.html" aria-label="LoneTree home"><img src="assets/lonetree-logo.png" alt=""></a>
+        <button class="menu-close" type="button">close</button>
+      </div>
+      <nav class="mobile-links" aria-label="Mobile primary">
+        <a class="bilingual" data-cn="关于我们" href="talents.html">About us</a>
+        <a class="bilingual" data-cn="项目" href="projects.html">Projects</a>
+        <a class="bilingual" data-cn="服务" href="services.html">Services</a>
+        <a class="bilingual" data-cn="模特图册" href="insights.html">Modle BOOK</a>
+        <a class="bilingual" data-cn="联系" href="contact.html">Contact</a>
+        <a class="bilingual" data-cn="灵感库" href="grove.html">Grove</a>
+      </nav>
+      <div class="mobile-footer">
+        <a href="https://www.instagram.com/" rel="noreferrer">instagram</a>
+        <a href="https://www.linkedin.com/" rel="noreferrer">linkedin</a>
+      </div>
+    </div>
+
+    <nav class="mobile-bottom-nav" aria-label="Mobile primary navigation">
+      <a class="bilingual" data-cn="关于我们" href="talents.html">About us</a>
+      <a class="bilingual" data-cn="项目" href="projects.html">Projects</a>
+      <a class="bilingual" data-cn="服务" href="services.html">Services</a>
+      <a class="bilingual" data-cn="模特图册" href="insights.html">Modle BOOK</a>
+      <a class="bilingual" data-cn="联系" href="contact.html">Contact</a>
+      <a class="bilingual" data-cn="灵感库" href="grove.html">Grove</a>
+    </nav>
+
+    <main class="viewport">
+      <section class="home" aria-label="Detroit">
+        <div class="hero">
+          <div class="display-title reveal-title">LoneTree</div>
+          <div class="hero-rule reveal-copy"></div>
+          <h1 class="intro reveal-copy">
+            <span class="intro-en">Rooted in strategy,<br>Growing through creativity</span>
+            <span class="intro-cn" lang="zh-CN">扎根于策略，生长于创意</span>
+            <small>AI. CGI. Creative Direction</small>
+          </h1>
+        </div>
+        <div class="gallery-window" aria-label="Selected talent and projects">
+          <div class="gallery" id="gallery"></div>
+        </div>
+      </section>
+    </main>
+
+    <div class="project-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Project preview">
+      <button class="modal-close" type="button">close</button>
+      <img class="modal-image" alt="">
+      <p class="modal-kicker"></p>
+      <h2 class="modal-title"></h2>
+    </div>
+  </body>
+</html>
