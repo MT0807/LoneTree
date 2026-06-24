@@ -74,7 +74,7 @@ function renderModelBook() {
     .map((model) => `
       <a class="model-card" href="model.html?id=${encodeURIComponent(model.id)}" data-category="${model.category}" data-face="${model.face}" aria-label="View ${model.name}">
         <span class="model-card-image model-card-image--${model.coverPosition || "center"}">
-          <img src="${model.images[0]}" alt="${model.name} headshot" loading="lazy">
+          <img src="${model.cover || model.images[0]}" alt="${model.name} headshot" loading="lazy">
         </span>
         <h2>${model.name}</h2>
         <p class="bilingual" data-cn="${modelLabels[model.face].cn}">${modelLabels[model.face].en}</p>

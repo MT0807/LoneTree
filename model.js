@@ -20,7 +20,11 @@ if (selectedModel && modelDetail && modelName && modelMeta && modelGallery) {
   document.title = `${selectedModel.name} | LoneTree Modle BOOK`;
   modelName.textContent = selectedModel.name;
   modelMeta.textContent = `${modelLabels[selectedModel.category]}  ·  ${modelLabels[selectedModel.face]}`;
-  modelGallery.innerHTML = selectedModel.images
+  const galleryImages = selectedModel.cover
+    ? [selectedModel.cover, ...selectedModel.images]
+    : selectedModel.images;
+
+  modelGallery.innerHTML = galleryImages
     .map((image, index) => `
       <figure class="model-detail-image ${index === 0 ? "is-cover" : ""}">
         <img src="${image}" alt="${selectedModel.name} ${index + 1}" ${index === 0 ? "" : "loading=\"lazy\""}>
