@@ -70,7 +70,11 @@ const modelLabels = {
 function renderModelBook() {
   if (!modelGrid || !modelData.length) return;
 
-  modelGrid.innerHTML = modelData
+  const modelsByName = [...modelData].sort((first, second) =>
+    first.name.localeCompare(second.name, "en", { sensitivity: "base" })
+  );
+
+  modelGrid.innerHTML = modelsByName
     .map((model) => `
       <a class="model-card" href="model.html?id=${encodeURIComponent(model.id)}" data-category="${model.category}" data-face="${model.face}" aria-label="View ${model.name}">
         <span class="model-card-image model-card-image--${model.coverPosition || "center"}">
@@ -109,7 +113,7 @@ modelFilterButtons.forEach((button) => {
     activeModelFilter = button.dataset.modelFilter;
     activeFaceFilter = "all";
     modelFilterButtons.forEach((item) => item.classList.toggle("is-active", item === button));
-    faceFilterButtons.forEach((item) => item.classList.toggle("is-active", item.dataset.faceFilter === "all"));
+    faceFilterButtons.forEach((item) => item.classList.remove("is-active"));
     updateModelBookFilters();
   });
 });

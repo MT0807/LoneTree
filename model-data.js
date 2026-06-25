@@ -7,9 +7,9 @@ window.LONETREE_MODELS = [
     coverPosition: "left",
     cover: "assets/models/elias/cover.png",
     images: [
+      "assets/models/elias/03.png",
       "assets/models/elias/01.png",
-      "assets/models/elias/02.png",
-      "assets/models/elias/03.png"
+      "assets/models/elias/02.png"
     ]
   },
   {
@@ -21,8 +21,8 @@ window.LONETREE_MODELS = [
     cover: "assets/models/nico/cover.png",
     images: [
       "assets/models/nico/02.png",
-      "assets/models/nico/01.png",
-      "assets/models/nico/03.png"
+      "assets/models/nico/03.png",
+      "assets/models/nico/01.png"
     ]
   },
   {
@@ -68,8 +68,8 @@ window.LONETREE_MODELS = [
     cover: "assets/models/mira/cover.png",
     images: [
       "assets/models/mira/01.png",
-      "assets/models/mira/02.png",
-      "assets/models/mira/03.png"
+      "assets/models/mira/03.png",
+      "assets/models/mira/02.png"
     ]
   },
   {
@@ -80,9 +80,9 @@ window.LONETREE_MODELS = [
     coverPosition: "left",
     cover: "assets/models/lin/cover.png",
     images: [
+      "assets/models/lin/03.png",
       "assets/models/lin/01.png",
-      "assets/models/lin/02.png",
-      "assets/models/lin/03.png"
+      "assets/models/lin/02.png"
     ]
   },
   {
@@ -106,9 +106,9 @@ window.LONETREE_MODELS = [
     coverPosition: "center",
     cover: "assets/models/aya/cover.png",
     images: [
+      "assets/models/aya/02.png",
       "assets/models/aya/03.png",
-      "assets/models/aya/01.png",
-      "assets/models/aya/02.png"
+      "assets/models/aya/01.png"
     ]
   },
   {
@@ -120,8 +120,8 @@ window.LONETREE_MODELS = [
     cover: "assets/models/jutin/cover.png",
     images: [
       "assets/models/jutin/02.png",
-      "assets/models/jutin/01.png",
-      "assets/models/jutin/03.png"
+      "assets/models/jutin/03.png",
+      "assets/models/jutin/01.png"
     ]
   }
 ];

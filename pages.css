@@ -79,6 +79,10 @@ body.subpage-body {
   margin-top: -1.25rem;
 }
 
+.model-subfilters[hidden] {
+  display: none;
+}
+
 .filter-button {
   background: #ececea;
   border-radius: 0.75rem;
@@ -507,24 +511,24 @@ body.subpage-body {
   height: 100%;
   object-fit: cover;
   object-position: center center;
-  transform: scale(1.42);
+  transform: scale(1);
   transition: transform 520ms var(--ease);
   width: 100%;
 }
 
 .model-card-image--left img {
-  object-position: left center;
-  transform-origin: left center;
+  object-position: center center;
+  transform-origin: center center;
 }
 
 .model-card-image--right img {
-  object-position: right center;
-  transform-origin: right center;
+  object-position: center center;
+  transform-origin: center center;
 }
 
 .model-card:hover .model-card-image img,
 .model-card:focus-visible .model-card-image img {
-  transform: scale(1.46);
+  transform: scale(1.025);
 }
 
 .model-card h2 {
@@ -554,6 +558,8 @@ body.subpage-body {
 }
 
 .model-detail-shell {
+  margin: 0 auto;
+  max-width: 86rem;
   padding-top: calc(var(--pad) + 5rem);
 }
 
@@ -578,17 +584,19 @@ body.subpage-body {
 
 .model-detail-title {
   font-family: var(--english-font);
-  font-size: clamp(5rem, 15vw, 16rem);
+  font-size: clamp(4.5rem, 7vw, 8rem);
   font-weight: 800;
-  line-height: 0.82;
+  line-height: 0.88;
   margin-top: 0.8rem;
 }
 
 .model-detail-gallery {
   display: grid;
+  align-items: start;
   gap: 1rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-top: 3rem;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+  margin-top: 2.5rem;
+  max-width: 76rem;
 }
 
 .model-detail-image {
@@ -597,8 +605,14 @@ body.subpage-body {
 }
 
 .model-detail-image.is-cover {
-  grid-column: 1 / -1;
-  max-width: min(66rem, 100%);
+  grid-column: auto;
+  max-width: none;
+}
+
+.model-detail-secondary {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
 }
 
 .model-detail-image img {
@@ -1017,6 +1031,10 @@ body.subpage-body {
 
   .model-detail-image.is-cover {
     grid-column: auto;
+  }
+
+  .model-detail-secondary {
+    grid-template-columns: 1fr;
   }
 
   .service-tree-panel {

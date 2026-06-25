@@ -24,13 +24,21 @@ if (selectedModel && modelDetail && modelName && modelMeta && modelGallery) {
     ? [selectedModel.cover, ...selectedModel.images]
     : selectedModel.images;
 
-  modelGallery.innerHTML = galleryImages
-    .map((image, index) => `
-      <figure class="model-detail-image ${index === 0 ? "is-cover" : ""}">
-        <img src="${image}" alt="${selectedModel.name} ${index + 1}" ${index === 0 ? "" : "loading=\"lazy\""}>
-      </figure>
-    `)
-    .join("");
+  const renderImage = (image, index, className = "") => `
+    <figure class="model-detail-image ${className}">
+      <img src="${image}" alt="${selectedModel.name} ${index + 1}" ${index === 0 ? "" : "loading=\"lazy\""}>
+    </figure>
+  `;
+
+  const [coverImage, ...supportingImages] = galleryImages;
+  modelGallery.innerHTML = `
+    ${renderImage(coverImage, 0, "is-cover")}
+    ${supportingImages.length ? `
+      <div class="model-detail-secondary">
+        ${supportingImages.map((image, index) => renderImage(image, index + 1)).join("")}
+      </div>
+    ` : ""}
+  `;
 }
 
 window.setTimeout(() => {
