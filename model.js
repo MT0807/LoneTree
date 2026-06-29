@@ -9,17 +9,23 @@ const modelId = new URLSearchParams(window.location.search).get("id");
 const selectedModel = models.find((model) => model.id === modelId) || models[0];
 
 const modelLabels = {
-  male: "Male / 男性",
-  female: "Female / 女性",
-  "east-asian": "East Asian / 东亚面孔",
-  european: "European / 欧洲面孔",
-  african: "African / 非洲面孔"
+  male: { en: "Male", cn: "男性" },
+  female: { en: "Female", cn: "女性" },
+  "east-asian": { en: "East Asian", cn: "东亚面孔" },
+  european: { en: "European", cn: "欧洲面孔" },
+  african: { en: "African", cn: "非洲面孔" }
 };
 
 if (selectedModel && modelDetail && modelName && modelMeta && modelGallery) {
   document.title = `${selectedModel.name} | LoneTree Modle BOOK`;
   modelName.textContent = selectedModel.name;
-  modelMeta.textContent = `${modelLabels[selectedModel.category]}  ·  ${modelLabels[selectedModel.face]}`;
+  const genderHref = `insights.html?category=${encodeURIComponent(selectedModel.category)}`;
+  const faceHref = `${genderHref}&face=${encodeURIComponent(selectedModel.face)}`;
+  modelMeta.innerHTML = `
+    <a class="model-meta-link" href="${genderHref}">${modelLabels[selectedModel.category].en} / ${modelLabels[selectedModel.category].cn}</a>
+    <span aria-hidden="true">·</span>
+    <a class="model-meta-link" href="${faceHref}">${modelLabels[selectedModel.face].en} / ${modelLabels[selectedModel.face].cn}</a>
+  `;
   const galleryImages = selectedModel.cover
     ? [selectedModel.cover, ...selectedModel.images]
     : selectedModel.images;

@@ -7,9 +7,9 @@
     <title>Services | LoneTree</title>
     <link rel="icon" href="assets/lonetree-logo.png">
     <link rel="stylesheet" href="styles.css?v=20260624-1">
-    <link rel="stylesheet" href="pages.css?v=20260610-5">
+    <link rel="stylesheet" href="pages.css?v=20260625-3">
     <script src="pages.js" defer></script>
-    <script src="services-tree.js?v=20260610-1" defer></script>
+    <script src="services-tree.js?v=20260625-1" defer></script>
   </head>
   <body class="subpage-body">
     <div class="loader" aria-hidden="true"><img class="loader-logo" src="assets/lonetree-logo.png" alt=""></div>
@@ -52,75 +52,16 @@
         </p>
       </section>
 
-      <section class="service-tree-panel reveal-copy" aria-label="Interactive service tree">
+      <section class="service-tree-panel reveal-copy" aria-label="LoneTree service tree">
         <div class="service-tree-meta">
-          <p>Move through the canopy. Numbers become leaves. Roots reveal what we build with.</p>
-          <p lang="zh-CN">移动鼠标穿过树冠，数字会变成叶片；靠近树根，服务能力会显现。</p>
+          <p>Strategy<br>AI Creative<br>Visual System<br>Campaign<br>Content<br>Production</p>
+          <p lang="zh-CN">策略<br>AI 创意<br>视觉系统<br>战役传播<br>内容生产<br>执行落地</p>
         </div>
 
         <div class="service-tree-stage" data-service-tree>
-          <svg class="service-tree-svg" viewBox="0 0 1000 760" role="img" aria-labelledby="service-tree-title service-tree-desc">
-            <title id="service-tree-title">LoneTree service tree</title>
-            <desc id="service-tree-desc">A monochrome interactive tree diagram with numbered digital leaves and service roots.</desc>
-            <defs>
-              <filter id="roughen">
-                <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="16" result="noise"/>
-                <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.8"/>
-              </filter>
-            </defs>
-
-            <g class="tree-rings" data-tree-rings aria-hidden="true">
-              <ellipse cx="508" cy="488" rx="38" ry="12"/>
-              <ellipse cx="508" cy="488" rx="28" ry="8"/>
-              <ellipse cx="508" cy="488" rx="16" ry="5"/>
-              <path d="M477 488 C492 481 520 481 540 488"/>
-              <path d="M486 494 C503 498 526 497 535 492"/>
-            </g>
-
-            <g class="tree-wood" aria-hidden="true">
-              <path class="service-trunk" data-trunk d="M495 682 C485 620 484 560 497 507 C506 469 522 434 548 398 C573 364 591 327 604 282"/>
-              <path class="service-trunk service-trunk-shadow" d="M520 684 C514 626 514 566 526 512 C536 466 553 426 584 382"/>
-              <path class="service-branch branch-heavy" d="M513 508 C464 458 415 429 348 418 C293 409 239 419 184 445"/>
-              <path class="service-branch" d="M473 464 C423 419 371 388 302 380 C244 373 193 385 139 414"/>
-              <path class="service-branch branch-fine" d="M333 420 C296 397 259 384 214 383"/>
-              <path class="service-branch branch-fine" d="M279 384 C241 356 203 343 156 347"/>
-              <path class="service-branch branch-heavy" d="M522 445 C482 383 436 337 375 314 C324 294 273 294 214 317"/>
-              <path class="service-branch" d="M486 383 C448 326 411 282 360 257 C318 236 279 232 236 244"/>
-              <path class="service-branch branch-fine" d="M376 315 C335 294 296 284 250 291"/>
-              <path class="service-branch branch-fine" d="M360 257 C333 224 301 206 260 198"/>
-              <path class="service-branch branch-heavy" d="M552 407 C611 356 671 322 742 313 C802 305 856 322 908 356"/>
-              <path class="service-branch" d="M579 366 C625 306 674 267 737 251 C790 237 839 245 888 274"/>
-              <path class="service-branch branch-fine" d="M742 313 C789 299 831 300 874 318"/>
-              <path class="service-branch branch-fine" d="M737 251 C765 219 801 201 844 196"/>
-              <path class="service-branch branch-heavy" d="M535 514 C591 474 653 452 727 454 C789 456 842 478 896 518"/>
-              <path class="service-branch" d="M575 485 C626 455 683 440 746 447"/>
-              <path class="service-branch branch-fine" d="M727 454 C766 434 806 429 850 438"/>
-              <path class="service-branch branch-fine" d="M746 447 C790 455 826 474 862 504"/>
-              <path class="service-branch branch-heavy" d="M568 356 C574 295 573 239 551 181 C535 139 509 106 472 78"/>
-              <path class="service-branch" d="M589 325 C618 279 638 236 637 184"/>
-              <path class="service-branch branch-fine" d="M551 181 C522 154 488 139 449 135"/>
-              <path class="service-branch branch-fine" d="M637 184 C661 153 692 134 728 126"/>
-            </g>
-
-            <g class="service-nodes" data-service-nodes aria-label="Numbered service leaves"></g>
-
-            <g class="service-roots" data-service-roots aria-hidden="true">
-              <path d="M500 674 C443 701 384 708 306 718"/>
-              <path d="M515 681 C475 722 421 739 344 747"/>
-              <path d="M530 677 C594 708 671 717 780 722"/>
-              <path d="M541 681 C604 730 678 744 790 746"/>
-              <path d="M510 681 C499 722 480 742 448 754"/>
-              <path d="M529 681 C548 721 576 744 622 754"/>
-              <text x="213" y="720">Strategy</text>
-              <text x="286" y="752">AI Creative</text>
-              <text x="373" y="752">Visual System</text>
-              <text x="644" y="752">Campaign</text>
-              <text x="790" y="725">Content</text>
-              <text x="792" y="752">Production</text>
-            </g>
-
-            <circle class="service-cursor" data-service-cursor cx="-100" cy="-100" r="46"/>
-          </svg>
+          <img class="service-tree-image service-tree-image-bw" src="assets/service-tree-bw.png" alt="Black ink drawing of a LoneTree service tree">
+          <img class="service-tree-image service-tree-image-color" src="assets/service-tree-color.png" alt="" aria-hidden="true">
+          <span class="service-tree-cursor" aria-hidden="true"></span>
         </div>
       </section>
     </main>

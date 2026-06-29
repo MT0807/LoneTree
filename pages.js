@@ -56,8 +56,9 @@ filterButtons.forEach((button) => {
   });
 });
 
-let activeModelFilter = "all";
-let activeFaceFilter = "all";
+const modelParams = new URLSearchParams(window.location.search);
+let activeModelFilter = modelParams.get("category") || "all";
+let activeFaceFilter = modelParams.get("face") || "all";
 
 const modelLabels = {
   male: { en: "Male", cn: "男性" },
@@ -106,6 +107,12 @@ function updateModelBookFilters() {
 }
 
 renderModelBook();
+modelFilterButtons.forEach((button) => {
+  button.classList.toggle("is-active", button.dataset.modelFilter === activeModelFilter);
+});
+faceFilterButtons.forEach((button) => {
+  button.classList.toggle("is-active", activeModelFilter !== "all" && button.dataset.faceFilter === activeFaceFilter);
+});
 updateModelBookFilters();
 
 modelFilterButtons.forEach((button) => {
