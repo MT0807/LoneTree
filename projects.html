@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#ffffff">
     <title>Projects | LoneTree</title>
-    <link rel="icon" href="assets/lonetree-logo.png">
+    <link rel="icon" href="assets/lonetree-favicon.png?v=20260702-2">
     <link rel="stylesheet" href="styles.css?v=20260624-1">
-    <link rel="stylesheet" href="pages.css?v=20260625-2">
-    <script src="pages.js" defer></script>
+    <link rel="stylesheet" href="pages.css?v=20260702-10">
+    <script src="pages.js?v=20260702-1" defer></script>
   </head>
   <body class="subpage-body">
     <div class="loader" aria-hidden="true"><img class="loader-logo" src="assets/lonetree-logo.png" alt=""></div>
@@ -40,53 +40,122 @@
     </nav>
 
     <main class="page-shell projects-shell">
-      <section class="page-hero">
-        <div class="reveal-title">
+      <section class="project-board" aria-label="Projects by category">
+        <div class="project-board-hero reveal-title">
           <p class="page-kicker bilingual" data-cn="精选项目">selected works</p>
           <h1 class="page-title">Projects</h1>
         </div>
-        <p class="page-lede reveal-copy">
-          Luxury campaigns, AI content systems and cinematic visual worlds.
-          <span class="page-lede-cn">从概念策略到影像执行，为品牌建立可延展的视觉系统。</span>
-        </p>
-      </section>
 
-      <div class="filter-row reveal-copy" aria-label="Project filters">
-        <button class="filter-button bilingual is-active" type="button" data-filter="all" data-cn="全部">All</button>
-        <button class="filter-button bilingual" type="button" data-filter="luxury" data-cn="奢侈品">luxury</button>
-        <button class="filter-button bilingual" type="button" data-filter="beauty" data-cn="美妆">beauty</button>
-        <button class="filter-button bilingual" type="button" data-filter="technology" data-cn="科技">technology</button>
-      </div>
+        <nav class="project-tabs reveal-copy" aria-label="Project category filters">
+          <button class="project-tab is-active" type="button" data-filter="all">全部</button>
+          <button class="project-tab" type="button" data-filter="fashion">时尚</button>
+          <button class="project-tab" type="button" data-filter="beauty">美妆</button>
+          <button class="project-tab" type="button" data-filter="dining">餐饮</button>
+          <button class="project-tab" type="button" data-filter="creative">创意</button>
+        </nav>
 
-      <section class="project-list reveal-copy" aria-label="Project list">
-        <button class="list-row" type="button" data-category="luxury" data-preview-image="assets/dom-summer.webp" data-preview-title="Dom Perignon Summer" data-preview-meta="Social travel / AI production">
-          <strong>Dom Perignon Summer</strong><span class="bilingual" data-cn="社交旅行">Social travel</span><span class="bilingual" data-cn="创意指导">AI. CGI. Creative Direction</span><span class="confidential bilingual" data-cn="保密项目">confidential project</span>
-        </button>
-        <button class="list-row" type="button" data-category="technology" data-preview-image="assets/google.webp" data-preview-title="Google Pixel" data-preview-meta="Tech IA fashion / live action and AI">
-          <strong>GOOGLE</strong><span class="bilingual" data-cn="科技时尚">Tech IA Fashion</span><span class="bilingual" data-cn="创意生产">Creative production</span><span class="confidential bilingual" data-cn="保密项目">confidential project</span>
-        </button>
-        <button class="list-row" type="button" data-category="beauty" data-preview-image="assets/la-mer.webp" data-preview-title="La Mer" data-preview-meta="Skincare print / refined digital expression">
-          <strong>La Mer</strong><span class="bilingual" data-cn="护肤平面">Skincare print</span><span class="bilingual" data-cn="材质探索">AI material exploration</span><span class="confidential bilingual" data-cn="保密项目">confidential project</span>
-        </button>
-        <button class="list-row" type="button" data-category="luxury" data-preview-image="assets/lv-asnieres.webp" data-preview-title="Louis Vuitton Asnieres" data-preview-meta="Social quest / narrative production">
-          <strong>Louis Vuitton Asnieres</strong><span class="bilingual" data-cn="社交叙事">Social Quest</span><span class="bilingual" data-cn="叙事设计">Narrative design</span><span class="confidential bilingual" data-cn="保密项目">confidential project</span>
-        </button>
-        <button class="list-row" type="button" data-category="beauty" data-preview-image="assets/paris-berlin.jpeg" data-preview-title="Paris Berlin" data-preview-meta="Print cosmetic / radical beauty language">
-          <strong>Paris berlin</strong><span class="bilingual" data-cn="美妆平面">Print cosmetic</span><span class="bilingual" data-cn="静物指导">Still-life direction</span><span class="confidential bilingual" data-cn="保密项目">confidential project</span>
-        </button>
-        <button class="list-row" type="button" data-category="luxury" data-preview-image="assets/hermes.webp" data-preview-title="Hermes" data-preview-meta="Fragrance finder / sensory world">
-          <strong>Hermes</strong><span class="bilingual" data-cn="香氛探索">Fragrance Finder</span><span class="bilingual" data-cn="AI与三维制作">AI + 3D production</span><span class="confidential bilingual" data-cn="保密项目">confidential project</span>
-        </button>
+        <div class="project-brand-sections reveal-copy">
+          <section class="project-brand-section" data-category="fashion">
+            <div class="project-brand-heading">
+              <h2>Fashion</h2>
+              <span>时尚</span>
+            </div>
+            <div class="project-card-grid">
+              <article class="project-card project-card--stacked">
+                <button class="project-image-button project-stack-button" type="button" data-project-gallery="assets/output/home-07.png,assets/output/home-08.png,assets/output/home-09.png" data-project-title="CELINE" data-project-subtitle="halfmoon" aria-label="Open CELINE halfmoon image series">
+                  <span class="project-stack-frame">
+                    <img src="assets/output/home-07.png" alt="CELINE halfmoon campaign visual 1">
+                    <img src="assets/output/home-08.png" alt="CELINE halfmoon campaign visual 2">
+                    <img src="assets/output/home-09.png" alt="CELINE halfmoon campaign visual 3">
+                  </span>
+                </button>
+                <h3>CELINE</h3>
+                <p class="project-card-fine">halfmoon</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="project-brand-section" data-category="beauty">
+            <div class="project-brand-heading">
+              <h2>Beauty</h2>
+              <span>美妆</span>
+            </div>
+            <div class="project-card-grid">
+              <article class="project-card">
+                <button class="project-image-button" type="button" data-project-full-image="assets/output/home-01.png" aria-label="Open LA PRAIRIE image">
+                  <img src="assets/output/home-01.png" alt="LA PRAIRIE beauty product visual">
+                </button>
+                <h3>LA PRAIRIE</h3>
+                <p>Beauty image</p>
+              </article>
+              <article class="project-card">
+                <button class="project-image-button" type="button" data-project-full-image="assets/output/home-10.png" aria-label="Open BYREDO image">
+                  <img src="assets/output/home-10.png" alt="BYREDO beauty product visual">
+                </button>
+                <h3>BYREDO</h3>
+                <p>Beauty image</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="project-brand-section" data-category="dining">
+            <div class="project-brand-heading">
+              <h2>Dining</h2>
+              <span>餐饮</span>
+            </div>
+            <div class="project-card-grid">
+              <article class="project-card project-card--stacked">
+                <button class="project-image-button project-stack-button" type="button" data-project-gallery="assets/output/home-03.png,assets/output/home-04.png,assets/output/home-05.png" data-project-title="COCKRAILS" data-project-subtitle="cocktail story" aria-label="Open COCKRAILS image series">
+                  <span class="project-stack-frame">
+                    <img src="assets/output/home-05.png" alt="COCKRAILS cover visual">
+                    <img src="assets/output/home-03.png" alt="COCKRAILS cocktail visual 1">
+                    <img src="assets/output/home-04.png" alt="COCKRAILS cocktail visual 2">
+                  </span>
+                </button>
+                <h3>COCKRAILS</h3>
+                <p>cocktail story</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="project-brand-section" data-category="creative">
+            <div class="project-brand-heading">
+              <h2>Creative</h2>
+              <span>创意</span>
+            </div>
+            <div class="project-card-grid">
+              <article class="project-card">
+                <button class="project-image-button" type="button" data-project-full-image="assets/output/home-02.png" aria-label="Open Creative Shooting image">
+                  <img src="assets/output/home-02.png" alt="Creative shooting visual">
+                </button>
+                <h3>Creative Shooting</h3>
+                <p class="project-card-cn">创意拍摄</p>
+              </article>
+              <article class="project-card">
+                <button class="project-image-button" type="button" data-project-full-image="assets/output/home-06.png" aria-label="Open Natural Shooting image">
+                  <img src="assets/output/home-06.png" alt="Natural shooting visual">
+                </button>
+                <h3>Natural Shooting</h3>
+                <p class="project-card-cn">自然拍摄</p>
+              </article>
+            </div>
+          </section>
+        </div>
       </section>
     </main>
 
-    <aside class="preview-panel" aria-hidden="true" aria-label="Project preview">
-      <button class="preview-close" type="button">close</button>
-      <img class="preview-image" src="assets/dom-summer.webp" alt="">
-      <div class="preview-copy">
-        <h2 class="preview-title"></h2>
-        <p class="preview-meta"></p>
+    <div class="project-image-viewer" aria-hidden="true" role="dialog" aria-label="Project image preview">
+      <button class="project-viewer-back" type="button" data-project-viewer-close>
+        <span class="back-line" aria-hidden="true"></span>
+        <span>返回</span>
+      </button>
+      <div class="project-viewer-glass" aria-hidden="true"></div>
+      <div class="project-viewer-gallery" aria-label="Project image series"></div>
+      <img class="project-viewer-image" src="" alt="">
+      <div class="project-viewer-copy" aria-hidden="true">
+        <h2></h2>
+        <p></p>
       </div>
-    </aside>
+    </div>
   </body>
 </html>

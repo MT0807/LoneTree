@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#ffffff">
     <title>Services | LoneTree</title>
-    <link rel="icon" href="assets/lonetree-logo.png">
+    <link rel="icon" href="assets/lonetree-favicon.png?v=20260702-2">
     <link rel="stylesheet" href="styles.css?v=20260624-1">
-    <link rel="stylesheet" href="pages.css?v=20260625-3">
-    <script src="pages.js" defer></script>
-    <script src="services-tree.js?v=20260625-1" defer></script>
+    <link rel="stylesheet" href="pages.css?v=20260629-10">
+    <script src="pages.js?v=20260629-5" defer></script>
+    <script src="services-tree.js?v=20260629-7" defer></script>
   </head>
   <body class="subpage-body">
     <div class="loader" aria-hidden="true"><img class="loader-logo" src="assets/lonetree-logo.png" alt=""></div>
@@ -53,15 +53,145 @@
       </section>
 
       <section class="service-tree-panel reveal-copy" aria-label="LoneTree service tree">
-        <div class="service-tree-meta">
-          <p>Strategy<br>AI Creative<br>Visual System<br>Campaign<br>Content<br>Production</p>
-          <p lang="zh-CN">策略<br>AI 创意<br>视觉系统<br>战役传播<br>内容生产<br>执行落地</p>
-        </div>
-
         <div class="service-tree-stage" data-service-tree>
           <img class="service-tree-image service-tree-image-bw" src="assets/service-tree-bw.png" alt="Black ink drawing of a LoneTree service tree">
           <img class="service-tree-image service-tree-image-color" src="assets/service-tree-color.png" alt="" aria-hidden="true">
           <span class="service-tree-cursor" aria-hidden="true"></span>
+
+          <div class="service-tree-markers" aria-label="Service tree labels">
+            <article class="service-tree-marker" data-service-marker="leaves" tabindex="0">
+              <span>叶子</span>
+              <strong>LEAVES</strong>
+            </article>
+            <article class="service-tree-marker" data-service-marker="branches" tabindex="0">
+              <span>树枝</span>
+              <strong>BRANCHES</strong>
+            </article>
+            <article class="service-tree-marker is-active" data-service-marker="trunk" tabindex="0">
+              <span>树干</span>
+              <strong>TRUNK</strong>
+            </article>
+          </div>
+
+          <article class="service-tree-detail" aria-live="polite">
+            <div class="service-tree-detail-content is-active" data-service-detail="trunk">
+              <div class="service-tree-language service-tree-language-cn">
+                <p class="service-tree-detail-kicker">树干&nbsp;&nbsp;TRUNK</p>
+                <h2>Hybrid Production</h2>
+                <p>Trunk 是 LoneTree 的混合式影像制作系统。</p>
+                <p>我们结合 AI 生成、3D 空间控制、数字模特、产品参考与后期修正，让创意从概念生长为可交付的视觉资产。</p>
+                <h3>What we provide</h3>
+                <ul>
+                  <li>AI 数字拍摄</li>
+                  <li>数字模特定制</li>
+                  <li>产品场景图</li>
+                  <li>服装 Lookbook / Campaign 图</li>
+                  <li>AI + 3D 场景辅助</li>
+                  <li>图像后期精修</li>
+                  <li>画面一致性控制</li>
+                  <li>产品比例 / 材质 / 光线校正</li>
+                </ul>
+              </div>
+              <div class="service-tree-language service-tree-language-en" hidden>
+                <p class="service-tree-detail-kicker">TRUNK</p>
+                <h2>Hybrid Production</h2>
+                <p>Trunk is LoneTree's hybrid production system.</p>
+                <p>We combine AI generation, 3D spatial control, digital models, product references and post-production to turn creative concepts into deliverable visual assets.</p>
+                <h3>What we provide</h3>
+                <ul>
+                  <li>AI digital shooting</li>
+                  <li>Digital model creation</li>
+                  <li>Product scene imagery</li>
+                  <li>Fashion Lookbook / Campaign visuals</li>
+                  <li>AI + 3D scene support</li>
+                  <li>Post-production retouching</li>
+                  <li>Visual consistency control</li>
+                  <li>Product proportion / material / lighting refinement</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="service-tree-detail-content" data-service-detail="branches" hidden>
+              <div class="service-tree-language service-tree-language-cn">
+                <p class="service-tree-detail-kicker">树枝&nbsp;&nbsp;BRANCHES</p>
+                <h2>Campaign & Content</h2>
+                <p>Branches 是品牌向外生长的内容触点。</p>
+                <p>我们将核心视觉方向延展为 Campaign、社媒内容、电商视觉、短片与线下物料，让品牌在不同场景中保持统一表达。</p>
+                <h3>What we provide</h3>
+                <ul>
+                  <li>Campaign 主视觉</li>
+                  <li>小红书 / Instagram 社媒图</li>
+                  <li>电商详情页视觉</li>
+                  <li>品牌海报</li>
+                  <li>活动主视觉</li>
+                  <li>快闪 / 市集 / 展览视觉</li>
+                  <li>PR 礼盒视觉</li>
+                  <li>节日 Campaign</li>
+                  <li>10-15 秒 AI 视觉短片</li>
+                </ul>
+              </div>
+              <div class="service-tree-language service-tree-language-en" hidden>
+                <p class="service-tree-detail-kicker">BRANCHES</p>
+                <h2>Campaign & Content</h2>
+                <p>Branches are the touchpoints where the brand grows outward.</p>
+                <p>We extend the core visual direction into campaigns, social content, e-commerce visuals, short films and offline materials, keeping the brand consistent across different scenes.</p>
+                <h3>What we provide</h3>
+                <ul>
+                  <li>Campaign key visuals</li>
+                  <li>Xiaohongshu / Instagram social images</li>
+                  <li>E-commerce detail page visuals</li>
+                  <li>Brand posters</li>
+                  <li>Event key visuals</li>
+                  <li>Pop-up / market / exhibition visuals</li>
+                  <li>PR gift box visuals</li>
+                  <li>Seasonal campaigns</li>
+                  <li>10-15s AI visual films</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="service-tree-detail-content" data-service-detail="leaves" hidden>
+              <div class="service-tree-language service-tree-language-cn">
+              <p class="service-tree-detail-kicker">叶子&nbsp;&nbsp;LEAVES</p>
+              <h2>Visual Assets</h2>
+              <p>Leaves 是最终交付的视觉资产。</p>
+              <p>每一张图、每一支短片、每一个数字角色，都是品牌视觉系统中可以继续使用、继续延展的内容。</p>
+              <h3>What we provide</h3>
+              <ul>
+                <li>单张主视觉图</li>
+                <li>一组 Look 图</li>
+                <li>产品白底图 / 场景图</li>
+                <li>数字模特三视图 / 全身图</li>
+                <li>社媒封面图</li>
+                <li>海报图</li>
+                <li>短视频分镜图</li>
+                <li>动态视觉短片</li>
+                <li>品牌视觉资产包</li>
+              </ul>
+              </div>
+
+              <div class="service-tree-language service-tree-language-en" hidden>
+              <p class="service-tree-detail-kicker">LEAVES</p>
+              <h2>Visual Assets</h2>
+              <p>Leaves are the final visual assets we deliver.</p>
+              <p>Each image, film and digital character becomes part of a brand's visual system, ready to be reused, extended and adapted.</p>
+              <h3>What we provide</h3>
+              <ul>
+                <li>Single key visual</li>
+                <li>Look series</li>
+                <li>Product cut-out / scene images</li>
+                <li>Digital model turnarounds / full-body images</li>
+                <li>Social cover images</li>
+                <li>Poster visuals</li>
+                <li>Short video storyboards</li>
+                <li>Motion visual films</li>
+                <li>Brand visual asset package</li>
+              </ul>
+              </div>
+            </div>
+
+            <button class="service-tree-lang-toggle" type="button" data-service-language-toggle>English</button>
+          </article>
         </div>
       </section>
     </main>

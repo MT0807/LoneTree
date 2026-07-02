@@ -2,10 +2,47 @@ const serviceTreeStage = document.querySelector("[data-service-tree]");
 
 if (serviceTreeStage) {
   const colorTree = serviceTreeStage.querySelector(".service-tree-image-color");
+  const languageToggle = serviceTreeStage.querySelector("[data-service-language-toggle]");
+  const markers = Array.from(serviceTreeStage.querySelectorAll("[data-service-marker]"));
+  const details = Array.from(serviceTreeStage.querySelectorAll("[data-service-detail]"));
   const revealMin = 0;
   const revealMax = 150;
+  let activeService = "trunk";
+  let activeLanguage = "cn";
+
+  function getServiceFromPoint(xRatio, yRatio) {
+    if (yRatio < 0.43 && xRatio > 0.18 && xRatio < 0.82) return "leaves";
+    if (xRatio < 0.36 || xRatio > 0.64 || yRatio < 0.67) return "branches";
+    return "trunk";
+  }
+
+  function syncLanguage(detail) {
+    const cn = detail.querySelector(".service-tree-language-cn");
+    const en = detail.querySelector(".service-tree-language-en");
+    if (!cn || !en) return;
+    cn.hidden = activeLanguage !== "cn";
+    en.hidden = activeLanguage !== "en";
+  }
+
+  function setActiveService(service, revealLabels = false) {
+    activeService = service;
+    if (revealLabels) serviceTreeStage.classList.add("has-service-focus");
+
+    markers.forEach((marker) => {
+      marker.classList.toggle("is-active", marker.dataset.serviceMarker === service);
+    });
+
+    details.forEach((detail) => {
+      const isActive = detail.dataset.serviceDetail === service;
+      detail.hidden = !isActive;
+      detail.classList.toggle("is-active", isActive);
+      if (isActive) syncLanguage(detail);
+    });
+  }
 
   function setReveal(event) {
+    if (event.target.closest(".service-tree-detail, .service-tree-marker")) return;
+
     const rect = serviceTreeStage.getBoundingClientRect();
     const imageRect = colorTree.getBoundingClientRect();
     const x = event.clientX - rect.left;
@@ -18,6 +55,8 @@ if (serviceTreeStage) {
     const activeDistance = Math.min(imageRect.width, imageRect.height) * 0.72;
     const strength = Math.max(0, 1 - distance / activeDistance);
     const revealSize = revealMin + revealMax * strength;
+    const xRatio = imageX / imageRect.width;
+    const yRatio = imageY / imageRect.height;
 
     serviceTreeStage.style.setProperty("--tree-image-x", `${imageX}px`);
     serviceTreeStage.style.setProperty("--tree-image-y", `${imageY}px`);
@@ -25,14 +64,36 @@ if (serviceTreeStage) {
     serviceTreeStage.style.setProperty("--tree-reveal-y", `${y}px`);
     serviceTreeStage.style.setProperty("--tree-reveal-size", `${revealSize}px`);
     serviceTreeStage.classList.toggle("is-active", revealSize > 18);
+    setActiveService(getServiceFromPoint(xRatio, yRatio), true);
   }
 
   serviceTreeStage.addEventListener("pointermove", setReveal);
+
+  markers.forEach((marker) => {
+    marker.addEventListener("pointerenter", () => setActiveService(marker.dataset.serviceMarker, true));
+    marker.addEventListener("click", () => setActiveService(marker.dataset.serviceMarker, true));
+    marker.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      setActiveService(marker.dataset.serviceMarker, true);
+    });
+  });
 
   serviceTreeStage.addEventListener("pointerleave", () => {
     serviceTreeStage.classList.remove("is-active");
     serviceTreeStage.style.setProperty("--tree-reveal-size", "0px");
   });
+
+  if (languageToggle) {
+    languageToggle.addEventListener("click", () => {
+      activeLanguage = activeLanguage === "cn" ? "en" : "cn";
+      const activeDetail = details.find((detail) => detail.dataset.serviceDetail === activeService);
+      if (activeDetail) syncLanguage(activeDetail);
+      languageToggle.textContent = activeLanguage === "cn" ? "English" : "中文";
+    });
+  }
+
+  setActiveService(activeService);
 
   if (colorTree.complete) {
     serviceTreeStage.classList.add("is-loaded");

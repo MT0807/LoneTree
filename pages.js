@@ -25,6 +25,12 @@ const memberDetail = document.querySelector(".about-member-detail");
 const memberTriggers = Array.from(document.querySelectorAll("[data-member-trigger]"));
 const memberPanels = Array.from(document.querySelectorAll("[data-member-panel]"));
 const memberBack = document.querySelector("[data-member-back]");
+const projectViewer = document.querySelector(".project-image-viewer");
+const projectViewerImage = document.querySelector(".project-viewer-image");
+const projectViewerGallery = document.querySelector(".project-viewer-gallery");
+const projectViewerCopy = document.querySelector(".project-viewer-copy");
+const projectViewerClose = document.querySelector("[data-project-viewer-close]");
+const projectImageButtons = Array.from(document.querySelectorAll("[data-project-full-image], [data-project-gallery]"));
 let memberLineTimer = 0;
 
 window.setTimeout(() => {
@@ -139,6 +145,19 @@ const closePreview = () => {
   previewPanel.setAttribute("aria-hidden", "true");
 };
 
+const closeProjectViewer = () => {
+  if (!projectViewer) return;
+  projectViewer.classList.remove("is-visible", "has-gallery");
+  projectViewer.setAttribute("aria-hidden", "true");
+  if (projectViewerGallery) projectViewerGallery.innerHTML = "";
+  if (projectViewerCopy) {
+    projectViewerCopy.setAttribute("aria-hidden", "true");
+    projectViewerCopy.querySelector("h2").textContent = "";
+    projectViewerCopy.querySelector("p").textContent = "";
+  }
+  document.body.classList.remove("is-project-viewer-open");
+};
+
 previewTriggers.forEach((trigger) => {
   trigger.addEventListener("click", () => {
     if (!previewPanel) return;
@@ -155,8 +174,45 @@ if (previewClose) {
   previewClose.addEventListener("click", closePreview);
 }
 
+projectImageButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (!projectViewer || !projectViewerImage) return;
+    const image = button.querySelector("img");
+    const galleryImages = button.dataset.projectGallery
+      ? button.dataset.projectGallery.split(",").map((item) => item.trim()).filter(Boolean)
+      : [];
+
+    projectViewer.classList.toggle("has-gallery", galleryImages.length > 1);
+
+    if (galleryImages.length > 1 && projectViewerGallery && projectViewerCopy) {
+      projectViewerGallery.innerHTML = galleryImages
+        .map((src, index) => `<img src="${src}" alt="${button.dataset.projectTitle || "Project"} ${index + 1}">`)
+        .join("");
+      projectViewerImage.removeAttribute("src");
+      projectViewerImage.alt = "";
+      projectViewerCopy.querySelector("h2").textContent = button.dataset.projectTitle || "";
+      projectViewerCopy.querySelector("p").textContent = button.dataset.projectSubtitle || "";
+      projectViewerCopy.setAttribute("aria-hidden", "false");
+    } else {
+      if (projectViewerGallery) projectViewerGallery.innerHTML = "";
+      if (projectViewerCopy) projectViewerCopy.setAttribute("aria-hidden", "true");
+      projectViewerImage.src = button.dataset.projectFullImage;
+      projectViewerImage.alt = image ? image.alt : "Project image";
+    }
+
+    projectViewer.classList.add("is-visible");
+    projectViewer.setAttribute("aria-hidden", "false");
+    document.body.classList.add("is-project-viewer-open");
+  });
+});
+
+if (projectViewerClose) {
+  projectViewerClose.addEventListener("click", closeProjectViewer);
+}
+
 window.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closePreview();
+  if (event.key === "Escape") closeProjectViewer();
   if (event.key === "Escape") closeMemberDetail();
 });
 
