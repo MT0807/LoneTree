@@ -33,6 +33,9 @@ const projectViewerClose = document.querySelector("[data-project-viewer-close]")
 const projectImageButtons = Array.from(document.querySelectorAll("[data-project-full-image], [data-project-gallery]"));
 let memberLineTimer = 0;
 let memberDetailDragStartX = null;
+let memberDetailDragging = false;
+let projectViewerDragStartX = null;
+let projectViewerDragging = false;
 const mobileAbout = window.matchMedia("(max-width: 991px)");
 
 window.setTimeout(() => {
@@ -212,6 +215,39 @@ if (projectViewerClose) {
   projectViewerClose.addEventListener("click", closeProjectViewer);
 }
 
+if (projectViewer) {
+  projectViewer.addEventListener("pointerdown", (event) => {
+    if (!mobileAbout.matches || event.target.closest(".project-viewer-back")) return;
+    projectViewerDragStartX = event.clientX;
+    projectViewerDragging = true;
+    projectViewer.setPointerCapture?.(event.pointerId);
+    projectViewer.classList.add("is-dragging");
+  });
+
+  projectViewer.addEventListener("pointermove", (event) => {
+    if (!mobileAbout.matches || !projectViewerDragging || projectViewerDragStartX === null) return;
+    const movedX = Math.max(0, event.clientX - projectViewerDragStartX);
+    projectViewer.style.setProperty("--viewer-drag-x", `${movedX}px`);
+  });
+
+  projectViewer.addEventListener("pointerup", (event) => {
+    if (!mobileAbout.matches || projectViewerDragStartX === null) return;
+    const movedX = event.clientX - projectViewerDragStartX;
+    projectViewerDragStartX = null;
+    projectViewerDragging = false;
+    projectViewer.classList.remove("is-dragging");
+    projectViewer.style.setProperty("--viewer-drag-x", "0px");
+    if (movedX > 70) closeProjectViewer();
+  });
+
+  projectViewer.addEventListener("pointercancel", () => {
+    projectViewerDragStartX = null;
+    projectViewerDragging = false;
+    projectViewer.classList.remove("is-dragging");
+    projectViewer.style.setProperty("--viewer-drag-x", "0px");
+  });
+}
+
 window.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closePreview();
   if (event.key === "Escape") closeProjectViewer();
@@ -298,12 +334,31 @@ if (memberDetail) {
   memberDetail.addEventListener("pointerdown", (event) => {
     if (!mobileAbout.matches) return;
     memberDetailDragStartX = event.clientX;
+    memberDetailDragging = true;
+    memberDetail.setPointerCapture?.(event.pointerId);
+    memberDetail.classList.add("is-dragging");
+  });
+
+  memberDetail.addEventListener("pointermove", (event) => {
+    if (!mobileAbout.matches || !memberDetailDragging || memberDetailDragStartX === null) return;
+    const movedX = Math.max(0, event.clientX - memberDetailDragStartX);
+    memberDetail.style.setProperty("--panel-drag-x", `${movedX}px`);
   });
 
   memberDetail.addEventListener("pointerup", (event) => {
     if (!mobileAbout.matches || memberDetailDragStartX === null) return;
     const movedX = event.clientX - memberDetailDragStartX;
     memberDetailDragStartX = null;
+    memberDetailDragging = false;
+    memberDetail.classList.remove("is-dragging");
+    memberDetail.style.setProperty("--panel-drag-x", "0px");
     if (movedX > 60) closeMemberDetail();
+  });
+
+  memberDetail.addEventListener("pointercancel", () => {
+    memberDetailDragStartX = null;
+    memberDetailDragging = false;
+    memberDetail.classList.remove("is-dragging");
+    memberDetail.style.setProperty("--panel-drag-x", "0px");
   });
 }

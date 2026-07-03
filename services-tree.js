@@ -10,6 +10,7 @@ if (serviceTreeStage) {
   let activeService = "trunk";
   let activeLanguage = "cn";
   let detailDragStartX = null;
+  let detailDragging = false;
   const mobileServices = window.matchMedia("(max-width: 991px)");
 
   function getServiceFromPoint(xRatio, yRatio) {
@@ -104,13 +105,32 @@ if (serviceTreeStage) {
     detailCard.addEventListener("pointerdown", (event) => {
       if (!mobileServices.matches) return;
       detailDragStartX = event.clientX;
+      detailDragging = true;
+      detailCard.setPointerCapture?.(event.pointerId);
+      detailCard.classList.add("is-dragging");
+    });
+
+    detailCard.addEventListener("pointermove", (event) => {
+      if (!mobileServices.matches || !detailDragging || detailDragStartX === null) return;
+      const movedX = Math.max(0, event.clientX - detailDragStartX);
+      detailCard.style.setProperty("--panel-drag-x", `${movedX}px`);
     });
 
     detailCard.addEventListener("pointerup", (event) => {
       if (!mobileServices.matches || detailDragStartX === null) return;
       const movedX = event.clientX - detailDragStartX;
       detailDragStartX = null;
+      detailDragging = false;
+      detailCard.classList.remove("is-dragging");
+      detailCard.style.setProperty("--panel-drag-x", "0px");
       if (movedX > 60) closeMobileDetail();
+    });
+
+    detailCard.addEventListener("pointercancel", () => {
+      detailDragStartX = null;
+      detailDragging = false;
+      detailCard.classList.remove("is-dragging");
+      detailCard.style.setProperty("--panel-drag-x", "0px");
     });
 
     detailCard.addEventListener("click", (event) => {

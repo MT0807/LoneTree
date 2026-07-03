@@ -2319,3 +2319,53 @@ body.is-project-viewer-open {
     visibility: visible;
   }
 }
+
+
+@media (max-width: 991px) {
+  .about-member-detail,
+  .service-tree-detail {
+    transform: translateX(calc(105% + var(--panel-drag-x, 0px)));
+  }
+
+  .about-layout.is-member-open .about-member-detail,
+  .service-tree-stage.is-mobile-detail-open .service-tree-detail {
+    transform: translateX(var(--panel-drag-x, 0px));
+  }
+
+  .about-member-detail.is-dragging,
+  .service-tree-detail.is-dragging,
+  .project-image-viewer.is-dragging .project-viewer-gallery,
+  .project-image-viewer.is-dragging .project-viewer-image,
+  .project-image-viewer.is-dragging .project-viewer-copy {
+    transition: none !important;
+  }
+
+  .project-image-viewer .project-viewer-gallery,
+  .project-image-viewer .project-viewer-image,
+  .project-image-viewer .project-viewer-copy {
+    transform: translateX(var(--viewer-drag-x, 0px));
+    transition: transform 260ms var(--ease);
+  }
+
+  .project-image-viewer.is-dragging .project-viewer-glass {
+    opacity: 0.82;
+  }
+}
+
+
+@media (max-width: 991px) {
+  .about-member-detail,
+  .service-tree-detail,
+  .project-image-viewer {
+    touch-action: pan-y;
+  }
+
+  .about-layout.is-member-switching .about-member-detail {
+    opacity: 0;
+    transform: translateX(105%) !important;
+  }
+
+  .project-image-viewer.is-visible {
+    overscroll-behavior: contain;
+  }
+}
