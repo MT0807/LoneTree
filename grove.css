@@ -20,10 +20,10 @@
   font-size: 0.8rem;
   gap: 0.65rem;
   line-height: 1.45;
+  left: var(--pad);
   position: fixed;
-  right: var(--pad);
   top: var(--pad);
-  z-index: 10;
+  z-index: 20;
 }
 
 .back-line {
@@ -593,5 +593,15 @@ body.is-ready .grove-signature {
 
   .brand-card h3 {
     font-size: 1rem;
+  }
+}
+
+
+@media (max-width: 991px) {
+  .grove-back {
+    left: 1rem;
+    right: auto;
+    top: 1rem;
+    z-index: 120;
   }
 }

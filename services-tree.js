@@ -9,6 +9,8 @@ if (serviceTreeStage) {
   const revealMax = 150;
   let activeService = "trunk";
   let activeLanguage = "cn";
+  let detailDragStartX = null;
+  const mobileServices = window.matchMedia("(max-width: 991px)");
 
   function getServiceFromPoint(xRatio, yRatio) {
     if (yRatio < 0.43 && xRatio > 0.18 && xRatio < 0.82) return "leaves";
@@ -22,6 +24,14 @@ if (serviceTreeStage) {
     if (!cn || !en) return;
     cn.hidden = activeLanguage !== "cn";
     en.hidden = activeLanguage !== "en";
+  }
+
+  function openMobileDetail() {
+    serviceTreeStage.classList.add("has-service-focus", "is-mobile-detail-open");
+  }
+
+  function closeMobileDetail() {
+    serviceTreeStage.classList.remove("is-mobile-detail-open");
   }
 
   function setActiveService(service, revealLabels = false) {
@@ -64,24 +74,61 @@ if (serviceTreeStage) {
     serviceTreeStage.style.setProperty("--tree-reveal-y", `${y}px`);
     serviceTreeStage.style.setProperty("--tree-reveal-size", `${revealSize}px`);
     serviceTreeStage.classList.toggle("is-active", revealSize > 18);
-    setActiveService(getServiceFromPoint(xRatio, yRatio), true);
+    const service = getServiceFromPoint(xRatio, yRatio);
+    const shouldRevealLabels = !(mobileServices.matches && event.pointerType === "touch");
+    setActiveService(service, shouldRevealLabels);
+    if (mobileServices.matches && event.pointerType === "touch") closeMobileDetail();
   }
 
   serviceTreeStage.addEventListener("pointermove", setReveal);
 
   markers.forEach((marker) => {
-    marker.addEventListener("pointerenter", () => setActiveService(marker.dataset.serviceMarker, true));
-    marker.addEventListener("click", () => setActiveService(marker.dataset.serviceMarker, true));
+    marker.addEventListener("pointerenter", () => {
+      if (mobileServices.matches) return;
+      setActiveService(marker.dataset.serviceMarker, true);
+    });
+    marker.addEventListener("click", () => {
+      setActiveService(marker.dataset.serviceMarker, true);
+      if (mobileServices.matches) openMobileDetail();
+    });
     marker.addEventListener("keydown", (event) => {
       if (event.key !== "Enter" && event.key !== " ") return;
       event.preventDefault();
       setActiveService(marker.dataset.serviceMarker, true);
+      if (mobileServices.matches) openMobileDetail();
     });
   });
+
+  const detailCard = serviceTreeStage.querySelector(".service-tree-detail");
+  if (detailCard) {
+    detailCard.addEventListener("pointerdown", (event) => {
+      if (!mobileServices.matches) return;
+      detailDragStartX = event.clientX;
+    });
+
+    detailCard.addEventListener("pointerup", (event) => {
+      if (!mobileServices.matches || detailDragStartX === null) return;
+      const movedX = event.clientX - detailDragStartX;
+      detailDragStartX = null;
+      if (movedX > 60) closeMobileDetail();
+    });
+
+    detailCard.addEventListener("click", (event) => {
+      if (!mobileServices.matches) return;
+      if (event.target.closest("[data-service-language-toggle]")) return;
+      if (event.target.closest(".service-tree-detail-content")) return;
+      closeMobileDetail();
+    });
+  }
 
   serviceTreeStage.addEventListener("pointerleave", () => {
     serviceTreeStage.classList.remove("is-active");
     serviceTreeStage.style.setProperty("--tree-reveal-size", "0px");
+  });
+
+  serviceTreeStage.addEventListener("pointerdown", (event) => {
+    if (!mobileServices.matches || event.target.closest(".service-tree-marker, .service-tree-detail")) return;
+    setReveal(event);
   });
 
   if (languageToggle) {

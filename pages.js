@@ -32,6 +32,8 @@ const projectViewerCopy = document.querySelector(".project-viewer-copy");
 const projectViewerClose = document.querySelector("[data-project-viewer-close]");
 const projectImageButtons = Array.from(document.querySelectorAll("[data-project-full-image], [data-project-gallery]"));
 let memberLineTimer = 0;
+let memberDetailDragStartX = null;
+const mobileAbout = window.matchMedia("(max-width: 991px)");
 
 window.setTimeout(() => {
   pageLoader.classList.add("is-gone");
@@ -240,6 +242,19 @@ function setActiveMember(member) {
   });
 }
 
+function switchMobileMember(member) {
+  if (!aboutStage || !memberDetail || !mobileAbout.matches || !aboutStage.classList.contains("is-member-open")) {
+    setActiveMember(member);
+    return;
+  }
+
+  aboutStage.classList.add("is-member-switching");
+  window.setTimeout(() => {
+    setActiveMember(member);
+    aboutStage.classList.remove("is-member-switching");
+  }, 220);
+}
+
 function closeMemberDetail() {
   if (!aboutStage || !memberDetail) return;
   window.clearTimeout(memberLineTimer);
@@ -262,7 +277,7 @@ memberTriggers.forEach((trigger) => {
       item.setAttribute("aria-expanded", "false");
     });
 
-    setActiveMember(member);
+    switchMobileMember(member);
     trigger.classList.add("is-lining");
 
     memberLineTimer = window.setTimeout(() => {
@@ -277,4 +292,18 @@ memberTriggers.forEach((trigger) => {
 
 if (memberBack) {
   memberBack.addEventListener("click", closeMemberDetail);
+}
+
+if (memberDetail) {
+  memberDetail.addEventListener("pointerdown", (event) => {
+    if (!mobileAbout.matches) return;
+    memberDetailDragStartX = event.clientX;
+  });
+
+  memberDetail.addEventListener("pointerup", (event) => {
+    if (!mobileAbout.matches || memberDetailDragStartX === null) return;
+    const movedX = event.clientX - memberDetailDragStartX;
+    memberDetailDragStartX = null;
+    if (movedX > 60) closeMemberDetail();
+  });
 }
