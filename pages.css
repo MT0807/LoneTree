@@ -2305,3 +2305,17 @@ body.is-project-viewer-open {
     z-index: 1;
   }
 }
+
+
+@media (max-width: 991px) {
+  .about-member-detail,
+  .service-tree-detail {
+    visibility: hidden;
+    will-change: transform, opacity;
+  }
+
+  .about-layout.is-member-open .about-member-detail,
+  .service-tree-stage.is-mobile-detail-open .service-tree-detail {
+    visibility: visible;
+  }
+}

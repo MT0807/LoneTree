@@ -1,14 +1,14 @@
 const media = [
-  { name: "LoneTree 01", type: "Visual", image: "assets/output/home-01.png" },
-  { name: "LoneTree 02", type: "Visual", image: "assets/output/home-02.png" },
-  { name: "LoneTree 03", type: "Visual", image: "assets/output/home-03.png" },
-  { name: "LoneTree 04", type: "Visual", image: "assets/output/home-04.png" },
-  { name: "LoneTree 05", type: "Visual", image: "assets/output/home-05.png" },
-  { name: "LoneTree 06", type: "Visual", image: "assets/output/home-06.png" },
-  { name: "LoneTree 07", type: "Visual", image: "assets/output/home-07.png" },
-  { name: "LoneTree 08", type: "Visual", image: "assets/output/home-08.png" },
-  { name: "LoneTree 09", type: "Visual", image: "assets/output/home-09.png" },
-  { name: "LoneTree 10", type: "Visual", image: "assets/output/home-10.png" }
+  { name: "LoneTree 01", type: "Visual", image: "assets/output/optimized/home-01.webp" },
+  { name: "LoneTree 02", type: "Visual", image: "assets/output/optimized/home-02.webp" },
+  { name: "LoneTree 03", type: "Visual", image: "assets/output/optimized/home-03.webp" },
+  { name: "LoneTree 04", type: "Visual", image: "assets/output/optimized/home-04.webp" },
+  { name: "LoneTree 05", type: "Visual", image: "assets/output/optimized/home-05.webp" },
+  { name: "LoneTree 06", type: "Visual", image: "assets/output/optimized/home-06.webp" },
+  { name: "LoneTree 07", type: "Visual", image: "assets/output/optimized/home-07.webp" },
+  { name: "LoneTree 08", type: "Visual", image: "assets/output/optimized/home-08.webp" },
+  { name: "LoneTree 09", type: "Visual", image: "assets/output/optimized/home-09.webp" },
+  { name: "LoneTree 10", type: "Visual", image: "assets/output/optimized/home-10.webp" }
 ];
 
 const AUTO_SCROLL_SPEED = 0.38;
