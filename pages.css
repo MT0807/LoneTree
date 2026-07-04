@@ -2440,3 +2440,56 @@ body.is-project-viewer-open {
     padding: 0.5rem 0.72rem;
   }
 }
+
+
+.about-lab-intro {
+  margin-bottom: clamp(2rem, 4.5vw, 4.2rem);
+  max-width: 44rem;
+}
+
+.about-lab-intro h2 {
+  font-family: var(--english-font);
+  font-size: clamp(3.4rem, 7vw, 8rem);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 0.82;
+  margin-bottom: 1rem;
+  max-width: none;
+}
+
+.about-lab-intro p {
+  font-family: var(--chinese-font);
+  font-size: clamp(1.05rem, 1.55vw, 1.65rem);
+  font-weight: 500;
+  line-height: 1.55;
+  margin-top: 0;
+  max-width: 34em;
+}
+
+.about-copy-en .about-lab-intro p {
+  font-family: Barlow, var(--english-font);
+  font-weight: 400;
+  line-height: 1.36;
+}
+
+@media (max-width: 991px) {
+  .about-lab-intro {
+    margin-bottom: 2.4rem;
+  }
+
+  .about-lab-intro h2 {
+    font-size: clamp(3rem, 18vw, 5.6rem);
+  }
+}
+
+
+.about-lab-intro h2 {
+  line-height: 0.92;
+}
+
+@media (max-width: 991px) {
+  .about-lab-intro h2 {
+    line-height: 0.9;
+    margin-bottom: 1.35rem;
+  }
+}
