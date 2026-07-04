@@ -17,7 +17,7 @@ const modelLabels = {
 };
 
 if (selectedModel && modelDetail && modelName && modelMeta && modelGallery) {
-  document.title = `${selectedModel.name} | LoneTree Modle BOOK`;
+  document.title = `${selectedModel.name} | LoneTree Model book`;
   modelName.textContent = selectedModel.name;
   const genderHref = `insights.html?category=${encodeURIComponent(selectedModel.category)}`;
   const faceHref = `${genderHref}&face=${encodeURIComponent(selectedModel.face)}`;

@@ -25,6 +25,8 @@ const memberDetail = document.querySelector(".about-member-detail");
 const memberTriggers = Array.from(document.querySelectorAll("[data-member-trigger]"));
 const memberPanels = Array.from(document.querySelectorAll("[data-member-panel]"));
 const memberBack = document.querySelector("[data-member-back]");
+const memberLanguageToggle = document.querySelector("[data-member-language-toggle]");
+const memberLanguageBlocks = Array.from(document.querySelectorAll(".member-language"));
 const projectViewer = document.querySelector(".project-image-viewer");
 const projectViewerImage = document.querySelector(".project-viewer-image");
 const projectViewerGallery = document.querySelector(".project-viewer-gallery");
@@ -36,6 +38,7 @@ let memberDetailDragStartX = null;
 let memberDetailDragging = false;
 let projectViewerDragStartX = null;
 let projectViewerDragging = false;
+let activeMemberLanguage = "cn";
 const mobileAbout = window.matchMedia("(max-width: 991px)");
 
 window.setTimeout(() => {
@@ -270,6 +273,27 @@ if (languageToggle && aboutCopyCn && aboutCopyEn) {
     languageToggle.textContent = showEnglish ? "中文" : "English";
     languageToggle.setAttribute("aria-pressed", String(showEnglish));
   });
+}
+
+
+function syncMemberLanguage() {
+  memberLanguageBlocks.forEach((block) => {
+    const showBlock = block.classList.contains(`member-language-${activeMemberLanguage}`);
+    block.hidden = !showBlock;
+  });
+  if (memberLanguageToggle) {
+    const showEnglish = activeMemberLanguage === "en";
+    memberLanguageToggle.textContent = showEnglish ? "中文" : "English";
+    memberLanguageToggle.setAttribute("aria-pressed", String(showEnglish));
+  }
+}
+
+if (memberLanguageToggle) {
+  memberLanguageToggle.addEventListener("click", () => {
+    activeMemberLanguage = activeMemberLanguage === "cn" ? "en" : "cn";
+    syncMemberLanguage();
+  });
+  syncMemberLanguage();
 }
 
 function setActiveMember(member) {

@@ -1177,3 +1177,30 @@ body.is-ready .reveal-copy {
     transform: translateY(-0.48rem) !important;
   }
 }
+
+
+/* Keep the current mobile navigation stable through tablet widths. */
+.nav {
+  text-transform: none;
+}
+
+@media (max-width: 991px) {
+  body:not(.subpage-body) .desktop-link,
+  body:not(.subpage-body) .menu-toggle,
+  body:not(.subpage-body) .mobile-menu {
+    display: none !important;
+  }
+
+  body:not(.subpage-body) .site-header {
+    inset: 0 0 auto !important;
+    width: 100% !important;
+  }
+
+  body:not(.subpage-body) .site-header .brand {
+    display: flex !important;
+  }
+}
+
+.model-back {
+  text-transform: none;
+}
