@@ -47,6 +47,7 @@ const modalImage = document.querySelector(".modal-image");
 const modalVideo = document.querySelector(".modal-video");
 const modalTitle = document.querySelector(".modal-title");
 const modalKicker = document.querySelector(".modal-kicker");
+const compactHome = window.matchMedia("(max-width: 479px)");
 let tiles = [];
 let dragging = false;
 let moved = false;
@@ -103,7 +104,7 @@ function measure() {
   itemHeight = tiles[0].getBoundingClientRect().height;
   itemStep = itemHeight + 18;
   trackHeight = itemStep * tiles.length;
-  const startsAtGalleryTop = window.matchMedia("(max-width: 479px)").matches;
+  const startsAtGalleryTop = compactHome.matches;
   restingOffset = gallery.getBoundingClientRect().height + (startsAtGalleryTop ? 0 : itemHeight * 0.15);
 }
 
@@ -133,7 +134,7 @@ function paintGallery() {
 
 function tick() {
   const ease = dragging ? 0.12 : 0.06;
-  if (introductionFinished && !dragging && !modal.classList.contains("is-visible")) {
+  if (introductionFinished && !dragging && !modal.classList.contains("is-visible") && !compactHome.matches) {
     target += AUTO_SCROLL_SPEED;
   }
   current += (target - current) * ease;
