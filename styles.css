@@ -957,7 +957,8 @@ body.is-ready .reveal-copy {
   }
 
   .gallery-window {
-    height: 50svh;
+    height: calc(100svh - 21rem);
+    top: 21rem;
     width: min(72vw, 17rem);
   }
 

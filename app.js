@@ -103,7 +103,8 @@ function measure() {
   itemHeight = tiles[0].getBoundingClientRect().height;
   itemStep = itemHeight + 18;
   trackHeight = itemStep * tiles.length;
-  restingOffset = gallery.getBoundingClientRect().height + itemHeight * 0.15;
+  const startsAtGalleryTop = window.matchMedia("(max-width: 479px)").matches;
+  restingOffset = gallery.getBoundingClientRect().height + (startsAtGalleryTop ? 0 : itemHeight * 0.15);
 }
 
 function clamp(value, minimum, maximum) {
