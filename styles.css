@@ -965,6 +965,11 @@ body.is-ready .reveal-copy {
   .tile {
     height: min(41svh, 21rem);
   }
+
+  .gallery .media-link {
+    bottom: 0.85rem;
+    height: auto;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
