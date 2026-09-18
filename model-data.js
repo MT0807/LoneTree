@@ -1,3 +1,5 @@
+const modelImageVersion = "20260914-1";
+
 window.LONETREE_MODELS = [
   {
     id: "elias",
@@ -124,4 +126,8 @@ window.LONETREE_MODELS = [
       "assets/models/jutin/01.webp"
     ]
   }
-];
+].map((model) => ({
+  ...model,
+  cover: `${model.cover}?v=${modelImageVersion}`,
+  images: model.images.map((image) => `${image}?v=${modelImageVersion}`)
+}));

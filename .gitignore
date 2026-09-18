@@ -8,3 +8,6 @@ Thumbs.db
 # Local development files
 node_modules/
 dist/
+
+# Local high-resolution model-image sources; the matching .webp files are deployed.
+assets/models/**/*topaz*.png

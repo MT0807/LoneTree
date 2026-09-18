@@ -414,7 +414,8 @@ body.is-ready .reveal-copy {
   cursor: grabbing;
 }
 
-.media-link img {
+.media-link img,
+.media-link video {
   display: block;
   height: 110%;
   object-fit: cover;
@@ -425,7 +426,8 @@ body.is-ready .reveal-copy {
   width: 100%;
 }
 
-.tile:hover .media-link img {
+.tile:hover .media-link img,
+.tile:hover .media-link video {
   transform: translateY(var(--parallax, -5%)) scale(1.03);
 }
 
@@ -754,7 +756,8 @@ body.is-ready .reveal-copy {
   top: 1.6rem;
 }
 
-.modal-image {
+.modal-image,
+.modal-video {
   display: block;
   height: calc(100svh - 7rem);
   object-fit: cover;
@@ -817,7 +820,8 @@ body.is-ready .reveal-copy {
     padding-top: 4rem;
   }
 
-  .modal-image {
+  .modal-image,
+  .modal-video {
     height: 60svh;
     width: 100%;
   }

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <title>Digital Lookbook | LoneTree</title>
+    <link rel="icon" href="assets/paperclip-favicon.svg?v=20260704-2" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css?v=20260712-1">
+    <link rel="stylesheet" href="pages.css?v=20260915-3">
+    <script src="pages.js?v=20260915-3" defer></script>
+  </head>
+  <body class="subpage-body lookbook-page-body">
+    <div class="loader" aria-hidden="true"><img class="loader-logo" src="assets/lonetree-logo-ui.png" alt=""></div>
+    <div class="transition-overlay" aria-hidden="true"></div>
+
+    <main class="lookbook-page">
+      <header class="lookbook-page-topbar">
+        <a href="projects.html" class="lookbook-page-back"><span aria-hidden="true">←</span> Projects</a>
+        <p>LoneTree Lab</p>
+        <p>Digital Imagery</p>
+        <p>01.1</p>
+      </header>
+
+      <section class="lookbook-page-intro">
+        <div>
+          <p class="lookbook-page-kicker">Selected Works <sup>(07)</sup></p>
+          <h1>Digital<br>Lookbook</h1>
+        </div>
+        <div class="lookbook-page-summary">
+          <p>Digital wardrobe studies for fashion brands: model, garment, gesture and light are composed as one continuous visual language.</p>
+          <p>数字模特、成衣换装与品牌视觉测试的系列档案。</p>
+        </div>
+      </section>
+
+      <section class="lookbook-page-index" aria-label="Digital Lookbook index">
+        <div class="lookbook-page-index-title">
+          <p>Index</p>
+          <span>点击任一封面阅览两张作品</span>
+        </div>
+        <div class="project-lookbook-grid lookbook-page-grid" aria-label="Digital Lookbook projects">
+          <button class="project-lookbook-card" type="button" data-project-lookbook="assets/projects/digital-lookbook/01/cover.webp,assets/projects/digital-lookbook/01/02.webp" data-project-title="Digital Lookbook 01" data-project-subtitle="数字 Lookbook / 01" aria-label="Open Digital Lookbook 01">
+            <img src="assets/projects/digital-lookbook/01/cover.webp" alt="Digital Lookbook 01 cover">
+            <span>01</span>
+          </button>
+          <button class="project-lookbook-card" type="button" data-project-lookbook="assets/projects/digital-lookbook/02/cover.webp,assets/projects/digital-lookbook/02/02.webp" data-project-title="Digital Lookbook 02" data-project-subtitle="数字 Lookbook / 02" aria-label="Open Digital Lookbook 02">
+            <img src="assets/projects/digital-lookbook/02/cover.webp" alt="Digital Lookbook 02 cover" loading="lazy">
+            <span>02</span>
+          </button>
+          <button class="project-lookbook-card" type="button" data-project-lookbook="assets/projects/digital-lookbook/03/cover.webp,assets/projects/digital-lookbook/03/02.webp" data-project-title="Digital Lookbook 03" data-project-subtitle="数字 Lookbook / 03" aria-label="Open Digital Lookbook 03">
+            <img src="assets/projects/digital-lookbook/03/cover.webp" alt="Digital Lookbook 03 cover" loading="lazy">
+            <span>03</span>
+          </button>
+          <button class="project-lookbook-card" type="button" data-project-lookbook="assets/projects/digital-lookbook/04/cover.webp,assets/projects/digital-lookbook/04/02.webp" data-project-title="Digital Lookbook 04" data-project-subtitle="数字 Lookbook / 04" aria-label="Open Digital Lookbook 04">
+            <img src="assets/projects/digital-lookbook/04/cover.webp" alt="Digital Lookbook 04 cover" loading="lazy">
+            <span>04</span>
+          </button>
+          <button class="project-lookbook-card" type="button" data-project-lookbook="assets/projects/digital-lookbook/05/cover.webp?v=20260916-2,assets/projects/digital-lookbook/05/02.webp?v=20260916-2" data-project-title="Digital Lookbook 05" data-project-subtitle="数字 Lookbook / 05" aria-label="Open Digital Lookbook 05">
+            <img src="assets/projects/digital-lookbook/05/cover.webp?v=20260916-2" alt="Digital Lookbook 05 cover" loading="lazy">
+            <span>05</span>
+          </button>
+          <button class="project-lookbook-card" type="button" data-project-lookbook="assets/projects/digital-lookbook/06/cover.webp,assets/projects/digital-lookbook/06/02.webp" data-project-title="Digital Lookbook 06" data-project-subtitle="数字 Lookbook / 06" aria-label="Open Digital Lookbook 06">
+            <img src="assets/projects/digital-lookbook/06/cover.webp" alt="Digital Lookbook 06 cover" loading="lazy">
+            <span>06</span>
+          </button>
+          <button class="project-lookbook-card" type="button" data-project-lookbook="assets/projects/digital-lookbook/07/cover.webp,assets/projects/digital-lookbook/07/02.webp" data-project-title="Digital Lookbook 07" data-project-subtitle="数字 Lookbook / 07" aria-label="Open Digital Lookbook 07">
+            <img src="assets/projects/digital-lookbook/07/cover.webp" alt="Digital Lookbook 07 cover" loading="lazy">
+            <span>07</span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <div class="project-image-viewer" aria-hidden="true" role="dialog" aria-label="Digital Lookbook image preview">
+      <button class="project-viewer-back" type="button" data-project-viewer-close>
+        <span class="back-line" aria-hidden="true"></span>
+        <span>返回</span>
+      </button>
+      <div class="project-viewer-glass" aria-hidden="true"></div>
+      <div class="project-viewer-gallery" aria-label="Digital Lookbook image pair"></div>
+      <img class="project-viewer-image" src="" alt="">
+      <div class="project-viewer-zoom" aria-label="Image zoom controls">
+        <button type="button" data-project-viewer-zoom-out aria-label="Zoom out" title="缩小">−</button>
+        <button type="button" data-project-viewer-zoom-reset aria-label="Reset zoom" title="重置缩放">100%</button>
+        <button type="button" data-project-viewer-zoom-in aria-label="Zoom in" title="放大">+</button>
+      </div>
+      <div class="project-viewer-copy" aria-hidden="true"><h2></h2><p></p></div>
+    </div>
+  </body>
+</html>

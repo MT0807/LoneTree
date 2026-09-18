@@ -1,14 +1,23 @@
 const media = [
-  { name: "LoneTree 01", type: "Visual", image: "assets/output/optimized/home-01.webp" },
-  { name: "LoneTree 02", type: "Visual", image: "assets/output/optimized/home-02.webp" },
-  { name: "LoneTree 03", type: "Visual", image: "assets/output/optimized/home-03.webp" },
-  { name: "LoneTree 04", type: "Visual", image: "assets/output/optimized/home-04.webp" },
-  { name: "LoneTree 05", type: "Visual", image: "assets/output/optimized/home-05.webp" },
-  { name: "LoneTree 06", type: "Visual", image: "assets/output/optimized/home-06.webp" },
-  { name: "LoneTree 07", type: "Visual", image: "assets/output/optimized/home-07.webp" },
-  { name: "LoneTree 08", type: "Visual", image: "assets/output/optimized/home-08.webp" },
-  { name: "LoneTree 09", type: "Visual", image: "assets/output/optimized/home-09.webp" },
-  { name: "LoneTree 10", type: "Visual", image: "assets/output/optimized/home-10.webp" }
+  { name: "Wearable Worlds 01", type: "Fashion", image: "assets/projects/digital-lookbook/01/cover.webp" },
+  { name: "Wearable Worlds 02", type: "Fashion", image: "assets/projects/digital-lookbook/01/02.webp" },
+  { name: "Wearable Worlds 03", type: "Fashion", image: "assets/projects/digital-lookbook/02/cover.webp" },
+  { name: "Wearable Worlds 04", type: "Fashion", image: "assets/projects/digital-lookbook/02/02.webp" },
+  { name: "Wearable Worlds 05", type: "Fashion", image: "assets/projects/digital-lookbook/03/cover.webp" },
+  { name: "Wearable Worlds 06", type: "Fashion", image: "assets/projects/digital-lookbook/03/02.webp" },
+  { name: "Wearable Worlds 07", type: "Fashion", image: "assets/projects/digital-lookbook/04/cover.webp" },
+  { name: "Wearable Worlds 08", type: "Fashion", image: "assets/projects/digital-lookbook/04/02.webp" },
+  { name: "Objects in Focus 01", type: "Objects", image: "assets/projects/objects-in-focus/1.webp" },
+  { name: "Objects in Focus 02", type: "Objects", image: "assets/projects/objects-in-focus/2.webp" },
+  { name: "Objects in Focus 03", type: "Objects", image: "assets/projects/objects-in-focus/3.webp" },
+  { name: "Objects in Focus 04", type: "Objects", image: "assets/projects/objects-in-focus/4.webp" },
+  { name: "Objects in Focus 05", type: "Objects", image: "assets/projects/objects-in-focus/5.webp" },
+  { name: "Objects in Focus 06", type: "Objects", image: "assets/projects/objects-in-focus/6.webp" },
+  { name: "Objects in Focus 07", type: "Objects", image: "assets/projects/objects-in-focus/7.webp" },
+  { name: "Digital MOVE 01", type: "Motion", image: "assets/projects/digital-move/01.mp4", kind: "video" },
+  { name: "Digital MOVE 02", type: "Motion", image: "assets/projects/digital-move/02.mp4", kind: "video" },
+  { name: "Digital MOVE 03", type: "Motion", image: "assets/projects/digital-move/03.mp4", kind: "video" },
+  { name: "Digital MOVE 04", type: "Motion", image: "assets/projects/digital-move/04.mp4", kind: "video" }
 ];
 
 const AUTO_SCROLL_SPEED = 0.38;
@@ -35,6 +44,7 @@ const menuClose = document.querySelector(".menu-close");
 const modal = document.querySelector(".project-modal");
 const modalClose = document.querySelector(".modal-close");
 const modalImage = document.querySelector(".modal-image");
+const modalVideo = document.querySelector(".modal-video");
 const modalTitle = document.querySelector(".modal-title");
 const modalKicker = document.querySelector(".modal-kicker");
 let tiles = [];
@@ -52,17 +62,27 @@ let introductionFinished = false;
 let frame = 0;
 
 function shuffledItems() {
-  return [...media];
+  const videos = media.filter((item) => item.kind === "video");
+  const images = media.filter((item) => item.kind !== "video");
+
+  for (let index = images.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    [images[index], images[swapIndex]] = [images[swapIndex], images[index]];
+  }
+
+  return [...videos, ...images];
 }
 
 function renderGallery() {
   gallery.innerHTML = shuffledItems()
     .map(
       (item) => `
-        <article class="tile" data-name="${item.name}" data-type="${item.type}" data-image="${item.image}">
+        <article class="tile" data-name="${item.name}" data-type="${item.type}" data-image="${item.image}" data-kind="${item.kind || "image"}">
           <div class="tile-label"><span class="tile-dot"></span><span>${item.name}</span></div>
           <a class="media-link" href="#" draggable="false" aria-label="View ${item.name}">
-            <img src="${item.image}" alt="${item.name}" draggable="false">
+            ${item.kind === "video"
+              ? `<video src="${item.image}" muted loop autoplay playsinline preload="metadata" aria-label="${item.name}"></video>`
+              : `<img src="${item.image}" alt="${item.name}" draggable="false">`}
           </a>
         </article>
       `
@@ -187,8 +207,20 @@ function flashTransition(callback) {
 
 function openPreview(tile) {
   flashTransition(() => {
-    modalImage.src = tile.dataset.image;
-    modalImage.alt = tile.dataset.name;
+    const isVideo = tile.dataset.kind === "video";
+    modalImage.hidden = isVideo;
+    modalVideo.hidden = !isVideo;
+    if (isVideo) {
+      modalVideo.src = tile.dataset.image;
+      modalVideo.load();
+      modalVideo.play().catch(() => {});
+    } else {
+      modalVideo.pause();
+      modalVideo.removeAttribute("src");
+      modalVideo.load();
+      modalImage.src = tile.dataset.image;
+      modalImage.alt = tile.dataset.name;
+    }
     modalKicker.textContent = tile.dataset.type;
     modalTitle.textContent = tile.dataset.name;
     modal.classList.add("is-visible");
@@ -198,6 +230,9 @@ function openPreview(tile) {
 
 function closePreview() {
   flashTransition(() => {
+    modalVideo.pause();
+    modalVideo.removeAttribute("src");
+    modalVideo.load();
     modal.classList.remove("is-visible");
     modal.setAttribute("aria-hidden", "true");
   });
