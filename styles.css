@@ -957,8 +957,9 @@ body.is-ready .reveal-copy {
   }
 
   .gallery-window {
-    height: calc(100svh - 4rem);
-    top: 4rem;
+    bottom: var(--nav-height);
+    height: auto;
+    top: 16rem;
     width: min(72vw, 17rem);
   }
 
@@ -969,6 +970,21 @@ body.is-ready .reveal-copy {
   .gallery .media-link {
     bottom: 0.85rem;
     height: auto;
+  }
+
+  .tile.is-mobile-hero-video {
+    aspect-ratio: auto;
+    height: 100%;
+    right: 0;
+    width: 100%;
+  }
+
+  .tile.is-mobile-hero-video > video {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    width: 100%;
   }
 }
 

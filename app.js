@@ -76,20 +76,24 @@ function shuffledItems() {
 }
 
 function renderGallery() {
-  gallery.innerHTML = shuffledItems()
-    .map(
-      (item) => `
-        <article class="tile" data-name="${item.name}" data-type="${item.type}" data-image="${item.image}" data-kind="${item.kind || "image"}">
-          <div class="tile-label"><span class="tile-dot"></span><span>${item.name}</span></div>
-          <a class="media-link" href="#" draggable="false" aria-label="View ${item.name}">
-            ${item.kind === "video"
-              ? `<video src="${item.image}" muted loop autoplay playsinline preload="metadata" aria-label="${item.name}"></video>`
-              : `<img src="${item.image}" alt="${item.name}" draggable="false">`}
-          </a>
-        </article>
-      `
-    )
-    .join("");
+  const mobileHeroVideo = media.find((item) => item.name === "Digital MOVE 02");
+  const galleryItems = compactHome.matches && mobileHeroVideo ? [mobileHeroVideo] : shuffledItems();
+
+  gallery.innerHTML = galleryItems.map((item) => {
+    const isMobileHeroVideo = compactHome.matches && item === mobileHeroVideo;
+    const mediaElement = item.kind === "video"
+      ? `<video src="${item.image}" muted loop autoplay playsinline preload="${isMobileHeroVideo ? "auto" : "metadata"}" aria-label="${item.name}"></video>`
+      : `<img src="${item.image}" alt="${item.name}" draggable="false">`;
+
+    return `
+      <article class="tile${isMobileHeroVideo ? " is-mobile-hero-video" : ""}" data-name="${item.name}" data-type="${item.type}" data-image="${item.image}" data-kind="${item.kind || "image"}">
+        <div class="tile-label"><span class="tile-dot"></span><span>${item.name}</span></div>
+        ${isMobileHeroVideo
+          ? mediaElement
+          : `<a class="media-link" href="#" draggable="false" aria-label="View ${item.name}">${mediaElement}</a>`}
+      </article>
+    `;
+  }).join("");
   tiles = [...gallery.querySelectorAll(".tile")];
   galleryVideos = Array.from(gallery.querySelectorAll("video"));
   galleryVideos.forEach((video) => {
@@ -100,7 +104,7 @@ function renderGallery() {
     video.pause();
   });
   tiles.forEach((tile) => {
-    tile.querySelector(".media-link").addEventListener("click", (event) => {
+    tile.querySelector(".media-link")?.addEventListener("click", (event) => {
       event.preventDefault();
       if (!moved) openPreview(tile);
     });
