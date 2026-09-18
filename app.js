@@ -102,7 +102,7 @@ function renderGallery() {
 function measure() {
   if (!tiles.length) return;
   itemHeight = tiles[0].getBoundingClientRect().height;
-  itemStep = itemHeight + 18;
+  itemStep = itemHeight + (compactHome.matches ? 24 : 18);
   trackHeight = itemStep * tiles.length;
   const startsAtGalleryTop = compactHome.matches;
   restingOffset = gallery.getBoundingClientRect().height + (startsAtGalleryTop ? 0 : itemHeight * 0.15);
