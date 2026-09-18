@@ -14,10 +14,10 @@ const media = [
   { name: "Objects in Focus 05", type: "Objects", image: "assets/projects/objects-in-focus/5.webp" },
   { name: "Objects in Focus 06", type: "Objects", image: "assets/projects/objects-in-focus/6.webp" },
   { name: "Objects in Focus 07", type: "Objects", image: "assets/projects/objects-in-focus/7.webp" },
-  { name: "Digital MOVE 01", type: "Motion", image: "assets/projects/digital-move/01.mp4", kind: "video" },
-  { name: "Digital MOVE 02", type: "Motion", image: "assets/projects/digital-move/02.mp4", kind: "video" },
-  { name: "Digital MOVE 03", type: "Motion", image: "assets/projects/digital-move/03.mp4", kind: "video" },
-  { name: "Digital MOVE 04", type: "Motion", image: "assets/projects/digital-move/04.mp4", kind: "video" }
+  { name: "Digital MOVE 01", type: "Motion", image: "assets/projects/digital-move/01.mp4?v=20260918-1", kind: "video" },
+  { name: "Digital MOVE 02", type: "Motion", image: "assets/projects/digital-move/02.mp4?v=20260918-1", kind: "video" },
+  { name: "Digital MOVE 03", type: "Motion", image: "assets/projects/digital-move/03.mp4?v=20260918-1", kind: "video" },
+  { name: "Digital MOVE 04", type: "Motion", image: "assets/projects/digital-move/04.mp4?v=20260918-1", kind: "video" }
 ];
 
 const AUTO_SCROLL_SPEED = 0.38;
@@ -61,6 +61,7 @@ let trackHeight = 0;
 let restingOffset = 0;
 let introductionFinished = false;
 let frame = 0;
+let galleryVideos = [];
 
 function shuffledItems() {
   const videos = media.filter((item) => item.kind === "video");
@@ -90,6 +91,14 @@ function renderGallery() {
     )
     .join("");
   tiles = [...gallery.querySelectorAll(".tile")];
+  galleryVideos = Array.from(gallery.querySelectorAll("video"));
+  galleryVideos.forEach((video) => {
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+    video.setAttribute("muted", "");
+    video.pause();
+  });
   tiles.forEach((tile) => {
     tile.querySelector(".media-link").addEventListener("click", (event) => {
       event.preventDefault();
@@ -115,6 +124,8 @@ function clamp(value, minimum, maximum) {
 function paintGallery() {
   if (!trackHeight) return;
   const viewportHeight = gallery.getBoundingClientRect().height;
+  let activeVideo = null;
+  let activeVideoDistance = Infinity;
 
   tiles.forEach((tile, index) => {
     let y = viewportHeight + index * itemStep - current;
@@ -129,6 +140,22 @@ function paintGallery() {
     tile.style.transform = `translateY(${y}px)`;
     tile.style.zIndex = "1";
     tile.style.setProperty("--parallax", `${parallax}%`);
+
+    const video = tile.querySelector("video");
+    const isVisible = y < viewportHeight && y + itemHeight > 0;
+    const distanceFromCenter = Math.abs(center - viewportHeight / 2);
+    if (video && isVisible && distanceFromCenter < activeVideoDistance) {
+      activeVideo = video;
+      activeVideoDistance = distanceFromCenter;
+    }
+  });
+
+  galleryVideos.forEach((video) => {
+    if (video === activeVideo && !document.hidden) {
+      if (video.paused) video.play().catch(() => {});
+    } else if (!video.paused) {
+      video.pause();
+    }
   });
 }
 
@@ -256,6 +283,9 @@ gallery.addEventListener("pointerdown", beginDrag);
 window.addEventListener("pointermove", moveDrag);
 window.addEventListener("pointerup", endDrag);
 window.addEventListener("resize", measure);
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) galleryVideos.forEach((video) => video.pause());
+});
 menuOpen.addEventListener("click", openMenu);
 menuClose.addEventListener("click", closeMenu);
 mobileMenu.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));

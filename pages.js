@@ -71,6 +71,7 @@ const videoOpenTriggers = Array.from(document.querySelectorAll("[data-project-vi
 const videoViewer = document.querySelector("[data-project-video-viewer]");
 const videoViewerPlayer = document.querySelector("[data-project-video-player]");
 const videoViewerClose = document.querySelector("[data-project-video-close]");
+const mobileVideoPlayback = window.matchMedia("(max-width: 767px)");
 const spatialTrigger = document.querySelector("[data-project-spatial-trigger]");
 const spatialArchive = document.querySelector("[data-project-spatial-archive]");
 const graphicTrigger = document.querySelector("[data-project-graphic-trigger]");
@@ -87,6 +88,7 @@ let projectViewerDragStartX = null;
 let projectViewerDragging = false;
 let projectViewerZoomLevel = 1;
 let activeMemberLanguage = "cn";
+let videoArchivePreviewObserver = null;
 const mobileAbout = window.matchMedia("(max-width: 991px)");
 
 window.setTimeout(() => {
@@ -298,6 +300,46 @@ function setStudioArchive(open) {
   }, lookbookTransitionDuration);
 }
 
+function prepareVideoPreview(video) {
+  video.muted = true;
+  video.defaultMuted = true;
+  video.playsInline = true;
+  video.setAttribute("muted", "");
+}
+
+function stopVideoArchivePreviews() {
+  videoArchivePreviewObserver?.disconnect();
+  videoArchivePreviewObserver = null;
+  videoArchivePreviews.forEach((video) => video.pause());
+}
+
+function startVideoArchivePreviews() {
+  stopVideoArchivePreviews();
+  videoArchivePreviews.forEach(prepareVideoPreview);
+
+  if (!mobileVideoPlayback.matches) {
+    videoArchivePreviews.forEach((video) => video.play().catch(() => {}));
+    return;
+  }
+
+  if (!("IntersectionObserver" in window)) {
+    videoArchivePreviews[0]?.play().catch(() => {});
+    return;
+  }
+
+  videoArchivePreviewObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const video = entry.target;
+      if (entry.isIntersecting && entry.intersectionRatio >= 0.55 && !document.hidden) {
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
+  }, { threshold: [0, 0.55] });
+  videoArchivePreviews.forEach((video) => videoArchivePreviewObserver.observe(video));
+}
+
 function setVideoArchive(open) {
   if (!videoArchive || !exhibitionGrid) return;
 
@@ -307,7 +349,7 @@ function setVideoArchive(open) {
     exhibitionGrid.classList.add("is-leaving");
     void videoArchive.offsetWidth;
     window.requestAnimationFrame(() => videoArchive.classList.add("is-open"));
-    videoArchivePreviews.forEach((video) => video.play().catch(() => {}));
+    startVideoArchivePreviews();
     window.setTimeout(() => {
       exhibitionGrid.hidden = true;
     }, lookbookTransitionDuration);
@@ -322,7 +364,7 @@ function setVideoArchive(open) {
   window.setTimeout(() => {
     videoArchive.hidden = true;
     videoArchive.setAttribute("aria-hidden", "true");
-    videoArchivePreviews.forEach((video) => video.pause());
+    stopVideoArchivePreviews();
   }, lookbookTransitionDuration);
 }
 
