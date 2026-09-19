@@ -301,6 +301,10 @@ function setStudioArchive(open) {
 }
 
 function prepareVideoPreview(video) {
+  if (!video.src && video.dataset.previewSrc) {
+    video.src = video.dataset.previewSrc;
+    video.load();
+  }
   video.muted = true;
   video.defaultMuted = true;
   video.playsInline = true;

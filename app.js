@@ -14,7 +14,7 @@ const media = [
   { name: "Objects in Focus 05", type: "Objects", image: "assets/projects/objects-in-focus/5.webp" },
   { name: "Objects in Focus 06", type: "Objects", image: "assets/projects/objects-in-focus/6.webp" },
   { name: "Objects in Focus 07", type: "Objects", image: "assets/projects/objects-in-focus/7.webp" },
-  { name: "Digital MOVE 01", type: "Motion", image: "assets/projects/digital-move/01.mp4?v=20260919-1", kind: "video" },
+  { name: "Digital MOVE 01", type: "Motion", image: "assets/projects/digital-move/01.mp4?v=20260919-1", mobileImage: "assets/projects/digital-move/01-mobile.mp4?v=20260919-1", kind: "video" },
   { name: "Digital MOVE 02", type: "Motion", image: "assets/projects/digital-move/02.mp4?v=20260918-1", kind: "video" },
   { name: "Digital MOVE 03", type: "Motion", image: "assets/projects/digital-move/03.mp4?v=20260918-1", kind: "video" },
   { name: "Digital MOVE 04", type: "Motion", image: "assets/projects/digital-move/04.mp4?v=20260918-1", kind: "video" }
@@ -92,12 +92,13 @@ function renderGallery() {
 
   gallery.innerHTML = galleryItems.map((item) => {
     const isMobileHeroVideo = compactHome.matches && item === mobileHeroVideo;
+    const mediaSource = isMobileHeroVideo && item.mobileImage ? item.mobileImage : item.image;
     const mediaElement = item.kind === "video"
-      ? `<video src="${item.image}" muted loop autoplay playsinline webkit-playsinline preload="${isMobileHeroVideo ? "auto" : "metadata"}" aria-label="${item.name}"></video>`
+      ? `<video src="${mediaSource}" muted loop autoplay playsinline webkit-playsinline preload="${isMobileHeroVideo ? "auto" : "metadata"}" aria-label="${item.name}"></video>`
       : `<img src="${item.image}" alt="${item.name}" draggable="false">`;
 
     return `
-      <article class="tile${isMobileHeroVideo ? " is-mobile-hero-video" : ""}" data-name="${item.name}" data-type="${item.type}" data-image="${item.image}" data-kind="${item.kind || "image"}">
+      <article class="tile${isMobileHeroVideo ? " is-mobile-hero-video" : ""}" data-name="${item.name}" data-type="${item.type}" data-image="${mediaSource}" data-kind="${item.kind || "image"}">
         <div class="tile-label"><span class="tile-dot"></span><span>${item.name}</span></div>
         ${isMobileHeroVideo
           ? mediaElement
@@ -199,7 +200,7 @@ function tick() {
     target += trackHeight;
   }
   paintGallery();
-  frame = requestAnimationFrame(tick);
+  if (!compactHome.matches) frame = requestAnimationFrame(tick);
 }
 
 function onWheel(event) {

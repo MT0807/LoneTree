@@ -980,6 +980,7 @@ body.is-ready .reveal-copy {
     aspect-ratio: auto;
     height: 100%;
     right: 0;
+    will-change: auto;
     width: 100%;
   }
 
@@ -1009,8 +1010,8 @@ body.is-ready .reveal-copy {
     top: var(--nav-height);
     width: min(88vw, 25rem);
     z-index: 4;
-    -webkit-backdrop-filter: blur(18px) saturate(1.12);
-    backdrop-filter: blur(18px) saturate(1.12);
+    -webkit-backdrop-filter: blur(12px) saturate(1.08);
+    backdrop-filter: blur(12px) saturate(1.08);
   }
 
   .hero-rule {
