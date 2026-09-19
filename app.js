@@ -63,6 +63,17 @@ let introductionFinished = false;
 let frame = 0;
 let galleryVideos = [];
 
+function startMutedVideo(video) {
+  if (!video || document.hidden) return;
+  video.muted = true;
+  video.defaultMuted = true;
+  video.playsInline = true;
+  video.setAttribute("muted", "");
+  video.setAttribute("playsinline", "");
+  video.setAttribute("webkit-playsinline", "");
+  video.play().catch(() => {});
+}
+
 function shuffledItems() {
   const videos = media.filter((item) => item.kind === "video");
   const images = media.filter((item) => item.kind !== "video");
@@ -82,7 +93,7 @@ function renderGallery() {
   gallery.innerHTML = galleryItems.map((item) => {
     const isMobileHeroVideo = compactHome.matches && item === mobileHeroVideo;
     const mediaElement = item.kind === "video"
-      ? `<video src="${item.image}" muted loop autoplay playsinline preload="${isMobileHeroVideo ? "auto" : "metadata"}" aria-label="${item.name}"></video>`
+      ? `<video src="${item.image}" muted loop autoplay playsinline webkit-playsinline preload="${isMobileHeroVideo ? "auto" : "metadata"}" aria-label="${item.name}"></video>`
       : `<img src="${item.image}" alt="${item.name}" draggable="false">`;
 
     return `
@@ -101,7 +112,12 @@ function renderGallery() {
     video.defaultMuted = true;
     video.playsInline = true;
     video.setAttribute("muted", "");
+    video.setAttribute("playsinline", "");
+    video.setAttribute("webkit-playsinline", "");
     video.pause();
+    if (compactHome.matches) {
+      video.addEventListener("canplay", () => startMutedVideo(video), { once: true });
+    }
   });
   tiles.forEach((tile) => {
     tile.querySelector(".media-link")?.addEventListener("click", (event) => {
@@ -156,7 +172,7 @@ function paintGallery() {
 
   galleryVideos.forEach((video) => {
     if (video === activeVideo && !document.hidden) {
-      if (video.paused) video.play().catch(() => {});
+      if (video.paused) startMutedVideo(video);
     } else if (!video.paused) {
       video.pause();
     }
@@ -289,6 +305,10 @@ window.addEventListener("pointerup", endDrag);
 window.addEventListener("resize", measure);
 document.addEventListener("visibilitychange", () => {
   if (document.hidden) galleryVideos.forEach((video) => video.pause());
+  else if (compactHome.matches) galleryVideos.forEach((video) => startMutedVideo(video));
+});
+window.addEventListener("pageshow", () => {
+  if (compactHome.matches) galleryVideos.forEach((video) => startMutedVideo(video));
 });
 menuOpen.addEventListener("click", openMenu);
 menuClose.addEventListener("click", closeMenu);

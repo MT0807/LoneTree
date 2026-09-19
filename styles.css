@@ -1486,3 +1486,17 @@ body.is-ready .reveal-copy {
     width: 1.42rem;
   }
 }
+
+@media (max-width: 991px) {
+  .mobile-bottom-nav::before {
+    background: var(--white);
+    bottom: 0;
+    content: "";
+    height: calc(3.7rem + env(safe-area-inset-bottom, 0px));
+    left: 0;
+    pointer-events: none;
+    position: fixed;
+    right: 0;
+    z-index: 108;
+  }
+}
