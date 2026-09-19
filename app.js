@@ -76,7 +76,7 @@ function shuffledItems() {
 }
 
 function renderGallery() {
-  const mobileHeroVideo = media.find((item) => item.name === "Digital MOVE 02");
+  const mobileHeroVideo = media.find((item) => item.name === "Digital MOVE 01");
   const galleryItems = compactHome.matches && mobileHeroVideo ? [mobileHeroVideo] : shuffledItems();
 
   gallery.innerHTML = galleryItems.map((item) => {

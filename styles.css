@@ -957,10 +957,13 @@ body.is-ready .reveal-copy {
   }
 
   .gallery-window {
-    bottom: var(--nav-height);
+    bottom: 3.7rem;
     height: auto;
-    top: 16rem;
-    width: min(72vw, 17rem);
+    inset-inline: 0;
+    top: var(--nav-height);
+    touch-action: pan-y;
+    width: auto;
+    z-index: 0;
   }
 
   .tile {
@@ -983,8 +986,38 @@ body.is-ready .reveal-copy {
     display: block;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     pointer-events: none;
     width: 100%;
+  }
+
+  .tile.is-mobile-hero-video .tile-label {
+    display: none;
+  }
+
+  .hero {
+    background: linear-gradient(145deg, rgb(255 255 255 / 72%), rgb(255 255 255 / 38%));
+    border: 1px solid rgb(255 255 255 / 58%);
+    border-left: 0;
+    box-shadow: 0 0.6rem 1.8rem rgb(0 0 0 / 9%);
+    height: auto;
+    left: 0;
+    max-width: 25rem;
+    padding: 1rem var(--pad) 1.2rem;
+    position: absolute;
+    top: var(--nav-height);
+    width: min(88vw, 25rem);
+    z-index: 4;
+    -webkit-backdrop-filter: blur(18px) saturate(1.12);
+    backdrop-filter: blur(18px) saturate(1.12);
+  }
+
+  .hero-rule {
+    margin-top: 0.7rem;
+  }
+
+  .intro {
+    max-width: 100%;
   }
 }
 
