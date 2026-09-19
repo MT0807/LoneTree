@@ -961,7 +961,8 @@ body.is-ready .reveal-copy {
     height: auto;
     inset-inline: 0;
     top: var(--nav-height);
-    touch-action: pan-y;
+    pointer-events: none;
+    touch-action: none;
     width: auto;
     z-index: 0;
   }

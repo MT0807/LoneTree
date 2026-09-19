@@ -14,7 +14,7 @@ const media = [
   { name: "Objects in Focus 05", type: "Objects", image: "assets/projects/objects-in-focus/5.webp" },
   { name: "Objects in Focus 06", type: "Objects", image: "assets/projects/objects-in-focus/6.webp" },
   { name: "Objects in Focus 07", type: "Objects", image: "assets/projects/objects-in-focus/7.webp" },
-  { name: "Digital MOVE 01", type: "Motion", image: "assets/projects/digital-move/01.mp4?v=20260918-1", kind: "video" },
+  { name: "Digital MOVE 01", type: "Motion", image: "assets/projects/digital-move/01.mp4?v=20260919-1", kind: "video" },
   { name: "Digital MOVE 02", type: "Motion", image: "assets/projects/digital-move/02.mp4?v=20260918-1", kind: "video" },
   { name: "Digital MOVE 03", type: "Motion", image: "assets/projects/digital-move/03.mp4?v=20260918-1", kind: "video" },
   { name: "Digital MOVE 04", type: "Motion", image: "assets/projects/digital-move/04.mp4?v=20260918-1", kind: "video" }
