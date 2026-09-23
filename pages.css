@@ -4412,6 +4412,33 @@ body.is-project-viewer-open {
   line-height: 1.65;
 }
 
+.project-spatial-top {
+  align-items: center;
+  background: transparent;
+  border: 1px solid var(--black);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: Barlow, var(--english-font);
+  font-size: 0.72rem;
+  font-weight: 700;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-top: clamp(3rem, 7vw, 6rem);
+  min-height: 2.8rem;
+  padding: 0.6rem 0.95rem;
+}
+
+.project-spatial-top:hover,
+.project-spatial-top:focus-visible {
+  background: var(--black);
+  color: var(--white);
+}
+
+.project-spatial-top span {
+  font-size: 1rem;
+  line-height: 1;
+}
+
 @media (max-width: 900px) {
   .project-spatial-archive {
     grid-column: 1 / -1;

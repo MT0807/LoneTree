@@ -74,6 +74,7 @@ const videoViewerClose = document.querySelector("[data-project-video-close]");
 const mobileVideoPlayback = window.matchMedia("(max-width: 767px)");
 const spatialTrigger = document.querySelector("[data-project-spatial-trigger]");
 const spatialArchive = document.querySelector("[data-project-spatial-archive]");
+const spatialTop = document.querySelector("[data-project-spatial-top]");
 const graphicTrigger = document.querySelector("[data-project-graphic-trigger]");
 const graphicArchive = document.querySelector("[data-project-graphic-archive]");
 const exhibitionGrid = document.querySelector(".project-exhibition-grid");
@@ -424,6 +425,18 @@ function setGraphicArchive(open) {
   }, lookbookTransitionDuration);
 }
 
+function returnToVisualStories() {
+  if (studioArchive && !studioArchive.hidden) {
+    setStudioArchive(false);
+    window.setTimeout(() => setLookbookArchive(false), lookbookTransitionDuration);
+    return;
+  }
+  if (lookbookArchive && !lookbookArchive.hidden) return setLookbookArchive(false);
+  if (objectsArchive && !objectsArchive.hidden) return setObjectsArchive(false);
+  if (tableArchive && !tableArchive.hidden) return setTableArchive(false);
+  if (videoArchive && !videoArchive.hidden) return setVideoArchive(false);
+}
+
 function closeVideoViewer() {
   if (!videoViewer || !videoViewerPlayer) return;
   videoViewerPlayer.pause();
@@ -467,6 +480,8 @@ videoArchiveTrigger?.addEventListener("click", () => setVideoArchive(true));
 videoArchiveBack?.addEventListener("click", () => setVideoArchive(false));
 spatialTrigger?.addEventListener("click", () => setSpatialArchive(true));
 graphicTrigger?.addEventListener("click", () => setGraphicArchive(true));
+projectPanelTabs.find((tab) => tab.dataset.number === "01")?.addEventListener("click", returnToVisualStories);
+spatialTop?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 videoOpenTriggers.forEach((trigger) => {
   trigger.addEventListener("click", () => openVideoViewer(trigger.dataset.projectVideoSrc));
 });
