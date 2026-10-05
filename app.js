@@ -236,15 +236,19 @@ function endDrag() {
 }
 
 function openMenu() {
+  mobileMenu.inert = false;
   mobileMenu.setAttribute("aria-hidden", "false");
   menuOpen.setAttribute("aria-expanded", "true");
   mobileMenu.classList.add("is-open");
+  menuClose.focus();
 }
 
 function closeMenu() {
+  mobileMenu.inert = true;
   mobileMenu.classList.remove("is-open");
   menuOpen.setAttribute("aria-expanded", "false");
   window.setTimeout(() => mobileMenu.setAttribute("aria-hidden", "true"), 400);
+  menuOpen.focus();
 }
 
 function flashTransition(callback) {
@@ -255,7 +259,11 @@ function flashTransition(callback) {
   }, 390);
 }
 
+let previewTrigger = null;
+const backgroundInert = new Map();
+
 function openPreview(tile) {
+  previewTrigger = tile.querySelector(".media-link");
   flashTransition(() => {
     const isVideo = tile.dataset.kind === "video";
     modalImage.hidden = isVideo;
@@ -275,6 +283,11 @@ function openPreview(tile) {
     modalTitle.textContent = tile.dataset.name;
     modal.classList.add("is-visible");
     modal.setAttribute("aria-hidden", "false");
+    [...document.body.children].filter((child) => child !== modal).forEach((child) => {
+      backgroundInert.set(child, child.inert);
+      child.inert = true;
+    });
+    modalClose.focus();
   });
 }
 
@@ -285,6 +298,9 @@ function closePreview() {
     modalVideo.load();
     modal.classList.remove("is-visible");
     modal.setAttribute("aria-hidden", "true");
+    backgroundInert.forEach((wasInert, child) => { child.inert = wasInert; });
+    backgroundInert.clear();
+    if (previewTrigger?.isConnected) previewTrigger.focus({ preventScroll: true });
   });
 }
 
