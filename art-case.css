@@ -1,0 +1,33 @@
+.object-case { padding: 0 clamp(22px, 4.8vw, 82px) 130px; }
+.case-top { display: flex; justify-content: space-between; padding: 28px 0; color: var(--muted); font: 400 12px Barlow, Arial, sans-serif; }
+.case-opening { display: grid; grid-template-columns: 36% 1fr; align-items: center; gap: clamp(25px, 4vw, 65px); min-height: 730px; }
+.case-opening > div { align-self: center; }
+.case-opening h1 { margin: 18px 0 40px; font: 400 clamp(56px, 7vw, 110px)/.94 Barlow, Arial, sans-serif; letter-spacing: -.07em; }
+.case-opening p { margin: 0; font-size: 14px; line-height: 1.9; color: var(--muted); }
+.case-opening figure { margin: 0; justify-self: center; width: min(100%, 600px); }
+.case-opening img { width: 100%; height: min(72svh, 700px); object-fit: cover; object-position: center; display: block; }
+.object-case figcaption { padding-top: 11px; color: var(--muted); font: 400 11px Barlow, Arial, sans-serif; }
+.case-interlude { display: grid; grid-template-columns: 36% 1fr; align-items: start; gap: 4vw; border-top: 1px solid var(--line); padding: 115px 0 145px; }
+.case-interlude p { max-width: 560px; margin: 0; font-size: clamp(25px, 3.2vw, 43px); font-weight: 400; letter-spacing: -.05em; line-height: 1.5; }
+.case-images { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: clamp(35px, 7vw, 120px); }
+.case-images figure { width: 100%; max-width: 510px; margin: 0; }
+.case-images figure:nth-child(2) { margin-top: 180px; }
+.case-images img { width: 100%; height: auto; display: block; }
+.case-next { margin-top: 130px; padding: 25px 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); display: flex; justify-content: space-between; gap: 20px; font: 400 13px Barlow, Arial, sans-serif; }
+.case-next span { color: var(--muted); }
+.case-next a span { color: var(--ink); padding-left: 12px; }
+@media (max-width: 680px) {
+ .object-case { padding: 0 20px 80px; }
+ .case-top { padding: 22px 0; font-size: 11px; }
+ .case-opening { display: flex; flex-direction: column; align-items: stretch; min-height: 0; gap: 28px; }
+ .case-opening h1 { font-size: clamp(62px, 15vw, 90px); margin-bottom: 15px; }
+ .case-opening p { font-size: 13px; }
+ .case-opening figure { width: 100%; }
+ .case-opening img { height: auto; max-height: none; }
+ .case-interlude { display: block; padding: 85px 0; }
+ .case-interlude p { margin-top: 28px; font-size: 26px; }
+ .case-images { display: block; }
+ .case-images figure:nth-child(2) { margin: 50px 0 0 12%; width: 88%; }
+ .case-next { margin-top: 90px; display: flex; flex-wrap: wrap; }
+ .case-next > span { width: 100%; }
+}
