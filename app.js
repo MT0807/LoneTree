@@ -291,6 +291,11 @@ function closePreview() {
 function loadHome() {
   renderGallery();
   target = restingOffset;
+  // Compact home paints only once: place its single hero clip before that frame.
+  if (compactHome.matches) {
+    current = restingOffset;
+    introductionFinished = true;
+  }
   window.setTimeout(() => {
     loader.classList.add("is-gone");
     document.body.classList.add("is-ready");

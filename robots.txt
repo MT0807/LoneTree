@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /grove.html
+Disallow: /model.html
+Sitemap: http://lonetreelab.com/sitemap.xml

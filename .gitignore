@@ -11,3 +11,7 @@ dist/
 
 # Local high-resolution model-image sources; the matching .webp files are deployed.
 assets/models/**/*topaz*.png
+
+# Article builder bytecode
+__pycache__/
+*.pyc
