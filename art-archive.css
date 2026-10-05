@@ -1,0 +1,34 @@
+/* Archive retains its interactive project categories; this layer only quiets the frame. */
+.art-archive { background: #f5f4f0; }
+.art-archive .site-header { background: #f5f4f0; border-bottom: 1px solid #d5d5cc; }
+.art-archive .site-header .nav { padding-left: clamp(20px, 4.8vw, 82px); padding-right: clamp(20px, 4.8vw, 82px); }
+.art-archive .site-header .nav-link { font-family: Barlow, Arial, sans-serif; font-size: 12px; font-weight: 400; }
+.art-archive .site-header .nav-link .bilingual::after { display: none; }
+.art-archive .site-header .nav-dot { display: none; }
+.art-archive .projects-shell { background: #f5f4f0; }
+.art-archive .projects-shell .project-introduction { border-color: #d5d5cc; padding: 20px 2px; margin: 24px 0 35px; }
+.art-archive .projects-shell .project-introduction span { color: #6b6b64; font-weight: 400; }
+.art-archive .projects-shell .project-introduction p { color: #44443e; font-size: 14px; }
+.art-archive .projects-shell .project-introduction a { color: #44443e; font-size: 12px; border-color: #999990; }
+.art-archive .project-three-panel-menu { background: transparent; border-color: #d5d5cc; }
+.art-archive .project-three-panel-tab { border-color: #d5d5cc; padding: 23px 20px 23px 0; }
+.art-archive .project-three-panel-tab strong { font-family: Barlow, Arial, sans-serif; font-size: clamp(23px, 2.2vw, 32px); font-weight: 400; letter-spacing: -.045em; line-height: 1.05; }
+.art-archive .project-three-panel-tab span { font-size: 11px; font-weight: 400; }
+.art-archive .project-three-panel-tab em { color: #6b6b64; font-size: 12px; }
+.art-archive .project-three-panel-tab.is-active, .art-archive .project-three-panel-tab.is-active span, .art-archive .project-three-panel-tab.is-active em { color: #435e49; }
+.art-archive .project-exhibition-grid { border: 0; gap: 10px; }
+.art-archive .project-exhibition-item { border: 0 !important; }
+.art-archive .project-exhibition-item p { background: rgb(245 244 240 / 94%); bottom: 0; left: 0; padding: 6px 7px 0 0; font-size: 11px; font-weight: 400; }
+.art-archive .project-exhibition-item p em { color: #6b6b64; }
+.art-archive .project-exhibition-item img { background: #eeede8; }
+@media (max-width: 900px) {
+  .art-archive .projects-shell .project-introduction { margin: 16px 0 24px; }
+}
+@media (max-width: 760px) {
+  .art-archive .site-header { background: #f5f4f0; }
+  .art-archive .mobile-bottom-nav { background: #f5f4f0; color: #252521; border-top: 1px solid #d5d5cc; }
+  /* The legacy CSS fixes items 2–4 to a black bar using !important; keep the three quiet top links instead. */
+  .art-archive .mobile-bottom-nav a:nth-child(2), .art-archive .mobile-bottom-nav a:nth-child(3), .art-archive .mobile-bottom-nav a:nth-child(4) { display: none !important; }
+  .art-archive .project-three-panel-tab { padding: 18px 15px 18px 0; }
+  .art-archive .project-exhibition-grid { gap: 8px; margin-top: 24px; }
+}

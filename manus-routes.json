@@ -1,0 +1,19 @@
+{
+  "routes": [
+    {"path": "/", "title": "LoneTree Lab"},
+    {"path": "/index.html", "title": "LoneTree Lab"},
+    {"path": "/talents.html", "title": "About us"},
+    {"path": "/projects.html", "title": "Projects"},
+    {"path": "/services.html", "title": "Services"},
+    {"path": "/insights.html", "title": "Model book"},
+    {"path": "/contact.html", "title": "Contact"},
+    {"path": "/grove.html", "title": "Grove"},
+    {"path": "/lookbook.html", "title": "Digital Lookbook"},
+    {"path": "/model.html", "title": "Model detail"},
+    {"path": "/journal.html", "title": "Field Notes"},
+    {"path": "/article-ai-design-workflow.html", "title": "AI 与设计工作流"},
+    {"path": "/article-firefly-video-background.html", "title": "Firefly 视频去背景"},
+    {"path": "/project-wearable-worlds.html", "title": "Wearable Worlds"},
+    {"path": "/project-objects-in-focus.html", "title": "Objects in Focus"}
+  ]
+}

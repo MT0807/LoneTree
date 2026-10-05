@@ -1,0 +1,66 @@
+body.editorial-body { background: #f4f2eb; }
+.case-main { max-width: 1800px; margin: 0 auto; padding: 0 3.5vw; }
+.case-hero { position: relative; min-height: min(78vh, 800px); display: grid; grid-template-columns: minmax(0,1fr) minmax(0,.72fr); gap: clamp(2rem, 5vw, 7rem); padding: clamp(3rem, 7vw, 7rem) 0 5rem; }
+.case-intro { display: flex; flex-direction: column; align-items: flex-start; }
+.case-intro .eyebrow { color: var(--moss); margin: 0 0 2rem; }
+.case-intro h1 { font: 700 clamp(5rem, 10vw, 12rem)/.83 Mango, Arial, sans-serif; letter-spacing: -.07em; margin: auto 0 2rem; }
+.case-intro h1 em { color: var(--moss); font-style: normal; }
+.case-intro>p { border-top: 1px solid var(--rule); padding-top: 1.2rem; width: min(34rem,100%); font-size: clamp(1.25rem, 2vw, 2rem); line-height: 1.5; margin: 0; }
+.case-hero-image { align-self: stretch; position: relative; margin: 0; background: #dedbd0; overflow: hidden; }
+.case-hero-image img { display: block; width: 100%; height: 100%; min-height: 40rem; object-fit: cover; object-position: center 26%; }
+.case-hero-image figcaption { position: absolute; right: 1rem; bottom: 1rem; padding: .6rem .8rem; background: var(--paper); color: var(--moss); font: 600 .7rem Barlow,sans-serif; }
+.case-side-index { position: absolute; right: -2vw; top: 50%; writing-mode: vertical-rl; font: 600 .65rem Barlow,sans-serif; letter-spacing: .15em; color: var(--moss); }
+.case-overview { border-top: 1px solid var(--ink); display: grid; grid-template-columns: minmax(0,.85fr) minmax(0,.65fr); gap: clamp(2rem, 7vw, 8rem); padding: clamp(3rem, 6vw, 7rem) 0; }
+.case-overview .eyebrow { color: var(--moss); }
+.case-overview h2 { font-size: clamp(2.2rem, 4.2vw, 5.2rem); line-height: 1.3; font-weight: 530; letter-spacing: -.06em; margin: 3rem 0 0; }
+.case-overview h2 span { color: var(--moss); }
+.case-overview>div:last-child { max-width: 38rem; font-size: clamp(1rem, 1.12vw, 1.2rem); line-height: 1.9; }
+.case-overview>div:last-child p { margin: 0 0 1.4rem; }
+.case-overview small { display: block; border-top: 1px solid var(--rule); padding-top: 1rem; font-size: .74rem; color: #62685f; line-height: 1.6; }
+.case-gallery { display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); gap: clamp(.8rem, 2vw, 2.3rem); align-items: start; padding-bottom: 7rem; }
+.case-frame { margin: 0; min-width: 0; }
+.case-frame img { display: block; width: 100%; height: auto; background: #e8e6d9; }
+.case-frame figcaption { display: block; border-top: 1px solid var(--rule); margin-top: .65rem; padding-top: .45rem; font: 600 .68rem Barlow,var(--chinese); color: var(--moss); letter-spacing: .08em; }
+.case-frame-wide { grid-column: 1/7; }
+.case-frame-tall { grid-column: 8/13; padding-top: 9rem; }
+.case-interlude { grid-column: 1/7; padding: 3rem 0 7rem; }
+.case-interlude span { color: var(--moss); font: 600 .72rem Barlow,sans-serif; letter-spacing: .1em; }
+.case-interlude p { font-size: clamp(1.6rem, 3vw, 3.5rem); line-height: 1.4; margin: 2rem 0; }
+.case-frame-right { grid-column: 7/13; margin-top: -4rem; }
+.case-frame-end { grid-column: 2/6; margin-top: 3rem; }
+.case-method { border-top: 1px solid var(--ink); padding: clamp(3rem, 7vw, 8rem) 0; }
+.case-method .eyebrow { color: var(--moss); }
+.case-method>h2 { font-size: clamp(2.7rem, 5vw, 6rem); line-height: 1.2; letter-spacing: -.065em; font-weight: 520; margin: 3rem 0 4rem; }
+.case-method-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; }
+.case-method-grid article { border-top: 1px solid var(--moss); padding-top: 1rem; }
+.case-method-grid b { color: var(--moss); font: 600 .75rem Barlow,sans-serif; }
+.case-method-grid h3 { font-size: clamp(1.4rem, 2vw, 2rem); margin: 2rem 0 1rem; font-weight: 550; }
+.case-method-grid p { line-height: 1.75; max-width: 20rem; }
+.case-disclaimer { margin-top: 2rem; font-size: .76rem; color: #62685f; }
+.case-next { border-top: 1px solid var(--ink); display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; padding: 1.5rem 0 7rem; }
+.case-next div { display: flex; flex-direction: column; gap: 1.3rem; }
+.case-next span { color: var(--moss); font: 600 .7rem Barlow,sans-serif; letter-spacing: .08em; }
+.case-next a { font-size: clamp(1rem, 1.5vw, 1.5rem); border-bottom: 1px solid var(--rule); padding-bottom: .7rem; }
+.case-next a:hover { color: var(--moss); }
+@media (max-width: 850px) {
+  .case-main { padding: 0 4vw; }
+  .case-hero { grid-template-columns: 1fr; padding: 3rem 0; }
+  .case-intro h1 { margin: 2rem 0; font-size: clamp(5rem, 12vw, 8rem); }
+  .case-hero-image img { min-height: 0; height: 40rem; }
+  .case-side-index { display: none; }
+  .case-overview { grid-template-columns: 1fr; padding: 3rem 0; }
+  .case-overview h2 { margin: 1.5rem 0 0; }
+  .case-method-grid, .case-next { gap: 1rem; }
+}
+@media (max-width: 590px) {
+  .case-intro h1 { font-size: clamp(4.1rem, 16vw, 6rem); }
+  .case-hero-image img { height: 32rem; }
+  .case-gallery { grid-template-columns: repeat(2,1fr); gap: 1rem; }
+  .case-frame-wide, .case-frame-tall, .case-frame-right, .case-frame-end { grid-column: auto; padding: 0; margin: 0; }
+  .case-frame-wide, .case-frame-right { grid-column: 1/-1; }
+  .case-interlude { grid-column: 1/-1; padding: 1rem 0; }
+  .case-method-grid, .case-next { grid-template-columns: 1fr; }
+}
+
+.case-intro h1 { font-family: Barlow, Arial, sans-serif; font-size: clamp(4.7rem, 8vw, 9rem); font-weight: 700; line-height: .9; letter-spacing: -.06em; }
+@media (max-width: 590px) { .case-intro h1 { font-size: clamp(3.7rem, 13vw, 5rem); } }
