@@ -37,7 +37,7 @@ def header(current: str = "notes") -> str:
     )
 
 
-def document(title: str, description: str, body: str, image: str = "") -> str:
+def document(title: str, description: str, body: str, image: str = "", page_type: str = "article") -> str:
     image_meta = (
         '<meta property="og:image" content="https://raw.githubusercontent.com/'
         f'MT0807/LoneTree/main/{esc(image)}">' if image else ""
@@ -50,7 +50,7 @@ def document(title: str, description: str, body: str, image: str = "") -> str:
   <meta name="theme-color" content="#f4f2eb">
   <title>{esc(title)} | LoneTree Lab</title>
   <meta name="description" content="{esc(description)}">
-  <meta property="og:type" content="article">
+  <meta property="og:type" content="{esc(page_type)}">
   <meta property="og:site_name" content="LoneTree Lab">
   <meta property="og:title" content="{esc(title)}">
   <meta property="og:description" content="{esc(description)}">
@@ -103,7 +103,7 @@ def build_hub() -> None:
   <aside class="editorial-method"><span>EDITORIAL METHOD / 编辑方法</span><p>每一条资讯都链接一手来源；时效性结论附上日期。公众号稿件只是二次编辑起点，正式发布前请再核对事实、版权和图片授权。</p></aside>
 </main>'''
     (ROOT / "journal.html").write_text(
-        document("Field Notes｜AI、设计与创意观察", "LoneTree Lab 的 AI 资讯、设计观察与视觉创作方法，基于一手来源，连接品牌视觉实践。", body, lead["image"]),
+        document("Field Notes｜AI、设计与创意观察", "LoneTree Lab 的 AI 资讯、设计观察与视觉创作方法，基于一手来源，连接品牌视觉实践。", body, lead["image"], "website"),
         encoding="utf-8",
     )
 
