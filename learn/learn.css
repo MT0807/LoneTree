@@ -13,10 +13,12 @@ a { color: inherit; text-decoration: none; }
 button { color: inherit; font: inherit; }
 
 .learn-header { min-height: 82px; padding: 0 max(28px, 4vw); border-bottom: 1px solid #d9d9d9; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+.learn-menu-back { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; font-size: 12px; font-weight: 700; }
+.learn-menu-back span { font-size: 20px; line-height: 1; }
 .site-mark { font-family: MangoGrotesque, Arial, sans-serif; font-size: 29px; line-height: 1; }
 .site-mark-slash { color: #507c4f; }
 .learn-nav { display: flex; align-items: center; gap: 30px; font-size: 12px; font-weight: 700; text-transform: uppercase; }
-.learn-nav a:hover, .learn-footer a:hover { color: #507c4f; }
+.learn-nav a:hover, .learn-footer a:hover, .learn-menu-back:hover { color: #507c4f; }
 
 main { max-width: 1600px; margin: auto; padding: 0 max(28px, 4vw) 100px; }
 .library-heading { min-height: 250px; padding: 44px 0 30px; display: grid; grid-template-columns: 1fr auto; align-content: start; align-items: end; }
@@ -72,7 +74,8 @@ h2 span { font-family: Arial, "PingFang SC", sans-serif; font-size: 13px; font-w
 .learn-footer { border-top: 1px solid #d9d9d9; display: flex; justify-content: space-between; gap: 18px; padding: 24px max(28px, 4vw) 45px; font-size: 11px; font-weight: 700; }
 
 @media (max-width: 700px) {
-  .learn-header { min-height: 64px; padding: 0 18px; }
+  .learn-header { min-height: 64px; padding: 0 18px; gap: 10px; }
+  .learn-menu-back { gap: 4px; font-size: 11px; }
   .site-mark { font-size: 24px; }
   .learn-nav { gap: 14px; font-size: 11px; }
   main { padding: 0 18px 65px; }

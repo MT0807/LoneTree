@@ -1,0 +1,37 @@
+.learn-return {
+  position: fixed;
+  z-index: 70;
+  bottom: calc(18px + env(safe-area-inset-bottom));
+  left: calc(18px + env(safe-area-inset-left));
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 0 14px;
+  border: 1px solid #172838;
+  border-radius: 3px;
+  background: #fff;
+  color: #172838;
+  box-shadow: 0 2px 10px #0002;
+  font: 700 13px/1.2 Arial, "PingFang SC", sans-serif;
+  text-decoration: none;
+}
+
+.learn-return:hover,
+.learn-return:focus-visible {
+  background: #172838;
+  color: #fff;
+}
+
+.learn-return-arrow { font-size: 19px; line-height: 1; }
+
+@media (max-width: 650px) {
+  .learn-return ~ .layout .hero { padding-bottom: 160px; }
+
+  .learn-return {
+    bottom: calc(12px + env(safe-area-inset-bottom));
+    left: calc(12px + env(safe-area-inset-left));
+    min-height: 40px;
+    padding: 0 12px;
+  }
+}
