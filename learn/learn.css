@@ -1,0 +1,102 @@
+@font-face {
+  font-family: MangoGrotesque;
+  src: url("../assets/mango-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #fff; color: #101010; font-family: Arial, "PingFang SC", sans-serif; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-decoration: none; }
+button { color: inherit; font: inherit; }
+
+.learn-header { min-height: 82px; padding: 0 max(28px, 4vw); border-bottom: 1px solid #d9d9d9; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+.site-mark { font-family: MangoGrotesque, Arial, sans-serif; font-size: 29px; line-height: 1; }
+.site-mark-slash { color: #507c4f; }
+.learn-nav { display: flex; align-items: center; gap: 30px; font-size: 12px; font-weight: 700; text-transform: uppercase; }
+.learn-nav a:hover, .learn-footer a:hover { color: #507c4f; }
+
+main { max-width: 1600px; margin: auto; padding: 0 max(28px, 4vw) 100px; }
+.library-heading { min-height: 250px; padding: 44px 0 30px; display: grid; grid-template-columns: 1fr auto; align-content: start; align-items: end; }
+.eyebrow { grid-column: 1 / -1; margin: 0 0 15px; font-size: 11px; font-weight: 700; }
+h1 { margin: 0; font-family: MangoGrotesque, Arial, sans-serif; font-size: clamp(74px, 9rem, 150px); line-height: .82; font-weight: 700; }
+h1 span { color: #507c4f; }
+.library-index { margin: 0 0 6px; font-size: 11px; font-weight: 700; color: #666; }
+
+.shelf-section { padding: 24px 0 56px; border-top: 1px solid #202020; scroll-margin-top: 20px; }
+.shelf-heading { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 20px; }
+.shelf-title { display: flex; align-items: baseline; gap: 16px; min-width: 0; }
+.shelf-number { font-size: 12px; font-weight: 700; color: #507c4f; }
+h2 { margin: 0; font-family: MangoGrotesque, Arial, sans-serif; font-size: 32px; line-height: 1.15; }
+h2 span { font-family: Arial, "PingFang SC", sans-serif; font-size: 13px; font-weight: 400; color: #777; margin-left: 8px; white-space: nowrap; }
+.shelf-controls { display: flex; align-items: center; gap: 12px; white-space: nowrap; }
+.shelf-controls > span { margin-right: 8px; font-size: 10px; font-weight: 700; color: #777; }
+.scroll-arrow { width: 29px; height: 29px; border: 0; background: none; font-size: 29px; line-height: 1; cursor: pointer; }
+.scroll-arrow:disabled { opacity: .28; cursor: default; }
+.scroll-arrow:not(:disabled):hover { color: #507c4f; }
+
+.shelf-row { --book-height: 258px; --rail-color: #ecab55; position: relative; }
+.shelf-row-clo { --rail-color: #81a4b6; }
+.book-list { display: flex; gap: 26px; overflow-x: auto; overflow-y: hidden; padding: 5px 8px 12px; scrollbar-width: none; scroll-snap-type: x mandatory; }
+.book-list::-webkit-scrollbar { display: none; }
+.book-item { flex: 0 0 188px; min-width: 0; scroll-snap-align: start; }
+.book-cover { position: relative; display: block; width: 100%; height: var(--book-height); overflow: hidden; background: #ececec; border: 1px solid #d1d1d1; box-shadow: 5px 7px 10px #00000019, -3px 0 0 #00000013; }
+.book-cover::before { content: ""; position: absolute; inset: 0 auto 0 0; z-index: 2; width: 6px; background: #00000021; }
+.cover-topline, .cover-bottomline { position: absolute; left: 14px; right: 11px; z-index: 2; font-size: 8px; line-height: 1.3; font-weight: 700; letter-spacing: .02em; }
+.cover-topline { top: 12px; }
+.cover-bottomline { bottom: 12px; }
+.book-cover strong { position: absolute; z-index: 2; left: 14px; top: 35px; font-family: MangoGrotesque, Arial, sans-serif; font-size: 32px; line-height: .88; }
+.book-cover img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.cover-ai-course { background: #172838; color: #fff; transition: transform 180ms ease, box-shadow 180ms ease; }
+.cover-ai-course img { position: absolute; inset: 100px 0 0; height: calc(100% - 100px); object-position: 50% 27%; }
+.cover-ai-course strong { font-size: 36px; }
+.cover-ai-course .cover-period { color: #f1bc6a; }
+.cover-ai-course .cover-bottomline { right: 0; left: 0; bottom: 0; padding: 10px 14px; background: #172838; }
+.cover-clo { background: #29485d; color: #fff; transition: transform 180ms ease, box-shadow 180ms ease; }
+.cover-clo img { position: absolute; inset: 132px 0 0; height: calc(100% - 132px); object-position: center; }
+.cover-clo strong { font-size: 48px; }
+.cover-period { color: #e4ba64; }
+.cover-clo .cover-bottomline { background: #29485d; right: 0; left: 0; bottom: 0; padding: 10px 14px; }
+.cover-clo:hover, .cover-clo:focus-visible, .cover-ai-course:hover, .cover-ai-course:focus-visible { transform: translateY(-5px); box-shadow: 7px 12px 16px #00000029, -3px 0 0 #00000013; }
+.book-caption { display: flex; flex-direction: column; gap: 4px; margin: 24px 0 0; font-size: 12px; line-height: 1.3; }
+.book-caption strong, .book-caption span { display: block; }
+.book-caption span { color: #777; font-size: 11px; }
+.book-caption a:hover { color: #507c4f; }
+.shelf-rail { position: absolute; top: calc(var(--book-height) - 25px); left: 0; right: 0; height: 33px; pointer-events: none; background: color-mix(in srgb, var(--rail-color) 84%, transparent); border: 1px solid color-mix(in srgb, var(--rail-color) 80%, #000); box-shadow: 0 4px 5px #00000012; }
+.shelf-rail i { position: absolute; top: 12px; width: 8px; height: 8px; border-radius: 50%; border: 2px solid #ffffff9c; background: #55555560; }
+.shelf-rail i:first-child { left: 14px; }
+.shelf-rail i:last-child { right: 14px; }
+
+.learn-footer { border-top: 1px solid #d9d9d9; display: flex; justify-content: space-between; gap: 18px; padding: 24px max(28px, 4vw) 45px; font-size: 11px; font-weight: 700; }
+
+@media (max-width: 700px) {
+  .learn-header { min-height: 64px; padding: 0 18px; }
+  .site-mark { font-size: 24px; }
+  .learn-nav { gap: 14px; font-size: 11px; }
+  main { padding: 0 18px 65px; }
+  .library-heading { min-height: 188px; padding-top: 36px; }
+  h1 { font-size: 76px; }
+  .library-index { font-size: 9px; }
+  .shelf-section { padding-bottom: 44px; }
+  .shelf-title { gap: 10px; }
+  h2 { font-size: 27px; }
+  h2 span { font-size: 11px; margin-left: 4px; }
+  .shelf-controls > span { display: none; }
+  .shelf-row { --book-height: 224px; }
+  .book-list { gap: 17px; margin: 0 -18px; padding: 4px 18px 12px; }
+  .book-item { flex-basis: 160px; }
+  .book-cover strong { font-size: 27px; }
+  .cover-ai-course strong { font-size: 32px; }
+  .cover-ai-course img { inset-block-start: 94px; height: calc(100% - 94px); }
+  .cover-clo strong { font-size: 43px; }
+  .cover-clo img { inset-block-start: 120px; height: calc(100% - 120px); }
+  .shelf-rail { left: -18px; right: -18px; }
+  .learn-footer { padding: 22px 18px 38px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .cover-clo, .cover-ai-course { transition: none; }
+}
