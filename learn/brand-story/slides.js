@@ -1,21 +1,21 @@
 const media = {
   borsalino: {
-    src: 'https://i.mdel.net/i/db/2025/2/2453009/2453009-800w.jpg',
-    alt: 'Borsalino 2025 春夏广告：戴帽人物立于浅色岩石场景',
-    credit: 'Jeremy Everett / Borsalino SS25',
-    link: 'https://www.borsalino.com/es_en/ss25-adv-campaign'
+    src: 'assets/borsalino-hat.jpg',
+    alt: 'Borsalino 黑色毡帽产品图',
+    credit: 'Borsalino official product image',
+    link: 'https://www.borsalino.com/us_en/the-history'
   },
   rock: {
-    src: 'https://img.alicdn.com/i1/2206770313152/O1CN018nuon31Z9f73wV3MT_!!2206770313152.jpg',
-    alt: 'ROCK&RIDE 银饰产品的金属细节',
-    credit: 'ROCK&RIDE 产品图 / 店铺页面',
-    link: 'https://rockride.jd.com/'
+    src: 'assets/rockride-jewelry.webp',
+    alt: 'ROCK&RIDE 银饰佩戴细节',
+    credit: 'ROCK&RIDE reference image',
+    link: 'http://www.rockride.cn/about.html'
   },
   scabal: {
-    src: 'https://scabal.com/cdn/shop/files/Mosaic_853535_2.jpg?v=1737040138&width=2000',
-    alt: 'Scabal 官方形象：穿着蓝色格纹西装的人物置于深色室内',
-    credit: 'Scabal 官方网站',
-    link: 'https://scabal.com/'
+    src: 'assets/scabal-savile-row.jpg',
+    alt: 'SCABAL Savile Row 门店与品牌标识',
+    credit: 'Scabal / Savile Row reference image',
+    link: 'https://scabal.com/pages/scabal-savile-row'
   },
   scabalEditorial: {
     src: 'https://scabal.com/cdn/shop/articles/Tailoring-Header-SS18-1_5f7127fc-99f3-452a-aec1-9d94feaeba9f.jpg?v=1748611485',
@@ -47,6 +47,15 @@ const slides = [
   {section:'00 / 开场', title:'Brand Story', tone:'purple', layout:'cover', kicker:'A VISUAL STORYTELLING WORKBOOK', lead:'品牌如何成为故事，故事如何成为画面。', foot:'FC&I BB3 · CONCEPT / COMPOSITION / STYLE', note:'从三个学期项目品牌出发，学习把研究转换为艺术指导。'},
   {section:'00 / 开场', title:'项目概览', tone:'dark', layout:'tiles', hideTitle:true, kicker:'READ THE BRIEF', lead:'从品牌研究出发，创作可跨媒介延伸的视觉叙事。', tiles:[['01','品牌与受众','有依据地认识品牌与新一代受众'],['02','艺术指导','让策略变成可执行的视觉规则'],['03','广告图像','Borsalino 方向：3 张棚拍/CGI 图像 + 2 张外景图像'],['04','Brandzine','用图片、文章与版式建立品牌世界']], note:'Borsalino 是跨校竞赛；ROCK&RIDE 与 SCABAL 按项目 brief 的其他要求推进。', source:'课程项目 brief（本地 PDF）'},
   {section:'01 / 三个品牌', title:'同一份方法，三种品牌语言。', tone:'purple', layout:'tiles', kicker:'THREE BRAND DIRECTIONS', tiles:[['01 / HATS','Borsalino','传承如何进入新一代的生活？'],['02 / JEWELLERY','ROCK&RIDE','如何让首饰成为态度与身份线索？'],['03 / TAILORING','SCABAL','怎样让面料工艺被看见、被感受？']], note:'这三个问题是课堂分析角度，不是品牌给出的正式口号。'},
+  {section:'01 / 三个品牌', title:'Borsalino：从 Alessandria 出发。', tone:'light', layout:'brand', kicker:'BRAND STORY / ORIGIN', image:media.borsalino, lead:'一顶帽子的历史，不只属于过去；它也在持续决定人如何进入一个空间。', points:['1857 年 4 月 4 日，Giuseppe Borsalino 在 Alessandria 创办制帽工厂。','品牌后来通过广告与电影，把工艺物件带入更大的文化想象。','可保留的核心资产：制帽手艺、经典帽形、Alessandria 与电影记忆。'], source:'https://borsalinomuseum.com/en/the-museum/', note:'历史页用于建立可信度；下一页把历史转成今天可使用的身份语言。'},
+  {section:'01 / 三个品牌', title:'Borsalino：经典是一种出场方式。', tone:'dark', layout:'tiles', kicker:'STORY TRANSLATION / HATS', lead:'不要只说“复古”。要让观众看到帽子如何改变一个人的轮廓、姿态与角色。', tiles:[['事实','1857 / Alessandria','品牌拥有真实地点与可追溯的工艺起点。'],['张力','传统 × 新一代','经典不能停留在博物馆，要重新回到身体上。'],['命题','你的出场方式','帽子不规定你是谁，而是让你决定如何出现。']], note:'建议视觉关键词：轮廓、帽檐、手势、城市、银幕；避免把品牌固定成老派绅士。'},
+  {section:'01 / 三个品牌', title:'Borsalino：人们买到的，是一段角色感。', tone:'purple', layout:'tiles', kicker:'BRAND LABELS / HATS', tiles:[['01','有品位','懂得经典的来源，但不需要大声证明。'],['02','有个人风格','敢于在日常城市里制造自己的轮廓。'],['03','有文化记忆','让电影、工艺和当下生活发生联系。'],['04','耐久而非一次性','选择可以长期佩戴、持续改写的物件。']], note:'年轻化的重点不是把 Borsalino 变低龄，而是让经典成为个人表达工具。'},
+  {section:'01 / 三个品牌', title:'ROCK&RIDE：把符号戴在身上。', tone:'light', layout:'brand', kicker:'BRAND STORY / ORIGIN', image:media.rock, lead:'首饰不只是装饰；它可以成为佩戴者选择过的信念、记忆或生活态度。', points:['官方资料将品牌描述为发源于布鲁克林的独立设计品牌，发展超过 20 年。','品牌强调“不凡设计、卓越工艺”和“自由灵魂装备”。','设计会借用历史、宗教、流行文化与神秘主义符号，再重新赋予意义。'], source:'http://www.rockride.cn/about.html', note:'“1993 年创立”在部分外部传播中出现，但官方当前关于页未明确给出；正式提案前应向品牌方确认。'},
+  {section:'01 / 三个品牌', title:'ROCK&RIDE：自由不是风格滤镜。', tone:'dark', layout:'tiles', kicker:'STORY TRANSLATION / JEWELLERY', lead:'真正的故事不是“看起来很酷”，而是为什么这个符号值得被某个人随身携带。', tiles:[['符号','玫瑰 / 徽章 / 骷髅','从文化中取出图腾，再放回个人生活。'],['行为','佩戴 / 收藏 / 叠戴','手、颈部和动作让首饰进入日常。'],['命题','我的自由装备','产品成为表达立场与经历的私人标记。']], note:'建议视觉关键词：刻痕、反光、手部、身体距离、收藏；避免只用皮衣和霓虹灯代表摇滚。'},
+  {section:'01 / 三个品牌', title:'ROCK&RIDE：人们获得的是态度标签。', tone:'purple', layout:'tiles', kicker:'BRAND LABELS / JEWELLERY', tiles:[['01','独立','不随主流审美走，有自己的选择。'],['02','有态度','敢于表达，但不依赖大Logo。'],['03','懂符号','会为图腾、饰物和收藏赋予个人意义。'],['04','有反骨','外表可以锋利，选择仍然高度私人化。']], note:'传播可邀请用户讲述“我为什么选择这个符号”，让首饰故事由佩戴者共同完成。'},
+  {section:'01 / 三个品牌', title:'SCABAL：一套衣服从纤维开始。', tone:'light', layout:'brand', kicker:'BRAND STORY / ORIGIN', image:media.scabal, lead:'SCABAL 的品牌价值藏在看不见的地方：原料、织造、知识和量体过程共同构成身份。', points:['1938 年，Otto Hertz 在布鲁塞尔创办纺织品贸易公司。','1972 年，品牌进入伦敦 Savile Row；1973 年收购 Huddersfield 织造厂。','SCABAL 把面料、定制、艺术想象与电影服装联系在同一个系统中。'], source:'https://scabal.com/pages/scabal-heritage', note:'SCABAL 不应只被讲成“正式西装”；它更适合讲材料如何成为个人身份。'},
+  {section:'01 / 三个品牌', title:'SCABAL：把材料拍成身份。', tone:'dark', layout:'tiles', kicker:'STORY TRANSLATION / TAILORING', lead:'从一根纤维开始，经过水、织机、样本册、剪裁和身体，最后成为一个人进入世界的方式。', tiles:[['原料','羊毛与来源','品质也包含环境、耐久与责任。'],['工艺','织造与手感','用纹理、垂坠和光泽替代空泛的“高级感”。'],['场景','Savile Row / 生活','服装最终要服务于人物，而不是压过人物。']], note:'建议视觉关键词：样本册、织纹、肩线、手势、建筑线条；让近景成为工艺证据。'},
+  {section:'01 / 三个品牌', title:'SCABAL：人们获得的是判断力。', tone:'purple', layout:'tiles', kicker:'BRAND LABELS / TAILORING', tiles:[['01','有知识','看得见剪裁、材料和细节的差异。'],['02','可靠','在重要场合拥有清晰、稳定的自我形象。'],['03','长期主义','把衣服当作可持续使用的个人资产。'],['04','面向未来','尊重传统，同时接受技术与责任的变化。']], note:'年轻化的方向是“有知识的自我建构”，而不只是老派商务权威。'},
   {section:'01 / 三个品牌', title:'Borsalino', tone:'light', layout:'brand', kicker:'BRAND 01 / ITALY · HATS', image:media.borsalino, lead:'不是先讲“复古”，而是先看一顶帽子承载的工艺与身份。', points:['品牌由 Giuseppe Borsalino 于 1857 年在意大利 Alessandria 开设。','品牌的真实资产包括制帽工序、经典帽形与手写标识。','本次 brief 的核心张力：传承与年轻一代，真实身份与数字传播。'], source:'https://www.borsalino.com/row_en/the-history', note:'课堂可请学生区分：品牌史实、自己的观察、尚待验证的受众假设。'},
   {section:'01 / 三个品牌', title:'把帽子从“物件”变成“角色”。', tone:'dark', layout:'tiles', kicker:'BORSALINO / VISUAL TRANSLATION', lead:'同一顶帽子可以讲三层故事。', tiles:[['轮廓','远景','帽檐先成为一眼可认的形状。'],['工艺','近景','手势、材料和制作痕迹让传承可见。'],['关系','情境','人物如何佩戴，决定它属于谁的当下。']], note:'这是一套摄影任务分配方法，不要求每张图重复展示帽子。'},
   {section:'01 / 三个品牌', title:'ROCK&RIDE', tone:'light', layout:'brand', kicker:'BRAND 02 / JEWELLERY · SHANGHAI PROJECT', image:media.rock, lead:'金属、符号与佩戴方式，可以成为讲述个人态度的语法。', points:['品牌发布资料将摇滚与机车文化列为重要线索。','产品线可见戒指、项链、手镯等，部分作品使用骷髅、扑克、玫瑰等符号。','研究时要问：这些符号对目标受众意味着什么，而不只是“酷”。'], source:'https://www.chinapp.com/pinpaidongtai/229665', note:'公开资料有限；创始时间、品牌定位等进一步信息应向合作品牌核实。'},

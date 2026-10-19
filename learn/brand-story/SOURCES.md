@@ -8,11 +8,21 @@
 
 ## 三个品牌
 
-- [Borsalino 品牌历史](https://www.borsalino.com/row_en/the-history)：1857 年 Alessandria 起源、品牌标识与制帽历史。
-- [Borsalino 制帽工序](https://www.borsalino.com/es_en/heritage)：毡帽制作过程。
-- [ROCK&RIDE 品牌发布资料](https://www.chinapp.com/pinpaidongtai/229665)：品牌自述的摇滚、机车文化方向与上海张园空间。
-- [ROCK&RIDE 京东店铺](https://rockride.jd.com/)：产品品类与系列名称。网站目前显示店铺暂停经营；课件没有据此推断品牌整体经营状态。
-- [SCABAL 官方历史](https://scabal.com/pages/scabal-heritage)：1938 年创立、面料、Savile Row 与电影服装合作。
+- [Borsalino 官方品牌历史](https://www.borsalino.com/us_en/the-history)：1857 年 Alessandria 起源与制帽历史。
+- [Borsalino 博物馆故事](https://borsalinomuseum.com/en/the-museum/)：Giuseppe Borsalino、Alessandria、广告与电影文化。
+- [Borsalino 制帽工序](https://www.borsalino.com/us_en/heritage)：毡帽制作过程。
+- [ROCK&RIDE 官方关于页](http://www.rockride.cn/about.html)：布鲁克林起源、发展超过 20 年、“自由灵魂装备”与设计工艺。
+- [ROCK&RIDE 官方合作品牌页](http://www.rockride.cn/Co-branding.html)：历史、宗教符号与手工制作线索。
+- [ROCK&RIDE 零售品牌介绍](https://www.parccentral.com.hk/en/shop/439)：文化元素、银饰设计与符号转译。
+- [SCABAL 官方历史](https://scabal.com/pages/scabal-heritage)：1938 年创立、1946 年面料样本册、Dalí、Savile Row、Huddersfield 与面料创新。
+- [SCABAL Savile Row](https://scabal.com/pages/scabal-savile-row)：1972 年进入 12 Savile Row 与定制服务。
+- [SCABAL 官方面料页](https://scabal.com/pages/scabal-fabrics)：Huddersfield 织造厂、5000 多种面料与特殊系列。
+
+## 新增品牌研究页图像
+
+- `assets/borsalino-hat.jpg`：Borsalino 官方产品图，来自图像检索结果，页面内标注品牌来源与历史页入口。
+- `assets/rockride-jewelry.webp`：ROCK&RIDE 银饰参考图，来自图像检索结果，页面内标注品牌参考图与官方关于页入口。
+- `assets/scabal-savile-row.jpg`：SCABAL Savile Row 参考图，来自图像检索结果，页面内标注品牌参考图与官方 Savile Row 页面入口。
 
 ## 五个案例
 
