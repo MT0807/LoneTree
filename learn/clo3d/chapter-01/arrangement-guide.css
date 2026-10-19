@@ -1,0 +1,19 @@
+.arrangement-guide{grid-column:1/-1;display:block;overflow:hidden}
+.arrangement-heading{padding:26px 28px 22px;border-bottom:1px solid #dce5e8}
+.arrangement-kicker{display:block;color:#557b98;font-size:10px;font-weight:750;letter-spacing:.16em}
+.arrangement-heading h3{font-size:clamp(23px,3vw,30px);line-height:1.35;margin:7px 0 10px;color:var(--deep)}
+.arrangement-heading p{font-size:14px;line-height:1.8;margin:0;max-width:760px}
+.arrangement-lessons{display:grid;gap:1px;background:#dce5e8}
+.arrangement-lesson{display:grid;grid-template-columns:minmax(280px,.85fr) minmax(0,1.15fr);gap:24px;align-items:center;padding:25px 28px;background:#fffdfa}
+.arrangement-copy{min-width:0}
+.arrangement-copy h4{color:var(--deep);font-size:20px;line-height:1.45;margin:0 0 13px}
+.arrangement-copy ol{margin:0;padding-left:22px;font-size:13px;line-height:1.8}
+.arrangement-copy li{padding-left:4px;margin:0 0 9px;overflow-wrap:anywhere}
+.arrangement-copy li::marker{color:#557b98;font-weight:700}
+.arrangement-lesson video{display:block;width:100%;height:auto;aspect-ratio:5/3;object-fit:contain;max-height:520px;background:#202123;border-radius:7px}
+.arrangement-menu{display:grid;gap:7px;justify-items:start;width:max-content;max-width:180px;margin:15px 0 0;padding:8px;background:#f0f3f4;border:1px solid #dce5e8;border-radius:8px;text-decoration:none}
+.arrangement-menu img{display:block;width:100%;height:auto;border-radius:4px}
+.arrangement-menu span{font-size:10px;line-height:1.5;color:#607785}
+.arrangement-menu:focus-visible{outline:3px solid #7299b8;outline-offset:3px}
+@media(max-width:800px){.arrangement-lesson{grid-template-columns:1fr}.arrangement-lesson video{max-height:none}}
+@media(max-width:650px){.arrangement-heading{padding:22px 20px}.arrangement-lesson{padding:20px;gap:17px}}

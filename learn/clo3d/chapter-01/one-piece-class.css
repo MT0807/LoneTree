@@ -1,0 +1,48 @@
+.one-piece-class{scroll-margin-top:88px}
+.one-piece-layout{display:grid;grid-template-columns:minmax(0,.84fr) minmax(0,1.16fr);gap:26px;align-items:start;margin-top:26px}
+.one-piece-copy,.one-piece-media,.one-piece-references{min-width:0}
+.one-piece-copy h3,.one-piece-references h3{font-size:clamp(20px,2.6vw,25px);line-height:1.4;margin:0 0 15px;color:var(--deep)}
+.one-piece-copy ol{padding-left:22px;margin:0}
+.one-piece-copy li{padding-left:5px;margin:0 0 13px;line-height:1.85;overflow-wrap:anywhere}
+.one-piece-copy li::marker{color:#50789a;font-weight:700}
+.one-piece-prompt{padding:13px 15px;background:#eaf2f5;border-left:3px solid #7198b3;border-radius:0 7px 7px 0;font-size:13px;line-height:1.85}
+.one-piece-stills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:15px}
+.one-piece-stills figure{margin:0;min-width:0;border:1px solid var(--line);background:#f4f6f6;border-radius:9px;overflow:hidden}
+.one-piece-stills a{display:block}
+.one-piece-stills img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+.one-piece-stills figcaption{padding:8px 10px;font-size:11px;line-height:1.5;color:#577187}
+.one-piece-video-label{display:inline-flex;align-items:center;margin:3px 0 10px;padding:5px 11px;border-radius:999px;background:#e7eff3;color:#365c76;font-size:12px;font-weight:700;letter-spacing:.03em}
+.one-piece-media video{display:block;width:100%;height:auto;border-radius:9px;background:#202123}
+.one-piece-references{margin:27px 0 28px;padding:24px;border:1px solid var(--line);border-radius:11px;background:#f8faf9}
+.one-piece-references p{font-size:13px;line-height:1.85;max-width:780px}
+.one-piece-inspiration{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px;margin:19px 0 5px}
+.one-piece-inspiration figure{display:flex;flex-direction:column;margin:0;min-width:0;border:1px solid #d7e0e3;border-radius:9px;overflow:hidden;background:#fff}
+.one-piece-inspiration .reference-sketch,.one-piece-inspiration .reference-vintage{grid-column:span 7}
+.one-piece-inspiration .reference-instructions,.one-piece-inspiration .reference-worn{grid-column:span 5}
+.one-piece-inspiration a{display:grid;place-items:center;flex:1;min-height:0;padding:14px;background:#f1f2f0}
+.one-piece-inspiration a:hover,.one-piece-inspiration a:focus-visible{background:#e5edf0}
+.one-piece-inspiration img{display:block;width:100%;height:310px;object-fit:contain}
+.one-piece-inspiration .reference-vintage img,.one-piece-inspiration .reference-worn img{height:390px}
+.one-piece-inspiration figcaption{padding:11px 14px;color:#425e70;font-size:12px;line-height:1.6;background:#fff}
+.one-piece-ref-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}
+.one-piece-ref-grid a{display:flex;flex-direction:column;gap:8px;padding:16px;border:1px solid #c8d8e0;border-radius:8px;background:#fff;color:#315b79;text-decoration:none}
+.one-piece-ref-grid a:hover,.one-piece-ref-grid a:focus-visible{background:#edf4f7;border-color:#85a9c0}
+.one-piece-ref-grid strong{font-size:17px}.one-piece-ref-grid span{font-size:12px;line-height:1.7}
+.one-piece-next-steps{display:grid;gap:16px;margin-top:26px}
+.one-piece-step{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);gap:24px;align-items:start;padding:23px;border:1px solid var(--line);border-radius:11px;background:#fffdfa}
+.one-piece-step h3{margin:0 0 13px;color:var(--deep);font-size:clamp(19px,2.5vw,24px);line-height:1.4}
+.one-piece-step ol{margin:0;padding-left:22px}
+.one-piece-step li{padding-left:4px;margin:0 0 12px;line-height:1.85;overflow-wrap:anywhere}
+.one-piece-step li::marker{color:#50789a;font-weight:700}
+.one-piece-step-media{min-width:0}
+.one-piece-step video{display:block;width:100%;height:auto;border-radius:8px;background:#202123}
+.one-piece-speed{display:block;margin-top:8px;font-size:11px;line-height:1.6;color:#607785}
+.one-piece-step-copy>p{font-size:13px;line-height:1.85;margin:0 0 16px}
+.one-piece-menu-shot{display:flex;flex-direction:column;align-items:center;gap:7px;width:max-content;max-width:min(100%,225px);padding:9px;margin:15px 0 11px;background:#f0f3f4;border:1px solid #dce5e8;border-radius:8px;text-decoration:none}
+.one-piece-menu-shot img{display:block;max-width:100%;max-height:135px;object-fit:contain;border-radius:4px}
+.one-piece-menu-shot span{font-size:10px;line-height:1.5;color:#607785;text-align:center}
+.one-piece-official{display:inline-block;margin:4px 0 12px;color:#315b79;font-size:12px;line-height:1.6;text-decoration:none}
+.one-piece-official:hover,.one-piece-official:focus-visible{text-decoration:underline}
+@media(max-width:850px){.one-piece-layout{grid-template-columns:1fr}}
+@media(max-width:850px){.one-piece-step{grid-template-columns:1fr}}
+@media(max-width:600px){.one-piece-stills,.one-piece-ref-grid,.one-piece-inspiration{grid-template-columns:1fr}.one-piece-inspiration .reference-sketch,.one-piece-inspiration .reference-instructions,.one-piece-inspiration .reference-vintage,.one-piece-inspiration .reference-worn{grid-column:1}.one-piece-references{padding:19px}.one-piece-inspiration img,.one-piece-inspiration .reference-vintage img,.one-piece-inspiration .reference-worn img{height:auto;max-height:430px}.one-piece-step{padding:18px}}

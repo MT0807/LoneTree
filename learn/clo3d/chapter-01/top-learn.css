@@ -1,0 +1,4 @@
+.top .top-left{display:flex;align-items:center;gap:22px;min-width:0}
+.top .learn-return{position:static;z-index:auto;min-height:35px;padding:0 11px;border-color:#c8d6df;border-radius:6px;box-shadow:none;font-size:11px;white-space:nowrap}
+.top .learn-return-arrow{font-size:16px}
+@media(max-width:650px){.top .top-left{gap:11px}.top .right{gap:7px}.top .right>span{display:none}.top .learn-return{min-height:32px;padding:0 8px}.learn-return~.layout .hero{padding-bottom:78px}}

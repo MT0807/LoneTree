@@ -1,0 +1,9 @@
+.about-entry{margin:55px 0 25px;padding:30px;border:1px solid var(--line);border-radius:13px;background:#f5f8f9}
+.about-entry h2{margin:10px 0 12px}
+.about-entry p{max-width:600px;line-height:1.8}
+.about-entry-link,.about-back{display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border:1px solid #b9ccd9;border-radius:7px;background:#fff;color:var(--blue);font-size:13px;font-weight:650;text-decoration:none}
+.about-entry-link:hover,.about-back:hover{background:#e9f1f5}
+.about-page .about-main{max-width:1050px;margin:0 auto;padding:30px 32px 70px}
+.about-page .detailed-guide{margin-top:24px}
+.about-page .about-back-bottom{margin-top:35px}
+@media(max-width:650px){.about-entry{padding:23px}.about-page .about-main{padding:22px 20px 55px}}

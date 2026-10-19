@@ -1,0 +1,8 @@
+.symmetry-guide .sewing-guide-heading{grid-template-columns:1fr}
+.symmetry-guide .sewing-guide-heading p{max-width:830px}
+.symmetry-steps{margin:0;padding-left:21px;color:#435864;font-size:13px;line-height:1.85}
+.symmetry-steps li{padding-left:4px;margin:0 0 9px;overflow-wrap:anywhere}
+.symmetry-steps li::marker{color:#557b98;font-weight:700}
+.symmetry-guide .sewing-wide{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+.symmetry-note{margin:12px 0 0!important;padding:12px 14px;background:#e8f0f3;border-left:3px solid #789bb6;border-radius:0 6px 6px 0;color:#38566a}
+@media(max-width:760px){.symmetry-guide .sewing-wide{grid-template-columns:1fr}}
