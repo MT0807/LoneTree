@@ -68,6 +68,7 @@
     });
     try { localStorage.setItem('clo-lang',code); } catch (_) {}
     closeMenu();
+    document.dispatchEvent(new CustomEvent('clo:languagechange',{detail:{language:code}}));
   }
   window.setLang = setLang;
   trigger.addEventListener('click',() => {
