@@ -1,0 +1,7 @@
+.curve-tools-intro{grid-column:1/-1;background:#edf3f5;border-left:3px solid #789bb6;padding:18px 21px;margin:5px 0 3px;line-height:1.8;overflow-wrap:break-word}
+.curve-tools-intro strong{display:block;color:var(--deep);font-size:17px;margin-bottom:4px}
+.curve-tools-intro p{font-size:14px;color:#435864;margin:0}
+.curve-tool-media .tool-menu-shot{display:block;width:100%;max-width:160px;overflow:hidden;border:1px solid #42474d;border-radius:7px;background:#202123}
+.curve-tool-media .tool-menu-shot:focus-visible{outline:3px solid #7299b8;outline-offset:3px}
+.curve-tool-media .tool-menu-shot img{display:block;width:100%;height:auto;object-fit:contain}
+.curve-tool .tool-steps{margin-top:0}

@@ -1,0 +1,21 @@
+.simulation-guide{grid-column:1/-1;display:block;overflow:hidden}
+.simulation-heading{display:grid;grid-template-columns:minmax(0,1fr) 92px;align-items:start;gap:24px;padding:27px 28px 23px}
+.simulation-kicker{display:block;color:#557b98;font-size:10px;font-weight:750;letter-spacing:.16em}
+.simulation-heading h3{font-size:clamp(23px,3vw,30px);line-height:1.35;margin:7px 0 11px;color:var(--deep)}
+.simulation-heading p{font-size:14px;line-height:1.8;margin:0;max-width:770px}
+.simulation-icon{margin:0;padding:10px;background:#f0f3f4;border:1px solid #dce5e8;border-radius:9px;text-align:center}
+.simulation-icon img{display:block;width:52px;height:52px;object-fit:contain;margin:auto}
+.simulation-icon figcaption{font-size:10px;line-height:1.5;color:#607785;margin-top:7px}
+.simulation-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:#dce5e8}
+.simulation-step{min-width:0;padding:22px 25px;background:#fffdfa}
+.simulation-step h4{font-size:19px;line-height:1.45;color:var(--deep);margin:0 0 10px}
+.simulation-step p,.simulation-step ol{font-size:13px;line-height:1.8;margin:0}
+.simulation-step ol{padding-left:21px}
+.simulation-step li{padding-left:4px;margin-bottom:7px;overflow-wrap:anywhere}
+.simulation-step li::marker{color:#557b98;font-weight:700}
+.simulation-step video{display:block;width:100%;height:auto;border-radius:7px;margin-top:17px;background:#202123}
+.simulation-wide{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:24px;align-items:center}
+.simulation-wide video{margin:0}
+.simulation-portrait video{width:auto;max-width:100%;max-height:460px;margin:17px auto 0}
+@media(max-width:800px){.simulation-wide{grid-template-columns:1fr}.simulation-wide video{margin-top:15px}}
+@media(max-width:650px){.simulation-heading{grid-template-columns:minmax(0,1fr) 72px;padding:22px 20px;gap:12px}.simulation-icon img{width:42px;height:42px}.simulation-grid{grid-template-columns:1fr}.simulation-step,.simulation-wide{grid-column:1;padding:20px}.simulation-portrait video{max-height:none}}

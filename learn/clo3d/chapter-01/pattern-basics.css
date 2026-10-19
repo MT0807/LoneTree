@@ -1,0 +1,22 @@
+.pattern-basics{margin:38px 0 52px;padding-top:35px;border-top:1px solid var(--line);scroll-margin-top:85px}
+.pattern-basics-heading h3,.pattern-rectangle-heading h3{font-size:clamp(23px,2.9vw,32px);line-height:1.35;letter-spacing:-.03em;color:var(--deep);margin:10px 0}
+.pattern-basics-heading p,.pattern-rectangle-heading p{font-size:14px;line-height:1.85;color:#52636b;margin:0}
+.pattern-menu-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:24px 0 32px}
+.pattern-menu-cards figure{min-width:0;margin:0;background:#fffdfa;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.pattern-menu-cards a{display:flex;align-items:center;justify-content:center;min-height:300px;padding:18px;background:#202123}
+.pattern-menu-cards a:focus-visible{outline:3px solid #7299b8;outline-offset:-3px}
+.pattern-menu-cards img{display:block;max-width:100%;height:auto;max-height:280px;object-fit:contain}
+.pattern-menu-cards figure:first-child img{width:150px;image-rendering:auto}
+.pattern-menu-cards figcaption{display:grid;gap:8px;padding:17px 19px 19px;font-size:13px;line-height:1.85;color:#52636b;overflow-wrap:break-word}
+.pattern-menu-cards figcaption strong{font-size:16px;line-height:1.5;color:var(--deep)}
+.pattern-rectangle-demo{background:#fffdfa;border:1px solid var(--line);border-radius:12px;padding:27px}
+.pattern-rectangle-steps{display:grid;gap:10px;margin:22px 0 26px;padding-left:26px;max-width:780px;font-size:14px;line-height:1.85;color:#435864}
+.pattern-rectangle-steps li{padding-left:4px;overflow-wrap:break-word}
+.pattern-rectangle-steps li::marker{font-weight:700;color:var(--blue)}
+.pattern-rectangle-video{margin:0;max-width:950px}
+.pattern-rectangle-video video{display:block;width:100%;height:auto;aspect-ratio:auto;border-radius:8px;box-shadow:0 2px 12px #182c3d1c}
+.pattern-rectangle-video figcaption{font-size:12px;line-height:1.7;color:#74838c;margin-top:9px}
+.pattern-observation{max-width:900px;background:#edf3f5;border-left:3px solid #789bb6;margin-top:24px;padding:17px 20px}
+.pattern-observation strong{display:block;font-size:14px;color:var(--deep);line-height:1.6;margin-bottom:5px}
+.pattern-observation p{font-size:14px;line-height:1.85;color:#435864;margin:0;overflow-wrap:break-word}
+@media(max-width:700px){.pattern-menu-cards{grid-template-columns:1fr}.pattern-menu-cards a{min-height:210px}.pattern-rectangle-demo{padding:18px}.pattern-rectangle-steps{padding-left:22px}}

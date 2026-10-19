@@ -1,0 +1,10 @@
+.avatar-pen-guide{grid-column:1/-1}
+.avatar-pen-guide .sewing-guide-heading{display:block}
+.avatar-pen-guide .sewing-wide>div{min-width:0}
+.avatar-pen-guide .sewing-wide .sewing-tool-shot{width:max-content;max-width:min(100%,190px);margin-top:16px}
+.avatar-pen-guide .sewing-wide .sewing-tool-shot img{max-height:80px}
+.avatar-pen-guide .sewing-wide video{aspect-ratio:16/9;object-fit:contain}
+.avatar-pen-guide .avatar-pen-edit video{width:min(100%,390px);max-height:620px;aspect-ratio:auto;justify-self:center}
+.avatar-pen-guide .avatar-pen-edit .sewing-tool-shot{padding:8px}
+.avatar-pen-guide .avatar-pen-edit .sewing-tool-shot img{width:42px;height:42px;object-fit:contain}
+@media(max-width:760px){.avatar-pen-guide .sewing-wide video{aspect-ratio:auto}}

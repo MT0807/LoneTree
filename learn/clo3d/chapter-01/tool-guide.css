@@ -1,0 +1,18 @@
+.tool-real{display:flex;flex-direction:column;border-color:#d4dfe4;background:#fffdfa}
+.tool-photo{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:19px;background:#202123;min-height:150px;padding:20px 18px;text-decoration:none}
+.capture-label{align-self:flex-start;color:#bbc5cc;font-size:10px;letter-spacing:.1em}
+.tool-photo img{display:block;width:min(100%,308px);height:auto;max-height:none;object-fit:contain}
+.capture-open{align-self:flex-end;color:#c6d8e5;font-size:11px}
+.tool-photo:hover{background:#292c30}.tool-photo:focus-visible{outline:3px solid #7299b8;outline-offset:-4px}
+.tool-real .tool-content{display:flex;flex:1;flex-direction:column;padding:24px}
+.tool-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+.tool-real .tool-heading h3{font-size:22px;line-height:1.4;margin:0;overflow-wrap:anywhere}
+.tool-heading kbd{flex-shrink:0;background:#edf2f5;border:1px solid #c6d2da;border-bottom-width:3px;border-radius:6px;min-width:31px;text-align:center;font:14px/28px ui-monospace,monospace;color:#294a65}
+.tool-real .tool-alias{font-size:12px;color:#6d838e;margin:4px 0 15px}
+.tool-real .tool-location{font-size:11px;line-height:1.8;color:#517088;border-bottom:1px solid #e4e9e9;padding-bottom:14px;margin-bottom:17px}
+.tool-real .tool-purpose{font-size:14px;line-height:1.8;color:#334d5b;margin-bottom:14px}
+.tool-steps{margin:0 0 16px;padding-left:23px;color:#455d69;font-size:13px;line-height:1.9}
+.tool-steps li{padding:3px 0 3px 3px}.tool-steps li::marker{color:#557b98;font-weight:700}
+.tool-real .tool-tip{font-size:12px;line-height:1.8;background:#f0f4f5;border-left:2px solid #90aebb;padding:11px 13px;margin:0 0 18px}
+.tool-real .tool-reference{margin-top:auto;font-size:12px}
+@media(max-width:500px){.tool-real .tool-content{padding:20px}.tool-real .tool-heading h3{font-size:21px}.tool-photo img{width:min(100%,286px)}}
