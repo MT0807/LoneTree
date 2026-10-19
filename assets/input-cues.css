@@ -1,0 +1,17 @@
+/* Shared instructional emphasis; inherit size so compact labels stay compact. */
+html body .input-cue,
+html body kbd,
+html body .tool-heading kbd,
+html body .gizmo-key-list kbd,
+html body .navigation-keys,
+html body .tool-shortcut {
+  color: #b94b00;
+  font-weight: 700;
+  text-decoration-line: underline;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .18em;
+}
+html body .navigation-keys *,
+html body .tool-shortcut * { color: inherit; font-weight: inherit; }
+html body .input-cue { font-size: inherit; display: inline; }
