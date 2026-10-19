@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100d17">
+  <meta name="description" content="Brand Story：从品牌研究到视觉叙事的横版互动课件。">
+  <title>Brand Story / 品牌如何成为故事</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="slides.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="back" href="../" aria-label="返回 Learn 书架">← <span>返回书架</span></a>
+    <div class="brandmark"><span class="brandmark-orb"></span><span>LONETREE / LEARN</span></div>
+    <button class="contents-button" id="contentsButton" type="button" aria-expanded="false" aria-controls="contents">目录 <span aria-hidden="true">☷</span></button>
+  </header>
+
+  <main class="deck-shell" aria-label="Brand Story 横向课件">
+    <div class="deck-heading"><span id="chapterName">INTRODUCTION</span><span>FC&I BB3 / SEMESTER PROJECT</span></div>
+    <div class="carousel" id="carousel" tabindex="0" aria-label="左右滑动切换课件，或使用键盘方向键"></div>
+    <nav class="deck-nav" aria-label="课件翻页">
+      <button id="prevButton" class="nav-button" type="button" aria-label="上一页">←</button>
+      <div class="progress-wrap"><span id="pageNumber">01 / 22</span><div class="progress-track"><div id="progressBar"></div></div><span class="nav-hint">拖动 / 左右滑动 / ← →</span></div>
+      <button id="nextButton" class="nav-button" type="button" aria-label="下一页">→</button>
+    </nav>
+  </main>
+
+  <aside class="contents" id="contents" aria-hidden="true" aria-label="课件目录">
+    <div class="contents-inner"><div class="contents-head"><p>TABLE OF CONTENTS</p><button id="closeContents" type="button" aria-label="关闭目录">×</button></div><h2>从品牌到画面。</h2><div id="contentsList"></div></div>
+  </aside>
+</body>
+</html>
