@@ -20,3 +20,8 @@
 .slide[data-index="1"] .tile b{margin-bottom:6px}
 .slide[data-index="1"] .lead{margin-bottom:0}
 @media(max-width:550px){.slide[data-index="1"] .tile-grid{gap:8px;margin-top:12px}.slide[data-index="1"] .tile{padding:10px}.slide[data-index="1"] .tile b{margin-bottom:3px}.slide[data-index="1"] .tile small{margin-top:5px}}
+
+/* Four-label slides follow the reference composition: strict 2 × 2 cards. */
+.tile-grid.four-tiles{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+.source-links{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:13px;}
+.source-links .source-link{margin-top:0;}
