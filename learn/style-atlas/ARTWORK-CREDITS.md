@@ -133,3 +133,22 @@
 | poetic_realism | Grand Illusion — publicity still | Jean Renoir（导演）；宣传照片摄影者未署名 | 1937 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Grand-Illusion-1937.jpg) · Public domain |
 | surrealist_photography | Pendant l’éclipse | Eugène Atget | 1912 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Eug%C3%A8ne_Atget,_Eclipse,_1912.jpg) · Public domain |
 | abstract_photography | Abstraction, Twin Lakes, Connecticut | Paul Strand | 1916 | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Paul_Strand._Abstraction,_Twin_Lakes,_Connecticut._1916.jpg) · Public domain |
+
+## 视觉关键词画廊新增图片（2026-10-23）
+
+关键词卡片使用图鉴已有的真实作品图像作为视觉参考；下列为本次额外加入的原始作品/物件图像。创作者观察卡片中的画廊并非被观察创作者本人的作品。卡片封面为适应 3:4 版式作自动裁切，详情页展示完整图像。
+
+| 本地文件 | 作品、作者与出处 | 使用条件 |
+| --- | --- | --- |
+| `keyword_embroidery_spot.jpg` | [Embroidered spot sampler, British, 17th c., The Met](https://www.metmuseum.org/art/collection/search/228218) | Open Access / CC0 |
+| `keyword_embroidery_german.jpg` | [Embroidered sampler, German, 1691, The Met](https://www.metmuseum.org/art/collection/search/227937) | Open Access / CC0 |
+| `keyword_doll_photo.jpg` | [Lewis Carroll, The Prettiest Doll in the World, The Met](https://www.metmuseum.org/art/collection/search/286007) | Open Access / CC0 |
+| `keyword_food_drawing.jpg` | [Jan van Huysum, Still Life with Fruit, The Met](https://www.metmuseum.org/art/collection/search/335601) | Open Access / CC0 |
+| `keyword_food_still_life.jpg` | [Willem Kalf, Still Life with Fruit, Glassware, and a Wanli Bowl, The Met](https://www.metmuseum.org/art/collection/search/436805) | Open Access / CC0 |
+| `keyword_silver_vessel.jpg` | [Silver cosmetic vessel, East Greek, The Met](https://www.metmuseum.org/art/collection/search/256858) | Open Access / CC0 |
+| `keyword_doll.jpg` | [Doll, ca. 1830, The Met](https://www.metmuseum.org/art/collection/search/17673) | Open Access / CC0 |
+| `keyword_teddy_bears.jpg` | [Cooper David / U.S. Fish and Wildlife Service, Teddy bear toys collection](https://commons.wikimedia.org/wiki/File:Teddy_bear_toys_collection.jpg) | Public domain |
+| `keyword_risograph_print.jpg` | [Mario Felipe, Impressão em risografia em duas cores](https://commons.wikimedia.org/wiki/File:Impress%C3%A3o_em_risografia_em_dua_cores,_2014.jpg) | CC BY 2.0 |
+| `keyword_riso_posters.jpg` | [Alequihdez, Carteles en riso](https://commons.wikimedia.org/wiki/File:Carteles_en_riso.jpg) | CC BY-SA 4.0 |
+| `keyword_gradient.jpg` | [Vidsplay, Gradient Abstract Background](https://commons.wikimedia.org/wiki/File:Gradient_Abstract_Background.jpg) | CC0 |
+| `keyword_liquid_metal.jpg` | [Fractal Caleidoscope, Alien fluid metal texture](https://commons.wikimedia.org/wiki/File:Alien_fluid_metal_texture.jpg) | CC BY-SA 4.0 |
