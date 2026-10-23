@@ -565,5 +565,665 @@ window.ATLAS_ARTWORKS = {
     "rights": "Public domain",
     "note": "NASA Ames 太空居住地研究的概念画，是 1970 年代人们想象未来生活的真实历史图像。",
     "institution": "Wikimedia Commons"
+  },
+  "pop_art": {
+    "file": "artworks/pop_art.jpg",
+    "title": "Andy Warhol at the Jewish Museum",
+    "artist": "摄影 Bernard Gotfryd",
+    "date": "1980",
+    "url": "https://commons.wikimedia.org/wiki/File:Andy_Warhol_at_the_Jewish_Museum_(LOC).jpg",
+    "institution": "美国国会图书馆 / Wikimedia Commons",
+    "rights": "Public domain / no known restrictions",
+    "note": "这是安迪·沃霍尔在纽约犹太博物馆的 1980 年现场肖像，不是 1955—1975 年间的波普艺术作品；用于连接艺术家、展览与运动传播的历史语境。"
+  },
+  "conceptual_art": {
+    "file": "artworks/conceptual_art.jpg",
+    "title": "One and Three Chairs",
+    "artist": "Joseph Kosuth；摄影 Gautier Poupeau",
+    "date": "1965 年作品；2010 年摄影",
+    "url": "https://commons.wikimedia.org/wiki/File:One_and_Three_Chair.jpg",
+    "institution": "MoMA 作品陈列 / Wikimedia Commons",
+    "rights": "照片 CC BY 2.0",
+    "note": "这是《一把和三把椅子》的后期陈列摄影，用于观察实物、再现与词典定义的并置。CC BY 许可仅适用于摄影；原作仍可能受版权保护。"
+  },
+  "arte_povera": {
+    "file": "artworks/arte_povera.jpg",
+    "title": "Torsion",
+    "artist": "Giovanni Anselmo；摄影 Pedro Ribeiro Simões",
+    "date": "1968 年作品；2015 年摄影",
+    "url": "https://commons.wikimedia.org/wiki/File:Torsion_(1968)_-_Giovanni_Anselmo_(1934)_(45445261121).jpg",
+    "institution": "Berardo Collection / Wikimedia Commons",
+    "rights": "照片 CC BY 2.0",
+    "note": "这是《Torsion》的后期现场实物摄影，展示铁与法兰绒的材料关系。摄影许可不等于原作版权豁免。"
+  },
+  "neo_expressionism": {
+    "file": "artworks/neo_expressionism.jpg",
+    "title": "Das Museum (The Museum)",
+    "artist": "Anselm Kiefer；摄影 GualdimG",
+    "date": "1984—1992 年作品；2025 年摄影",
+    "url": "https://commons.wikimedia.org/wiki/File:Anselm_Kiefer,_Das_Museum_(The_Museum),_1984-92,_SFMOMA_05.jpg",
+    "institution": "SFMOMA 展览现场 / Wikimedia Commons",
+    "rights": "照片 CC BY-SA 4.0",
+    "note": "这是 SFMOMA 展览现场摄影，适合观察大幅画面的材料肌理与尺度。摄影许可不自动覆盖基弗原作。"
+  },
+  "new_topographics": {
+    "file": "artworks/new_topographics.jpg",
+    "title": "George Eastman House exterior",
+    "artist": "摄影 Dmadeo",
+    "date": "2007",
+    "url": "https://commons.wikimedia.org/wiki/File:George-Eastman-House%3DExterior.JPG",
+    "institution": "Wikimedia Commons",
+    "rights": "CC BY-SA 4.0",
+    "note": "这是 1975 年《New Topographics》展览举办地乔治·伊士曼故居的后期照片，不是原展作品；作为理解展览史的语境图使用。"
+  },
+  "dansekhwa": {
+    "file": "artworks/dansekhwa.jpg",
+    "title": "Park Seo-Bo working at his studio",
+    "artist": "摄影 선의의 바람",
+    "date": "2019",
+    "url": "https://commons.wikimedia.org/wiki/File:Park_Seo-Bo_working_at_his_studio_2019.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "CC BY-SA 4.0",
+    "note": "这是朴栖甫在首尔工作室的创作现场照片，呈现单色画中反复劳动与材料过程的当代语境，并非馆藏原作图。"
+  },
+  "aboriginal_dot": {
+    "file": "artworks/aboriginal_dot.jpg",
+    "title": "Doreen Reid Nakamarra paintings in documenta 13",
+    "artist": "Doreen Reid Nakamarra 等；摄影 David Gómez Fontanills",
+    "date": "2012",
+    "url": "https://commons.wikimedia.org/wiki/File:Doreen_Reid_Nakamarra_paintings_in_documenta_13.JPG",
+    "institution": "dOCUMENTA 13 展场 / Wikimedia Commons",
+    "rights": "照片 CC BY-SA 3.0",
+    "note": "这是 dOCUMENTA 13 的展览现场照片，涉及 Papunya Tula 艺术家作品。点描与符号不应脱离具体社群、土地知识、授权和文化语境而被当作通用装饰。"
+  },
+  "straight_photography": {
+    "file": "artworks/straight_photography.jpg",
+    "title": "Wall Street, New York",
+    "artist": "Paul Strand",
+    "date": "1915",
+    "url": "https://commons.wikimedia.org/wiki/File:Wall_Street_by_Paul_Strand,_1915.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "1915 年的代表性直接摄影作品，以建筑、通勤者与长影呈现城市经验中的清晰细节和形式结构。"
+  },
+  "documentary_photography": {
+    "file": "artworks/documentary_photography.jpg",
+    "title": "Destitute pea pickers in California (Migrant Mother)",
+    "artist": "Dorothea Lange",
+    "date": "1936",
+    "url": "https://commons.wikimedia.org/wiki/File:Lange-MigrantMother02.jpg",
+    "institution": "Farm Security Administration / Library of Congress",
+    "rights": "Public domain",
+    "note": "兰格在加州尼波莫豌豆采摘者营地拍摄的历史照片。阅读时也应讨论委托、标题、传播和被摄者能动性，而非将它视为纯客观事实。"
+  },
+  "new_color_photography": {
+    "file": "artworks/new_color_photography.jpg",
+    "title": "Photo Print Envelope, USA, mid 1970s",
+    "artist": "作者未详；扫描 Infrogmation",
+    "date": "约 1975—1976",
+    "url": "https://commons.wikimedia.org/wiki/File:Your_Color_Prints_-_Photo_Print_Envelope,_USA,_mid_1970s_-_Back.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain (US)",
+    "note": "这不是埃格尔斯顿等人的艺术作品，而是 1970 年代美国彩色冲印流程的历史语境物件，可用来讨论彩色摄影从大众文化进入美术馆的转向。"
+  },
+  "dusseldorf_school": {
+    "file": "artworks/dusseldorf_school.jpg",
+    "title": "Hilla Becher at Sonnabend Gallery",
+    "artist": "摄影 Lithoderm (Petropoxy)",
+    "date": "2010",
+    "url": "https://commons.wikimedia.org/wiki/File:Hilla_Becher.jpg",
+    "institution": "Sonnabend Gallery / Wikimedia Commons",
+    "rights": "CC BY-SA 4.0",
+    "note": "这是 Hilla Becher 在纽约 Sonnabend Gallery 讨论其与 Bernd Becher 摄影作品的创作者肖像兼现场照片，不是贝歇尔夫妇的作品本身；公开使用还应评估可辨识人物的肖像权。"
+  },
+  "soviet_montage": {
+    "file": "artworks/soviet_montage.jpg",
+    "title": "Battleship Potemkin still",
+    "artist": "Sergei Eisenstein",
+    "date": "1925",
+    "url": "https://commons.wikimedia.org/wiki/File:Eisenstein_Potemkin_2.jpg",
+    "institution": "MoMA source / Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "《战舰波将金号》的历史剧照，适合课堂分析镜头、表演和剪辑的关系；仍应按使用地法律核验公共领域状态。"
+  },
+  "german_expressionist_cinema": {
+    "file": "artworks/german_expressionist_cinema.jpg",
+    "title": "Das Cabinet des Dr. Caligari film poster",
+    "artist": "Rudolf Ledl、Fritz Bernhard（Atelier Ledl Bernhard）",
+    "date": "1920",
+    "url": "https://commons.wikimedia.org/wiki/File:Das_Cabinet_des_Dr._Caligari.JPG",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "1920 年电影海报，可直接观察尖锐构图、字形和表现主义视觉语汇；它不是电影剧照。"
+  },
+  "film_noir": {
+    "file": "artworks/film_noir.jpg",
+    "title": "Ann Savage and Tom Neal in Detour",
+    "artist": "制片公司宣传剧照；作者未署名",
+    "date": "1945",
+    "url": "https://commons.wikimedia.org/wiki/File:Ann_Savage_and_Tom_Neal_in_Detour.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain (US, not renewed)",
+    "note": "电影《Detour》的真实宣传剧照，适合观察黑色电影人物关系与高反差光影的类型语汇。"
+  },
+  "italian_neorealism": {
+    "file": "artworks/italian_neorealism.jpg",
+    "title": "Bicycle Thieves rain scene",
+    "artist": "Vittorio De Sica",
+    "date": "1948",
+    "url": "https://commons.wikimedia.org/wiki/File:Bicycle-thieves-rain.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "《偷自行车的人》的真实电影画格，适合讨论战后意大利新现实主义中的街道、普通人物与社会环境。"
+  },
+  "french_new_wave": {
+    "file": "artworks/french_new_wave.jpg",
+    "title": "French New Wave actors and directors, Cannes",
+    "artist": "摄影者未详；Touring Club Italiano 档案",
+    "date": "1959",
+    "url": "https://commons.wikimedia.org/wiki/File:Photo_A_portrait_of_a_group_of_French_actors_and_directors_from_the_Nouvelle_Vague_(French_New_Wave)_1959_-_Touring_Club_Italiano_04_1126.jpg",
+    "institution": "Archivio Storico del Touring Club Italiano / Wikimedia Commons",
+    "rights": "CC BY-SA 4.0",
+    "note": "1959 年戛纳的新浪潮演员与导演群像，并非电影剧照；适合说明创作者群体与时代现场。"
+  },
+  "plakatstil": {
+    "file": "artworks/plakatstil.jpg",
+    "title": "Achte Kriegs-Anleihe",
+    "artist": "Lucian Bernhard",
+    "date": "1918",
+    "url": "https://commons.wikimedia.org/wiki/File:Achte_Kriegs-Anleihe-_je_gewaltiger_das_Ergebnis,_desto_fr%C3%BCher_ein_guter_Frieden!_-_Bernhard._LCCN2004665813.tif",
+    "institution": "Library of Congress / Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "伯恩哈德的德国战争债券历史海报，展示简化形体、色块、字标与快速识别策略；不是严格以消费商品为中心的 Sachplakat。"
+  },
+  "futurist_typography": {
+    "file": "artworks/futurist_typography.jpg",
+    "title": "ZANG TUMB TUUUM",
+    "artist": "Filippo Tommaso Marinetti",
+    "date": "1915",
+    "url": "https://commons.wikimedia.org/wiki/File:Filippo_Tommaso_Marinetti_-_ZANG_TUMB_TUUUM_1915.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "1915 年文字拼贴/纸上作品，可观察未来主义将拟声、字级与空间关系转化为动态视觉。"
+  },
+  "russian_constructivist_graphics": {
+    "file": "artworks/russian_constructivist_graphics.png",
+    "title": "Beat the Whites with the Red Wedge",
+    "artist": "El Lissitzky",
+    "date": "1919",
+    "url": "https://commons.wikimedia.org/wiki/File:Beat_the_Whites_with_the_Red_Wedge.png",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "构成主义政治海报原作图像，展示几何、对角线和高对比色的公共传播策略。"
+  },
+  "de_stijl_graphics": {
+    "file": "artworks/de_stijl_graphics.jpg",
+    "title": "De Stijl, vol. 4 no. 3 cover",
+    "artist": "Theo van Doesburg",
+    "date": "1921",
+    "url": "https://commons.wikimedia.org/wiki/File:Stijl_vol_04_nr_03_front_cover.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "历史刊物的真实封面档案，呈现风格派的几何版面、色块与文字组织。"
+  },
+  "bauhaus_typography": {
+    "file": "artworks/bauhaus_typography.jpg",
+    "title": "Bauhausbücher 8: Malerei, Fotografie, Film",
+    "artist": "László Moholy-Nagy",
+    "date": "1927",
+    "url": "https://commons.wikimedia.org/wiki/File:Bauhausb%C3%BCcher_8,_Malerei,_Fotografie,_Film.jpg",
+    "institution": "MoMA source / Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "包豪斯书籍的历史印刷品封面，适合观察几何构成、字形、色块与书籍信息层级。"
+  },
+  "corporate_identity": {
+    "file": "artworks/corporate_identity.png",
+    "title": "IBM 8-bar wordmark",
+    "artist": "Paul Rand",
+    "date": "1972",
+    "url": "https://commons.wikimedia.org/wiki/File:IBM_logo.svg",
+    "institution": "IBM Design Language / Wikimedia Commons",
+    "rights": "Public domain; IBM trademark notice applies",
+    "note": "企业识别系统中的真实标志作品，展示 1972 年八道横线字标的模块化结构；仍可能受商标法限制。"
+  },
+  "phototypesetting": {
+    "file": "artworks/phototypesetting.jpg",
+    "title": "Britannic Condensed phototypesetting specimen",
+    "artist": "tarrytown",
+    "date": "2008",
+    "url": "https://commons.wikimedia.org/wiki/File:Britannic_Condensed.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "CC BY 2.0",
+    "note": "照相排版字体样张的后期数码照片，是技术语境物件而非原始印刷品。"
+  },
+  "punk_zine": {
+    "file": "artworks/punk_zine.jpg",
+    "title": "A Selection of UK Punk Fanzines",
+    "artist": "Dgnews",
+    "date": "2012",
+    "url": "https://commons.wikimedia.org/wiki/File:A_Selection_of_UK_Punk_Fanzines.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "CC0 1.0",
+    "note": "英国朋克 fanzine 选集语境照片，照片可用性不改变画面中各出版物封面可能存在的独立版权。"
+  },
+  "deconstructive_typography": {
+    "file": "artworks/deconstructive_typography.jpg",
+    "title": "Does It Make Sense? (Design Quarterly No. 133)",
+    "artist": "April Greiman; photo MadeInSpace.la",
+    "date": "1986 original; 2020 photo",
+    "url": "https://commons.wikimedia.org/wiki/File:Design_Quarterly_133_-_Does_It_Make_Sense.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "CC BY-SA 4.0 (photo file)",
+    "note": "1986 年原作的后期现场照片，展示数字拼贴与解构排版语境；照片许可不代表原作整体版权状态。"
+  },
+  "desktop_publishing": {
+    "file": "artworks/desktop_publishing.jpg",
+    "title": "Apple LaserWriter II",
+    "artist": "All About Apple Museum; upload Hellisp",
+    "date": "c. 2001 photo",
+    "url": "https://commons.wikimedia.org/wiki/File:Apple_Laserwriter_II.jpg",
+    "institution": "All About Apple Museum / Wikimedia Commons",
+    "rights": "CC BY-SA 2.5 IT",
+    "note": "桌面出版生态中的历史语境设备照片；LaserWriter 与 PageMaker、PostScript 共同改变了小型出版工作流。"
+  },
+  "web1_design": {
+    "file": "artworks/web1_design.png",
+    "title": "NCSA Mosaic Browser Screenshot",
+    "artist": "Charles Severance",
+    "date": "2013",
+    "url": "https://commons.wikimedia.org/wiki/File:NCSA_Mosaic_Browser_Screenshot.png",
+    "institution": "Wikimedia Commons",
+    "rights": "CC0 1.0",
+    "note": "早期浏览器界面的历史语境截图，并非 1990 年代原始网页作品；用于说明当时的观看与排版环境。"
+  },
+  "y2k_graphics": {
+    "file": "artworks/y2k_graphics.jpg",
+    "title": "Y2K",
+    "artist": "Franklin R. García",
+    "date": "2020",
+    "url": "https://commons.wikimedia.org/wiki/File:Y2K.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "CC BY-SA 4.0",
+    "note": "后见性的 Y2K 描述性平面图像，不是 1990 年代末历史原件；用于展示关联视觉特征。"
+  },
+  "flat_design": {
+    "file": "artworks/flat_design.png",
+    "title": "Metro UI (Figma recreation)",
+    "artist": "Hstoops",
+    "date": "2023",
+    "url": "https://commons.wikimedia.org/wiki/File:Metro_UI.png",
+    "institution": "Wikimedia Commons",
+    "rights": "CC BY-SA 4.0",
+    "note": "Metro 窗口的 Figma 重建图，并非微软原始产品截图；作为扁平化/Metro 视觉语境的当代示例。"
+  },
+  "information_design": {
+    "file": "artworks/information_design.png",
+    "title": "Figurative Map of the French Army losses in Russia",
+    "artist": "Charles Joseph Minard",
+    "date": "1869",
+    "url": "https://commons.wikimedia.org/wiki/File:Minard.png",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "历史档案中的信息图与专题地图，以流线宽度、路线、地点和温度共同编码拿破仑俄国战役。"
+  },
+  "scandinavian_interior": {
+    "file": "artworks/scandinavian_interior.jpg",
+    "title": "Interior of Aalto Muuratsalo Experimental House",
+    "artist": "Trogain",
+    "date": "2020 photo; 1950s house",
+    "url": "https://commons.wikimedia.org/wiki/File:Interior_of_Aalto_Muuratsalo_experimental_house_03.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "CC BY-SA 4.0",
+    "note": "阿尔瓦·阿尔托穆拉萨洛实验住宅的当代室内实景照片，不是历史档案；展示木材、光线与住宅尺度。"
+  },
+  "midcentury_interior": {
+    "file": "artworks/midcentury_interior.jpg",
+    "title": "Eames Lounge Chair 670",
+    "artist": "Charles Eames; photo Sailko",
+    "date": "1956 design; 2009 photo",
+    "url": "https://commons.wikimedia.org/wiki/File:Ngv_design,_charles_eames_and_herman_miller,_lounge_chair_670,_1956.JPG",
+    "institution": "National Gallery of Victoria / Wikimedia Commons",
+    "rights": "CC BY-SA 3.0",
+    "note": "馆藏设计物的后期展陈照片，不是住宅室内原始档案；作为中世纪现代家具与材料语言的语境物件。"
+  },
+  "high_tech_architecture": {
+    "file": "artworks/high_tech_architecture.jpg",
+    "title": "HSBC Main Building, Hong Kong",
+    "artist": "WiNG",
+    "date": "2008 photo; 1985 building",
+    "url": "https://commons.wikimedia.org/wiki/File:HK_HSBC_Main_Building_2008.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "CC BY 3.0",
+    "note": "诺曼·福斯特事务所设计的香港汇丰总行大厦后期实景照片，可观察外露结构与模块化立面。"
+  },
+  "daguerreotype": {
+    "file": "artworks/daguerreotype.jpg",
+    "title": "The Artist's Studio",
+    "artist": "Louis Daguerre",
+    "date": "1837",
+    "url": "https://commons.wikimedia.org/wiki/File:Daguerreotype_Daguerre_Atelier_1837.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "早期银版照片实物；不是对该工艺全部面貌的概括。"
+  },
+  "calotype": {
+    "file": "artworks/calotype.jpg",
+    "title": "Melrose Abbey",
+    "artist": "William Henry Fox Talbot",
+    "date": "1844",
+    "url": "https://commons.wikimedia.org/wiki/File:William_Henry_Fox_Talbot_(British_-_Melrose_Abbey._-_Google_Art_Project.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "纸基负片／正片工艺的实例。"
+  },
+  "cyanotype": {
+    "file": "artworks/cyanotype.jpg",
+    "title": "Algae from Photographs of British Algae",
+    "artist": "Anna Atkins",
+    "date": "1843",
+    "url": "https://commons.wikimedia.org/wiki/File:Anna_Atkins_algae_cyanotype.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "植物直接接触印相，为蓝晒工艺实例。"
+  },
+  "albumen_print": {
+    "file": "artworks/albumen_print.jpg",
+    "title": "The Echo",
+    "artist": "Julia Margaret Cameron",
+    "date": "1868",
+    "url": "https://commons.wikimedia.org/wiki/File:The_Echo,_by_Julia_Margaret_Cameron.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "蛋白相纸肖像实例。"
+  },
+  "stereoscopy": {
+    "file": "artworks/stereoscopy.jpg",
+    "title": "An Eroded Sentinel",
+    "artist": "Underwood & Underwood",
+    "date": "约 1900",
+    "url": "https://commons.wikimedia.org/wiki/File:An_eroded_sentinel_-_survivor_of_the_primeval_flood,_by_Underwood_%26_Underwood.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "双联立体照片，需立体观看器才能感知原始深度效果。"
+  },
+  "chronophotography": {
+    "file": "artworks/chronophotography.jpg",
+    "title": "Animal Locomotion, plate",
+    "artist": "Eadweard Muybridge",
+    "date": "1887",
+    "url": "https://commons.wikimedia.org/wiki/File:E._Muybridge_%22Animal_locomotion%22,_plate_Wellcome_L0018593.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "CC BY 4.0",
+    "note": "连续动作摄影图版。"
+  },
+  "autochrome": {
+    "file": "artworks/autochrome.jpg",
+    "title": "Autochrome portrait",
+    "artist": "Arnold Genthe",
+    "date": "约 1908",
+    "url": "https://commons.wikimedia.org/wiki/File:Genthe_autochrome.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "奥托克罗姆彩色玻璃正片实例。"
+  },
+  "photogram": {
+    "file": "artworks/photogram.jpg",
+    "title": "Photogram (fgm 422)",
+    "artist": "László Moholy-Nagy",
+    "date": "1923",
+    "url": "https://commons.wikimedia.org/wiki/File:Photogram_by_L%C3%A1szl%C3%B3_Moholy-Nagy,_(fgm_422),_1923.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "不经相机、在感光材料上直接成像的作品。"
+  },
+  "architecture_photography": {
+    "file": "artworks/architecture_photography.jpg",
+    "title": "Nightview, Manhattan",
+    "artist": "Berenice Abbott",
+    "date": "1930s",
+    "url": "https://commons.wikimedia.org/wiki/File:Nightview,_Berenice_Abbott.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "建筑与城市夜景交叉案例。"
+  },
+  "aerial_photography": {
+    "file": "artworks/aerial_photography.jpg",
+    "title": "Brooklyn Navy Yard from the air",
+    "artist": "摄影者未详；U.S. Navy 档案",
+    "date": "1918",
+    "url": "https://commons.wikimedia.org/wiki/File:Navy_Yard,_Brooklyn._New_York._1918_-_NH_117794.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "历史航拍资料，原始摄影者未在档案中确认。"
+  },
+  "macro_photography": {
+    "file": "artworks/macro_photography.jpg",
+    "title": "Thorned bulbous plant",
+    "artist": "Karl Blossfeldt",
+    "date": "约 1928",
+    "url": "https://commons.wikimedia.org/wiki/File:Blossfeldt_-_Thorned_bulbous_plant,_84.XM.142.5.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "植物局部摄影；不是现代意义的高倍显微影像。"
+  },
+  "color_documentary": {
+    "file": "artworks/color_documentary.jpg",
+    "title": "Mrs. Irene Bracker",
+    "artist": "Jack Delano",
+    "date": "1943",
+    "url": "https://commons.wikimedia.org/wiki/File:Mrs_Irene_Bracker_by_Jack_Delano_b_1943.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "FSA/OWI 彩色纪实摄影。"
+  },
+  "trick_film": {
+    "file": "artworks/trick_film.jpg",
+    "title": "A Trip to the Moon — film frame",
+    "artist": "Georges Méliès（导演）",
+    "date": "1902",
+    "url": "https://commons.wikimedia.org/wiki/File:A_Trip_to_the_Moon_(Le_Voyage_dans_la_Lune).jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "影片画面；摄影作者未单独署名。"
+  },
+  "silent_slapstick": {
+    "file": "artworks/silent_slapstick.jpg",
+    "title": "The General — film frame",
+    "artist": "Buster Keaton 与 Clyde Bruckman（导演）",
+    "date": "1926",
+    "url": "https://commons.wikimedia.org/wiki/File:The_General_18.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "影片画面；截图中演员与拍摄作者请见源文件。"
+  },
+  "surrealist_cinema": {
+    "file": "artworks/surrealist_cinema.jpg",
+    "title": "Un chien andalou — film still",
+    "artist": "Luis Buñuel（导演）；Jennifer Mei（上传截图）",
+    "date": "1929 年影片；2012 年截图",
+    "url": "https://commons.wikimedia.org/wiki/File:Un_chien_andalou-_Un_perro_andaluz.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "CC BY 2.0",
+    "note": "原片实际画面，截图文件标为 CC BY 2.0；原片的独立权利状态需另核。"
+  },
+  "classical_hollywood": {
+    "file": "artworks/classical_hollywood.jpg",
+    "title": "Casablanca — publicity still",
+    "artist": "Michael Curtiz（导演）；Warner Bros.（宣传剧照）",
+    "date": "1942",
+    "url": "https://commons.wikimedia.org/wiki/File:Bergman_%26_Bogart_Casablanca_still.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "宣传剧照，与影片中的具体镜头可能不同。"
+  },
+  "street_photography": {
+    "file": "artworks/street_photography.jpg",
+    "title": "Winter, Fifth Avenue",
+    "artist": "Alfred Stieglitz",
+    "date": "1892",
+    "url": "https://commons.wikimedia.org/wiki/File:Alfred_Stieglitz_Winter_Fifth_Avenue_1892.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "纽约街头摄影，摄影者和拍摄年代见原始资料。"
+  },
+  "fashion_photography": {
+    "file": "artworks/fashion_photography.jpg",
+    "title": "Edwina St. Clair for Vogue",
+    "artist": "Edward Steichen",
+    "date": "1928",
+    "url": "https://commons.wikimedia.org/wiki/File:Edwina_St._Clair_Vogue_1928-03-15.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "时尚摄影与杂志刊载实例。"
+  },
+  "environmental_portrait": {
+    "file": "artworks/environmental_portrait.jpg",
+    "title": "Igor Stravinsky",
+    "artist": "Arnold Newman",
+    "date": "1946",
+    "url": "https://commons.wikimedia.org/wiki/File:Igor_Stravinsky_by_Arnold_Newman.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "环境肖像实例；作品原始摄影版权状态请以来源页为准。"
+  },
+  "early_cinema": {
+    "file": "artworks/early_cinema.png",
+    "title": "Arrival of a Train at La Ciotat — film frames",
+    "artist": "Auguste 与 Louis Lumière",
+    "date": "1896",
+    "url": "https://commons.wikimedia.org/wiki/File:Arrival_of_a_Train_at_La_Ciotat,_1896_stills.png",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "早期电影连续画面，来自影片本身。"
+  },
+  "french_impressionist_cinema": {
+    "file": "artworks/french_impressionist_cinema.jpg",
+    "title": "La Roue — printed programme cover",
+    "artist": "Henri Armengol（封面）；Abel Gance（导演）",
+    "date": "1923",
+    "url": "https://commons.wikimedia.org/wiki/File:Canudo_La_Roue_3e_et_4e_epoque.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "影片相关印刷品；可作为历史资料，不能单凭封面判断电影镜头风格。"
+  },
+  "city_symphony": {
+    "file": "artworks/city_symphony.png",
+    "title": "Man with a Movie Camera — film frame",
+    "artist": "Dziga Vertov（导演）",
+    "date": "1929",
+    "url": "https://commons.wikimedia.org/wiki/File:Man_with_a_movie_camera_1929_3.png",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "城市交响电影原片画面。"
+  },
+  "technicolor_musical": {
+    "file": "artworks/technicolor_musical.jpg",
+    "title": "The Wizard of Oz — publicity still",
+    "artist": "MGM（宣传照片）；Victor Fleming（导演）",
+    "date": "1939",
+    "url": "https://commons.wikimedia.org/wiki/File:Billie_Burke_and_Judy_Garland_The_Wizard_of_Oz_(1939)-1.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "彩色歌舞片宣传剧照。"
+  },
+  "cinema_novo": {
+    "file": "artworks/cinema_novo.png",
+    "title": "Maurício do Valle as Antônio das Mortes",
+    "artist": "摄影者未详（巴西国家档案）；Maurício do Valle（演员）；Glauber Rocha（导演）",
+    "date": "1969 年前后",
+    "url": "https://commons.wikimedia.org/wiki/File:Mauricio_do_Valle_interpretando_Antonio_das_Mortes.png",
+    "institution": "Brazilian National Archives via Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "巴西新电影代表导演格劳贝尔·罗沙作品《安东尼奥·达斯·莫尔特斯》相关档案照片；非整部影片画风的概括。"
+  },
+  "third_cinema": {
+    "file": "artworks/third_cinema.jpg",
+    "title": "La hora de los hornos — poster",
+    "artist": "作者未署名；Fernando Solanas 与 Octavio Getino（导演）",
+    "date": "1968",
+    "url": "https://commons.wikimedia.org/wiki/File:Afiche_de_La_hora_de_los_hornos.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "《燃火的时刻》海报；作者未见可靠署名。"
+  },
+  "iranian_new_wave": {
+    "file": "artworks/iranian_new_wave.jpg",
+    "title": "The Cow — poster",
+    "artist": "Farshid Mesghali（海报）；Dariush Mehrjui（导演）",
+    "date": "1969",
+    "url": "https://commons.wikimedia.org/wiki/File:Gaav_movie_poster.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "伊朗新浪潮代表影片海报；不是电影剧照。"
+  },
+  "japanese_jidaigeki": {
+    "file": "artworks/japanese_jidaigeki.jpg",
+    "title": "Akira Kurosawa on the set of Seven Samurai",
+    "artist": "《映画の友》杂志摄影者未署名；黑泽明（导演）",
+    "date": "1953",
+    "url": "https://commons.wikimedia.org/wiki/File:Akirakurosawa-onthesetof7samurai-1953-page88.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "《七武士》片场资料；不是影片画面。"
+  },
+  "photomontage": {
+    "file": "artworks/photomontage.jpg",
+    "title": "The Constructor (Self-Portrait)",
+    "artist": "El Lissitzky",
+    "date": "1924",
+    "url": "https://commons.wikimedia.org/wiki/File:El_Lissitzky_The_Constructor,_self-portrait,_gelatin_silver_print,_107%C3%97118_mm,_1924_London,_Victoria_and_Albert_Museum,_Inv._PH142-1985.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "以照片拼贴和叠印构成的先锋摄影蒙太奇作品。"
+  },
+  "night_photography": {
+    "file": "artworks/night_photography.jpg",
+    "title": "An Icy Night",
+    "artist": "Alfred Stieglitz",
+    "date": "1898（1920—1939 年间冲印）",
+    "url": "https://commons.wikimedia.org/wiki/File:An_Icy_Night_MET_DP244496.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "早期城市夜间摄影实例；与布拉塞的巴黎夜景并列阅读。"
+  },
+  "absolute_film": {
+    "file": "artworks/absolute_film.jpg",
+    "title": "Lichtspiel: Opus I — film frame",
+    "artist": "Walter Ruttmann（导演）",
+    "date": "1921",
+    "url": "https://commons.wikimedia.org/wiki/File:Lichtspiel_Opus_I_(1921).webm",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "公有领域影片的实际画面缩略图，展示抽象形状和运动。"
+  },
+  "poetic_realism": {
+    "file": "artworks/poetic_realism.jpg",
+    "title": "Grand Illusion — publicity still",
+    "artist": "Jean Renoir（导演）；宣传照片摄影者未署名",
+    "date": "1937",
+    "url": "https://commons.wikimedia.org/wiki/File:Grand-Illusion-1937.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "《大幻影》宣传剧照，来源注明为当年影刊刊载。"
+  },
+  "surrealist_photography": {
+    "file": "artworks/surrealist_photography.jpg",
+    "title": "Pendant l’éclipse",
+    "artist": "Eugène Atget",
+    "date": "1912",
+    "url": "https://commons.wikimedia.org/wiki/File:Eug%C3%A8ne_Atget,_Eclipse,_1912.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "阿杰本人并非超现实主义成员；本照片曾被超现实主义者选用及重新解读。"
+  },
+  "abstract_photography": {
+    "file": "artworks/abstract_photography.jpg",
+    "title": "Abstraction, Twin Lakes, Connecticut",
+    "artist": "Paul Strand",
+    "date": "1916",
+    "url": "https://commons.wikimedia.org/wiki/File:Paul_Strand._Abstraction,_Twin_Lakes,_Connecticut._1916.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "抽象摄影原作；以光影和几何构图弱化对象的辨识。"
   }
 };

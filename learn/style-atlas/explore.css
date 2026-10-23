@@ -1,0 +1,20 @@
+.site-controls{position:fixed;top:16px;left:24px;right:24px;display:flex;align-items:center;justify-content:space-between;pointer-events:none;z-index:20}.site-controls>*{pointer-events:auto}.control-back,.control-languages{height:38px;border:1px solid rgba(45,41,37,.27);background:rgba(247,240,228,.91);backdrop-filter:blur(12px);box-shadow:0 4px 20px rgba(45,41,37,.07);color:var(--ink);font-size:12px;font-weight:700}.control-back{display:inline-flex;align-items:center;gap:4px;padding:0 14px;text-decoration:none}.control-back:hover,.control-back:focus-visible{color:var(--rust);border-color:var(--rust)}.control-languages{display:flex;align-items:center;padding:3px 5px;gap:2px}.control-languages button{border:0;background:transparent;min-width:33px;height:29px;color:#746b62;font-size:11px;font-weight:700}.control-languages button[aria-pressed="true"]{background:var(--ink);color:var(--cream)}.control-languages span{color:#8d8173;font-size:10px}
+.detail-language{position:absolute;top:26px;right:77px;display:flex;align-items:center;gap:2px;z-index:4;height:38px;padding:3px 5px;border:1px solid rgba(41,33,27,.35);background:#fff7e9}.detail-language button{border:0;background:transparent;min-width:29px;height:27px;color:#746b62;font-size:11px;font-weight:700}.detail-language button[aria-pressed="true"]{background:var(--ink);color:var(--cream)}.detail-inner>.detail-kicker{display:block;padding-top:48px}
+.explore{height:100vh;height:100svh;min-height:0;display:flex;flex-direction:column;background:#e7e5df;color:var(--ink);overflow:hidden;position:relative}
+.explore-title{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.explore:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 43%,rgba(255,255,255,.55),transparent 69%)}
+.explore-top{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:69px 34px 19px;font-size:11px;font-weight:700;letter-spacing:.11em}
+.explore-top i{font-style:normal;font-weight:500;letter-spacing:.04em;color:#6d6760}
+.explore-modes{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+.explore-modes button{border:1px solid #aaa8a1;border-radius:99px;background:transparent;color:var(--ink);padding:6px 18px;min-width:62px;font-size:11px;line-height:1.2;transition:background .2s,color .2s,border-color .2s}
+.explore-modes button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fffaf1}
+.explore-modes button:focus-visible,.explore-work:focus-visible,.explore-stage:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+.explore-stage{position:relative;flex:1;min-height:0;touch-action:pan-y;outline:0}
+.explore-items{position:absolute;inset:0;perspective:1100px}
+.explore-work{position:absolute;left:50%;top:50%;width:clamp(82px,8vw,126px);height:clamp(110px,10.8vw,168px);padding:0;border:0;background:#f7f2e9;box-shadow:0 11px 28px rgba(39,32,25,.18);overflow:hidden;transform-origin:center;transition:transform .75s cubic-bezier(.2,.75,.2,1),opacity .55s,box-shadow .35s;will-change:transform}
+.explore-work:hover{box-shadow:0 21px 44px rgba(39,32,25,.3)}
+.explore-work img{display:block;width:100%;height:100%;object-fit:contain}
+.explore-work:after{content:attr(data-name);position:absolute;inset:auto 0 0;padding:17px 8px 7px;color:#fff;text-align:left;font-size:10px;font-weight:700;letter-spacing:.02em;background:linear-gradient(transparent,rgba(24,20,17,.72));opacity:0;transition:opacity .2s}
+.explore-work:hover:after,.explore-work:focus-visible:after{opacity:1}
+@media(max-width:760px){.site-controls{top:10px;left:12px;right:12px}.detail-language{top:17px;right:65px}.explore-top{align-items:flex-start;flex-direction:column;gap:13px;padding:64px 18px 8px}.explore-modes{width:100%;justify-content:space-between;gap:4px}.explore-modes button{flex:1;min-width:0;padding:7px 6px}.explore-work{width:clamp(50px,15vw,76px);height:clamp(68px,20vw,102px)}}
+@media(prefers-reduced-motion:reduce){.explore-work,.explore-modes button{transition:none}}
