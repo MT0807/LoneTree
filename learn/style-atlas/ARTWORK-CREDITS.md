@@ -152,3 +152,6 @@
 | `keyword_riso_posters.jpg` | [Alequihdez, Carteles en riso](https://commons.wikimedia.org/wiki/File:Carteles_en_riso.jpg) | CC BY-SA 4.0 |
 | `keyword_gradient.jpg` | [Vidsplay, Gradient Abstract Background](https://commons.wikimedia.org/wiki/File:Gradient_Abstract_Background.jpg) | CC0 |
 | `keyword_liquid_metal.jpg` | [Fractal Caleidoscope, Alien fluid metal texture](https://commons.wikimedia.org/wiki/File:Alien_fluid_metal_texture.jpg) | CC BY-SA 4.0 |
+| `keyword_russian_towel.jpg` | [Russian towel border, early 19th century, The Met](https://www.metmuseum.org/art/collection/search/158365) | Open Access / CC0 |
+| `keyword_japanese_magazine.jpg` | [Hisui Sugiura, Present-Day Japan cover, 1925](https://commons.wikimedia.org/wiki/File:Present-Day_Japan_(1925)_magazine_cover_by_Hisui_Sugiura.webp) | Public domain |
+| `keyword_pixel_city.jpg` | [Stvk Công Cuối (VN), Upscaled pixel art of a city at night](https://commons.wikimedia.org/wiki/File:Upscaled_pixel_art_of_a_city_at_night.png) | CC0 |
