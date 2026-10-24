@@ -17,7 +17,18 @@
     keyword_liquid_metal:{file:'artworks/keyword_liquid_metal.jpg',title:'Alien fluid metal texture',artist:'Fractal Caleidoscope',date:'2020',url:'https://commons.wikimedia.org/wiki/File:Alien_fluid_metal_texture.jpg',institution:'Wikimedia Commons',rights:'CC BY-SA 4.0'},
     keyword_russian_towel:{file:'artworks/keyword_russian_towel.jpg',title:'Towel border',artist:'Unidentified Russian maker',date:'early 19th century',url:'https://www.metmuseum.org/art/collection/search/158365',institution:'The Metropolitan Museum of Art',rights:'Open Access / CC0'},
     keyword_japanese_magazine:{file:'artworks/keyword_japanese_magazine.jpg',title:'Present-Day Japan magazine cover',artist:'Hisui Sugiura',date:'1925',url:'https://commons.wikimedia.org/wiki/File:Present-Day_Japan_(1925)_magazine_cover_by_Hisui_Sugiura.webp',institution:'Wikimedia Commons',rights:'Public domain'},
-    keyword_pixel_city:{file:'artworks/keyword_pixel_city.jpg',title:'Upscaled pixel art of a city at night',artist:'Stvk Công Cuối (VN)',date:'2023',url:'https://commons.wikimedia.org/wiki/File:Upscaled_pixel_art_of_a_city_at_night.png',institution:'Wikimedia Commons',rights:'CC0'}
+    keyword_pixel_city:{file:'artworks/keyword_pixel_city.jpg',title:'Upscaled pixel art of a city at night',artist:'Stvk Công Cuối (VN)',date:'2023',url:'https://commons.wikimedia.org/wiki/File:Upscaled_pixel_art_of_a_city_at_night.png',institution:'Wikimedia Commons',rights:'CC0'},
+    zimm_3d_type:{file:'artworks/zimm_3d_type.jpg',title:'LOVE sculpture in New York',artist:'Robert Indiana; photograph by Hu Totya, crop by Regi51',date:'2006 photograph',url:'https://commons.wikimedia.org/wiki/File:LOVE_sculpture_NY_cropped.jpg',institution:'Wikimedia Commons',rights:'Public domain photograph'},
+    zimm_popup_open:{file:'artworks/zimm_popup_open.jpg',title:'Pop-up in A Treatise on Perspective',artist:'Thomas Malton the Elder',date:'18th century',url:'https://commons.wikimedia.org/wiki/File:Close-up_of_pop-up_from_Thomas_Malton_the_Elder%27s_book_Treatise_on_Perspective.jpg',institution:'Wikimedia Commons',rights:'Public domain'},
+    zimm_popup:{file:'artworks/zimm_popup.gif',title:'Cinderella pop-up book demonstration',artist:'Hans Hartung',date:'2007',url:'https://commons.wikimedia.org/wiki/File:PopupCinderella.gif',institution:'Wikimedia Commons',rights:'CC BY-SA 2.0 DE'},
+    zimm_paper_theatre:{file:'artworks/zimm_paper_theatre.jpg',title:'Paper theatre with Little Red Riding Hood',artist:'Papiertheater Invisius; photograph by Tiefenschaerfe',date:'2004 photograph',url:'https://commons.wikimedia.org/wiki/File:Papertheatre.jpg',institution:'Wikimedia Commons',rights:'CC BY-SA 4.0'},
+    zimm_patchwork_type:{file:'artworks/zimm_patchwork_type.jpg',title:'Quilted Merry',artist:'NorthernNeedle; letter design by Patch & Dot',date:'2025',url:'https://commons.wikimedia.org/wiki/File:Quilted_Merry.jpg',institution:'Wikimedia Commons',rights:'CC BY 4.0'},
+    zimm_stitched_letters:{file:'artworks/zimm_stitched_letters.jpg',title:'Embroidered sampler',artist:'Mary Bower',date:'1808',url:'https://commons.wikimedia.org/wiki/File:Embroidered_sampler_MET_164834.jpg',institution:'The Metropolitan Museum of Art / Wikimedia Commons',rights:'CC0'},
+    zimm_mini_street:{file:'artworks/zimm_mini_street.jpg',title:'Mini street2',artist:'Jared Smith',date:'2006',url:'https://commons.wikimedia.org/wiki/File:Mini_street2_-_Flickr_-_Jared_Smith.jpg',institution:'Wikimedia Commons',rights:'CC BY-SA 2.0'},
+    zimm_tilt_shift:{file:'artworks/zimm_tilt_shift.jpg',title:'KLCC Park tilt-shift',artist:'Graeme Maclean',date:'2008',url:'https://commons.wikimedia.org/wiki/File:Klcc_park_tilt_shift.jpg',institution:'Wikimedia Commons',rights:'CC BY 2.0'},
+    zimm_low_poly:{file:'artworks/zimm_low_poly.jpg',title:'Low Poly Kingfisher',artist:'Elionas',date:'2016',url:'https://commons.wikimedia.org/wiki/File:Low_Poly_Kingfisher.jpg',institution:'Wikimedia Commons',rights:'CC0'},
+    zimm_low_poly_forest:{file:'artworks/zimm_low_poly_forest.jpg',title:'Low poly Forest',artist:'Srkrishna412',date:'2019',url:'https://commons.wikimedia.org/wiki/File:Low_poly_Forest.png',institution:'Wikimedia Commons',rights:'CC BY-SA 4.0'},
+    zimm_low_poly_hamburger:{file:'artworks/zimm_low_poly_hamburger.jpg',title:'Low polygon 3D hamburger',artist:'Kurtkaiser',date:'2020',url:'https://commons.wikimedia.org/wiki/File:Low_polygon_3D_hamburger.png',institution:'Wikimedia Commons',rights:'CC0'}
   });
   window.ATLAS_KEYWORD_GALLERIES = {
     folk_illustration:['minhwa','arts_crafts','adinkra'],
@@ -53,6 +64,11 @@
     enigmatriz:['web1_design','y2k_graphics','punk_zine'],
     roktimm:['color_field','conceptual_art','retro_futurism'],
     xchylerdrenth:['corporate_identity','memphis','deconstructive_typography'],
-    roktimm_xray:['photogram','new_vision','cyanotype']
+    roktimm_xray:['photogram','new_vision','cyanotype'],
+    zimm_street_3d_type:['zimm_3d_type','photomontage','deconstructive_typography'],
+    zimm_paper_stage:['zimm_popup_open','zimm_popup','zimm_paper_theatre'],
+    zimm_patchwork_type:['zimm_patchwork_type','zimm_stitched_letters','keyword_embroidery_spot'],
+    zimm_spatial_poster:['zimm_mini_street','zimm_tilt_shift','photomontage'],
+    zimm_lowpoly_game:['zimm_low_poly','zimm_low_poly_forest','zimm_low_poly_hamburger']
   };
 })();

@@ -1,6 +1,6 @@
 # 真实作品图片清单
 
-当前共 127 张真实作品、实物、影片资料或现场照片。图片已保存为本地文件；卡片使用 3:4 图片框，原图在框中完整显示，不拉伸。作品信息与使用许可请以原始来源页面为准。
+图片已保存为本地文件；卡片使用 3:4 图片框，详情页完整显示原图，不拉伸。作品信息与使用许可请以原始来源页面为准。
 
 | 风格 ID | 作品或图片 | 作者 / 创作者 | 年代 | 来源及许可 |
 | --- | --- | --- | --- | --- |
@@ -168,3 +168,21 @@
 | `byzantine.jpg` | [Portable Icon with the Virgin Eleousa, Byzantine, early 1300s](https://www.metmuseum.org/art/collection/search/474336) | Open Access / CC0 |
 | `byzantine_2.jpg` | [Icon with the Koimesis, Byzantine, late 900s](https://www.metmuseum.org/art/collection/search/464013) | Open Access / CC0 |
 | `byzantine_3.jpg` | [Double-Sided Pendant Icon with the Virgin and Christ Pantokrator, Byzantine, ca. 1100](https://www.metmuseum.org/art/collection/search/466272) | Open Access / CC0 |
+
+## ZIMM 视觉方法画廊新增图片（2026-10-24）
+
+这些是用来观察相近视觉方法的独立作品或现场照片，**均不是 ZIMM 视频作品**。网页使用约 1000px 的压缩版；有署名要求的图片在详情页标注作者、作品名和来源链接。GIF 保持原始动画。
+
+| 本地文件 | 作品、作者与出处 | 使用条件 |
+| --- | --- | --- |
+| `zimm_3d_type.jpg` | [Robert Indiana, LOVE 雕塑；Hu Totya 摄影、Regi51 裁切](https://commons.wikimedia.org/wiki/File:LOVE_sculpture_NY_cropped.jpg) | 照片 Public domain；作品本身权利以来源页为准 |
+| `zimm_popup_open.jpg` | [Thomas Malton the Elder, A Treatise on Perspective 中的立体纸结构](https://commons.wikimedia.org/wiki/File:Close-up_of_pop-up_from_Thomas_Malton_the_Elder%27s_book_Treatise_on_Perspective.jpg) | Public domain |
+| `zimm_popup.gif` | [Hans Hartung, Cinderella pop-up book demonstration](https://commons.wikimedia.org/wiki/File:PopupCinderella.gif) | CC BY-SA 2.0 DE |
+| `zimm_paper_theatre.jpg` | [Papiertheater Invisius 纸戏剧；Tiefenschaerfe 摄影](https://commons.wikimedia.org/wiki/File:Papertheatre.jpg) | CC BY-SA 4.0 |
+| `zimm_patchwork_type.jpg` | [NorthernNeedle, Quilted Merry；字母设计 Patch & Dot](https://commons.wikimedia.org/wiki/File:Quilted_Merry.jpg) | CC BY 4.0 |
+| `zimm_stitched_letters.jpg` | [Mary Bower, Embroidered sampler, 1808, The Met](https://commons.wikimedia.org/wiki/File:Embroidered_sampler_MET_164834.jpg) | Open Access / CC0 |
+| `zimm_mini_street.jpg` | [Jared Smith, Mini street2](https://commons.wikimedia.org/wiki/File:Mini_street2_-_Flickr_-_Jared_Smith.jpg) | CC BY-SA 2.0 |
+| `zimm_tilt_shift.jpg` | [Graeme Maclean, KLCC Park tilt-shift](https://commons.wikimedia.org/wiki/File:Klcc_park_tilt_shift.jpg) | CC BY 2.0 |
+| `zimm_low_poly.jpg` | [Elionas, Low Poly Kingfisher](https://commons.wikimedia.org/wiki/File:Low_Poly_Kingfisher.jpg) | CC0 |
+| `zimm_low_poly_forest.jpg` | [Srkrishna412, Low poly Forest](https://commons.wikimedia.org/wiki/File:Low_poly_Forest.png) | CC BY-SA 4.0 |
+| `zimm_low_poly_hamburger.jpg` | [Kurtkaiser, Low polygon 3D hamburger](https://commons.wikimedia.org/wiki/File:Low_polygon_3D_hamburger.png) | CC0 |

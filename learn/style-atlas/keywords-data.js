@@ -72,5 +72,36 @@ xchylerdrenth|XchylerDrenth：实验品牌视觉|XchylerDrenth: Experimental Bra
 roktimm_xray|Roktimm：X 射线视觉实验|Roktimm: X-ray Visual Study|创作者观察|X 射线意象,粉色信号标记,像素化边缘|X-ray imagery,pink signal labels,pixelated edges|new_vision,editorial_minimal
 `);
 
+  add('ZIMM', `
+zimm_street_3d_type|街景中的立体字|Dimensional Type in a Street Scene|海报做法|果冻或气球质感,街景透视,贴纸与警示带|jelly or balloon texture,street perspective,stickers and caution tape|photomontage,pop_art,deconstructive_typography
+zimm_paper_stage|平面设计变纸艺立体书|Flat Design as a Paper Pop-up|材料技法|纸张层叠,折叠结构,侧向光影|layered paper,folded structure,side lighting|arts_crafts,persian_miniature
+zimm_patchwork_type|布料拼贴字|Patchwork Letterforms|材料技法|碎布字形,缝合边缘,错位排版|fabric-cut letters,stitched edges,offset composition|arts_crafts,kente
+zimm_spatial_poster|移轴感空间海报|Miniature-like Spatial Poster|海报做法|斜向透视,局部景深,版式层次|oblique perspective,selective focus,layered layout|photomontage,new_vision
+zimm_lowpoly_game|低多边形游戏画面|Low-poly Game Visuals|媒介技法|可见多边形,低模几何,早期游戏锯齿|visible facets,low-poly geometry,early-game aliasing|web1_design,y2k_graphics
+`);
+
+  window.ATLAS_KEYWORD_DETAILS = {
+    zimm_street_3d_type: {
+      zh:'从原有字形出发，建立柔软、发亮的立体材质，再按街景的机位、透视和光照合成。最后叠加贴纸与警示带，让图形越出照片边框。先检查文字是否仍清楚、投影是否贴合墙面。',
+      en:'Start with existing letterforms, give them a soft glossy volume, and composite them into a street photograph using its camera angle, perspective and light. Add stickers and caution tape across the frame; check legibility and contact shadows.'
+    },
+    zimm_paper_stage: {
+      zh:'把原本的平面图拆成前景、中景、背景，模拟纸片折叠、叠压与投影，再从斜角观察。视频展示的是数字生成的纸艺效果；真实立体书还需要能实际开合的纸机构。',
+      en:'Separate a flat graphic into foreground, middle ground and background; simulate paper folds, overlapping layers and shadows, then view it obliquely. This is a digital paper effect; a physical pop-up book also needs a working paper mechanism.'
+    },
+    zimm_patchwork_type: {
+      zh:'先画字形轮廓，再给每个字母分配不同布片，加入切边、缝线和轻微错位。视频结合生成图像与手工修整；重点是让缝合逻辑和字的可读性同时成立。',
+      en:'Draw the letter shapes first, then assign different fabric pieces and add cut edges, seams and slight misalignment. The video combines generated imagery with manual refinement; keep both stitching logic and letter legibility.'
+    },
+    zimm_spatial_poster: {
+      zh:'通过倾斜的画面平面、前后遮挡与局部景深，把平面文字版式做出微缩场景般的空间感。这里的“移轴”指视觉效果与软件操作，不能等同于真正的移轴镜头摄影。',
+      en:'Use an angled picture plane, occlusion and selective focus to make a flat text layout feel like a miniature scene. Here “tilt-shift” names a visual effect and software action, not necessarily a photograph made with a tilt-shift lens.'
+    },
+    zimm_lowpoly_game: {
+      zh:'用少量多边形建立物体或场景，让切面、简化贴图与轻微锯齿可见，联想到 N64 / PS1 时期的低模游戏画面。视频说明字体另行手工处理，因此不要把整张海报都归为 AI 自动生成。',
+      en:'Build objects or scenes from few polygons, leaving facets, simple textures and slight aliasing visible to recall N64 / PS1-era games. The creator says the cover typography was handled separately by hand, so the entire poster should not be labelled fully AI-generated.'
+    }
+  };
+
   window.ATLAS_KEYWORDS = notes;
 })();
