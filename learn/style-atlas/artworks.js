@@ -1216,6 +1216,160 @@ window.ATLAS_ARTWORKS = {
     "rights": "Public domain",
     "note": "阿杰本人并非超现实主义成员；本照片曾被超现实主义者选用及重新解读。"
   },
+  "russian_avant_garde": {
+    "file": "artworks/russian_avant_garde.jpg",
+    "title": "Painterly Architectonic",
+    "artist": "Lyubov Popova",
+    "date": "1916",
+    "url": "https://www.nationalgalleries.org/art-and-artists/798",
+    "institution": "National Galleries of Scotland / Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "波波娃作品；详情中的其他作品分别展示至上主义、构成主义及平面传播方向。"
+  },
+  "light_and_space": {
+    "file": "artworks/light_and_space.jpg",
+    "title": "Three Gems — Skyspace, interior",
+    "artist": "James Turrell; photograph by Otheralex01",
+    "date": "2005",
+    "url": "https://commons.wikimedia.org/wiki/File:Three_Gems,_James_Turrell_Skyspace,_interior.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Photo CC BY-SA 4.0; installation © artist",
+    "note": "从室内仰望天空的真实现场照片；天空颜色与室内光线会随观看时间变化。"
+  },
+  "light_and_space_2": {
+    "file": "artworks/light_and_space_2.jpg",
+    "title": "Skyspace — view through ceiling opening",
+    "artist": "James Turrell; photograph by Philip Halling",
+    "date": "",
+    "url": "https://commons.wikimedia.org/wiki/File:%27Skyspace%27_by_James_Turrell_-_geograph.org.uk_-_4613695.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Photo CC BY-SA 2.0; installation © artist"
+  },
+  "street_art": {
+    "file": "artworks/street_art.jpg",
+    "title": "Banksy mural in Walthamstow, London",
+    "artist": "Banksy; photograph by Panicshouter",
+    "date": "",
+    "url": "https://commons.wikimedia.org/wiki/File:Image_of_Banksy_street_art_in_Walthamstow,_London.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Photo CC0; mural © artist",
+    "note": "保留街角店铺与墙面的现场语境，便于分析街头作品如何与周边环境一起被看见。"
+  },
+  "street_art_2": {
+    "file": "artworks/street_art_2.jpg",
+    "title": "Banksy Judo mural",
+    "artist": "Banksy; photograph by Simon Höger",
+    "date": "",
+    "url": "https://commons.wikimedia.org/wiki/File:Banksy_judo.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Photo CC BY 4.0; mural © artist"
+  },
+  "land_art": {
+    "file": "artworks/land_art.jpg",
+    "title": "Spiral Jetty, Great Salt Lake",
+    "artist": "Robert Smithson; photograph by Netherzone",
+    "date": "1970; photographed later",
+    "url": "https://commons.wikimedia.org/wiki/File:Spiral_Jetty_Smithson_Laramee.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Photo CC BY-SA 4.0; earthwork © Holt/Smithson Foundation",
+    "note": "真实场地照片；水位、盐和天气会改变作品被看见的状态。"
+  },
+  "land_art_2": {
+    "file": "artworks/land_art_2.jpg",
+    "title": "Spiral Jetty from Rozel Point",
+    "artist": "Robert Smithson; photograph by Soren Harward",
+    "date": "1970; photographed 2005",
+    "url": "https://commons.wikimedia.org/wiki/File:Spiral-jetty-from-rozel-point.png",
+    "institution": "Wikimedia Commons",
+    "rights": "Photo Public domain; earthwork © Holt/Smithson Foundation"
+  },
+  "japanese_contemporary": {
+    "file": "artworks/japanese_contemporary.jpg",
+    "title": "Pumpkin sculptures — exhibition view",
+    "artist": "Yayoi Kusama; photograph by בר",
+    "date": "",
+    "url": "https://commons.wikimedia.org/wiki/File:Artwork_by_Yayoi_Kusama.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Photo CC BY-SA 3.0; artworks © artist",
+    "note": "草间弥生的南瓜雕塑展览现场；下一张村上隆早期展览照片展示另一种实践，它们不属于同一画风。"
+  },
+  "japanese_contemporary_2": {
+    "file": "artworks/japanese_contemporary_2.jpg",
+    "title": "Takashi Murakami with early works at Galerie Mars",
+    "artist": "Takashi Murakami; photograph by Ithaka Darin Pappas",
+    "date": "1992",
+    "url": "https://commons.wikimedia.org/wiki/File:Artist_Takashi_Murakami_with_early_works_at_Galerie_Mars_in_Tokyo_1992._Photographed_by_Ithaka_Darin_Pappas_A.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Photo CC BY-SA 4.0; artworks © artist"
+  },
+  "japanese_contemporary_3": {
+    "file": "artworks/japanese_contemporary_3.jpg",
+    "title": "The Obliteration Room — installation view",
+    "artist": "Yayoi Kusama; photograph by Helsinki Art Museum / The Broad",
+    "date": "",
+    "url": "https://commons.wikimedia.org/wiki/File:Yayoi_Kusama_Obliteration_Room.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Photo CC BY-SA 4.0; installation © artist"
+  },
+  "african_modernism": {
+    "file": "artworks/african_modernism.jpg",
+    "title": "Fulani Milk Woman",
+    "artist": "Bruce Onobrakpeya",
+    "date": "",
+    "url": "https://commons.wikimedia.org/wiki/File:%22Fulani_Milk_Woman%22_-_NARA_-_558974.jpg",
+    "institution": "U.S. National Archives / Wikimedia Commons",
+    "rights": "NARA image: Public domain; artwork © artist",
+    "note": "尼日利亚艺术家版画原作；作为扎里亚一代的具体案例，不代表整个非洲的单一形式。"
+  },
+  "african_modernism_2": {
+    "file": "artworks/african_modernism_2.jpg",
+    "title": "Portrait of Oseni",
+    "artist": "Bruce Onobrakpeya",
+    "date": "",
+    "url": "https://commons.wikimedia.org/wiki/File:%22Portrait_of_Oseni%22_-_NARA_-_558975.jpg",
+    "institution": "U.S. National Archives / Wikimedia Commons",
+    "rights": "NARA image: Public domain; artwork © artist"
+  },
+  "isotype": {
+    "file": "artworks/isotype.jpg",
+    "title": "Basic by Isotype, book spread",
+    "artist": "Otto Neurath and the Isotype team",
+    "date": "1937",
+    "url": "https://commons.wikimedia.org/wiki/File:Basic_by_Isotype.jpg",
+    "institution": "Victoria and Albert Museum / Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "实拍书页，展示统一图形符号如何解释日常信息。"
+  },
+  "polish_poster": {
+    "file": "artworks/polish_poster.jpg",
+    "title": "Bitwa Stalingradzka",
+    "artist": "Tadeusz Trepkowski",
+    "date": "1950",
+    "url": "https://commons.wikimedia.org/wiki/File:Tadeusz_Trepkowski_Bitwa_Stalingradzka_(2).jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "波兰海报学派早期作品；战争意象被压缩成有力的图形符号。"
+  },
+  "silhouette_animation": {
+    "file": "artworks/silhouette_animation.jpg",
+    "title": "Die Abenteuer des Prinzen Achmed — film still",
+    "artist": "Lotte Reiniger / Primrose Productions",
+    "date": "1926",
+    "url": "https://commons.wikimedia.org/wiki/File:Lotte_Reiniger_Prinz_Achmed_003.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "CC BY-SA 4.0",
+    "note": "《阿赫迈德王子历险记》的真实电影画面，观察剪纸轮廓与层叠布景。"
+  },
+  "czech_new_wave": {
+    "file": "artworks/czech_new_wave.jpg",
+    "title": "Zbehovia a pútnici — official film poster",
+    "artist": "Jakubisko Film Europe, SE; film directed by Juraj Jakubisko",
+    "date": "1968",
+    "url": "https://commons.wikimedia.org/wiki/File:Zbehovia_a_putnici_poster.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "CC BY-SA 4.0",
+    "note": "斯洛伐克新浪潮电影《逃兵与朝圣者》的官方海报；影片视觉可与海报图形语言对照阅读。"
+  },
   "abstract_photography": {
     "file": "artworks/abstract_photography.jpg",
     "title": "Abstraction, Twin Lakes, Connecticut",
@@ -1225,5 +1379,35 @@ window.ATLAS_ARTWORKS = {
     "institution": "Wikimedia Commons",
     "rights": "Public domain",
     "note": "抽象摄影原作；以光影和几何构图弱化对象的辨识。"
+  },
+  "new_typography": {
+    "file": "artworks/new_typography.jpg",
+    "title": "For the Voice (Dlia golosa), page design",
+    "artist": "El Lissitzky",
+    "date": "1923",
+    "url": "https://risdmuseum.org/art-design/collection/voice-dlia-golosa-2006921",
+    "institution": "RISD Museum / Wikimedia Commons",
+    "rights": "Public domain",
+    "note": "新字体排印形成前的重要实验：非对称构图、几何色块与字体共同组织阅读。"
+  },
+  "midcentury_graphics": {
+    "file": "artworks/midcentury_graphics.jpg",
+    "title": "Juni-Festwochen Zürich poster",
+    "artist": "Josef Müller-Brockmann",
+    "date": "1957",
+    "url": "https://commons.wikimedia.org/wiki/File:Josef_M%C3%BCller-Brockmann_1957.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Public domain (Commons geometric design claim)",
+    "note": "瑞士战后海报实例；这种严密网格是中世纪现代平面设计中的一种方向，并不代表其全部。"
+  },
+  "postmodern_graphics": {
+    "file": "artworks/postmodern_graphics.jpg",
+    "title": "Design Quarterly 133: Does It Make Sense?",
+    "artist": "April Greiman; photograph by MadeInSpace.la",
+    "date": "1986",
+    "url": "https://commons.wikimedia.org/wiki/File:Design_Quarterly_133_-_Does_It_Make_Sense.jpg",
+    "institution": "Wikimedia Commons",
+    "rights": "Photograph CC BY-SA 4.0; artwork rights remain with designer",
+    "note": "格雷曼的数字拼贴与实验排版；图档摄影有开放许可，设计作品的版权另计。"
   }
 };

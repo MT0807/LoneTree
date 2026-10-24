@@ -18,6 +18,12 @@ window.ATLAS_SOURCES = {
   dada: ['MoMA · 达达', 'https://www.moma.org/collection/terms/dada'],
   futurism: ['MoMA · 未来主义', 'https://www.moma.org/collection/terms/futurism'],
   suprematism: ['MoMA · 至上主义', 'https://www.moma.org/collection/terms/suprematism'],
+  russian_avant_garde: ['MoMA · 俄罗斯先锋艺术', 'https://www.moma.org/calendar/exhibitions/328'],
+  light_and_space: ['Getty · 加州光效与空间艺术', 'https://www.getty.edu/foundation/pdfs/pacific_standard_time_feb9_press_release.pdf'],
+  street_art: ['布鲁克林博物馆 · 涂鸦与公共表达', 'https://cdn2.brooklynmuseum.org/labels/Graffiti_Press_Release.pdf'],
+  land_art: ['Dia Art Foundation · Spiral Jetty', 'https://www.diaart.org/visit/visit-our-locations-sites/robert-smithson-spiral-jetty'],
+  japanese_contemporary: ['MoMA · 村上隆与 Superflat', 'https://www.moma.org/collection/works/88960'],
+  african_modernism: ['美国国立非洲艺术博物馆 · Uche Okeke', 'https://africa.si.edu/collection/object/nmafa_97-3-1'],
   destijl: ['MoMA · 风格派', 'https://www.moma.org/collection/terms/de-stijl'],
   orphism: ['MoMA · 俄耳甫斯主义', 'https://www.moma.org/collection/terms/orphism'],
   western_desert: ['澳大利亚国家美术馆 · 西部沙漠绘画', 'https://nga.gov.au/stories-ideas/mantua-nangala/'],
@@ -93,6 +99,7 @@ expressionism|表现主义|Expressionism|现代艺术运动|1905|1930|德国,奥
 cubism|立体主义|Cubism|现代艺术运动|1907|1920|法国,西班牙|拆解单一视点，把不同角度的物体压进同一画面。|多视角,几何切面,拼贴|毕加索;乔治·布拉克;胡安·格里斯|cubism|facets
 futurism|未来主义|Futurism|现代艺术运动|1909|1944|意大利|歌颂现代速度与技术，尝试在静态图像中表现运动。|重复轮廓,速度线,机械动势|翁贝托·薄丘尼;贾科莫·巴拉|futurism|speed
 suprematism|至上主义|Suprematism|现代艺术运动|1913|1930|俄罗斯|以基本几何与有限色彩探索非具象表达。|方形与圆形,白色空间,少量纯色|卡济米尔·马列维奇;奥尔加·罗扎诺娃|suprematism|blocks
+russian_avant_garde|俄罗斯先锋艺术|Russian Avant-Garde|现代艺术运动|1910|1932|俄罗斯,苏联|20 世纪初俄国艺术家跨越绘画、排版、舞台与纺织，实验非具象形式及艺术与社会的关系；它是多条运动的总称，不是单一画法。|几何抽象,强烈色块,跨媒介实验,艺术与生产|柳博芙·波波娃;卡济米尔·马列维奇;亚历山大·罗琴科;埃尔·利西茨基|russian_avant_garde|diagonal
 constructivism|构成主义|Constructivism|现代艺术运动|1915|1935|俄罗斯|强调艺术参与社会生产，形成富力量感的排版和结构。|斜线构图,红黑配色,摄影蒙太奇|亚历山大·罗琴科;柳博芙·波波娃|moma|diagonal
 destijl|风格派|De Stijl|现代艺术运动|1917|1932|荷兰|将造型还原为水平、垂直、原色和非对称平衡。|黑色网格,红黄蓝,矩形关系|蒙德里安;特奥·凡·杜斯堡|destijl|grid
 dada|达达|Dada|现代艺术运动|1916|1925|瑞士,德国,法国,美国|以偶然、现成品和拼贴挑战传统艺术的边界。|文字拼贴,荒诞并置,现成品|杜尚;汉娜·赫希;特里斯坦·查拉|dada|collage
@@ -111,6 +118,11 @@ pop_art|波普艺术|Pop Art|现代艺术运动|1955|1975|英国,美国|把广�
 minimalism|极简主义|Minimalism|现代艺术运动|1960|1980|美国|以重复、标准化形体及作品与空间的关系提出问题。|简单几何,重复模块,工业材料|唐纳德·贾德;艾格尼丝·马丁|moma|minimal
 conceptual_art|观念艺术|Conceptual Art|现代艺术运动|1960|1985|美国,英国|把思想、语言、档案和指令置于成品物件之前，使艺术成为可被阅读与实施的观念系统。|语言作为材料,档案与分类,指令先行,反物件化|约瑟夫·科苏斯;索尔·勒维特;Art & Language|conceptual|text
 arte_povera|贫穷艺术|Arte Povera|现代艺术运动|1967|1980|意大利|用土壤、布料、树枝等非传统材料和装置现场挑战艺术商品化。|日常与自然材料,物质过程,装置现场,反商品化|乔瓦尼·安塞尔莫;贾尼斯·库奈利斯;朱塞佩·佩诺内|arte_povera|material
+light_and_space|光效与空间艺术|Light and Space|现代艺术运动|1960|1985|美国|南加州艺术家以光、透明材料和场地条件改变观者的空间感与感知；作品需要在现场随时间观看。|光线变化,感知空间,透明材料,沉浸现场|詹姆斯·特瑞尔;罗伯特·欧文;玛丽·科斯|light_and_space|light
+land_art|大地艺术|Land Art|现代艺术运动|1965|1985|美国,英国|把土地、岩石与地形作为作品材料，让场地、尺度和自然变化成为创作的一部分。|场地特定,地形改造,巨大尺度,时间与风化|罗伯特·史密森;迈克尔·海泽;南希·霍尔特|land_art|landscape
+street_art|街头艺术|Street Art|当代视觉语言|1970|至今|美国,英国|从签名涂鸦到模板、壁画与公共干预，在城市表面直接与路人对话；不同作品的许可和政治语境并不相同。|公共墙面,喷漆与模板,现场语境,短暂性|班克斯;凯斯·哈林;李·奎尼奥内斯|street_art|mural
+african_modernism|非洲现代主义艺术|African Modernism|现代艺术运动|1950|1985|尼日利亚|非洲现代主义不是统一画派；以尼日利亚扎里亚艺术社为例，艺术家将本土图像传统与现代媒介主动结合。|本土图像再解释,版画与绘画,去殖民语境,形式综合|乌切·奥凯克;布鲁斯·奥诺布拉克佩亚;优素福·格里洛|african_modernism|brush
+japanese_contemporary|日本当代艺术|Japanese Contemporary Art|当代视觉语言|1990|至今|日本|用村上隆的超扁平、草间弥生的重复空间及奈良美智的人物叙事观察不同创作路线；它们不是同一种风格。|平面与流行文化,重复装置,人物叙事,跨媒介传播|村上隆;草间弥生;奈良美智|japanese_contemporary|color
 photorealism|照相写实主义|Photorealism|现代艺术运动|1968|1990|美国|依据摄影图像，以高度精细的绘画再现机械观看。|照片裁切,反射表面,精密细节|查克·克洛斯;理查德·埃斯蒂斯|moma|lens
 neo_expressionism|新表现主义|Neo-Expressionism|现代艺术运动|1975|1995|德国,美国,意大利|复兴大尺幅具象绘画，以粗粝笔触、材料肌理和不安情绪回应极简主义与观念艺术。|大尺幅具象,粗放笔触,厚重肌理,历史与身份叙事|格奥尔格·巴塞利兹;安塞尔姆·基弗;朱利安·施纳贝尔;尚-米歇尔·巴斯奎特|neo_expressionism|brush
 memphis|孟菲斯设计|Memphis Design|建筑与室内设计|1981|1988|意大利|以鲜艳塑料、图案与玩笑式造型挑战功能主义的严肃感。|撞色,几何图案,不规则组合|埃托雷·索特萨斯;娜塔莉·杜·帕斯基耶|va|memphis

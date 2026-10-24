@@ -8,6 +8,12 @@ Object.assign(window.ATLAS_ARTWORKS, {
   byzantine_3:{file:'artworks/byzantine_3.jpg',title:'Double-Sided Pendant Icon with the Virgin and Christ Pantokrator',artist:'Unidentified Byzantine maker',date:'ca. 1100',url:'https://www.metmuseum.org/art/collection/search/466272',institution:'The Metropolitan Museum of Art',rights:'Open Access / CC0'}
 });
 window.ATLAS_STYLE_GALLERIES = {
+  russian_avant_garde:['russian_avant_garde','suprematism','constructivism','russian_constructivist_graphics'],
+  light_and_space:['light_and_space','light_and_space_2'],
+  street_art:['street_art','street_art_2'],
+  land_art:['land_art','land_art_2'],
+  japanese_contemporary:['japanese_contemporary','japanese_contemporary_2','japanese_contemporary_3'],
+  african_modernism:['african_modernism','african_modernism_2'],
   ancient_greek:['ancient_greek','ancient_greek_2','ancient_greek_3'],
   byzantine:['byzantine','byzantine_2','byzantine_3']
 };

@@ -186,3 +186,41 @@
 | `zimm_low_poly.jpg` | [Elionas, Low Poly Kingfisher](https://commons.wikimedia.org/wiki/File:Low_Poly_Kingfisher.jpg) | CC0 |
 | `zimm_low_poly_forest.jpg` | [Srkrishna412, Low poly Forest](https://commons.wikimedia.org/wiki/File:Low_poly_Forest.png) | CC BY-SA 4.0 |
 | `zimm_low_poly_hamburger.jpg` | [Kurtkaiser, Low polygon 3D hamburger](https://commons.wikimedia.org/wiki/File:Low_polygon_3D_hamburger.png) | CC0 |
+
+## 俄罗斯先锋艺术与缺图条目（2026-10-25）
+
+Pinterest 用于寻找构图与作品线索；以下本地图片从可核对的馆藏或 Wikimedia Commons 图档取得。作品名、作者与使用条件在网站详情中呈现。俄罗斯先锋艺术详情页另外串联图鉴原有的至上主义、构成主义和平面设计作品，避免用一张图片代表整个运动。
+
+| 本地文件 | 作品、作者与出处 | 使用条件 |
+| --- | --- | --- |
+| `russian_avant_garde.jpg` | [Lyubov Popova, *Painterly Architectonic*, 1916；苏格兰国家美术馆藏](https://www.nationalgalleries.org/art-and-artists/798?location%5B36064%5D=36064&page=2&search_set_offset=128)，[图档](https://commons.wikimedia.org/wiki/File:Lyubov_Popova_-_Painterly_Architectonic_-_GMA_2080_-_National_Galleries_of_Scotland.jpg) | 作品 Public domain；馆藏摄影署名 Antonia Reeve / National Galleries of Scotland |
+| `isotype.jpg` | [Otto Neurath 与 Isotype 团队，*Basic by Isotype* 书页，1937](https://commons.wikimedia.org/wiki/File:Basic_by_Isotype.jpg) | Wikimedia Commons 标注 Public domain |
+| `polish_poster.jpg` | [Tadeusz Trepkowski，*Bitwa Stalingradzka* 海报，1950](https://commons.wikimedia.org/wiki/File:Tadeusz_Trepkowski_Bitwa_Stalingradzka_(2).jpg) | Public domain |
+| `silhouette_animation.jpg` | [Lotte Reiniger / Primrose Productions，*Die Abenteuer des Prinzen Achmed* 电影画面，1926](https://commons.wikimedia.org/wiki/File:Lotte_Reiniger_Prinz_Achmed_003.jpg) | 权利方标注 CC BY-SA 4.0 |
+| `czech_new_wave.jpg` | [Jakubisko Film Europe, SE，*Zbehovia a pútnici* 官方电影海报，1968](https://commons.wikimedia.org/wiki/File:Zbehovia_a_putnici_poster.jpg) | 上传方标注 CC BY-SA 4.0 |
+
+## TJ Design Studio 视频新增方向的作品图（2026-10-25）
+
+以下图片是与视频所列方向相关的**独立可查作品或现场照片**，不是视频截图。照片授权不等于照片中当代艺术作品的版权；页面明确分别署名。
+
+| 本地文件 | 作品与摄影出处 | 使用条件 |
+| --- | --- | --- |
+| `light_and_space.jpg` | [James Turrell，*Three Gems* 室内；Otheralex01 摄影](https://commons.wikimedia.org/wiki/File:Three_Gems,_James_Turrell_Skyspace,_interior.jpg) | 照片 CC BY-SA 4.0；装置作品版权归艺术家 |
+| `light_and_space_2.jpg` | [James Turrell，*Skyspace*；Philip Halling 摄影](https://commons.wikimedia.org/wiki/File:%27Skyspace%27_by_James_Turrell_-_geograph.org.uk_-_4613695.jpg) | 照片 CC BY-SA 2.0；装置作品版权归艺术家 |
+| `street_art.jpg` | [Banksy，伦敦 Walthamstow 街头作品；Panicshouter 摄影](https://commons.wikimedia.org/wiki/File:Image_of_Banksy_street_art_in_Walthamstow,_London.jpg) | 照片 CC0；壁画作品版权归艺术家 |
+| `street_art_2.jpg` | [Banksy，*Judo*；Simon Höger 摄影](https://commons.wikimedia.org/wiki/File:Banksy_judo.jpg) | 照片 CC BY 4.0；壁画作品版权归艺术家 |
+| `land_art.jpg` | [Robert Smithson，*Spiral Jetty*；Netherzone 摄影](https://commons.wikimedia.org/wiki/File:Spiral_Jetty_Smithson_Laramee.jpg) | 照片 CC BY-SA 4.0；作品版权归 Holt/Smithson Foundation |
+| `land_art_2.jpg` | [Robert Smithson，*Spiral Jetty*；Soren Harward 摄影](https://commons.wikimedia.org/wiki/File:Spiral-jetty-from-rozel-point.png) | 照片 Public domain；作品版权归 Holt/Smithson Foundation |
+| `japanese_contemporary.jpg` | [Yayoi Kusama，南瓜雕塑展览现场；בר 摄影](https://commons.wikimedia.org/wiki/File:Artwork_by_Yayoi_Kusama.jpg) | 照片 CC BY-SA 3.0；作品版权归艺术家 |
+| `japanese_contemporary_2.jpg` | [Takashi Murakami，1992 年早期展览现场；Ithaka Darin Pappas 摄影](https://commons.wikimedia.org/wiki/File:Artist_Takashi_Murakami_with_early_works_at_Galerie_Mars_in_Tokyo_1992._Photographed_by_Ithaka_Darin_Pappas_A.jpg) | 照片 CC BY-SA 4.0；作品版权归艺术家 |
+| `japanese_contemporary_3.jpg` | [Yayoi Kusama，*The Obliteration Room*；Helsinki Art Museum / The Broad 摄影](https://commons.wikimedia.org/wiki/File:Yayoi_Kusama_Obliteration_Room.jpg) | 照片 CC BY-SA 4.0；装置版权归艺术家 |
+| `african_modernism.jpg` | [Bruce Onobrakpeya，*Fulani Milk Woman*，美国国家档案馆图档](https://commons.wikimedia.org/wiki/File:%22Fulani_Milk_Woman%22_-_NARA_-_558974.jpg) | NARA 图档标注 Public domain；原作版权另计 |
+| `african_modernism_2.jpg` | [Bruce Onobrakpeya，*Portrait of Oseni*，美国国家档案馆图档](https://commons.wikimedia.org/wiki/File:%22Portrait_of_Oseni%22_-_NARA_-_558975.jpg) | NARA 图档标注 Public domain；原作版权另计 |
+
+## 本轮补充的排版作品（2026-10-25）
+
+| 本地文件 | 作品、作者与出处 | 使用条件 |
+| --- | --- | --- |
+| `new_typography.jpg` | [El Lissitzky，*For the Voice* 书页，1923；RISD Museum](https://risdmuseum.org/art-design/collection/voice-dlia-golosa-2006921)，[图档](https://commons.wikimedia.org/wiki/File:For_the_Voice_(Dlia_golosa),_1923_(22).jpg) | Wikimedia Commons 标注 Public domain；作为新字体排印的先驱案例 |
+| `midcentury_graphics.jpg` | [Josef Müller-Brockmann，*Juni-Festwochen Zürich* 海报，1957](https://commons.wikimedia.org/wiki/File:Josef_M%C3%BCller-Brockmann_1957.jpg) | Commons 根据几何与文字设计标注 Public domain；具体使用场景仍应重新核对原作权利 |
+| `postmodern_graphics.jpg` | [April Greiman，*Design Quarterly 133: Does It Make Sense?*，1986；MadeInSpace.la 摄影](https://commons.wikimedia.org/wiki/File:Design_Quarterly_133_-_Does_It_Make_Sense.jpg) | 照片 CC BY-SA 4.0；所摄设计作品版权归设计者 |
