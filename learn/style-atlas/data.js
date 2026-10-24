@@ -2,6 +2,8 @@
 window.ATLAS_SOURCES = {
   moma: ['MoMA · 艺术术语', 'https://www.moma.org/collection/terms/'],
   met: ['大都会艺术博物馆 · 艺术史', 'https://www.metmuseum.org/toah/'],
+  greek_art: ['大都会艺术博物馆 · 古希腊艺术', 'https://www.metmuseum.org/de/essays/greek-art-in-the-archaic-period'],
+  byzantine_art: ['大都会艺术博物馆 · 拜占庭艺术', 'https://www.metmuseum.org/de/essays/byzantium-ca-330-1453'],
   va: ['V&A · 艺术与设计', 'https://www.vam.ac.uk/articles/'],
   tate: ['Tate · 艺术术语', 'https://www.tate.org.uk/art/art-terms'],
   artnouveau: ['V&A · 新艺术运动', 'https://www.vam.ac.uk/articles/art-nouveau-an-international-style'],
@@ -68,6 +70,8 @@ window.ATLAS_SOURCES = {
 
 // id | 中文名 | 英文/原文 | 分类 | 起年 | 迄年 | 关联地域 | 一句话 | 可观察特征 | 代表人物/实践者 | 资料入口 | 视觉示意类型
 const rows = `
+ancient_greek|古希腊艺术|Ancient Greek Art|历史艺术|-800|-30|希腊|从陶器绘画、雕塑到建筑，探索人体、比例和公共空间；不同城邦与时期并没有同一种画法。|人体比例,柱式与秩序,陶器人物叙事|菲狄亚斯;波利克里托斯;埃克塞基亚斯|greek_art|figure
+byzantine|拜占庭艺术|Byzantine Art|历史艺术|330|1453|土耳其,希腊|东罗马帝国的宗教与宫廷艺术以圣像、镶嵌画、手抄本和建筑组织神圣叙事。|金色背景,正面人物,镶嵌工艺|无名拜占庭镶嵌画师;特拉勒斯的安忒米乌斯;米利都的伊西多尔|byzantine_art|gold
 gothic|哥特式|Gothic|建筑与室内设计|1140|1500|法国,英国,德国|从中世纪教堂发展出的垂直、透光的建筑语言，后来也影响书籍和装饰。|尖拱,肋拱与飞扶壁,彩色玻璃|苏热;皮埃尔·德·蒙特勒伊|met|arch
 renaissance|文艺复兴|Renaissance|历史艺术|1400|1600|意大利,法国,德国|借古典研究重新组织人体、空间与叙事，透视法成为重要工具。|线性透视,人体比例,古典秩序|列奥纳多·达·芬奇;拉斐尔|met|perspective
 mannerism|矫饰主义|Mannerism|历史艺术|1520|1600|意大利,法国|延长比例并制造不稳定的空间与姿态，显示有意为之的复杂性。|拉长的人体,紧张姿势,非自然色彩|蓬托尔莫;帕尔米贾尼诺|met|figure

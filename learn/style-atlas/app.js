@@ -22,7 +22,7 @@
   const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const regionList = [...new Set(styles.flatMap(x => x.regions))].sort((a,b)=>a.localeCompare(b,'zh-CN'));
   const eraMatch = (style, era) => style.start <= era.to && style.end >= era.from;
-  const period = s => i18n.lang === 'en' ? `${s.start}–${s.ongoing ? 'present' : s.end}` : `${s.start} 年—${s.ongoing ? '至今' : s.end + ' 年'}`;
+  const period = s => s.start < 0 ? (i18n.lang === 'en' ? `${Math.abs(s.start)}–${Math.abs(s.end)} BCE` : `公元前 ${Math.abs(s.start)}—${Math.abs(s.end)} 年`) : (i18n.lang === 'en' ? `${s.start}–${s.ongoing ? 'present' : s.end}` : `${s.start} 年—${s.ongoing ? '至今' : s.end + ' 年'}`);
   const places = s => s.regions.map(i18n.region).join(' · ');
   const category = s => i18n.lang === 'en' ? i18n.category(s.category) : categoryNames[s.category];
   const content = s => i18n.lang === 'en' ? en[s.id] : null;
@@ -47,8 +47,9 @@
     const list = styles.filter(s => {
       const translation=en[s.id];
       const directHit=[s.name,s.english,s.category,s.summary,...s.regions,...s.regions.map(i18n.region),...s.features,...s.people,i18n.category(s.category),translation?.summary,translation?.context,...(translation?.clues||[]),...(translation?.people||[])].join(' ').toLocaleLowerCase().includes(q);
+      const aliasHit=s.id==='realism'&&'写实主义'.includes(q);
       const noteHit=keywordNotes.some(note=>note.related.includes(s.id)&&[note.name,note.english,...note.clues,...note.cluesEn,note.creator].join(' ').toLocaleLowerCase().includes(q));
-      if(q && !directHit && !noteHit) return false;
+      if(q && !directHit && !aliasHit && !noteHit) return false;
       if(state.category.size && !state.category.has(s.category)) return false;
       if(state.era.size && !eras.some(e=>state.era.has(e.id)&&eraMatch(s,e))) return false;
       if(state.region.size && !s.regions.some(r=>state.region.has(r))) return false;
@@ -120,7 +121,8 @@
     const prompt=i18n.t(s.category==='当代视觉语言'?'promptLabel':'promptHistory');
     const sourceLabel=isEn?new URL(source[1]).hostname.replace(/^www\./,''):source[0];
     const workLabel=work?(isEn?new URL(work.url).hostname.replace(/^www\./,''):work.institution):'';
-    const workVisual=work?`<figure class="detail-work"><img src="${escape(work.file)}" alt="${escape(work.title)}, ${escape(work.artist)}" loading="eager"><figcaption><span>${escape(work.artist)} · ${escape(work.title)}${work.date?' · '+escape(work.date):''}</span><a href="${escape(work.url)}" target="_blank" rel="noopener noreferrer">${escape(workLabel)} / ${escape(work.rights)} ↗</a></figcaption>${work.note&&!isEn?`<p class="work-note">${escape(work.note)}</p>`:''}</figure>`:'';
+    const gallery=(window.ATLAS_STYLE_GALLERIES?.[s.id] || [s.id]).map(id=>artworks[id]).filter(Boolean);
+    const workVisual=gallery.length?`<div class="detail-work-gallery ${gallery.length>1?'multiple':''}">${gallery.map((item,index)=>`<figure class="detail-work"><img src="${escape(item.file)}" alt="${escape(item.title)}, ${escape(item.artist)}" loading="${index?'lazy':'eager'}"><figcaption><span>${escape(item.artist)} · ${escape(item.title)}${item.date?' · '+escape(item.date):''}</span><a href="${escape(item.url)}" target="_blank" rel="noopener noreferrer">${escape(isEn?new URL(item.url).hostname.replace(/^www\./,''):item.institution)} / ${escape(item.rights)} ↗</a></figcaption>${item.note&&!isEn?`<p class="work-note">${escape(item.note)}</p>`:''}</figure>`).join('')}</div>`:'';
     const clues=translated?.clues||s.features, people=translated?.people||s.people;
     $('detailContent').innerHTML=`<div class="detail-inner"><div class="detail-language" role="group" aria-label="${isEn?'Language':'语言切换'}"><button type="button" data-lang="zh" aria-pressed="${!isEn}">中</button><span>/</span><button type="button" data-lang="en" aria-pressed="${isEn}">EN</button></div><button class="detail-close" type="button" aria-label="${isEn?'Close details':'关闭详情'}">×</button><span class="detail-kicker">STYLE / ${String(s.index+1).padStart(2,'0')} · ${escape(category(s))} / ${escape(places(s))}</span><h2 id="detailTitle">${escape(i18n.name(s))}</h2><div class="detail-english">${escape(isEn?s.name:s.english)}</div>${workVisual}<p class="detail-intro">${escape(translated?.summary||s.summary)}</p><div class="detail-meta"><div><small>${i18n.t('artPeriod')}</small><strong>${escape(period(s))}</strong></div><div><small>${i18n.t('artPlace')}</small><strong>${escape(places(s))}</strong></div></div><div class="detail-history"><h3>${i18n.t('context')}</h3><p>${escape(translated?.context||histories[s.id]||i18n.t('missingContext'))}</p></div><div class="detail-cols"><div class="detail-block"><h3>${i18n.t('clues')}</h3><ul>${clues.map(f=>`<li>${escape(f)}</li>`).join('')}</ul></div><div class="detail-block"><h3>${i18n.t('people')}</h3><ul>${people.map(f=>`<li>${escape(f)}</li>`).join('')}</ul></div></div><div class="detail-callout"><b>${i18n.t('exercise')}</b>${escape(prompt)}</div><div class="detail-source"><span>${i18n.t('sourceEntry')}</span><a href="${escape(source[1])}" target="_blank" rel="noopener noreferrer">${escape(sourceLabel)} ↗</a></div><div class="detail-prevnext"><button type="button" data-shift="-1">${i18n.t('prevStyle')}</button><button type="button" data-shift="1">${i18n.t('nextStyle')}</button></div></div>`;
     if(!dialog.open){previousHash=location.hash||'#library';dialog.showModal()}

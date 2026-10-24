@@ -155,3 +155,16 @@
 | `keyword_russian_towel.jpg` | [Russian towel border, early 19th century, The Met](https://www.metmuseum.org/art/collection/search/158365) | Open Access / CC0 |
 | `keyword_japanese_magazine.jpg` | [Hisui Sugiura, Present-Day Japan cover, 1925](https://commons.wikimedia.org/wiki/File:Present-Day_Japan_(1925)_magazine_cover_by_Hisui_Sugiura.webp) | Public domain |
 | `keyword_pixel_city.jpg` | [Stvk Công Cuối (VN), Upscaled pixel art of a city at night](https://commons.wikimedia.org/wiki/File:Upscaled_pixel_art_of_a_city_at_night.png) | CC0 |
+
+## 艺术史阅读路径新增作品（2026-10-24）
+
+新建古希腊艺术、拜占庭艺术两条风格记录；以下六张均为大都会艺术博物馆 Open Access 馆藏，原图依馆藏 API 确认 `isPublicDomain: true`，本地仅压缩尺寸用于网页展示。三张一组分别出现在详情中。此前已有的另外十四种风格继续使用原馆藏图，不重复下载。
+
+| 本地文件 | 作品、作者与出处 | 使用条件 |
+| --- | --- | --- |
+| `ancient_greek.jpg` | [Marble statue of a kouros (youth), Greek, ca. 590–580 BCE](https://www.metmuseum.org/art/collection/search/253370) | Open Access / CC0 |
+| `ancient_greek_2.jpg` | [Marble statue of a kore (maiden), Greek, late 6th century BCE](https://www.metmuseum.org/art/collection/search/248008) | Open Access / CC0 |
+| `ancient_greek_3.jpg` | [Terracotta neck-amphora, attributed to Exekias, ca. 540 BCE](https://www.metmuseum.org/art/collection/search/250551) | Open Access / CC0 |
+| `byzantine.jpg` | [Portable Icon with the Virgin Eleousa, Byzantine, early 1300s](https://www.metmuseum.org/art/collection/search/474336) | Open Access / CC0 |
+| `byzantine_2.jpg` | [Icon with the Koimesis, Byzantine, late 900s](https://www.metmuseum.org/art/collection/search/464013) | Open Access / CC0 |
+| `byzantine_3.jpg` | [Double-Sided Pendant Icon with the Virgin and Christ Pantokrator, Byzantine, ca. 1100](https://www.metmuseum.org/art/collection/search/466272) | Open Access / CC0 |

@@ -1,5 +1,7 @@
 /* English editorial text for the 105 Chinese archive records. Fields: id | summary | context | visual clues | practitioners. */
 const englishRows = `
+ancient_greek|Greek makers explored the human figure, proportion and civic space across sculpture, pottery and architecture.|Ancient Greek art developed through distinct city-states and periods; Archaic, Classical and Hellenistic works should not be treated as one fixed look.|human proportion,architectural orders,figural vase painting|Phidias,Polykleitos,Exekias
+byzantine|Icons, mosaics, manuscripts and buildings shaped sacred imagery in the Eastern Roman Empire.|From Constantinople and across the empire, workshops used varied media; gold grounds and frontal figures are important but not universal features.|gold grounds,frontal figures,mosaic craft|unknown Byzantine mosaic makers,Anthemius of Tralles,Isidore of Miletus
 gothic|A vertical, light-filled architectural language born in medieval churches and later echoed in books and ornament.|From twelfth-century France, Gothic building methods spread across Europe and were adapted to local materials and rituals.|pointed arches,rib vaults and flying buttresses,stained glass|Abbot Suger,Pierre de Montreuil
 renaissance|Classical study reshaped the depiction of bodies, space and narrative; perspective became a key tool.|In fifteenth-century Italy, artists revisited antiquity while developing new methods of observation and representation.|linear perspective,human proportion,classical order|Leonardo da Vinci,Raphael
 mannerism|Elongated proportions and unstable spaces make artistic complexity deliberately visible.|After the High Renaissance, artists in Italy and France stretched familiar rules of proportion and composition.|elongated figures,tense poses,unusual colour|Pontormo,Parmigianino
@@ -112,7 +114,7 @@ window.ATLAS_EN = Object.fromEntries(englishRows.split('\n').map(line => {
   return [id, {summary, context, clues:clues.split(','), people:people.split(',')}];
 }));
 window.ATLAS_REGIONS_EN = {
-  '中国':'China','日本':'Japan','韩国':'South Korea','法国':'France','英国':'United Kingdom','德国':'Germany',
+  '希腊':'Greece','土耳其':'Türkiye','中国':'China','日本':'Japan','韩国':'South Korea','法国':'France','英国':'United Kingdom','德国':'Germany',
   '意大利':'Italy','美国':'United States','荷兰':'Netherlands','西班牙':'Spain','比利时':'Belgium',
   '奥地利':'Austria','瑞士':'Switzerland','俄罗斯':'Russia','苏联':'Soviet Union','挪威':'Norway',
   '墨西哥':'Mexico','印度':'India','伊朗':'Iran','土耳其':'Türkiye','摩洛哥':'Morocco',
