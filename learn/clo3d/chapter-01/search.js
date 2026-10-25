@@ -1,16 +1,18 @@
 (() => {
   const index = window.CLO_SEARCH_INDEX || [];
   if (!index.length) return;
-  const page = location.pathname.split('/').pop() || 'index.html';
+  const segments = location.pathname.split('/').filter(Boolean);
+  if (!segments.at(-1)?.endsWith('.html')) segments.push('index.html');
+  const page = segments.slice(-2).join('/');
   document.querySelectorAll('[data-zh][data-en]').forEach((element, number) => {
     element.id ||= `search-entry-${number + 1}`;
   });
   const terms = {
-    zh:{button:'搜索',title:'搜索 CLO3D 教程',placeholder:'搜索工具、操作或遇到的问题…',hint:'输入关键词或近义词，点击结果直达操作说明。',empty:'没有找到相关内容，试试其他说法。',initial:'例如：袖口、缝线、穿模、重置板片',pages:{'index.html':'第一章教程','about-clo3d.html':'关于 CLO3D','reset-3d-pattern.html':'重置 3D 版片'}},
-    en:{button:'Search',title:'Search CLO3D lessons',placeholder:'Search tools, steps, or a problem…',hint:'Try a term or a similar word, then open the matching instruction.',empty:'No match found. Try another term.',initial:'Try: armhole, seam, clipping, reset',pages:{'index.html':'Chapter 01','about-clo3d.html':'About CLO3D','reset-3d-pattern.html':'Reset 3D Pattern'}},
-    id:{button:'Cari',title:'Cari pelajaran CLO3D',placeholder:'Cari alat, langkah, atau masalah…',hint:'Coba istilah atau sinonim, lalu buka petunjuk yang sesuai.',empty:'Tidak ada hasil. Coba istilah lain.',initial:'Contoh: lubang lengan, jahitan, simulasi',pages:{'index.html':'Bab 01','about-clo3d.html':'Tentang CLO3D','reset-3d-pattern.html':'Atur ulang pola 3D'}},
-    ru:{button:'Поиск',title:'Поиск по урокам CLO3D',placeholder:'Найдите инструмент, действие или проблему…',hint:'Введите термин или похожее слово и откройте нужную инструкцию.',empty:'Ничего не найдено. Попробуйте другой запрос.',initial:'Например: пройма, шов, симуляция',pages:{'index.html':'Глава 01','about-clo3d.html':'О CLO3D','reset-3d-pattern.html':'Сброс 3D-детали'}},
-    de:{button:'Suche',title:'CLO3D-Lektionen durchsuchen',placeholder:'Werkzeug, Arbeitsschritt oder Problem suchen…',hint:'Einen Begriff oder ein ähnliches Wort eingeben und die Anleitung öffnen.',empty:'Keine Treffer. Versuche einen anderen Begriff.',initial:'Zum Beispiel: Armloch, Naht, Simulation',pages:{'index.html':'Kapitel 01','about-clo3d.html':'Über CLO3D','reset-3d-pattern.html':'3D-Schnittteil zurücksetzen'}}
+    zh:{button:'搜索',title:'搜索 CLO3D 教程',placeholder:'搜索工具、操作或遇到的问题…',hint:'输入关键词或近义词，点击结果直达操作说明。',empty:'没有找到相关内容，试试其他说法。',initial:'例如：袖口、缝线、肩省、重置板片',pages:{'chapter-01/index.html':'第一章教程','chapter-01/about-clo3d.html':'关于 CLO3D','chapter-01/reset-3d-pattern.html':'重置 3D 版片','shirt-lesson/index.html':'男士衬衫课程'}},
+    en:{button:'Search',title:'Search CLO3D lessons',placeholder:'Search tools, steps, or a problem…',hint:'Try a term or a similar word, then open the matching instruction.',empty:'No match found. Try another term.',initial:'Try: armhole, seam, dart, reset',pages:{'chapter-01/index.html':'Chapter 01','chapter-01/about-clo3d.html':'About CLO3D','chapter-01/reset-3d-pattern.html':'Reset 3D Pattern','shirt-lesson/index.html':"Men's shirt lesson"}},
+    id:{button:'Cari',title:'Cari pelajaran CLO3D',placeholder:'Cari alat, langkah, atau masalah…',hint:'Coba istilah atau sinonim, lalu buka petunjuk yang sesuai.',empty:'Tidak ada hasil. Coba istilah lain.',initial:'Contoh: lubang lengan, kupnat, simulasi',pages:{'chapter-01/index.html':'Bab 01','chapter-01/about-clo3d.html':'Tentang CLO3D','chapter-01/reset-3d-pattern.html':'Atur ulang pola 3D','shirt-lesson/index.html':'Pelajaran kemeja pria'}},
+    ru:{button:'Поиск',title:'Поиск по урокам CLO3D',placeholder:'Найдите инструмент, действие или проблему…',hint:'Введите термин или похожее слово и откройте нужную инструкцию.',empty:'Ничего не найдено. Попробуйте другой запрос.',initial:'Например: пройма, вытачка, симуляция',pages:{'chapter-01/index.html':'Глава 01','chapter-01/about-clo3d.html':'О CLO3D','chapter-01/reset-3d-pattern.html':'Сброс 3D-детали','shirt-lesson/index.html':'Мужская рубашка'}},
+    de:{button:'Suche',title:'CLO3D-Lektionen durchsuchen',placeholder:'Werkzeug, Arbeitsschritt oder Problem suchen…',hint:'Einen Begriff oder ein ähnliches Wort eingeben und die Anleitung öffnen.',empty:'Keine Treffer. Versuche einen anderen Begriff.',initial:'Zum Beispiel: Armloch, Abnäher, Simulation',pages:{'chapter-01/index.html':'Kapitel 01','chapter-01/about-clo3d.html':'Über CLO3D','chapter-01/reset-3d-pattern.html':'3D-Schnittteil zurücksetzen','shirt-lesson/index.html':'Herrenhemd-Lektion'}}
   };
   const synonyms = [
     ['板片','版片','裁片','纸样','pattern','panel','piece','pola','schnittteil','деталь','лекало'],
@@ -23,7 +25,9 @@
     ['安排点','吸附点','定位点','arrangement point','placement point','titik pengaturan','anordnungspunkt','точка размещения'],
     ['孔','洞','镂空','领口','cutout','hole','neckline','lubang','ausschnitt','вырез'],
     ['移动','平移','拖动','move','drag','verschieben','переместить'],
-    ['删除','移除','去掉','delete','remove','hapus','löschen','удалить']
+    ['删除','移除','去掉','delete','remove','hapus','löschen','удалить'],
+    ['省道','胸省','肩省','dart','kupnat','вытачка','abnäher'],
+    ['袖窿','袖笼','袖口','armhole','lubang lengan','пройма','armloch']
   ];
   const normalized = text => (text || '').normalize('NFKC').toLocaleLowerCase().replace(/[\s\p{P}\p{S}]+/gu,'');
   const groups = synonyms.map(group => group.map(normalized));
@@ -42,11 +46,16 @@
     const code = document.documentElement.lang.split('-')[0];
     return terms[code] ? code : 'zh';
   };
-  const translate = (entry, code, field) => code === 'zh' ? entry[field === 'title' ? 'headingZh' : 'zh']
-    : code === 'en' ? entry[field === 'title' ? 'headingEn' : 'en']
-    : window.CLO_TRANSLATIONS?.[code]?.[entry[field === 'title' ? 'headingEn' : 'en']] || entry[field === 'title' ? 'headingEn' : 'en'];
+  const translate = (entry, code, field) => {
+    if (field === 'title' && entry.headingEn === "Men's shirt pattern design") return terms[code].pages[entry.page];
+    if (code === 'zh') return entry[field === 'title' ? 'headingZh' : 'zh'];
+    const source = entry[field === 'title' ? 'headingEn' : 'en'];
+    if (code === 'en') return source;
+    const translations = entry.page.startsWith('shirt-lesson/') ? window.SHIRT_TRANSLATIONS : window.CLO_TRANSLATIONS;
+    return translations?.[code]?.[source] || source;
+  };
   const icon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="7.2"/><path d="m16.2 16.2 5 5"/></svg>';
-  const header = document.querySelector('.top .right') || document.querySelector('.reset-top');
+  const header = document.querySelector('.top .right') || document.querySelector('.reset-top') || document.querySelector('.lesson-header');
   if (!header) return;
   const trigger = document.createElement('button');
   trigger.type = 'button';
@@ -67,7 +76,7 @@
   const makeResult = (entry, code) => {
     const link = document.createElement('a');
     link.className = 'clo-search-result';
-    link.href = `${entry.page}#${entry.anchor}`;
+    link.href = `../${entry.page}#${entry.anchor}`;
     const head = document.createElement('div');
     head.className = 'clo-search-result-head';
     const title = document.createElement('strong');

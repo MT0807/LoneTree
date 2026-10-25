@@ -3,8 +3,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const chapter = path.join(__dirname, '..', 'learn', 'clo3d', 'chapter-01');
-const pages = ['index.html', 'about-clo3d.html', 'reset-3d-pattern.html'];
+const cloRoot = path.join(__dirname, '..', 'learn', 'clo3d');
+const pages = ['chapter-01/index.html', 'chapter-01/about-clo3d.html', 'chapter-01/reset-3d-pattern.html', 'shirt-lesson/index.html'];
 const decode = value => value.replace(/&(?:amp|quot|apos|lt|gt|#(\d+)|#x([\da-f]+));/gi, (whole, decimal, hex) => {
   if (decimal) return String.fromCodePoint(Number(decimal));
   if (hex) return String.fromCodePoint(parseInt(hex, 16));
@@ -17,10 +17,10 @@ const attr = (tag, name) => {
 const entries = [];
 
 for (const page of pages) {
-  const html = fs.readFileSync(path.join(chapter, page), 'utf8');
+  const html = fs.readFileSync(path.join(cloRoot, page), 'utf8');
   let ordinal = 0;
-  let headingZh = page === 'index.html' ? 'CLO3D 第一章' : page === 'about-clo3d.html' ? '关于 CLO3D' : '重置 3D 版片';
-  let headingEn = page === 'index.html' ? 'CLO3D Chapter 01' : page === 'about-clo3d.html' ? 'About CLO3D' : 'Reset 3D Pattern';
+  let headingZh = page === 'chapter-01/index.html' ? 'CLO3D 第一章' : page === 'chapter-01/about-clo3d.html' ? '关于 CLO3D' : page === 'shirt-lesson/index.html' ? '男士衬衫版型设计' : '重置 3D 版片';
+  let headingEn = page === 'chapter-01/index.html' ? 'CLO3D Chapter 01' : page === 'chapter-01/about-clo3d.html' ? 'About CLO3D' : page === 'shirt-lesson/index.html' ? "Men's shirt pattern design" : 'Reset 3D Pattern';
   const tags = html.match(/<[^>]*>/g) || [];
   for (const tag of tags) {
     const zh = attr(tag, 'data-zh');
@@ -36,5 +36,5 @@ for (const page of pages) {
   }
 }
 const output = 'window.CLO_SEARCH_INDEX=' + JSON.stringify(entries) + ';\n';
-fs.writeFileSync(path.join(chapter, 'search-index.js'), output, 'utf8');
+fs.writeFileSync(path.join(cloRoot, 'chapter-01', 'search-index.js'), output, 'utf8');
 console.log(`Indexed ${entries.length} searchable passages from ${pages.length} pages.`);

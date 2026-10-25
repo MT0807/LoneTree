@@ -76,12 +76,16 @@ h2 span { font-family: Arial, "PingFang SC", sans-serif; font-size: 13px; font-w
 .cover-clo strong { font-size: 48px; }
 .cover-period { color: #e4ba64; }
 .cover-clo .cover-bottomline { background: #29485d; right: 0; left: 0; bottom: 0; padding: 10px 14px; }
+.cover-shirt { background: #283b48; color: #fff; transition: transform 180ms ease, box-shadow 180ms ease; }
+.cover-shirt strong { font-size: 43px; letter-spacing: -.04em; }
+.cover-shirt img { position: absolute; inset: 105px 0 0; height: calc(100% - 105px); object-position: 26% 40%; filter: saturate(.8); }
+.cover-shirt .cover-bottomline { right: 0; left: 0; bottom: 0; padding: 11px 12px; background: #283b48; font-size: 9px; }
 .cover-style { background: #20362e; color: #fff; transition: transform 180ms ease, box-shadow 180ms ease; }
 .cover-style strong { font-size: 36px; }
 .cover-style .cover-period { color: #d78662; }
 .cover-style img { position: absolute; inset: 105px 0 0; height: calc(100% - 105px); object-position: center 45%; }
 .cover-style .cover-bottomline { right: 0; left: 0; bottom: 0; padding: 10px 14px; background: #20362e; }
-.cover-clo:hover, .cover-clo:focus-visible, .cover-ai-course:hover, .cover-ai-course:focus-visible, .cover-style:hover, .cover-style:focus-visible { transform: translateY(-5px); box-shadow: 7px 12px 16px #00000029, -3px 0 0 #00000013; }
+.cover-clo:hover, .cover-clo:focus-visible, .cover-shirt:hover, .cover-shirt:focus-visible, .cover-ai-course:hover, .cover-ai-course:focus-visible, .cover-style:hover, .cover-style:focus-visible { transform: translateY(-5px); box-shadow: 7px 12px 16px #00000029, -3px 0 0 #00000013; }
 .book-caption { display: flex; flex-direction: column; gap: 4px; margin: 24px 0 0; font-size: 12px; line-height: 1.3; }
 .book-caption strong, .book-caption span { display: block; }
 .book-caption span { color: #777; font-size: 11px; }
@@ -121,6 +125,8 @@ h2 span { font-family: Arial, "PingFang SC", sans-serif; font-size: 13px; font-w
   .cover-ai-course img { inset-block-start: 94px; height: calc(100% - 94px); }
   .cover-clo strong { font-size: 43px; }
   .cover-clo img { inset-block-start: 120px; height: calc(100% - 120px); }
+  .cover-shirt strong { font-size: 36px; }
+  .cover-shirt img { inset-block-start: 95px; height: calc(100% - 95px); }
   .cover-style strong { font-size: 31px; }
   .cover-style img { inset-block-start: 95px; height: calc(100% - 95px); }
   .shelf-rail { left: -18px; right: -18px; }
@@ -129,7 +135,7 @@ h2 span { font-family: Arial, "PingFang SC", sans-serif; font-size: 13px; font-w
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .cover-clo, .cover-ai-course, .cover-style { transition: none; }
+  .cover-clo, .cover-shirt, .cover-ai-course, .cover-style { transition: none; }
 }
 
 /* Brand Story, the second book on the first Learn shelf. */

@@ -6,5 +6,6 @@ for (const name of ['index.html', 'about-clo3d.html', 'reset-3d-pattern.html']) 
   let html = fs.readFileSync(file, 'utf8');
   if (!html.includes('search.css')) html = html.replace('</head>', '<link rel="stylesheet" href="search.css"/></head>');
   if (!html.includes('search-index.js')) html = html.replace('</body>', '<script src="search-index.js"></script><script src="search.js"></script></body>');
+  if (!html.includes('../shirt-lesson/shirt-translations.js')) html = html.replace('<script src="search-index.js">','<script src="../shirt-lesson/shirt-translations.js"></script><script src="search-index.js">');
   fs.writeFileSync(file, html);
 }
