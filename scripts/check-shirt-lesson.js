@@ -10,17 +10,18 @@ const shelf = fs.readFileSync(path.join(root,'learn','index.html'),'utf8');
 assert(shelf.includes('href="clo3d/shirt-lesson/"'),'Missing second CLO3D book');
 assert(shelf.includes('一起来做一件男士衬衫吧'),'Missing book title');
 assert(html.includes('href="../../#clo3d"'),'Missing return link');
-assert.equal((html.match(/class="lesson-step"/g)||[]).length,7,'Expected seven lesson steps');
+assert.equal((html.match(/class="lesson-step"/g)||[]).length,11,'Expected eleven lesson steps');
 assert(html.indexOf('class="design-intro"') < html.indexOf('id="chest-cut"'),'Pattern-design introduction must precede the second recording');
-assert.equal((html.match(/<figcaption data-zh="操作视频/g)||[]).length,7,'Each recording needs an 操作视频 caption');
+assert.equal((html.match(/<figcaption data-zh="操作视频/g)||[]).length,11,'Each recording needs an 操作视频 caption');
 assert(html.indexOf('id="trace-lines"') > html.indexOf('id="armhole-transfer"'),'Tracing must follow dart manipulation');
 assert(html.indexOf('id="trace-curves"') > html.indexOf('id="trace-lines"'),'Curves must follow straight edges');
 assert(html.includes('07-dartless-block.png'),'Missing final dartless block reference');
+for (const id of ['cut-new-pieces','arrange-pieces','sew-shirt','harden-check']) assert(html.includes(`id="${id}"`),`Missing ${id}`);
 
 const sources = [...html.matchAll(/<source src="([^"]+\.mp4)"/g)].map(match=>match[1]);
 const posters = [...html.matchAll(/poster="([^"]+\.jpg)"/g)].map(match=>match[1]);
-assert.equal(sources.length,7);
-assert.equal(posters.length,7);
+assert.equal(sources.length,11);
+assert.equal(posters.length,11);
 for (const file of [...sources,...posters]) assert(fs.existsSync(path.join(chapter,file)),`Missing ${file}`);
 for (const [,file] of html.matchAll(/<img[^>]+src="(assets\/[^"]+)"/g)) assert(fs.existsSync(path.join(chapter,file)),`Missing ${file}`);
 for (const file of sources) {
@@ -36,4 +37,4 @@ for (const lang of ['id','ru','de']) {
   const missing=phrases.filter(phrase=>!context.window.SHIRT_TRANSLATIONS[lang]?.[phrase]);
   assert.equal(missing.length,0,`Missing ${lang} translations: ${missing.join('; ')}`);
 }
-console.log(`Shirt lesson verified: 7 videos, 7 posters, ${phrases.length} phrases in 5 languages.`);
+console.log(`Shirt lesson verified: 11 videos, 11 posters, ${phrases.length} phrases in 5 languages.`);
