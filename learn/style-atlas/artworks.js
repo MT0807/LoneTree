@@ -1409,5 +1409,15 @@ window.ATLAS_ARTWORKS = {
     "institution": "Wikimedia Commons",
     "rights": "Photograph CC BY-SA 4.0; artwork rights remain with designer",
     "note": "格雷曼的数字拼贴与实验排版；图档摄影有开放许可，设计作品的版权另计。"
+  },
+  "psychedelic": {
+    "file": "artworks/psychedelic.jpg",
+    "title": "U.S.I.A. United States Information Agency",
+    "artist": "Peter Max",
+    "date": "1970–1980",
+    "url": "https://www.loc.gov/pictures/item/2015645799/",
+    "institution": "Library of Congress, Prints and Photographs Division",
+    "rights": "No known restrictions on publication (Library of Congress advisory)",
+    "note": "美国国会图书馆所藏的迷幻风格海报；这是 1970 年代的延续案例，而非 1960 年代迷幻音乐演出海报。"
   }
 };
