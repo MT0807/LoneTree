@@ -79,6 +79,7 @@ h2 span { font-family: Arial, "PingFang SC", sans-serif; font-size: 13px; font-w
 .cover-shirt { background: #283b48; color: #fff; transition: transform 180ms ease, box-shadow 180ms ease; }
 .cover-shirt strong { font-size: 43px; letter-spacing: -.04em; }
 .cover-shirt img { position: absolute; inset: 105px 0 0; height: calc(100% - 105px); object-position: 26% 40%; filter: saturate(.8); }
+.cover-shirt img { object-position: center 22%; filter: saturate(.92); }
 .cover-shirt .cover-bottomline { right: 0; left: 0; bottom: 0; padding: 11px 12px; background: #283b48; font-size: 9px; }
 .cover-style { background: #20362e; color: #fff; transition: transform 180ms ease, box-shadow 180ms ease; }
 .cover-style strong { font-size: 36px; }
