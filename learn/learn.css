@@ -159,3 +159,7 @@ h2 span { font-family: Arial, "PingFang SC", sans-serif; font-size: 13px; font-w
 .cover-vibe-coding:hover,.cover-vibe-coding:focus-visible { transform:translateY(-5px);box-shadow:7px 12px 16px #00000029,-3px 0 0 #00000013; }
 @media(max-width:700px){.cover-vibe-coding strong{top:42px;font-size:27px}.vibe-cover-folder-orange{left:25px;top:129px}.vibe-cover-folder-lime{left:48px;top:151px}}
 @media(prefers-reduced-motion:reduce){.cover-vibe-coding{transition:none}}
+
+/* Screen Archive: supplied vintage-camera cover on the Visual Styles shelf. */
+.cover-screen-archive { background:#fff; }
+.cover-screen-archive img { object-fit:contain; padding:10px; }
