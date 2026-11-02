@@ -22,7 +22,7 @@
   function highlightTools(language) {
     const escaped = toolNames[language].sort((a,b) => b.length-a.length)
       .map(term => term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'));
-    const pattern = new RegExp(['「[^」]+」','“[^”]+”','„[^“]+“','«[^»]+»',...escaped,'Ctrl[／/]Command\\s*\\+\\s*[AD]','\\b(?:Shift|Enter|Delete|Space|[ZIGNXBS])\\b','空格键'].join('|'),'gi');
+    const pattern = new RegExp(['「[^」]+」','“[^”]+”','„[^“]+“','«[^»]+»',...escaped,'Ctrl[／/]Command\\s*\\+\\s*[AD]','\\b(?:Shift|Enter|Delete|Space|[ZIGNXBSV])\\b','空格键'].join('|'),'gi');
     document.querySelectorAll('.lesson-step .step-copy p[data-zh][data-en], .lesson-step .step-copy li[data-zh][data-en]').forEach(element => {
       const value = element.textContent;
       pattern.lastIndex = 0;
