@@ -16,9 +16,9 @@ const styles=fs.readFileSync(path.join(chapter,'shirt-lesson.css'),'utf8');
 const i18n=fs.readFileSync(path.join(chapter,'shirt-i18n.js'),'utf8');
 assert(styles.includes('.tool-term{color:#bd6b3e;font-weight:800;text-decoration:underline'),'Missing orange bold underlined tool style');
 assert(i18n.includes('highlightTools(code)'),'Tool emphasis should follow language changes');
-assert.equal((html.match(/class="lesson-step"/g)||[]).length,35,'Expected thirty-five lesson steps');
+assert.equal((html.match(/class="lesson-step"/g)||[]).length,36,'Expected thirty-six lesson steps');
 assert(html.indexOf('class="design-intro"') < html.indexOf('id="chest-cut"'),'Pattern-design introduction must precede the second recording');
-assert.equal((html.match(/<figcaption data-zh="操作视频/g)||[]).length,35,'Each recording needs an 操作视频 caption');
+assert.equal((html.match(/<figcaption data-zh="操作视频/g)||[]).length,36,'Each recording needs an 操作视频 caption');
 assert(html.indexOf('id="trace-lines"') > html.indexOf('id="armhole-transfer"'),'Tracing must follow dart manipulation');
 assert(html.indexOf('id="trace-curves"') > html.indexOf('id="trace-lines"'),'Curves must follow straight edges');
 assert(html.includes('07-dartless-block.png'),'Missing final dartless block reference');
@@ -31,6 +31,8 @@ for (const id of ['check-sleeve-length','sleeve-width-points','sleeve-width-exte
 for (const id of ['cuff-module','create-cuff','fit-cuff','mark-cuff-pleats']) assert(html.includes(`id="${id}"`),`Missing ${id}`);
 for (const id of ['draw-pleat-fold-lines','set-pleat-fold-angles']) assert(html.includes(`id="${id}"`),`Missing ${id}`);
 for (const id of ['sew-sleeve-pleats','draft-sleeve-placket']) assert(html.includes(`id="${id}"`),`Missing ${id}`);
+assert(html.includes('id="extract-sleeve-placket"'),'Missing placket extraction lesson');
+assert(html.includes('2.5 ÷ 2 = 1.25 cm') && html.includes('「勾勒为板片」'),'Missing placket width calculation or tracing action');
 assert(html.includes('「间距」设为 1.25 cm') && html.includes('关闭「内部线延长」'),'Missing sleeve opening offset settings');
 assert(html.includes('折叠强度」设为 100') && html.includes('按 B 使用「编辑缝纫线」'),'Missing fold and seam adjustment details');
 assert(html.indexOf('id="overlap-placket"') < html.indexOf('id="collar-module"'),'Collar bookmark should follow placket overlap');
@@ -40,8 +42,8 @@ assert(html.includes('间距设为 1.5 cm'),'Missing 1.5 cm placket extension');
 
 const sources = [...html.matchAll(/<source src="([^"]+\.mp4)"/g)].map(match=>match[1]);
 const posters = [...html.matchAll(/poster="([^"]+\.jpg)"/g)].map(match=>match[1]);
-assert.equal(sources.length,35);
-assert.equal(posters.length,35);
+assert.equal(sources.length,36);
+assert.equal(posters.length,36);
 for (const file of [...sources,...posters]) assert(fs.existsSync(path.join(chapter,file)),`Missing ${file}`);
 for (const [,file] of html.matchAll(/<img[^>]+src="(assets\/[^"]+)"/g)) assert(fs.existsSync(path.join(chapter,file)),`Missing ${file}`);
 for (const file of sources) {
@@ -57,4 +59,4 @@ for (const lang of ['id','ru','de']) {
   const missing=phrases.filter(phrase=>!context.window.SHIRT_TRANSLATIONS[lang]?.[phrase]);
   assert.equal(missing.length,0,`Missing ${lang} translations: ${missing.join('; ')}`);
 }
-console.log(`Shirt lesson verified: 35 videos, 35 posters, ${phrases.length} phrases in 5 languages.`);
+console.log(`Shirt lesson verified: 36 videos, 36 posters, ${phrases.length} phrases in 5 languages.`);
