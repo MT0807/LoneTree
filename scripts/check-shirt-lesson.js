@@ -21,9 +21,9 @@ const styles=fs.readFileSync(path.join(chapter,'shirt-lesson.css'),'utf8');
 const i18n=fs.readFileSync(path.join(chapter,'shirt-i18n.js'),'utf8');
 assert(styles.includes('.tool-term{color:#bd6b3e;font-weight:800;text-decoration:underline'),'Missing orange bold underlined tool style');
 assert(i18n.includes('highlightTools(code)'),'Tool emphasis should follow language changes');
-assert.equal((html.match(/class="lesson-step"/g)||[]).length,56,'Expected fifty-six lesson steps');
+assert.equal((html.match(/class="lesson-step"/g)||[]).length,57,'Expected fifty-seven lesson steps');
 assert(html.indexOf('class="design-intro"') < html.indexOf('id="chest-cut"'),'Pattern-design introduction must precede the second recording');
-assert.equal((html.match(/<figcaption data-zh="操作视频/g)||[]).length,56,'Each recording needs an 操作视频 caption');
+assert.equal((html.match(/<figcaption data-zh="操作视频/g)||[]).length,57,'Each recording needs an 操作视频 caption');
 assert(html.indexOf('id="trace-lines"') > html.indexOf('id="armhole-transfer"'),'Tracing must follow dart manipulation');
 assert(html.indexOf('id="trace-curves"') > html.indexOf('id="trace-lines"'),'Curves must follow straight edges');
 assert(html.includes('07-dartless-block.png'),'Missing final dartless block reference');
@@ -43,6 +43,8 @@ for (const id of ['mirror-sleeve','garment-details-module','adjust-fabric','add-
 for (const id of ['button-properties','button-style','copy-buttons']) assert(html.includes(`id="${id}"`),`Missing ${id}`);
 for (const id of ['create-buttonholes','fix-buttonholes']) assert(html.includes(`id="${id}"`),`Missing ${id}`);
 for (const id of ['remove-cuff-seams','cuff-buttons']) assert(html.includes(`id="${id}"`),`Missing ${id}`);
+assert(html.includes('id="pointed-placket-buttons"') && html.includes('50-cuff-button-finished.png'),'Missing final cuff reference or pointed placket button lesson');
+assert(html.indexOf('id="cuff-buttons"') < html.indexOf('id="pointed-placket-buttons"') && html.indexOf('id="pointed-placket-buttons"') < html.indexOf('id="fabric-physics"'),'Pointed placket buttons must follow cuff fastening');
 assert(html.indexOf('id="buttonhole-style"') < html.indexOf('id="remove-cuff-seams"') && html.indexOf('id="cuff-buttons"') < html.indexOf('id="fabric-physics"'),'Cuff fastening must follow buttonholes and precede fabric details');
 for (const id of ['buttonhole-style','fabric-physics','fabric-library']) assert(html.includes(`id="${id}"`),`Missing ${id}`);
 for (const id of ['render-module','prepare-render','render-workspace']) assert(html.includes(`id="${id}"`),`Missing ${id}`);
@@ -60,8 +62,8 @@ assert(html.includes('间距设为 1.5 cm'),'Missing 1.5 cm placket extension');
 
 const sources = [...html.matchAll(/<source src="([^"]+\.mp4)"/g)].map(match=>match[1]);
 const posters = [...html.matchAll(/poster="([^"]+\.jpg)"/g)].map(match=>match[1]);
-assert.equal(sources.length,56);
-assert.equal(posters.length,56);
+assert.equal(sources.length,57);
+assert.equal(posters.length,57);
 for (const file of [...sources,...posters]) assert(fs.existsSync(path.join(chapter,file)),`Missing ${file}`);
 for (const [,file] of html.matchAll(/<img[^>]+src="(assets\/[^"]+)"/g)) assert(fs.existsSync(path.join(chapter,file)),`Missing ${file}`);
 for (const file of sources) {
@@ -77,4 +79,4 @@ for (const lang of ['id','ru','de']) {
   const missing=phrases.filter(phrase=>!context.window.SHIRT_TRANSLATIONS[lang]?.[phrase]);
   assert.equal(missing.length,0,`Missing ${lang} translations: ${missing.join('; ')}`);
 }
-console.log(`Shirt lesson verified: 56 videos, 56 posters, ${phrases.length} phrases in 5 languages.`);
+console.log(`Shirt lesson verified: 57 videos, 57 posters, ${phrases.length} phrases in 5 languages.`);
