@@ -63,6 +63,18 @@ const folders = [
     ],
     notes:["先从 MotionSites 和 Showreel 找到整体视觉方向，记录具体的布局与动效。","在 Aceternity UI、Uiverse 和 React Bits 中只选解决当前问题的组件。","需要自定义时间线时再研究 Anime.js，并检查加载速度、键盘操作和手机端。"],
     task:"从六站中选一个案例和一个组件，把链接交给 AI；说明想借鉴的结构、颜色或动效，并要求保留自己网站的内容与视觉规则。"
+  },
+  {
+    id: "scroll-parallax", number: "07", initials: "3D", color: "blue", title: "滚动视差网站搭建", subtitle: "从产品素材到滚动交互与上线", count: "03 SOURCES",
+    intro: "参考汤姆CC的AI工具箱《如何用AI制作3D产品网站？》：从产品素材出发，制作具有空间感的网页，再测试并部署。下面是按这一主题整理的可操作路线；具体工具和参数请以原视频及官方文档为准。",
+    video: "https://v.douyin.com/KRn2-m46pLk/",
+    resources: [
+      {name:"Three.js 模型加载", url:"https://threejs.org/manual/pages/loading-3d-models.html", origin:"真实 3D", text:"需要用户拖动旋转、缩放或换角度时，准备产品的 GLB 模型，在网页中实时渲染。先保证轮廓、材质和灯光，再安排滚动镜头。"},
+      {name:"GSAP ScrollTrigger", url:"https://gsap.com/docs/v3/Plugins/ScrollTrigger/", origin:"滚动控制", text:"将页面滚动进度连接到镜头、模型旋转或文字入场；用 scrub 调整跟随手感，并分段设计首屏、特写和结尾。"},
+      {name:"MDN 滚动动画", url:"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Scroll-driven_animations", origin:"网页基础", text:"了解浏览器原生的滚动进度动画。文字、图层和简单视差可先用 CSS 实现，再决定是否需要 Three.js。"}
+    ],
+    notes:["01 / 准备产品素材：正面、侧面和细节图；确定颜色、材质与三个展示重点。","02 / 选画面方案：固定镜头可做图片序列；需要自由旋转和点选细节时使用真实 3D 模型。","03 / 设计滚动分镜：首屏建立产品形象，中段依次展示结构与材质，结尾给出明确按钮。","04 / 让 AI 实现并逐段检查：文字可读、滚动可倒退、手机端流畅，并照顾减少动态效果的设置。","05 / 部署前压缩素材，检查加载速度、链接和触屏操作。"],
+    task:"选一件产品，写出 3 段滚动分镜与每段镜头动作。先做可滚动的静态草稿，再让 AI 接入图片序列或 GLB 模型；用手机和电脑各检查一次。"
   }
 ];
 
@@ -94,7 +106,7 @@ function renderFolder(index) {
       ${resource.image ? `<a class="resource-preview" href="${resource.image}" target="_blank" rel="noopener" aria-label="查看 ${resource.name} 网站完整截图"><img src="${resource.image}" alt="${resource.name} 网站实景截图" loading="lazy" decoding="async"></a>` : `<a class="resource-preview resource-preview-text" href="${resource.url}" target="_blank" rel="noopener noreferrer" aria-label="访问 ${resource.name} 网站"><span>${resource.name}</span><small>VISIT SITE ↗</small></a>`}
       <h3>${resource.name}</h3><p>${resource.text}</p><a class="resource-link" href="${resource.url}" target="_blank" rel="noopener noreferrer">访问网站 ↗</a></article>`).join("");
   readerContent.innerHTML = `
-    <div class="reader-hero"><div><p class="reader-tag">FOLDER ${folder.number} / VIBE CODING</p><h1>${folder.title}<span style="color:var(--orange)">.</span></h1><p>${folder.intro}</p>${folder.video ? `<a class="video-source" href="${folder.video}" target="_blank" rel="noopener noreferrer">观看 B 站原视频 ↗</a>` : ""}</div><div class="reader-folder-art" data-color="${folder.color}">${folderShape(folder)}</div></div>
+    <div class="reader-hero"><div><p class="reader-tag">FOLDER ${folder.number} / VIBE CODING</p><h1>${folder.title}<span style="color:var(--orange)">.</span></h1><p>${folder.intro}</p>${folder.video ? `<a class="video-source" href="${folder.video}" target="_blank" rel="noopener noreferrer">观看原视频 ↗</a>` : ""}</div><div class="reader-folder-art" data-color="${folder.color}">${folderShape(folder)}</div></div>
     <div class="reader-section"><h2>01 / 资料入口</h2><div class="reader-section-body resource-list">${resources}</div></div>
     <div class="reader-section"><h2>02 / 阅读线索</h2><div class="reader-section-body reader-notes">${folder.notes.map((note,i)=>`<div class="reader-note"><span>STEP ${String(i+1).padStart(2,"0")}</span><p>${note}</p></div>`).join("")}</div></div>
     <div class="reader-task"><h2>03 / 试一试</h2><p>${folder.task}</p></div>`;
