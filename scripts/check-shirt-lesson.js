@@ -11,6 +11,11 @@ assert(shelf.includes('href="clo3d/shirt-lesson/"'),'Missing second CLO3D book')
 assert(shelf.includes('一起来做一件男士衬衫吧'),'Missing book title');
 assert(shelf.includes('clo3d/shirt-lesson/assets/shirt-case-cover.jpg'),'Missing case photo on book cover');
 assert(html.includes('href="../../#clo3d"'),'Missing return link');
+assert(html.includes('id="assignment-checklist"'),'Missing assignment checklist');
+assert(html.includes('href="#assignment-checklist"'),'Missing checklist navigation');
+const checklistIds=[...html.matchAll(/data-check-id="([^"]+)"/g)].map(match=>match[1]);
+assert.deepEqual(checklistIds,['source-file','front','back','cuff-detail','favorite-angle','collar','placket','buttons','cuff','cuff-pleats']);
+assert(html.includes('shirt-checklist.js'),'Missing checklist persistence script');
 assert(html.indexOf('assets/shirt-case-cover.jpg') < html.indexOf('class="hero-copy"'),'Case photo should lead the lesson');
 const styles=fs.readFileSync(path.join(chapter,'shirt-lesson.css'),'utf8');
 const i18n=fs.readFileSync(path.join(chapter,'shirt-i18n.js'),'utf8');
