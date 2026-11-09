@@ -173,3 +173,9 @@ h2 span { font-family: Arial, "PingFang SC", sans-serif; font-size: 13px; font-w
 .cover-ai-tools:hover, .cover-ai-tools:focus-visible { transform: translateY(-5px); box-shadow: 7px 12px 16px #00000029, -3px 0 0 #00000013; }
 @media (max-width: 700px) { .cover-ai-tools strong { top: 77px; font-size: 36px; } }
 @media (prefers-reduced-motion: reduce) { .cover-ai-tools { transition: none; } }
+
+.cover-image-prompts { background: #292e2e; color: #fff; transition: transform 180ms ease, box-shadow 180ms ease; }
+.cover-image-prompts img { position: absolute; inset: 82px 0 0; width: 100%; height: calc(100% - 82px); object-fit: cover; object-position: 50% 65%; filter: brightness(.78); }
+.cover-image-prompts strong { font-size: 27px; }
+.cover-image-prompts .cover-bottomline { right: 0; left: 0; bottom: 0; padding: 10px 14px; background: #292e2e; }
+.cover-image-prompts:hover, .cover-image-prompts:focus-visible { transform: translateY(-5px); box-shadow: 7px 12px 16px #00000029, -3px 0 0 #00000013; }
