@@ -48,6 +48,21 @@ const folders = [
     ],
     notes:["记录动作发生在什么操作之后，持续多久，用户会得到什么反馈。","每页只保留少量关键动效，让内容的阅读优先。","测试键盘、触屏和减少动态效果的设置。"],
     task:"给自己的网页设计一个“打开文件夹”的微交互：写出触发、过渡、完成后的三个状态。"
+  },
+  {
+    id: "six-sites", number: "06", initials: "6×", color: "purple", title: "网页质感六站", subtitle: "北岛 Travis 视频里的六个实用网站", count: "06 SOURCES",
+    intro: "这六个网站来自北岛 Travis 的《Vibe Coding 必收藏！6 个提升网页质感的网站》。按“看案例 → 选组件 → 做动效”的顺序使用，把喜欢的页面或代码链接交给 AI，并说明要借鉴的具体部分。",
+    video: "https://www.bilibili.com/video/BV12SHQ6jEqA/",
+    resources: [
+      {name:"MotionSites", url:"https://motionsites.ai/", origin:"设计灵感", text:"浏览带动效的网页案例与可复用的 AI 设计提示词。先挑一个与项目气质接近的首页，观察布局、图像和运动节奏。"},
+      {name:"Aceternity UI", url:"https://ui.aceternity.com/", origin:"动态组件", text:"React、Tailwind CSS 与 Motion 组件库。可查看组件、页面区块与交互效果，再让 AI 按自己的技术栈和品牌颜色改写。"},
+      {name:"Showreel.design", url:"https://showreel.design/", origin:"动态作品", text:"按风格和类别浏览动态设计作品，包括 3D 与 CGI。适合寻找节奏、转场和视觉叙事参考，再提炼成文字要求。"},
+      {name:"Uiverse", url:"https://uiverse.io/", origin:"界面元素", text:"社区制作的按钮、加载状态、卡片等 UI 元素，可查看 HTML/CSS、Tailwind 或 React 等实现。先测试交互，再整合进页面。"},
+      {name:"React Bits", url:"https://reactbits.dev/", origin:"React 动效", text:"提供动画文字、背景和微交互的 React 组件。选择局部效果，核对依赖与性能，再适配手机和减少动态效果设置。"},
+      {name:"Anime.js", url:"https://animejs.com/", origin:"动画引擎", text:"用于网页动画的 JavaScript 库。可控制时间线、滚动触发与 SVG 动画；适合需要定制运动逻辑时参考官方示例。"}
+    ],
+    notes:["先从 MotionSites 和 Showreel 找到整体视觉方向，记录具体的布局与动效。","在 Aceternity UI、Uiverse 和 React Bits 中只选解决当前问题的组件。","需要自定义时间线时再研究 Anime.js，并检查加载速度、键盘操作和手机端。"],
+    task:"从六站中选一个案例和一个组件，把链接交给 AI；说明想借鉴的结构、颜色或动效，并要求保留自己网站的内容与视觉规则。"
   }
 ];
 
@@ -76,10 +91,10 @@ function renderFolder(index) {
   readerCount.textContent = `${folder.number} / ${String(folders.length).padStart(2,"0")}`;
   const resources = folder.resources.map((resource, i) => `
     <article class="resource"><div class="resource-top"><span>REFERENCE ${String(i + 1).padStart(2,"0")}</span><span>${resource.origin}</span></div>
-      <a class="resource-preview" href="${resource.image}" target="_blank" rel="noopener" aria-label="查看 ${resource.name} 网站完整截图"><img src="${resource.image}" alt="${resource.name} 网站实景截图" loading="lazy" decoding="async"></a>
+      ${resource.image ? `<a class="resource-preview" href="${resource.image}" target="_blank" rel="noopener" aria-label="查看 ${resource.name} 网站完整截图"><img src="${resource.image}" alt="${resource.name} 网站实景截图" loading="lazy" decoding="async"></a>` : `<a class="resource-preview resource-preview-text" href="${resource.url}" target="_blank" rel="noopener noreferrer" aria-label="访问 ${resource.name} 网站"><span>${resource.name}</span><small>VISIT SITE ↗</small></a>`}
       <h3>${resource.name}</h3><p>${resource.text}</p><a class="resource-link" href="${resource.url}" target="_blank" rel="noopener noreferrer">访问网站 ↗</a></article>`).join("");
   readerContent.innerHTML = `
-    <div class="reader-hero"><div><p class="reader-tag">FOLDER ${folder.number} / VIBE CODING</p><h1>${folder.title}<span style="color:var(--orange)">.</span></h1><p>${folder.intro}</p></div><div class="reader-folder-art" data-color="${folder.color}">${folderShape(folder)}</div></div>
+    <div class="reader-hero"><div><p class="reader-tag">FOLDER ${folder.number} / VIBE CODING</p><h1>${folder.title}<span style="color:var(--orange)">.</span></h1><p>${folder.intro}</p>${folder.video ? `<a class="video-source" href="${folder.video}" target="_blank" rel="noopener noreferrer">观看 B 站原视频 ↗</a>` : ""}</div><div class="reader-folder-art" data-color="${folder.color}">${folderShape(folder)}</div></div>
     <div class="reader-section"><h2>01 / 资料入口</h2><div class="reader-section-body resource-list">${resources}</div></div>
     <div class="reader-section"><h2>02 / 阅读线索</h2><div class="reader-section-body reader-notes">${folder.notes.map((note,i)=>`<div class="reader-note"><span>STEP ${String(i+1).padStart(2,"0")}</span><p>${note}</p></div>`).join("")}</div></div>
     <div class="reader-task"><h2>03 / 试一试</h2><p>${folder.task}</p></div>`;
