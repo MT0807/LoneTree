@@ -48,6 +48,33 @@ const folders = [
     ],
     notes:["记录动作发生在什么操作之后，持续多久，用户会得到什么反馈。","每页只保留少量关键动效，让内容的阅读优先。","测试键盘、触屏和减少动态效果的设置。"],
     task:"给自己的网页设计一个“打开文件夹”的微交互：写出触发、过渡、完成后的三个状态。"
+  },
+  {
+    id: "six-sites", number: "06", initials: "6×", color: "purple", title: "网页质感六站", subtitle: "北岛 Travis 视频里的六个实用网站", count: "06 SOURCES",
+    intro: "这六个网站来自北岛 Travis 的《Vibe Coding 必收藏！6 个提升网页质感的网站》。按“看案例 → 选组件 → 做动效”的顺序使用，把喜欢的页面或代码链接交给 AI，并说明要借鉴的具体部分。",
+    video: "https://www.bilibili.com/video/BV12SHQ6jEqA/",
+    resources: [
+      {name:"MotionSites", url:"https://motionsites.ai/", origin:"设计灵感", text:"浏览带动效的网页案例与可复用的 AI 设计提示词。先挑一个与项目气质接近的首页，观察布局、图像和运动节奏。"},
+      {name:"Aceternity UI", url:"https://ui.aceternity.com/", origin:"动态组件", text:"React、Tailwind CSS 与 Motion 组件库。可查看组件、页面区块与交互效果，再让 AI 按自己的技术栈和品牌颜色改写。"},
+      {name:"Showreel.design", url:"https://showreel.design/", origin:"动态作品", text:"按风格和类别浏览动态设计作品，包括 3D 与 CGI。适合寻找节奏、转场和视觉叙事参考，再提炼成文字要求。"},
+      {name:"Uiverse", url:"https://uiverse.io/", origin:"界面元素", text:"社区制作的按钮、加载状态、卡片等 UI 元素，可查看 HTML/CSS、Tailwind 或 React 等实现。先测试交互，再整合进页面。"},
+      {name:"React Bits", url:"https://reactbits.dev/", origin:"React 动效", text:"提供动画文字、背景和微交互的 React 组件。选择局部效果，核对依赖与性能，再适配手机和减少动态效果设置。"},
+      {name:"Anime.js", url:"https://animejs.com/", origin:"动画引擎", text:"用于网页动画的 JavaScript 库。可控制时间线、滚动触发与 SVG 动画；适合需要定制运动逻辑时参考官方示例。"}
+    ],
+    notes:["先从 MotionSites 和 Showreel 找到整体视觉方向，记录具体的布局与动效。","在 Aceternity UI、Uiverse 和 React Bits 中只选解决当前问题的组件。","需要自定义时间线时再研究 Anime.js，并检查加载速度、键盘操作和手机端。"],
+    task:"从六站中选一个案例和一个组件，把链接交给 AI；说明想借鉴的结构、颜色或动效，并要求保留自己网站的内容与视觉规则。"
+  },
+  {
+    id: "scroll-parallax", number: "07", initials: "3D", color: "blue", title: "滚动视差网站搭建", subtitle: "从产品素材到滚动交互与上线", count: "03 SOURCES",
+    intro: "参考汤姆CC的AI工具箱《如何用AI制作3D产品网站？》：从产品素材出发，制作具有空间感的网页，再测试并部署。下面是按这一主题整理的可操作路线；具体工具和参数请以原视频及官方文档为准。",
+    video: "https://v.douyin.com/KRn2-m46pLk/",
+    resources: [
+      {name:"Three.js 模型加载", url:"https://threejs.org/manual/pages/loading-3d-models.html", origin:"真实 3D", text:"需要用户拖动旋转、缩放或换角度时，准备产品的 GLB 模型，在网页中实时渲染。先保证轮廓、材质和灯光，再安排滚动镜头。"},
+      {name:"GSAP ScrollTrigger", url:"https://gsap.com/docs/v3/Plugins/ScrollTrigger/", origin:"滚动控制", text:"将页面滚动进度连接到镜头、模型旋转或文字入场；用 scrub 调整跟随手感，并分段设计首屏、特写和结尾。"},
+      {name:"MDN 滚动动画", url:"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Scroll-driven_animations", origin:"网页基础", text:"了解浏览器原生的滚动进度动画。文字、图层和简单视差可先用 CSS 实现，再决定是否需要 Three.js。"}
+    ],
+    notes:["01 / 准备产品素材：正面、侧面和细节图；确定颜色、材质与三个展示重点。","02 / 选画面方案：固定镜头可做图片序列；需要自由旋转和点选细节时使用真实 3D 模型。","03 / 设计滚动分镜：首屏建立产品形象，中段依次展示结构与材质，结尾给出明确按钮。","04 / 让 AI 实现并逐段检查：文字可读、滚动可倒退、手机端流畅，并照顾减少动态效果的设置。","05 / 部署前压缩素材，检查加载速度、链接和触屏操作。"],
+    task:"选一件产品，写出 3 段滚动分镜与每段镜头动作。先做可滚动的静态草稿，再让 AI 接入图片序列或 GLB 模型；用手机和电脑各检查一次。"
   }
 ];
 
@@ -76,10 +103,10 @@ function renderFolder(index) {
   readerCount.textContent = `${folder.number} / ${String(folders.length).padStart(2,"0")}`;
   const resources = folder.resources.map((resource, i) => `
     <article class="resource"><div class="resource-top"><span>REFERENCE ${String(i + 1).padStart(2,"0")}</span><span>${resource.origin}</span></div>
-      <a class="resource-preview" href="${resource.image}" target="_blank" rel="noopener" aria-label="查看 ${resource.name} 网站完整截图"><img src="${resource.image}" alt="${resource.name} 网站实景截图" loading="lazy" decoding="async"></a>
+      ${resource.image ? `<a class="resource-preview" href="${resource.image}" target="_blank" rel="noopener" aria-label="查看 ${resource.name} 网站完整截图"><img src="${resource.image}" alt="${resource.name} 网站实景截图" loading="lazy" decoding="async"></a>` : `<a class="resource-preview resource-preview-text" href="${resource.url}" target="_blank" rel="noopener noreferrer" aria-label="访问 ${resource.name} 网站"><span>${resource.name}</span><small>VISIT SITE ↗</small></a>`}
       <h3>${resource.name}</h3><p>${resource.text}</p><a class="resource-link" href="${resource.url}" target="_blank" rel="noopener noreferrer">访问网站 ↗</a></article>`).join("");
   readerContent.innerHTML = `
-    <div class="reader-hero"><div><p class="reader-tag">FOLDER ${folder.number} / VIBE CODING</p><h1>${folder.title}<span style="color:var(--orange)">.</span></h1><p>${folder.intro}</p></div><div class="reader-folder-art" data-color="${folder.color}">${folderShape(folder)}</div></div>
+    <div class="reader-hero"><div><p class="reader-tag">FOLDER ${folder.number} / VIBE CODING</p><h1>${folder.title}<span style="color:var(--orange)">.</span></h1><p>${folder.intro}</p>${folder.video ? `<a class="video-source" href="${folder.video}" target="_blank" rel="noopener noreferrer">观看原视频 ↗</a>` : ""}</div><div class="reader-folder-art" data-color="${folder.color}">${folderShape(folder)}</div></div>
     <div class="reader-section"><h2>01 / 资料入口</h2><div class="reader-section-body resource-list">${resources}</div></div>
     ${folder.id === "scroll-parallax" ? `<section class="case-lesson" aria-labelledby="case-lesson-heading"><div class="case-lesson-head"><span>CLASSROOM CASE / 01</span><h2 id="case-lesson-heading">把视频变成滚动叙事<span>.</span></h2><p>向下滚动，让 5 秒影像跟随页面前进；在 1、3、5 秒观察画面与白色文字如何配合。向上滚动可以倒放分镜。</p></div><div class="case-scroll" id="case-scroll"><div class="case-screen"><video id="case-video" src="scroll-case.mp4" poster="scroll-case-poster.jpg" preload="auto" muted playsinline aria-label="粉紫色 3D 猴头旋转，蓝色形体在结尾进入画面"></video><div class="case-vignette"></div><div class="case-top"><span>FORM / 001</span><span>SCROLL TO PLAY ↓</span></div><div class="case-caption" data-start="0.77" data-end="1.9"><span>01 / 1 SEC</span><h3>光，赋予形态<br>第一种表情。</h3><p>粉紫色的表面，在黑暗中慢慢显影。</p></div><div class="case-caption case-caption-right" data-start="2.65" data-end="3.9"><span>02 / 3 SEC</span><h3>转动之间，<br>细节开始说话。</h3><p>角度改变，熟悉的轮廓也有了新的视线。</p></div><div class="case-caption" data-start="4.55" data-end="5.184"><span>03 / 5 SEC</span><h3>色彩相遇，<br>故事停在这一刻。</h3><p>一个简短的动态实验，留下更长的想象。</p></div><div class="case-bottom"><span>SCROLL / SCRUB</span><span class="case-progress"><i id="case-progress-fill"></i></span><span id="case-time">00:00 / 00:05</span></div></div></div><div class="case-lesson-foot"><span>观察点：固定画面 · 滚动控制时间 · 分段文字入场</span><a href="scroll-case.mp4" target="_blank" rel="noopener">打开原始视频 ↗</a></div></section>` : ""}
     <div class="reader-section"><h2>02 / 阅读线索</h2><div class="reader-section-body reader-notes">${folder.notes.map((note,i)=>`<div class="reader-note"><span>STEP ${String(i+1).padStart(2,"0")}</span><p>${note}</p></div>`).join("")}</div></div>

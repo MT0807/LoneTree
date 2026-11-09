@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f5">
+  <meta name="description" content="认识 AI 公司、模型、对话产品与 Agent，并找到 ChatGPT、Codex、Grok、Manus、DeepSeek、MiniMax、WorkBuddy、扣子的官网与入门方法。">
+  <title>AI 工具图鉴 | LoneTree Learn</title>
+  <link rel="icon" href="../../assets/paperclip-favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="back" href="../">← <span>返回 Learn</span></a>
+    <a class="wordmark" href="../../">LoneTree<span>/</span></a>
+    <span class="topbar-label">LEARN / 03</span>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow">AI FIELD GUIDE · 2026</p>
+        <h1 id="page-title">认识工具，<br><em>看懂关系。</em></h1>
+        <p class="hero-intro">从公司和模型，到你能直接使用的 AI 产品与 Agent。按地区浏览，选一个任务，打开官网试一试。</p>
+        <a class="hero-link" href="#concepts">先看四个概念 <span>↓</span></a>
+      </div>
+      <div class="hero-graphic" aria-hidden="true">
+        <div class="graphic-label">HOW IT CONNECTS</div>
+        <div class="graphic-node">公司<span>COMPANY</span></div>
+        <div class="graphic-line"></div>
+        <div class="graphic-node">模型<span>MODEL</span></div>
+        <div class="graphic-line"></div>
+        <div class="graphic-node two">AI 产品 <b>+</b> Agent<span>USE / ACT</span></div>
+      </div>
+    </section>
+
+    <section class="concepts" id="concepts" aria-labelledby="concept-title">
+      <div class="section-heading"><span>00 / START HERE</span><h2 id="concept-title">四个词，先分清。</h2></div>
+      <div class="concept-grid">
+        <article><span class="concept-index">01</span><h3>公司</h3><p>开发和提供产品的组织，例如 OpenAI、DeepSeek、腾讯。一个公司可能有多个模型和产品。</p></article>
+        <article><span class="concept-index">02</span><h3>模型</h3><p>经过训练、负责理解与生成内容的核心能力。模型本身不等于你打开的网页或 App。</p></article>
+        <article><span class="concept-index">03</span><h3>AI 产品</h3><p>把模型能力放进可使用的界面。你可以提问、写作、分析文件，也可能使用搜索和图像等功能。</p></article>
+        <article><span class="concept-index">04</span><h3>Agent</h3><p>围绕目标持续工作：拆解步骤、调用工具、处理文件，并交付结果。执行范围取决于产品和授权。</p></article>
+      </div>
+      <p class="concept-note">例如：OpenAI 是公司，GPT 是模型系列，ChatGPT 是面向用户的 AI 产品，Codex 是处理编程任务的 Agent。</p>
+    </section>
+
+    <nav class="region-nav" aria-label="浏览地区"><a href="#overseas">海外工具 <small>需要 🪜</small> ↘</a><a href="#china">国内工具 ↘</a></nav>
+    <section class="region" id="overseas" aria-labelledby="overseas-title">
+      <div class="section-heading region-heading"><span>01 / GLOBAL · 访问可能需要 🪜</span><h2 id="overseas-title">海外工具</h2></div>
+      <div id="overseas-list" class="company-list"></div>
+    </section>
+    <section class="region" id="china" aria-labelledby="china-title">
+      <div class="section-heading region-heading"><span>02 / CHINA</span><h2 id="china-title">国内工具</h2></div>
+      <div id="china-list" class="company-list"></div>
+    </section>
+    <p class="page-footnote">产品功能与访问方式会更新；请以各卡片链接的官方页面为准。站内预览能否显示，取决于官网是否允许嵌入。</p>
+  </main>
+
+  <footer><span>LONETREE / LEARN</span><a href="../">返回书架 ↑</a></footer>
+
+  <dialog id="site-preview" aria-labelledby="preview-title">
+    <div class="preview-head"><div><span>OFFICIAL WEBSITE</span><h2 id="preview-title">官网预览</h2></div><button id="close-preview" type="button" aria-label="关闭预览">×</button></div>
+    <p>如果官网拒绝嵌入或要求登录，请使用下方链接在新标签页打开。</p>
+    <iframe id="preview-frame" title="官网预览" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-forms allow-scripts allow-same-origin allow-popups"></iframe>
+    <a id="preview-link" href="#" target="_blank" rel="noopener noreferrer">打开官方网站 ↗</a>
+  </dialog>
+</body>
+</html>
