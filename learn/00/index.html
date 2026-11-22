@@ -352,6 +352,10 @@
       .tool-links a:focus-visible { outline:2px solid var(--red); outline-offset:3px; }
       .soul-references { display:grid; gap:16px; margin-top:48px; scroll-margin-top:90px; }
       .soul-references h3 { margin:0; }
+      .agent-reference-grid.reference-grid { grid-template-columns:repeat(3,minmax(0,1fr)); grid-template-rows:none; height:auto; }
+      .agent-reference-grid.reference-grid figure { height:auto; aspect-ratio:3/4; background:var(--glass); border:1px solid var(--line); }
+      .agent-reflection-page { display:grid; align-content:center; gap:24px; }
+      .agent-reflection-page .prologue-reflection { max-width:920px; }
       .soul-references .reference-grid { height:auto; grid-template-rows:none; }
       .soul-references .reference-grid figure { height:clamp(180px,29vw,440px); background:var(--glass); border:1px solid var(--line); }
       @media (max-width:640px) { .soul-references .reference-grid figure { height:auto; aspect-ratio:3/4; } }
@@ -562,14 +566,14 @@
             <a class="small model-source" href="https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5" target="_blank" rel="noopener noreferrer">官方资料 ↗</a>
           </article>
           <article class="model-card">
-            <div class="model-logo"><span class="tool-mark" aria-hidden="true">SOUL</span></div>
+            <div class="model-logo"><img src="assets/tools/higgsfield-soul.jpg" alt=""></div>
             <span class="model-owner">HIGGSFIELD · 图像</span>
             <h3>Soul 2</h3>
             <p>面向时尚和编辑式人像设计。可搭配 Soul ID 做人物参考，测试同一形象在不同造型与场景里的效果。</p>
             <a class="small model-source" href="https://higgsfield.ai/creator-hub/help-center/ai-models/how-do-i-use-soul-to-generate-images" target="_blank" rel="noopener noreferrer">官方资料 ↗</a>
           </article>
           <article class="model-card">
-            <div class="model-logo"><span class="tool-mark" aria-hidden="true">KLING</span></div>
+            <div class="model-logo"><img src="assets/tools/kling.png" alt=""></div>
             <span class="model-owner">快手 · 视频</span>
             <h3>Kling 4.0</h3>
             <p>支持多模态参考和多关键帧控制，适合练习连贯运镜和长镜头；具体版本与可用范围以产品为准。</p>
@@ -591,6 +595,15 @@
             <p>最后做取舍。用自己的判断选片，告诉 Agent 下一轮该改什么。</p>
           </div>
         </div>
+        <div class="reference-grid agent-reference-grid" aria-label="镜头角度、人物风格与光线参考">
+          <figure><img src="assets/camera/low-angle.png" alt="低机位拍摄的极简美妆近景" loading="lazy" decoding="async"></figure>
+          <figure><img src="assets/gallery/higgsfield-soul/04.jpg" alt="蓝色网纱头巾与金属墨镜的冷调时尚肖像" loading="lazy" decoding="async"></figure>
+          <figure><img src="assets/lighting/window-light.png" alt="自然窗光下发丝掠过脸部的人像" loading="lazy" decoding="async"></figure>
+        </div>
+      </section>
+
+      <section class="agent-reflection-page" id="agent-decisions" aria-labelledby="agent-decisions-label">
+        <div class="eyebrow" id="agent-decisions-label">Module 07 / AI basics · Creative direction</div>
         <div class="prologue-reflection">
           <p>你是骑手。缰绳握在你手里，往哪里走、什么时候转向、在哪里停下，都由你决定。Agent 可以按你的方向试出不同走法，让你有更多版本可以比较。</p>
           <strong>每个人都可以成为创意的决策者。你决定作品要表达什么，AI 负责把想法做出来。</strong>
@@ -616,9 +629,9 @@
         {name:'Lovart',company:'LiblibAI',logo:'assets/tools/lovart.png',wide:true,task:'设计智能体 品牌 海报 多步骤执行',text:'从创意简报出发组织画板 品牌视觉和系列设计物料',url:'https://www.lovart.ai/'},
         {name:'TapNow',company:'TapNow',logo:'assets/tools/tapnow.png',task:'商业视觉 无限画布 工作流组合',text:'适合广告 电商和连续视觉内容的节点式创作流程',url:'https://app.tapnow.ai/'},
         {name:'Pinterest',company:'Pinterest Inc',logo:'assets/tools/pinterest.png',task:'视觉搜索 灵感扩散 资料库',text:'用于查找相似图和建立参考资料库 收藏后仍需分类与拆解',url:'https://www.pinterest.com/'},
-        {name:'Higgsfield SOUL',company:'Higgsfield',mark:'SOUL',reference:'#soul-references',task:'时尚人像 视觉风格 人物参考',text:'适合探索时装编辑大片、美妆人像和系列画面的整体观感',url:'https://higgsfield.ai/soul'},
-        {name:'可灵',company:'快手',mark:'KLING',task:'图生视频 运镜 关键帧',text:'适合把广告主视觉延展成动态镜头，继续测试动作、运镜和参考素材',url:'https://kling.ai/app/'},
-        {name:'LibTV',company:'LiblibAI',mark:'LibTV',task:'创作画布 分镜 多模型协作',text:'在同一画布组织参考图、分镜和视频，适合串联广告制作流程',url:'https://www.liblib.tv/'}
+        {name:'Higgsfield SOUL',company:'Higgsfield',logo:'assets/tools/higgsfield-soul.jpg',reference:'#soul-references',task:'时尚人像 视觉风格 人物参考',text:'适合探索时装编辑大片、美妆人像和系列画面的整体观感',url:'https://higgsfield.ai/soul'},
+        {name:'可灵',company:'快手',logo:'assets/tools/kling.png',task:'图生视频 运镜 关键帧',text:'适合把广告主视觉延展成动态镜头，继续测试动作、运镜和参考素材',url:'https://kling.ai/app/'},
+        {name:'LibTV',company:'LiblibAI',logo:'assets/tools/libtv.png',wide:true,task:'创作画布 分镜 多模型协作',text:'在同一画布组织参考图、分镜和视频，适合串联广告制作流程',url:'https://www.liblib.tv/'}
       ];
       document.querySelector('#tool-grid').innerHTML=toolData.map(tool=>{
         const logo=tool.logo?`<img class="${tool.wide?'wide':''}" src="${tool.logo}" alt="">`:`<span class="tool-mark" aria-hidden="true">${tool.mark}</span>`;
