@@ -337,11 +337,21 @@
         body.caption-dock-active .caption-source { margin-bottom:5px; font-size:11px; }
         body.caption-dock-active .caption-target { font-size:clamp(18px,4.8vw,25px); }
       }
+      .image-model-diagrams { grid-template-columns:repeat(2,minmax(0,1fr)); margin-top:32px; }
+      .image-model-subhead { margin:40px 0 12px; }
+      .image-model-references { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:20px 0; }
+      .image-model-references figure { margin:0; padding:12px; background:#fff; border:1px solid var(--line); }
+      .image-model-references img { display:block; width:100%; height:clamp(160px,34vw,500px); object-fit:contain; }
+      .image-model-references figcaption { padding-top:12px; color:var(--muted); font:11px "DM Mono",monospace; }
+      .image-model-sources { display:flex; flex-wrap:wrap; gap:8px 16px; margin-top:16px; }
+      .image-model-sources a,.model-card .model-source { color:var(--red); }
+      .tool-logo .tool-mark,.model-logo .tool-mark { font:700 18px Manrope,"Noto Sans SC",sans-serif; letter-spacing:-.04em; }
+      @media (max-width:640px) { .image-model-diagrams { grid-template-columns:1fr; } }
     </style>
   </head>
   <body>
     <div class="course-label brand-mark"><img src="assets/brand/instituto-marangoni.png" alt="Istituto Marangoni enhancing talent since 1935" /></div>
-    <nav><a href="#top" data-range="top">首页</a><a href="#ai-prologue-1" data-range="ai-prologue-1">Storytelling</a><div class="nav-menu" id="ai-tool-nav"><button id="ai-tool-toggle" data-range="visual-original" aria-expanded="false" aria-controls="ai-tool-menu">AI Tool</button><div class="ai-tool-menu" id="ai-tool-menu"><div class="menu-group"><b>视觉资料</b><a href="#visual-original">AI 后期处理与创意</a><a href="#visual-library">发型结构</a><a href="#visual-face">人物与面部</a><a href="#visual-camera">姿态与镜头</a><a href="#visual-lighting">灯光设计</a><a href="#visual-scene">场景世界</a><a href="#visual-material">材质语言</a><a href="#visual-graphic">平面排版</a><a href="#visual-summary">视觉标签汇总</a></div><div class="menu-group"><b>拍摄角度</b><a href="#lab">镜头总览</a><a href="#camera-front">正面平视</a><a href="#camera-profile">侧面</a><a href="#camera-three">四分之三侧面</a><a href="#camera-high">俯拍</a><a href="#camera-low">仰拍</a></div><div class="menu-group"><b>灯光</b><a href="#lighting">灯光总览</a><a href="#lighting-before">原始灯光</a><a href="#lighting-soft">柔和正面光</a><a href="#lighting-hard">侧面硬光</a><a href="#lighting-rim">轮廓光与发丝光</a><a href="#lighting-top">顶光</a><a href="#lighting-window">窗光</a><a href="#lighting-color">彩色灯光</a><a href="#lighting-summary">灯光效果汇总</a></div><div class="menu-group"><b>创意参考</b><a href="#reference-scene-material">场景与材质</a><a href="#reference-digital-hair">数字发型</a><a href="#reference-makeup">特殊妆容</a><a href="#reference-advertising">视觉广告</a></div><div class="menu-group"><b>工具与模型</b><a href="#tool-library">工具入口</a><a href="#model-library">模型能力</a><a href="#ai-basics">AI 基础逻辑</a></div></div></div><a href="#workflow" data-range="workflow">Workflow</a></nav>
+    <nav><a href="#top" data-range="top">首页</a><a href="#ai-prologue-1" data-range="ai-prologue-1">Storytelling</a><div class="nav-menu" id="ai-tool-nav"><button id="ai-tool-toggle" data-range="image-model-logic" aria-expanded="false" aria-controls="ai-tool-menu">AI Tool</button><div class="ai-tool-menu" id="ai-tool-menu"><div class="menu-group"><b>视觉资料</b><a href="#image-model-logic">图像模型生成逻辑</a><a href="#visual-original">AI 后期处理与创意</a><a href="#visual-library">发型结构</a><a href="#visual-face">人物与面部</a><a href="#visual-camera">姿态与镜头</a><a href="#visual-lighting">灯光设计</a><a href="#visual-scene">场景世界</a><a href="#visual-material">材质语言</a><a href="#visual-graphic">平面排版</a><a href="#visual-summary">视觉标签汇总</a></div><div class="menu-group"><b>拍摄角度</b><a href="#lab">镜头总览</a><a href="#camera-front">正面平视</a><a href="#camera-profile">侧面</a><a href="#camera-three">四分之三侧面</a><a href="#camera-high">俯拍</a><a href="#camera-low">仰拍</a></div><div class="menu-group"><b>灯光</b><a href="#lighting">灯光总览</a><a href="#lighting-before">原始灯光</a><a href="#lighting-soft">柔和正面光</a><a href="#lighting-hard">侧面硬光</a><a href="#lighting-rim">轮廓光与发丝光</a><a href="#lighting-top">顶光</a><a href="#lighting-window">窗光</a><a href="#lighting-color">彩色灯光</a><a href="#lighting-summary">灯光效果汇总</a></div><div class="menu-group"><b>创意参考</b><a href="#reference-scene-material">场景与材质</a><a href="#reference-digital-hair">数字发型</a><a href="#reference-makeup">特殊妆容</a><a href="#reference-advertising">视觉广告</a></div><div class="menu-group"><b>工具与模型</b><a href="#tool-library">工具入口</a><a href="#model-library">模型能力</a><a href="#ai-basics">AI 基础逻辑</a></div></div></div><a href="#workflow" data-range="workflow">Workflow</a></nav>
     <main>
       <section class="hero" id="top">
         <div class="hero-copy"><div class="eyebrow">AI visual storytelling workshop / 01</div><h1>THE STORY<br>BEHIND <em>IMAGE</em></h1><p class="lead">从拍摄作品到一张有世界观的视觉广告</p><div class="actions"><a class="btn" href="#ai-prologue-1">开始课程</a><a class="btn light" href="#workflow">查看工作流</a><a class="btn light" href="../">← 返回书架</a></div><div class="hero-meta"><span class="pill">Storytelling</span><span class="pill">AI IMAGE</span><span class="pill">VISUAL SYSTEM</span></div></div>
@@ -359,6 +369,55 @@
       <section id="story"><div class="eyebrow">Module 01 / Storytelling</div><h2>海报背后的故事<br>视觉构建桥梁</h2><p class="lead">Storytelling 是为发型建立人物、情绪、场景与视觉符号之间的关系，让作品变得可理解、可记住、可传播。</p><div class="formula glass"><span>发型结构</span><b>＋</b><span>人物性格</span><b>＋</b><span>情绪氛围</span><b>＋</b><span>场景世界</span><b>＋</b><span>视觉符号</span><b>＝</b><span>品牌作品</span></div></section>
 
       <section><div class="eyebrow">Module 01.3 / Brand cases</div><h2>三个不同的<br>叙事入口</h2><div class="grid"><a class="case card glass case-link" href="https://www.prada.com/us/en/pradasphere/campaigns/2021/holiday.html" target="_blank" rel="noopener noreferrer"><div><span class="num">CASE A</span><h3>Prada Holiday 2021</h3><strong>先做故事<br>再提取海报</strong></div><div><p>建立人物 空间与未完成情节 从连续画面中选取最有悬念的一帧</p><div class="tags"><span>CINEMA</span><span>SUSPENSE</span><span>NIGHT</span></div></div></a><a class="case card glass case-link" href="https://www.gucci.com/ca/en/st/stories/advertising-campaign/article/the-spring-summer-2025-campaign" target="_blank" rel="noopener noreferrer"><div><span class="num">CASE B</span><h3>Gucci SS25</h3><strong>让一个元素<br>成为故事主角</strong></div><div><p>把光从装饰变为叙事角色 发型也可以由风 水 影子或红色来讲述</p><div class="tags"><span>LIGHT</span><span>MOVEMENT</span><span>TENDERNESS</span></div></div></a><a class="case card glass case-link" href="https://www.dior.com/en_int/fashion/news-savoir-faire/folder-news-and-events/cruise-2026-womens-campaign" target="_blank" rel="noopener noreferrer"><div><span class="num">CASE C</span><h3>Dior Cruise 2026</h3><strong>地点不是背景<br>是世界观</strong></div><div><p>用城市 时代与文化建立作品的来处 你的发型属于哪里</p><div class="tags"><span>ROME</span><span>MEMORY</span><span>DREAM</span></div></div></a></div></section>
+
+      <section id="image-model-logic">
+        <div class="eyebrow">Module 02 / Image model logic</div>
+        <h2>图像模型如何<br>生成与修改画面</h2>
+        <p class="lead">模型从训练样本中学到文字、构图、光线和材质之间的关系。生成时，提示词、参考图和选区决定模型要满足的条件。换随机种子通常能看到同一条件下的不同结果。</p>
+        <div class="ai-logic-grid image-model-diagrams">
+          <article class="logic-column">
+            <span class="logic-kicker">扩散 / 流匹配</span>
+            <div class="logic-stack">
+              <div class="logic-node"><b>文字与参考图 → 条件</b><p>编码提示词和视觉参考，将主体、风格或构图作为生成条件。</p></div>
+              <span class="logic-arrow" aria-hidden="true">↓</span>
+              <div class="logic-node"><b>噪声 → 逐步变成图像表示</b><p>扩散模型学习怎样逐步去噪。流匹配学习在每一刻把随机表示往哪个方向推，采样时沿着这些方向推进。DiT 指用 Transformer 做这一步的网络结构。</p></div>
+              <span class="logic-arrow" aria-hidden="true">↓</span>
+              <div class="logic-node"><b>图像表示 → 输出</b><p>如果生成发生在潜空间，最后由解码器还原为像素。</p></div>
+            </div>
+          </article>
+          <article class="logic-column">
+            <span class="logic-kicker">自回归 / 混合架构</span>
+            <div class="logic-stack">
+              <div class="logic-node"><b>文本与图像 → 上下文</b><p>把要求和参考图转成模型可处理的表示。</p></div>
+              <span class="logic-arrow" aria-hidden="true">↓</span>
+              <div class="logic-node"><b>上下文 → 依次生成图像表示</b><p>模型根据已有内容预测下一部分。部分研究在每一步再用扩散生成连续的视觉表示，把两种方法结合起来。</p></div>
+              <span class="logic-arrow" aria-hidden="true">↓</span>
+              <div class="logic-node"><b>图像表示 → 输出或接着改</b><p>支持多轮编辑的产品可把前一轮图像作为新输入。具体实现以模型公开资料为准。</p></div>
+            </div>
+          </article>
+        </div>
+        <div class="eyebrow image-model-subhead">Reference images / One variable</div>
+        <h3>同一个主体，只改灯光</h3>
+        <div class="image-model-references">
+          <figure>
+            <img src="assets/lighting/before.jpg" alt="改变灯光前的原始人物参考图" loading="lazy" decoding="async">
+            <figcaption>输入 / 原始参考图</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/lighting/soft-front.png" alt="以柔和正面光重做的同一主体示例" loading="lazy" decoding="async">
+            <figcaption>输出示例 / 柔和正面光</figcaption>
+          </figure>
+        </div>
+        <div class="prompt">保留参考图的人物身份、发型、姿势、构图与背景。只把主光改成柔和正面光，让阴影边缘更柔和，保留发丝细节。</div>
+        <p class="small image-model-sources">核对结果时，先对比原图和输出，检查承诺保留的部分有没有一起变化。有选区功能时，可圈出允许修改的区域。</p>
+        <p class="small image-model-sources">
+          <a href="https://arxiv.org/abs/2112.10752" target="_blank" rel="noopener noreferrer">潜空间扩散论文 ↗</a>
+          <a href="https://arxiv.org/abs/2210.02747" target="_blank" rel="noopener noreferrer">流匹配论文 ↗</a>
+          <a href="https://arxiv.org/abs/2406.11838" target="_blank" rel="noopener noreferrer">自回归与扩散混合论文 ↗</a>
+          <a href="https://seed.bytedance.com/en/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5" target="_blank" rel="noopener noreferrer">官方图像编辑案例 ↗</a>
+          <a href="https://higgsfield.ai/soul-cinema" target="_blank" rel="noopener noreferrer">官方电影风格图像案例 ↗</a>
+        </p>
+      </section>
 
       <section class="library-page original-page" id="visual-original"><div class="library-copy"><div class="eyebrow">Module 02 / Visual library · Original</div><h2>AI POST PRODUCTION<br>AI 后期处理与创意</h2><p class="lead">从同一张原始人物照片出发 分别实验发型 人物 镜头 灯光 场景 材质与排版 每次只改变一个变量</p><div class="tags"><span>保留主体</span><span>控制变量</span><span>视觉实验</span><span>创意延展</span></div></div><div class="library-image"><img src="assets/visual-library/00-original.png" alt="AI 后期处理使用的原始人物照片" /></div></section>
 
@@ -416,13 +475,92 @@
 
       <section class="reference-gallery" id="reference-advertising"><div class="reference-copy"><div class="eyebrow">Reference library / 04</div><h2>VISUAL<br>ADVERTISING<br>视觉广告</h2><p class="lead">让静态视觉进入时间与运动 建立连续的广告表达</p><span class="reference-count">LOOP VIDEO</span></div><div class="reference-video"><video id="advertising-video" autoplay muted loop playsinline controls preload="auto" aria-label="视觉广告循环视频"><source src="assets/gallery/advertising/01-browser.m4v" type="video/mp4"></video></div></section>
 
+      <section id="tool-library"><div class="eyebrow">Module 05 / Tool library</div><h2>先认识工具<br>再理解模型</h2><div class="tool-grid" id="tool-grid"></div></section>
+
+      <section id="model-library">
+        <div class="eyebrow">Module 06 / Model library</div>
+        <h2>工具是入口<br>模型是能力</h2>
+        <p class="small">更新于 2026 年 11 月 22 日</p>
+        <div class="model-grid" id="model-grid">
+          <article class="model-card">
+            <div class="model-logo"><img src="assets/tools/chatgpt.png" alt=""></div>
+            <span class="model-owner">OPENAI · 理解与推理</span>
+            <h3>GPT-6.1 Terra</h3>
+            <p>分析参考图、拆解创意简报、整理分镜和写提示词。</p>
+            <a class="small model-source" href="https://developers.openai.com/api/docs/models/gpt-6.1-terra" target="_blank" rel="noopener noreferrer">官方资料 ↗</a>
+          </article>
+          <article class="model-card">
+            <div class="model-logo"><img src="assets/tools/chatgpt.png" alt=""></div>
+            <span class="model-owner">OPENAI · 图像</span>
+            <h3>GPT Image 2.6</h3>
+            <p>Sunburst 适合精细图像和多轮编辑，Flare 适合快速迭代。可结合参考图或选区调整广告画面。</p>
+            <a class="small model-source" href="https://developers.openai.com/api/docs/guides/image-generation" target="_blank" rel="noopener noreferrer">官方资料 ↗</a>
+          </article>
+          <article class="model-card">
+            <div class="model-logo"><img src="assets/tools/gemini.png" alt=""></div>
+            <span class="model-owner">GOOGLE · 理解与推理</span>
+            <h3>Gemini 4 Carbon</h3>
+            <p>用于解析多模态素材、比较创意方向和制定复杂任务的工作步骤。</p>
+            <a class="small model-source" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/" target="_blank" rel="noopener noreferrer">官方资料 ↗</a>
+          </article>
+          <article class="model-card">
+            <div class="model-logo"><img src="assets/tools/gemini.png" alt=""></div>
+            <span class="model-owner">GOOGLE · 图像</span>
+            <h3>Nano Banana 2.1</h3>
+            <p>适合快速试构图、多参考图生成和自然语言编辑。需精细排版时，也可比较 Nano Banana Pro 的结果。</p>
+            <a class="small model-source" href="https://ai.google.dev/gemini-api/docs/image-generation" target="_blank" rel="noopener noreferrer">官方资料 ↗</a>
+          </article>
+          <article class="model-card">
+            <div class="model-logo"><img src="assets/tools/gemini.png" alt=""></div>
+            <span class="model-owner">GOOGLE · 视频</span>
+            <h3>Gemini Omni 1.2 Flash</h3>
+            <p>支持生成最长 15 秒的原生视频，适合基于参考素材制作短镜头并用对话继续修改。</p>
+            <a class="small model-source" href="https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/" target="_blank" rel="noopener noreferrer">官方资料 ↗</a>
+          </article>
+          <article class="model-card">
+            <div class="model-logo"><img src="assets/tools/midjourney.png" alt=""></div>
+            <span class="model-owner">MIDJOURNEY · 图像</span>
+            <h3>Midjourney V8.2</h3>
+            <p>适合探索时装氛围和系列调性。V8.2 加强个性化，并通过 Edit Model 处理改图及参考。</p>
+            <a class="small model-source" href="https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version" target="_blank" rel="noopener noreferrer">官方资料 ↗</a>
+          </article>
+          <article class="model-card">
+            <div class="model-logo"><img src="assets/tools/jimeng.png" alt=""></div>
+            <span class="model-owner">字节跳动 · 图像</span>
+            <h3>Seedream 5.5</h3>
+            <p>适合图像生成和多轮编辑。做局部修改时，可对照原图检查未编辑区域和颜色是否保持。</p>
+            <a class="small model-source" href="https://seed.bytedance.com/en/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5" target="_blank" rel="noopener noreferrer">官方资料 ↗</a>
+          </article>
+          <article class="model-card">
+            <div class="model-logo"><span class="tool-mark" aria-hidden="true">SEEDANCE</span></div>
+            <span class="model-owner">字节跳动 · 视频</span>
+            <h3>Seedance 2.5</h3>
+            <p>接受文字、图片、音频或视频参考。适合把主视觉转为带声音的镜头，并继续延展镜头。</p>
+            <a class="small model-source" href="https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5" target="_blank" rel="noopener noreferrer">官方资料 ↗</a>
+          </article>
+          <article class="model-card">
+            <div class="model-logo"><span class="tool-mark" aria-hidden="true">SOUL</span></div>
+            <span class="model-owner">HIGGSFIELD · 图像</span>
+            <h3>Soul 2</h3>
+            <p>面向时尚和编辑式人像设计。可搭配 Soul ID 做人物参考，测试同一形象在不同造型与场景里的效果。</p>
+            <a class="small model-source" href="https://higgsfield.ai/creator-hub/help-center/ai-models/how-do-i-use-soul-to-generate-images" target="_blank" rel="noopener noreferrer">官方资料 ↗</a>
+          </article>
+          <article class="model-card">
+            <div class="model-logo"><span class="tool-mark" aria-hidden="true">KLING</span></div>
+            <span class="model-owner">快手 · 视频</span>
+            <h3>Kling 4.0</h3>
+            <p>支持多模态参考和多关键帧控制，适合练习连贯运镜和长镜头；具体版本与可用范围以产品为准。</p>
+            <a class="small model-source" href="https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-officially-launches-next-generation-kling-40-raising/" target="_blank" rel="noopener noreferrer">官方资料 ↗</a>
+          </article>
+        </div>
+      </section>
+
       <section id="ai-basics"><div class="eyebrow">Module 07 / AI basics</div><h2>理解能力结构<br>再选择工作方式</h2><div class="ai-logic-grid"><div class="logic-column"><span class="logic-kicker">理解与执行</span><div class="logic-stack"><article class="logic-node"><b>AI</b><p>人工智能的总称 包含语言 图像 视频 识别 推荐与自动化</p></article><span class="logic-arrow">↓</span><article class="logic-node"><b>LLM</b><p>理解与生成语言 用来梳理主题 分析参考图 写文案和提示词</p></article><span class="logic-arrow">↓</span><article class="logic-node"><b>AGENT</b><p>接收一个目标 调用模型与工具 分步骤完成连续任务</p></article></div></div><div class="logic-column generative-column"><span class="logic-kicker">生成式 AI 与 Agent</span><div class="generative-types"><article class="logic-node concept-trigger" tabindex="0" role="button"><b>IMAGE MODEL</b><p>生成 重绘和编辑人物 发型 场景 光线与材质</p></article><article class="logic-node concept-trigger" tabindex="0" role="button"><b>VIDEO MODEL</b><p>将文字 图片或视频延展为动作 镜头 声音与连续叙事</p></article></div><button class="reveal-logic" id="reveal-ai-logic">查看生成逻辑 ↗</button><p class="small">点击文字显示配图 图片出现后可以自由拖动</p></div></div><div class="ai-concept-layer" id="ai-concept-layer" aria-hidden="true"><button class="concept-close" id="close-ai-logic" aria-label="退出生成逻辑">×</button><figure class="concept-card concept-one"><img src="assets/ai-basics/diffusion.png" alt="扩散过程示意图"><figcaption>扩散模型的灵感受到非平衡热力学 (Non-equilibrium thermodynamics) 的影响</figcaption></figure><figure class="concept-card concept-two"><img src="assets/ai-basics/sde.png" alt="正向加噪与反向去噪过程示意图"><figcaption>正向过程将数据逐渐变为噪声 反向过程从噪声逐步恢复结构</figcaption></figure></div></section>
 
       <section id="workflow"><div class="eyebrow">Module 08 / Workflow</div><h2>从一张普通作品照<br>到一张广告主视觉</h2><div class="flow"><div><b>02</b><span>自我探索</span></div><div><b>03</b><span>Mini Moodboard</span></div><div><b>04</b><span>生成故事方向</span></div><div><b>05</b><span>视觉草图</span></div><div><b>06</b><span>实操拍摄</span></div><div><b>07</b><span>人工后期</span></div><div><b>08</b><span>完成海报</span></div></div></section>
 
       <section><div class="eyebrow">Module 09 / Prompt composer</div><h2>把视觉决策<br>变成清晰指令</h2><div class="composer"><div class="fields glass"><label>发型<input id="hair" value="精准的几何短发 发型轮廓干净利落" /></label><label>镜头<select id="angle"><option>四分之三侧面人像</option><option>侧面人像</option><option>正面平视人像</option><option>俯拍人像</option><option>仰拍人像</option></select></label><label>灯光<select id="light"><option>侧面硬光</option><option>柔和正面美妆光</option><option>轮廓光与发丝光</option><option>自然窗光</option><option>蓝紫彩色灯光</option></select></label><label>场景<select id="scene"><option>极简现代主义混凝土室内</option><option>干净白色影棚</option><option>深色电影感室内</option><option>夜间城市反射空间</option></select></label><label>情绪<input id="mood" value="冷静 精准 有力量" /></label><label>输出<select id="format"><option>三比四竖版发型广告海报</option><option>编辑式美妆近景</option><option>横版广告电影静帧</option></select></label></div><div class="result"><div class="eyebrow" style="color:#ff6b6f">生成方向</div><h3>你的提示词</h3><div class="prompt" id="prompt-output"></div><button class="copy-button" data-copy="#prompt-output">复制提示词</button></div></div></section>
 
-      <section id="tool-library"><div class="eyebrow">Module 05 / Tool library</div><h2>先认识工具<br>再理解模型</h2><div class="tool-grid" id="tool-grid"></div></section><section id="model-library"><div class="eyebrow">Module 06 / Model library</div><h2>工具是入口<br>模型是能力</h2><div class="model-grid" id="model-grid"><article class="model-card"><div class="model-logo"><img src="assets/tools/chatgpt.png" alt="GPT 5.6 Logo"></div><span class="model-owner">OPENAI</span><h3>GPT 5.6</h3><p>负责理解创意需求 分析参考图 整理故事 写文案并规划多步骤工作流</p></article><article class="model-card"><div class="model-logo"><img src="assets/tools/chatgpt.png" alt="GPT Image 2 Logo"></div><span class="model-owner">OPENAI</span><h3>GPT Image 2</h3><p>面向图像生成与编辑 适合局部修改 人物一致性和广告视觉制作</p></article><article class="model-card"><div class="model-logo"><img src="assets/tools/gemini.png" alt="Gemini 3.5 Logo"></div><span class="model-owner">GOOGLE</span><h3>Gemini 3.5</h3><p>多模态理解与推理模型 适合同时理解文字 图片 视频和复杂创意任务</p></article><article class="model-card"><div class="model-logo"><img src="assets/tools/gemini.png" alt="Nano Banana 2 Lite Logo"></div><span class="model-owner">GOOGLE</span><h3>Nano Banana 2 Lite</h3><p>适合高频图像生成 多参考图理解与自然语言编辑</p></article><article class="model-card"><div class="model-logo"><img src="assets/tools/gemini.png" alt="Gemini Omni Flash Logo"></div><span class="model-owner">GOOGLE</span><h3>Gemini Omni Flash</h3><p>支持通过自然语言对已有视频进行多轮编辑并保持场景一致</p></article><article class="model-card"><div class="model-logo"><img src="assets/tools/midjourney.png" alt="Midjourney V8.1 Logo"></div><span class="model-owner">MIDJOURNEY</span><h3>Midjourney V8.1</h3><p>适合时尚氛围 艺术风格 高清图像和 Campaign 方向探索</p></article><article class="model-card"><div class="model-logo"><img src="assets/tools/jimeng.png" alt="Seedream 5.0 Lite Logo"></div><span class="model-owner">字节跳动</span><h3>Seedream 5.0 Lite</h3><p>统一的图像生成与编辑模型 适合高清视觉 多模态参考与商业内容生产</p></article><article class="model-card"><div class="model-logo"><img class="seedance" src="assets/models/seedance-2.png" alt="Seedance 2.0 Logo"></div><span class="model-owner">字节跳动</span><h3>Seedance 2.0</h3><p>支持文字 图片 音频和视频输入 可进行多镜头生成 视频延展与指定内容修改</p></article></div></section>
 
       <section id="project"><div class="eyebrow">Final project / Your campaign</div><h2>最后请让一张发型作品<br>属于你自己的世界</h2><div class="project"><div class="checklist glass"><h3>交付清单</h3><div>个人视觉 Moodboard <span>01</span></div><div>Storytelling 创意卡 <span>02</span></div><div>一套视觉关键词 <span>03</span></div><div>广告视觉主图 <span>04</span></div><div>完整主题海报 <span>05</span></div><div>可复用提示词模板 <span>06</span></div></div><div class="poster"><div class="poster-top"><span>2026 / PERSONAL CAMPAIGN</span><span>01—01</span></div><h3>SILENT<br>ARCHI<br>TECTURE</h3><p>HAIR AS MODERN DESIGN</p></div></div></section>
       <footer class="footer"><span>THE STORY BEHIND IMAGE</span><span>Storytelling × AI visual advertising workshop</span></footer>
@@ -438,24 +576,12 @@
         {name:'即梦',company:'字节跳动',logo:'assets/tools/jimeng.png',task:'中文创作 图片 视频 社交内容',text:'中文操作入口集中 适合课堂演示和快速生成视觉素材',url:'https://www.jimeng.com/'},
         {name:'Lovart',company:'LiblibAI',logo:'assets/tools/lovart.png',wide:true,task:'设计智能体 品牌 海报 多步骤执行',text:'从创意简报出发组织画板 品牌视觉和系列设计物料',url:'https://www.lovart.ai/'},
         {name:'TapNow',company:'TapNow',logo:'assets/tools/tapnow.png',task:'商业视觉 无限画布 工作流组合',text:'适合广告 电商和连续视觉内容的节点式创作流程',url:'https://app.tapnow.ai/'},
-        {name:'Pinterest',company:'Pinterest Inc',logo:'assets/tools/pinterest.png',task:'视觉搜索 灵感扩散 资料库',text:'用于查找相似图和建立参考资料库 收藏后仍需分类与拆解',url:'https://www.pinterest.com/'}
+        {name:'Pinterest',company:'Pinterest Inc',logo:'assets/tools/pinterest.png',task:'视觉搜索 灵感扩散 资料库',text:'用于查找相似图和建立参考资料库 收藏后仍需分类与拆解',url:'https://www.pinterest.com/'},
+        {name:'Higgsfield SOUL',company:'Higgsfield',mark:'SOUL',task:'时尚人像 视觉风格 人物参考',text:'适合探索时装编辑大片、美妆人像和系列画面的整体观感',url:'https://higgsfield.ai/soul'},
+        {name:'可灵',company:'快手',mark:'KLING',task:'图生视频 运镜 关键帧',text:'适合把广告主视觉延展成动态镜头，继续测试动作、运镜和参考素材',url:'https://kling.ai/app/'},
+        {name:'LibTV',company:'LiblibAI',mark:'LibTV',task:'创作画布 分镜 多模型协作',text:'在同一画布组织参考图、分镜和视频，适合串联广告制作流程',url:'https://www.liblib.tv/'}
       ];
-      document.querySelector('#tool-grid').innerHTML=toolData.map(tool=>`<a class="tool glass" href="${tool.url}" target="_blank" rel="noopener noreferrer"><div class="tool-logo"><img class="${tool.wide?'wide':''}" src="${tool.logo}" alt="${tool.name} Logo"></div><b>${tool.name}</b><span class="tool-company">${tool.company}</span><span class="task">${tool.task}</span><small>${tool.text}</small><span class="tool-arrow">访问官网 ↗</span></a>`).join('');
-      const modelData=[
-        {owner:'OPENAI',name:'GPT 5.6',logo:'assets/tools/chatgpt.png',text:'负责理解创意需求 分析参考图 整理故事 写文案并规划多步骤工作流'},
-        {owner:'OPENAI',name:'GPT Image 2',logo:'assets/tools/chatgpt.png',text:'面向图像生成与编辑 适合根据文字和参考图完成局部修改 人物一致性和广告视觉制作'},
-        {owner:'GOOGLE',name:'Gemini 3.5',logo:'assets/tools/gemini.png',text:'多模态理解与推理模型 适合同时理解文字 图片 视频和复杂创意任务'},
-        {owner:'GOOGLE',name:'Nano Banana 2 Lite',logo:'assets/tools/gemini.png',text:'Google 图像模型 适合高频图像生成 多参考图理解与自然语言编辑'},
-        {owner:'GOOGLE',name:'Gemini Omni Flash',logo:'assets/tools/gemini.png',text:'面向视频生成与连续修改 可以通过自然语言对已有视频进行多轮编辑并保持场景一致'},
-        {owner:'MIDJOURNEY',name:'Midjourney V8.1',logo:'assets/tools/midjourney.png',text:'图像生成模型 适合时尚氛围 艺术风格 高清图像和 Campaign 方向探索'},
-        {owner:'字节跳动',name:'Seedream 5.0 Lite',logo:'assets/tools/jimeng.png',text:'统一的图像生成与编辑模型 适合高清视觉 多模态参考与商业内容生产'},
-        {owner:'字节跳动',name:'Seedance 2.0',logo:'assets/models/seedance-2.png',seedance:true,text:'音视频联合生成模型 支持文字 图片 音频和视频输入 可进行多镜头生成 视频延展与指定内容修改'}
-      ];
-      document.querySelector('#model-grid').innerHTML=modelData.map(model=>`<article class="model-card"><div class="model-logo"><img class="${model.seedance?'seedance':''}" src="${model.logo}" alt="${model.name} Logo"></div><span class="model-owner">${model.owner}</span><h3>${model.name}</h3><p>${model.text}</p></article>`).join('');
-      const toolSection=document.querySelector('#tool-library');
-      const modelSection=document.querySelector('#model-library');
-      const aiBasics=document.querySelector('#ai-basics');
-      aiBasics.before(toolSection,modelSection);
+      document.querySelector('#tool-grid').innerHTML=toolData.map(tool=>`<a class="tool glass" href="${tool.url}" target="_blank" rel="noopener noreferrer"><div class="tool-logo">${tool.logo?`<img class="${tool.wide?'wide':''}" src="${tool.logo}" alt="">`:`<span class="tool-mark" aria-hidden="true">${tool.mark}</span>`}</div><b>${tool.name}</b><span class="tool-company">${tool.company}</span><span class="task">${tool.task}</span><small>${tool.text}</small><span class="tool-arrow">访问官网 ↗</span></a>`).join('');
       const conceptLayer=document.querySelector('#ai-concept-layer');
       const revealLogic=document.querySelector('#reveal-ai-logic');
       const toggleConceptLayer=()=>{
@@ -533,7 +659,7 @@
       const lightbox=document.querySelector('#gallery-lightbox');
       const lightboxImage=document.querySelector('#gallery-lightbox-image');
       const lightboxBack=document.querySelector('#gallery-back');
-      const zoomSelector='.library-image > img,.summary-tag img,.camera-collage img,.lighting-collage img,.reference-grid img,.prologue-rider-image img,.prologue-warmth-image img';
+      const zoomSelector='.library-image > img,.summary-tag img,.camera-collage img,.lighting-collage img,.reference-grid img,.image-model-references img,.prologue-rider-image img,.prologue-warmth-image img';
       const openLightbox=image=>{
         lightboxImage.src=image.currentSrc||image.src;
         lightboxImage.alt=image.alt||'放大图片';
