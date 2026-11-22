@@ -347,11 +347,19 @@
       .image-model-sources a,.model-card .model-source { color:var(--red); }
       .tool-logo .tool-mark,.model-logo .tool-mark { font:700 18px Manrope,"Noto Sans SC",sans-serif; letter-spacing:-.04em; }
       @media (max-width:640px) { .image-model-diagrams { grid-template-columns:1fr; } }
+      .tool-links { display:flex; flex-wrap:wrap; gap:4px 14px; margin-top:auto; padding-top:18px; }
+      .tool-links .tool-arrow { margin-top:0; padding-top:0; }
+      .tool-links a:focus-visible { outline:2px solid var(--red); outline-offset:3px; }
+      .soul-references { display:grid; gap:16px; margin-top:48px; scroll-margin-top:90px; }
+      .soul-references h3 { margin:0; }
+      .soul-references .reference-grid { height:auto; grid-template-rows:none; }
+      .soul-references .reference-grid figure { height:clamp(180px,29vw,440px); background:var(--glass); border:1px solid var(--line); }
+      @media (max-width:640px) { .soul-references .reference-grid figure { height:auto; aspect-ratio:3/4; } }
     </style>
   </head>
   <body>
     <div class="course-label brand-mark"><img src="assets/brand/instituto-marangoni.png" alt="Istituto Marangoni enhancing talent since 1935" /></div>
-    <nav><a href="#top" data-range="top">首页</a><a href="#ai-prologue-1" data-range="ai-prologue-1">Storytelling</a><div class="nav-menu" id="ai-tool-nav"><button id="ai-tool-toggle" data-range="image-model-logic" aria-expanded="false" aria-controls="ai-tool-menu">AI Tool</button><div class="ai-tool-menu" id="ai-tool-menu"><div class="menu-group"><b>视觉资料</b><a href="#image-model-logic">图像模型生成逻辑</a><a href="#visual-original">AI 后期处理与创意</a><a href="#visual-library">发型结构</a><a href="#visual-face">人物与面部</a><a href="#visual-camera">姿态与镜头</a><a href="#visual-lighting">灯光设计</a><a href="#visual-scene">场景世界</a><a href="#visual-material">材质语言</a><a href="#visual-graphic">平面排版</a><a href="#visual-summary">视觉标签汇总</a></div><div class="menu-group"><b>拍摄角度</b><a href="#lab">镜头总览</a><a href="#camera-front">正面平视</a><a href="#camera-profile">侧面</a><a href="#camera-three">四分之三侧面</a><a href="#camera-high">俯拍</a><a href="#camera-low">仰拍</a></div><div class="menu-group"><b>灯光</b><a href="#lighting">灯光总览</a><a href="#lighting-before">原始灯光</a><a href="#lighting-soft">柔和正面光</a><a href="#lighting-hard">侧面硬光</a><a href="#lighting-rim">轮廓光与发丝光</a><a href="#lighting-top">顶光</a><a href="#lighting-window">窗光</a><a href="#lighting-color">彩色灯光</a><a href="#lighting-summary">灯光效果汇总</a></div><div class="menu-group"><b>创意参考</b><a href="#reference-scene-material">场景与材质</a><a href="#reference-digital-hair">数字发型</a><a href="#reference-makeup">特殊妆容</a><a href="#reference-advertising">视觉广告</a></div><div class="menu-group"><b>工具与模型</b><a href="#tool-library">工具入口</a><a href="#model-library">模型能力</a><a href="#ai-basics">AI 基础逻辑</a></div></div></div><a href="#workflow" data-range="workflow">Workflow</a></nav>
+    <nav><a href="#top" data-range="top">首页</a><a href="#ai-prologue-1" data-range="ai-prologue-1">Storytelling</a><div class="nav-menu" id="ai-tool-nav"><button id="ai-tool-toggle" data-range="image-model-logic" aria-expanded="false" aria-controls="ai-tool-menu">AI Tool</button><div class="ai-tool-menu" id="ai-tool-menu"><div class="menu-group"><b>视觉资料</b><a href="#image-model-logic">图像模型生成逻辑</a><a href="#visual-original">AI 后期处理与创意</a><a href="#visual-library">发型结构</a><a href="#visual-face">人物与面部</a><a href="#visual-camera">姿态与镜头</a><a href="#visual-lighting">灯光设计</a><a href="#visual-scene">场景世界</a><a href="#visual-material">材质语言</a><a href="#visual-graphic">平面排版</a><a href="#visual-summary">视觉标签汇总</a></div><div class="menu-group"><b>拍摄角度</b><a href="#lab">镜头总览</a><a href="#camera-front">正面平视</a><a href="#camera-profile">侧面</a><a href="#camera-three">四分之三侧面</a><a href="#camera-high">俯拍</a><a href="#camera-low">仰拍</a></div><div class="menu-group"><b>灯光</b><a href="#lighting">灯光总览</a><a href="#lighting-before">原始灯光</a><a href="#lighting-soft">柔和正面光</a><a href="#lighting-hard">侧面硬光</a><a href="#lighting-rim">轮廓光与发丝光</a><a href="#lighting-top">顶光</a><a href="#lighting-window">窗光</a><a href="#lighting-color">彩色灯光</a><a href="#lighting-summary">灯光效果汇总</a></div><div class="menu-group"><b>创意参考</b><a href="#reference-scene-material">场景与材质</a><a href="#reference-digital-hair">数字发型</a><a href="#reference-makeup">特殊妆容</a><a href="#reference-advertising">视觉广告</a></div><div class="menu-group"><b>工具与模型</b><a href="#tool-library">工具入口</a><a href="#model-library">模型能力</a><a href="#ai-basics">AI 基础逻辑</a><a href="#agent-direction">Agent 与创意决策</a></div></div></div><a href="#workflow" data-range="workflow">Workflow</a></nav>
     <main>
       <section class="hero" id="top">
         <div class="hero-copy"><div class="eyebrow">AI visual storytelling workshop / 01</div><h1>THE STORY<br>BEHIND <em>IMAGE</em></h1><p class="lead">从拍摄作品到一张有世界观的视觉广告</p><div class="actions"><a class="btn" href="#ai-prologue-1">开始课程</a><a class="btn light" href="#workflow">查看工作流</a><a class="btn light" href="../">← 返回书架</a></div><div class="hero-meta"><span class="pill">Storytelling</span><span class="pill">AI IMAGE</span><span class="pill">VISUAL SYSTEM</span></div></div>
@@ -475,7 +483,22 @@
 
       <section class="reference-gallery" id="reference-advertising"><div class="reference-copy"><div class="eyebrow">Reference library / 04</div><h2>VISUAL<br>ADVERTISING<br>视觉广告</h2><p class="lead">让静态视觉进入时间与运动 建立连续的广告表达</p><span class="reference-count">LOOP VIDEO</span></div><div class="reference-video"><video id="advertising-video" autoplay muted loop playsinline controls preload="auto" aria-label="视觉广告循环视频"><source src="assets/gallery/advertising/01-browser.m4v" type="video/mp4"></video></div></section>
 
-      <section id="tool-library"><div class="eyebrow">Module 05 / Tool library</div><h2>先认识工具<br>再理解模型</h2><div class="tool-grid" id="tool-grid"></div></section>
+      <section id="tool-library">
+        <div class="eyebrow">Module 05 / Tool library</div>
+        <h2>先认识工具<br>再理解模型</h2>
+        <div class="tool-grid" id="tool-grid"></div>
+        <div class="soul-references" id="soul-references" aria-labelledby="soul-references-heading" tabindex="-1">
+          <div class="eyebrow">Higgsfield SOUL / Reference images</div>
+          <h3 id="soul-references-heading">街拍与时尚人像</h3>
+          <div class="reference-grid">
+            <figure><img src="assets/gallery/higgsfield-soul/01.jpg" alt="香港斜坡街头的男装人像，图下附有提示词" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/gallery/higgsfield-soul/02.jpg" alt="露天咖啡馆的全身男装人像，图下附有提示词" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/gallery/higgsfield-soul/03.jpg" alt="宴会长桌旁以直闪拍摄感呈现的时尚场景" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/gallery/higgsfield-soul/04.jpg" alt="蓝色网纱头巾与金属墨镜的冷调美妆特写" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/gallery/higgsfield-soul/05.jpg" alt="粉红印花网纱头巾与窄框墨镜的暖调美妆特写" loading="lazy" decoding="async"></figure>
+          </div>
+        </div>
+      </section>
 
       <section id="model-library">
         <div class="eyebrow">Module 06 / Model library</div>
@@ -557,10 +580,26 @@
 
       <section id="ai-basics"><div class="eyebrow">Module 07 / AI basics</div><h2>理解能力结构<br>再选择工作方式</h2><div class="ai-logic-grid"><div class="logic-column"><span class="logic-kicker">理解与执行</span><div class="logic-stack"><article class="logic-node"><b>AI</b><p>人工智能的总称 包含语言 图像 视频 识别 推荐与自动化</p></article><span class="logic-arrow">↓</span><article class="logic-node"><b>LLM</b><p>理解与生成语言 用来梳理主题 分析参考图 写文案和提示词</p></article><span class="logic-arrow">↓</span><article class="logic-node"><b>AGENT</b><p>接收一个目标 调用模型与工具 分步骤完成连续任务</p></article></div></div><div class="logic-column generative-column"><span class="logic-kicker">生成式 AI 与 Agent</span><div class="generative-types"><article class="logic-node concept-trigger" tabindex="0" role="button"><b>IMAGE MODEL</b><p>生成 重绘和编辑人物 发型 场景 光线与材质</p></article><article class="logic-node concept-trigger" tabindex="0" role="button"><b>VIDEO MODEL</b><p>将文字 图片或视频延展为动作 镜头 声音与连续叙事</p></article></div><button class="reveal-logic" id="reveal-ai-logic">查看生成逻辑 ↗</button><p class="small">点击文字显示配图 图片出现后可以自由拖动</p></div></div><div class="ai-concept-layer" id="ai-concept-layer" aria-hidden="true"><button class="concept-close" id="close-ai-logic" aria-label="退出生成逻辑">×</button><figure class="concept-card concept-one"><img src="assets/ai-basics/diffusion.png" alt="扩散过程示意图"><figcaption>扩散模型的灵感受到非平衡热力学 (Non-equilibrium thermodynamics) 的影响</figcaption></figure><figure class="concept-card concept-two"><img src="assets/ai-basics/sde.png" alt="正向加噪与反向去噪过程示意图"><figcaption>正向过程将数据逐渐变为噪声 反向过程从噪声逐步恢复结构</figcaption></figure></div></section>
 
+      <section class="prologue prologue-three" id="agent-direction">
+        <div class="prologue-copy">
+          <div class="eyebrow">Module 07 / AI basics · Agent</div>
+          <h2>把缰绳握在<br>自己手里</h2>
+          <p class="prologue-definition">用 Agent 操作工具之前，先想清楚你要的画面。像写小说一样，先知道人物是谁、置身何处、这一幕要让观众感受到什么，再决定镜头、光线和风格。</p>
+          <div class="prologue-lines">
+            <p>先定方向。说明画面的情绪、风格和必须保留的细节。</p>
+            <p>再交给 Agent 执行。让它调用你选定的工具，按同一组要求试出几个版本。</p>
+            <p>最后做取舍。用自己的判断选片，告诉 Agent 下一轮该改什么。</p>
+          </div>
+        </div>
+        <div class="prologue-reflection">
+          <p>你是骑手。缰绳握在你手里，往哪里走、什么时候转向、在哪里停下，都由你决定。Agent 可以按你的方向试出不同走法，让你有更多版本可以比较。</p>
+          <strong>每个人都可以成为创意的决策者。你决定作品要表达什么，AI 负责把想法做出来。</strong>
+        </div>
+      </section>
+
       <section id="workflow"><div class="eyebrow">Module 08 / Workflow</div><h2>从一张普通作品照<br>到一张广告主视觉</h2><div class="flow"><div><b>02</b><span>自我探索</span></div><div><b>03</b><span>Mini Moodboard</span></div><div><b>04</b><span>生成故事方向</span></div><div><b>05</b><span>视觉草图</span></div><div><b>06</b><span>实操拍摄</span></div><div><b>07</b><span>人工后期</span></div><div><b>08</b><span>完成海报</span></div></div></section>
 
       <section><div class="eyebrow">Module 09 / Prompt composer</div><h2>把视觉决策<br>变成清晰指令</h2><div class="composer"><div class="fields glass"><label>发型<input id="hair" value="精准的几何短发 发型轮廓干净利落" /></label><label>镜头<select id="angle"><option>四分之三侧面人像</option><option>侧面人像</option><option>正面平视人像</option><option>俯拍人像</option><option>仰拍人像</option></select></label><label>灯光<select id="light"><option>侧面硬光</option><option>柔和正面美妆光</option><option>轮廓光与发丝光</option><option>自然窗光</option><option>蓝紫彩色灯光</option></select></label><label>场景<select id="scene"><option>极简现代主义混凝土室内</option><option>干净白色影棚</option><option>深色电影感室内</option><option>夜间城市反射空间</option></select></label><label>情绪<input id="mood" value="冷静 精准 有力量" /></label><label>输出<select id="format"><option>三比四竖版发型广告海报</option><option>编辑式美妆近景</option><option>横版广告电影静帧</option></select></label></div><div class="result"><div class="eyebrow" style="color:#ff6b6f">生成方向</div><h3>你的提示词</h3><div class="prompt" id="prompt-output"></div><button class="copy-button" data-copy="#prompt-output">复制提示词</button></div></div></section>
-
 
       <section id="project"><div class="eyebrow">Final project / Your campaign</div><h2>最后请让一张发型作品<br>属于你自己的世界</h2><div class="project"><div class="checklist glass"><h3>交付清单</h3><div>个人视觉 Moodboard <span>01</span></div><div>Storytelling 创意卡 <span>02</span></div><div>一套视觉关键词 <span>03</span></div><div>广告视觉主图 <span>04</span></div><div>完整主题海报 <span>05</span></div><div>可复用提示词模板 <span>06</span></div></div><div class="poster"><div class="poster-top"><span>2026 / PERSONAL CAMPAIGN</span><span>01—01</span></div><h3>SILENT<br>ARCHI<br>TECTURE</h3><p>HAIR AS MODERN DESIGN</p></div></div></section>
       <footer class="footer"><span>THE STORY BEHIND IMAGE</span><span>Storytelling × AI visual advertising workshop</span></footer>
@@ -577,11 +616,18 @@
         {name:'Lovart',company:'LiblibAI',logo:'assets/tools/lovart.png',wide:true,task:'设计智能体 品牌 海报 多步骤执行',text:'从创意简报出发组织画板 品牌视觉和系列设计物料',url:'https://www.lovart.ai/'},
         {name:'TapNow',company:'TapNow',logo:'assets/tools/tapnow.png',task:'商业视觉 无限画布 工作流组合',text:'适合广告 电商和连续视觉内容的节点式创作流程',url:'https://app.tapnow.ai/'},
         {name:'Pinterest',company:'Pinterest Inc',logo:'assets/tools/pinterest.png',task:'视觉搜索 灵感扩散 资料库',text:'用于查找相似图和建立参考资料库 收藏后仍需分类与拆解',url:'https://www.pinterest.com/'},
-        {name:'Higgsfield SOUL',company:'Higgsfield',mark:'SOUL',task:'时尚人像 视觉风格 人物参考',text:'适合探索时装编辑大片、美妆人像和系列画面的整体观感',url:'https://higgsfield.ai/soul'},
+        {name:'Higgsfield SOUL',company:'Higgsfield',mark:'SOUL',reference:'#soul-references',task:'时尚人像 视觉风格 人物参考',text:'适合探索时装编辑大片、美妆人像和系列画面的整体观感',url:'https://higgsfield.ai/soul'},
         {name:'可灵',company:'快手',mark:'KLING',task:'图生视频 运镜 关键帧',text:'适合把广告主视觉延展成动态镜头，继续测试动作、运镜和参考素材',url:'https://kling.ai/app/'},
         {name:'LibTV',company:'LiblibAI',mark:'LibTV',task:'创作画布 分镜 多模型协作',text:'在同一画布组织参考图、分镜和视频，适合串联广告制作流程',url:'https://www.liblib.tv/'}
       ];
-      document.querySelector('#tool-grid').innerHTML=toolData.map(tool=>`<a class="tool glass" href="${tool.url}" target="_blank" rel="noopener noreferrer"><div class="tool-logo">${tool.logo?`<img class="${tool.wide?'wide':''}" src="${tool.logo}" alt="">`:`<span class="tool-mark" aria-hidden="true">${tool.mark}</span>`}</div><b>${tool.name}</b><span class="tool-company">${tool.company}</span><span class="task">${tool.task}</span><small>${tool.text}</small><span class="tool-arrow">访问官网 ↗</span></a>`).join('');
+      document.querySelector('#tool-grid').innerHTML=toolData.map(tool=>{
+        const logo=tool.logo?`<img class="${tool.wide?'wide':''}" src="${tool.logo}" alt="">`:`<span class="tool-mark" aria-hidden="true">${tool.mark}</span>`;
+        const content=`<div class="tool-logo">${logo}</div><b>${tool.name}</b><span class="tool-company">${tool.company}</span><span class="task">${tool.task}</span><small>${tool.text}</small>`;
+        if(tool.reference){
+          return `<article class="tool glass">${content}<div class="tool-links"><a class="tool-arrow" href="${tool.url}" target="_blank" rel="noopener noreferrer">访问官网 ↗</a><a class="tool-arrow" href="${tool.reference}">查看参考图 ↓</a></div></article>`;
+        }
+        return `<a class="tool glass" href="${tool.url}" target="_blank" rel="noopener noreferrer">${content}<span class="tool-arrow">访问官网 ↗</span></a>`;
+      }).join('');
       const conceptLayer=document.querySelector('#ai-concept-layer');
       const revealLogic=document.querySelector('#reveal-ai-logic');
       const toggleConceptLayer=()=>{
