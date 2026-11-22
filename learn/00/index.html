@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>THE STORY BEHIND IMAGE</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&display=swap');
+
+      :root { --ink:#101010; --muted:#656565; --red:#e31e24; --line:rgba(15,15,15,.11); --glass:rgba(255,255,255,.68); --soft:#f3f3f1; }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; }
+      body { margin:0; color:var(--ink); background:#f8f8f6; font-family:Manrope,"Noto Sans SC",Arial,sans-serif; }
+      body:before { content:""; position:fixed; inset:0; z-index:-2; background:radial-gradient(circle at 84% 11%,#ebebe4 0 10%,transparent 29%),radial-gradient(circle at 11% 74%,#ecefed 0 12%,transparent 32%),#f8f8f6; }
+      .course-label { position:fixed; z-index:20; left:28px; top:24px; font-size:11px; font-weight:700; letter-spacing:.03em; }
+      .course-label span { color:var(--red); margin-right:8px; }
+      nav { position:fixed; z-index:19; right:22px; top:18px; display:flex; gap:5px; padding:5px; border:1px solid var(--line); border-radius:999px; background:var(--glass); backdrop-filter:blur(18px); }
+      nav a,nav button { text-decoration:none; color:var(--ink); font:500 11px Manrope,"Noto Sans SC",Arial,sans-serif; padding:8px 11px; border:0; border-radius:999px; background:transparent; cursor:pointer; } nav a:hover,nav button:hover { background:#111; color:white; }
+      main { padding:0 28px 80px; max-width:1500px; margin:auto; }
+      section { min-height:100vh; padding:116px 0 64px; border-bottom:1px solid var(--line); }
+      .eyebrow { font:500 11px "DM Mono",monospace; color:var(--red); letter-spacing:.08em; text-transform:uppercase; }
+      h1,h2,h3,p { margin-top:0; } h1 { font-size:clamp(58px,10vw,155px); line-height:.84; letter-spacing:-.09em; max-width:1100px; margin:22px 0; } h2 { font-size:clamp(40px,5vw,76px); letter-spacing:-.075em; line-height:.95; margin:16px 0 40px; max-width:850px; } h3 { font-size:18px; letter-spacing:-.04em; margin-bottom:12px; }
+      .lead { font-size:clamp(17px,2vw,25px); line-height:1.5; max-width:630px; color:#3f3f3f; }
+      .glass { background:var(--glass); border:1px solid rgba(255,255,255,.9); box-shadow:0 16px 60px rgba(0,0,0,.05); backdrop-filter:blur(18px); }
+      .hero { position:relative; display:grid; grid-template-columns:1.1fr .9fr; align-items:end; overflow:hidden; }
+      .hero-copy { padding-bottom:40px; } .hero-copy h1 em { font-style:normal; color:var(--red); }
+      .hero-visual { height:min(66vw,720px); min-height:500px; position:relative; overflow:hidden; border-radius:2px; background:linear-gradient(145deg,#202020 0 36%,#d8d8d4 36% 37%,#eeeeea 37% 60%,#e21e27 60% 61%,#c8c9c6 61%); }
+      .hero-visual:before { content:""; position:absolute; width:78%; height:78%; border-radius:50% 43% 55% 48%; background:radial-gradient(circle at 48% 28%,#757575 0 7%,#161616 23% 35%,#d6d6d1 36% 48%,#121212 49% 62%,#d4d4d0 63%); transform:rotate(-28deg); top:8%; left:16%; filter:contrast(1.1); }
+      .hero-visual:after { content:"01 — VISUAL ADVERTISING"; position:absolute; right:22px; bottom:20px; color:white; font:11px "DM Mono",monospace; letter-spacing:.08em; }
+      .hero-meta { position:absolute; left:0; bottom:0; display:flex; gap:8px; align-items:center; } .pill { display:inline-flex; padding:8px 10px; font:10px "DM Mono",monospace; border:1px solid var(--line); border-radius:30px; background:var(--glass); }
+      .actions { display:flex; gap:9px; flex-wrap:wrap; margin-top:30px; } .btn { cursor:pointer; border:1px solid #111; padding:12px 16px; background:#111; color:#fff; font:600 12px inherit; border-radius:2px; text-decoration:none; } .btn.light { background:var(--glass); color:#111; }
+      .formula { margin-top:40px; padding:25px; display:flex; align-items:center; flex-wrap:wrap; gap:13px; font-size:16px; font-weight:700; } .formula b { color:var(--red); font-weight:500; }
+      .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; } .card { padding:24px; min-height:190px; border-radius:3px; } .num { font:11px "DM Mono",monospace; color:var(--red); } .card p,.small { color:var(--muted); line-height:1.6; font-size:14px; }
+      .case { min-height:330px; display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden; } .case:after { content:""; position:absolute; right:-40px; bottom:-80px; height:230px; width:230px; border:1px solid #aaa; border-radius:50%; opacity:.5; } .case:nth-child(2):after { border-radius:0; transform:rotate(42deg); background:linear-gradient(45deg,transparent 46%,var(--red) 47% 53%,transparent 54%); }
+      .case strong { font-size:24px; letter-spacing:-.06em; position:relative; z-index:1; }.tags { display:flex; flex-wrap:wrap; gap:6px; position:relative; z-index:1; }.tags > span { font:10px "DM Mono",monospace; padding:6px 8px; border:1px solid var(--line); border-radius:20px; }
+      .library { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }.library div { background:#f8f8f6; padding:22px; min-height:125px; }.library b { display:block; font-size:12px; margin-bottom:20px; }.library span { font-size:13px; color:var(--muted); line-height:1.55; }
+      .explorer { display:grid; grid-template-columns:260px 1fr; gap:18px; }.tab-list { display:flex; flex-direction:column; gap:5px; }.tab { border:0; background:transparent; text-align:left; padding:13px 14px; font:600 14px inherit; border-bottom:1px solid var(--line); cursor:pointer; }.tab.active { background:#151515; color:#fff; border-radius:2px; }.detail { padding:30px; min-height:370px; position:relative; overflow:hidden; }.detail:after { content:""; position:absolute; width:270px;height:270px;border-radius:48% 53% 40% 56%;right:-28px;bottom:-100px; background:linear-gradient(110deg,#111 0 46%,#e31e24 47% 52%,#bbb 53%); opacity:.9; }.detail .copy { max-width:600px; position:relative; z-index:1; }.prompt { font:12px/1.7 "DM Mono",monospace; background:rgba(255,255,255,.7); border:1px solid var(--line); padding:14px; margin-top:20px; color:#313131; }.copy-button { margin-top:9px; border:0; background:var(--red); padding:8px 10px; color:white; cursor:pointer; font:600 11px inherit; }
+      .map { display:grid; grid-template-columns:repeat(5,1fr); gap:8px; }.map div { padding:18px 14px; min-height:148px; border-top:3px solid #161616; }.map div:nth-child(3) { border-color:var(--red); }.map b { font-size:13px; }.map span { display:block;margin-top:12px;color:var(--muted);font-size:12px;line-height:1.5; }
+      .flow { display:flex; gap:0; overflow:auto; padding-bottom:8px; }.flow div { min-width:150px; padding:20px 14px; border:1px solid var(--line); background:var(--glass);}.flow div:not(:last-child):after { content:"→"; color:var(--red); float:right; transform:translateX(23px); }.flow b { display:block; font:11px "DM Mono",monospace; color:var(--red); margin-bottom:14px; }.flow span { font-size:14px; font-weight:600; }
+      .composer { display:grid; grid-template-columns:1fr .85fr; gap:20px; }.fields { padding:24px; display:grid; grid-template-columns:1fr 1fr; gap:12px; }.fields label { font-size:11px; font-weight:700; }.fields input,.fields select { width:100%; margin-top:7px; border:1px solid var(--line); border-radius:0; padding:11px; background:rgba(255,255,255,.7); font:13px inherit; }.result { padding:25px; background:#161616; color:white; }.result .prompt { color:#e6e6e6; background:#222; border-color:#3b3b3b; min-height:200px; }.result .copy-button { background:white;color:#111; }
+      .tool-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }.tool { min-height:190px; padding:20px; position:relative; }.tool b { font-size:20px; letter-spacing:-.05em; }.tool .task { display:block; margin:20px 0 10px; font:11px "DM Mono",monospace; color:var(--red); }.tool small { color:var(--muted); line-height:1.55; display:block; }.level { position:absolute; right:17px; top:17px; font:10px "DM Mono",monospace; border:1px solid var(--line); padding:5px; }
+      .project { display:grid; grid-template-columns:1fr 1fr; gap:16px; }.checklist { padding:25px; }.checklist div { display:flex; justify-content:space-between; padding:13px 0; border-bottom:1px solid var(--line); font-size:14px; }.checklist span { color:var(--red); }.poster { min-height:450px; padding:27px; background:#e21e27; position:relative; overflow:hidden; color:#fff; display:flex; flex-direction:column; justify-content:space-between; }.poster:before { content:""; width:260px;height:350px; position:absolute; bottom:-80px;right:17%; border-radius:50% 50% 35% 35%; background:linear-gradient(135deg,#111 0 40%,#f2ede4 41% 55%,#191919 56%); transform:rotate(10deg); }.poster h3,.poster p,.poster .poster-top { position:relative; z-index:1; }.poster h3 { font-size:52px;line-height:.85;letter-spacing:-.1em;max-width:300px; }.poster-top { font:11px "DM Mono",monospace; display:flex;justify-content:space-between; }.footer { font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:10px; }
+      @media(max-width:850px){ main{padding:0 16px 55px}.course-label{left:16px}.hero,.composer,.project{grid-template-columns:1fr}.hero-visual{min-height:380px}.hero-copy{padding-bottom:24px}.grid,.tool-grid{grid-template-columns:1fr}.library{grid-template-columns:1fr 1fr}.explorer{grid-template-columns:1fr}.tab-list{flex-direction:row;overflow:auto}.tab{white-space:nowrap}.map{grid-template-columns:1fr 1fr}.map div:last-child{grid-column:span 2}nav > a:not(:first-child){display:none}nav{right:13px}.course-label{font-size:10px}section{padding-top:95px;min-height:auto}h1{font-size:55px}.detail{min-height:430px}.fields{grid-template-columns:1fr}.footer{flex-direction:column}}
+
+      /* Minimal visual system: typography, rules and frosted-glass labels only. */
+      html { scroll-snap-type:y mandatory; }
+      body { background:#fff; }
+      body:before { display:none; }
+      section { min-height:100svh; scroll-snap-align:start; scroll-snap-stop:always; }
+      .hero { display:flex; align-items:flex-end; }
+      .hero-visual,
+      .case:after,
+      .detail:after,
+      .poster:before { display:none; }
+      .glass { background:#fff; border:1px solid var(--line); box-shadow:none; backdrop-filter:none; }
+      .library div { background:#fff; }
+      .flow div { background:#fff; }
+      .poster { background:#fff; color:var(--ink); border:1px solid var(--line); }
+      .prompt { background:#fafafa; }
+      .course-label,
+      .eyebrow,
+      .pill,
+      .tags > span,
+      .level {
+        border:1px solid rgba(255,255,255,.86);
+        background:rgba(242,242,242,.72);
+        box-shadow:0 8px 28px rgba(0,0,0,.05);
+        backdrop-filter:blur(18px);
+        -webkit-backdrop-filter:blur(18px);
+      }
+      .course-label { top:18px; padding:9px 12px; border-radius:999px; }
+      .course-label.brand-mark { width:260px; height:52px; padding:2px 12px; display:flex; align-items:center; justify-content:center; border:1px solid rgba(15,15,15,.1); border-radius:999px; background:#fff; box-shadow:0 0 0 5px rgba(242,242,242,.48),0 9px 28px rgba(0,0,0,.05); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); overflow:hidden; }
+      .course-label.brand-mark img { display:block; width:194px; height:48px; object-fit:contain; object-position:center; mix-blend-mode:multiply; filter:contrast(1.15); }
+      nav a.active,nav button.active { background:#111; color:#fff; }
+      .nav-menu { position:relative; display:flex; }
+      .ai-tool-menu { position:absolute; right:-92px; top:calc(100% + 14px); width:min(820px,calc(100vw - 44px)); padding:18px; display:grid; grid-template-columns:1.25fr 1fr 1fr 1fr 1fr; gap:18px; border:1px solid rgba(15,15,15,.1); border-radius:18px; background:rgba(255,255,255,.94); box-shadow:0 18px 60px rgba(0,0,0,.12); backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px); opacity:0; visibility:hidden; transform:translateY(-6px); transition:opacity .16s ease,transform .16s ease,visibility .16s; }
+      .nav-menu.open .ai-tool-menu { opacity:1; visibility:visible; transform:translateY(0); }
+      .menu-group { min-width:0; }
+      .menu-group b { display:block; margin:0 0 9px; font:500 9px "DM Mono",monospace; color:var(--red); letter-spacing:.08em; }
+      .ai-tool-menu .menu-group a { display:block; padding:5px 0; border-radius:0; color:#4d4d4d; font-size:11px; line-height:1.25; }
+      .ai-tool-menu .menu-group a:hover { background:transparent; color:#000; text-decoration:underline; text-underline-offset:3px; }
+      .case-link { color:var(--ink); text-decoration:none; transition:transform .18s ease,border-color .18s ease; }
+      .case-link:hover { transform:translateY(-4px); border-color:rgba(15,15,15,.28); }
+      .summary-page { display:flex; flex-direction:column; justify-content:center; }
+      .summary-tags { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:20px; }
+      .summary-tag { min-height:218px; padding:14px; display:grid; grid-template-rows:auto 1fr auto; gap:9px; color:var(--ink); text-decoration:none; border:1px solid rgba(255,255,255,.86); background:rgba(242,242,242,.68); box-shadow:0 12px 38px rgba(0,0,0,.06); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); transition:transform .18s ease; overflow:hidden; }
+      .summary-tag:hover { transform:translateY(-4px); }
+      .summary-tag > span { font:10px "DM Mono",monospace; color:var(--red); }
+      .summary-tag b { font-size:17px; }
+      .summary-tag img { display:block; width:100%; height:132px; object-fit:contain; object-position:center; }
+      .lighting-summary .summary-tags { grid-template-columns:repeat(4,1fr); }
+      .camera-overview { display:grid; grid-template-columns:.75fr 1.25fr; gap:clamp(30px,7vw,100px); align-items:center; }
+      .camera-collage { display:grid; grid-template-columns:1fr 1fr; gap:10px; height:min(72svh,720px); }
+      .camera-collage a { display:flex; align-items:center; justify-content:center; min-height:0; overflow:visible; background:transparent; }
+      .camera-collage img { display:block; width:100%; height:100%; object-fit:contain; object-position:center; transition:transform .25s ease; }
+      .camera-collage a:hover img { transform:scale(1.025); }
+      .lighting-overview { display:grid; grid-template-columns:.68fr 1.32fr; gap:clamp(30px,6vw,90px); align-items:center; }
+      .lighting-collage { display:grid; grid-template-columns:1fr 1fr; grid-template-rows:repeat(3,1fr); gap:10px; height:min(74svh,740px); }
+      .lighting-collage a { display:flex; align-items:center; justify-content:center; min-height:0; background:transparent; }
+      .lighting-collage img { display:block; width:100%; height:100%; object-fit:contain; object-position:center; transition:transform .25s ease; }
+      .lighting-collage a:hover img { transform:scale(1.025); }
+      .reference-gallery { display:grid; grid-template-columns:.3fr .7fr; gap:clamp(34px,6vw,92px); align-items:center; }
+      .reference-copy h2 { margin-bottom:24px; }
+      .reference-count { display:inline-flex; margin-top:8px; padding:8px 11px; border-radius:999px; border:1px solid rgba(255,255,255,.9); background:rgba(242,242,242,.72); box-shadow:0 8px 28px rgba(0,0,0,.04); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); font:10px "DM Mono",monospace; color:var(--red); }
+      .reference-grid { height:min(74svh,740px); display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:repeat(2,1fr); gap:12px; }
+      .reference-grid.two { grid-template-columns:repeat(2,1fr); grid-template-rows:1fr; }
+      .reference-grid figure { margin:0; min-width:0; min-height:0; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+      .reference-grid img { display:block; width:100%; height:100%; object-fit:contain; object-position:center; }
+      .reference-video { height:min(76svh,760px); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+      .reference-video video { display:block; width:100%; height:100%; object-fit:contain; background:#000; }
+      .zoomable-image { cursor:zoom-in; }
+      .zoomable-image:focus-visible { outline:2px solid var(--red); outline-offset:4px; }
+      body.lightbox-open { overflow:hidden; }
+      .gallery-lightbox { position:fixed; inset:0; z-index:100; padding:84px 42px 34px; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,.62); backdrop-filter:blur(28px) saturate(115%); -webkit-backdrop-filter:blur(28px) saturate(115%); opacity:0; visibility:hidden; transition:opacity .2s ease,visibility .2s; }
+      .gallery-lightbox.open { opacity:1; visibility:visible; }
+      .gallery-lightbox:before { content:""; position:absolute; inset:18px; border:1px solid rgba(255,255,255,.92); box-shadow:inset 0 0 40px rgba(255,255,255,.78),0 20px 70px rgba(0,0,0,.08); border-radius:24px; pointer-events:none; }
+      .gallery-back { position:absolute; z-index:2; left:34px; top:28px; padding:10px 14px; border:1px solid rgba(15,15,15,.12); border-radius:999px; background:rgba(255,255,255,.82); box-shadow:0 8px 28px rgba(0,0,0,.08); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); color:var(--ink); font:600 12px Manrope,"Noto Sans SC",sans-serif; cursor:pointer; }
+      .gallery-back:hover { background:var(--red); color:#fff; border-color:var(--red); }
+      .gallery-lightbox-frame { position:relative; z-index:1; width:100%; height:100%; display:flex; align-items:center; justify-content:center; }
+      .gallery-lightbox-frame img { display:block; max-width:94vw; max-height:86vh; width:auto; height:auto; object-fit:contain; box-shadow:0 20px 70px rgba(0,0,0,.14); }
+      .prologue { display:grid; grid-template-columns:1fr 1fr; gap:clamp(54px,9vw,145px); align-items:center; align-content:center; padding-top:82px; padding-bottom:82px; }
+      .prologue h2 { max-width:720px; margin-bottom:28px; line-height:1.09; letter-spacing:-.065em; }
+      .red-title { color:var(--red); }
+      .prologue-copy { max-width:650px; }
+      .prologue-statement { margin-bottom:32px; font-size:clamp(25px,3vw,44px); line-height:1.12; letter-spacing:-.055em; font-weight:700; }
+      .prologue-lines { border-top:1px solid var(--line); }
+      .prologue-lines p { margin:0; padding:18px 0; border-bottom:1px solid var(--line); font-size:clamp(16px,1.45vw,21px); line-height:1.45; transition:color .18s ease,padding-left .18s ease; cursor:default; }
+      .prologue-lines p:hover { color:var(--red); padding-left:12px; }
+      .prologue-two { grid-template-columns:.82fr 1.18fr; }
+      .ability-panel { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+      .ability-column { padding:24px; min-height:350px; border:1px solid var(--line); background:#fff; }
+      .ability-column b { display:block; margin-bottom:22px; font:500 11px "DM Mono",monospace; color:var(--red); letter-spacing:.08em; }
+      .ability-column > span { display:block; padding:10px 0; border-bottom:1px solid var(--line); font-size:clamp(17px,1.6vw,24px); font-weight:600; }
+      .prologue-quote { grid-column:1/-1; margin:0; padding-top:26px; border-top:1px solid var(--line); font-size:clamp(25px,3.3vw,50px); line-height:1.12; letter-spacing:-.06em; font-weight:800; }
+      .prologue-three { grid-template-columns:.92fr 1.08fr; }
+      .prologue-definition { font-size:clamp(18px,1.65vw,24px); line-height:1.7; color:#333; }
+      .prologue-reflection { padding:clamp(24px,4vw,52px); border:1px solid rgba(255,255,255,.88); background:rgba(242,242,242,.62); box-shadow:0 16px 55px rgba(0,0,0,.05); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); text-align:left; }
+      .prologue-reflection p { width:100%; margin-left:0; margin-right:0; font-size:clamp(18px,1.7vw,25px); line-height:1.7; text-align:left; }
+      .prologue-reflection strong { display:block; width:100%; margin:38px 0 0; padding-top:24px; border-top:1px solid var(--line); font-size:clamp(25px,3vw,44px); line-height:1.15; letter-spacing:-.055em; text-align:left; }
+      .riding-system { display:grid; gap:12px; }
+      .prologue-rider { grid-template-columns:1.08fr .92fr; gap:clamp(44px,6vw,96px); align-items:start; align-content:start; padding-top:88px; padding-bottom:54px; }
+      .rider-copy h2 { margin-bottom:42px; }
+      .rider-copy .riding-system { max-width:760px; }
+      .prologue-rider-image { height:calc(100svh - 142px); min-height:560px; display:flex; align-items:flex-start; justify-content:flex-end; }
+      .prologue-rider-image img { display:block; width:100%; height:100%; object-fit:contain; object-position:right top; }
+      .prologue-warmth { grid-template-columns:1.08fr .92fr; gap:clamp(44px,6vw,96px); align-items:start; align-content:start; padding-top:88px; padding-bottom:54px; }
+      .warmth-copy h2 { margin-bottom:28px; }
+      .warmth-copy .prologue-definition { max-width:720px; margin-bottom:28px; }
+      .warmth-copy .prologue-reflection { max-width:760px; }
+      .prologue-warmth-image { height:calc(100svh - 142px); min-height:560px; display:flex; align-items:flex-start; justify-content:flex-end; }
+      .prologue-warmth-image img { display:block; width:100%; height:100%; object-fit:contain; object-position:right top; }
+      .riding-equation { display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:12px; }
+      .riding-card { min-height:150px; padding:22px; display:flex; flex-direction:column; justify-content:space-between; border:1px solid rgba(255,255,255,.88); background:rgba(242,242,242,.62); box-shadow:0 12px 38px rgba(0,0,0,.05); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); }
+      .riding-card > span { font:500 10px "DM Mono",monospace; color:var(--red); }
+      .riding-card b { font-size:clamp(20px,2vw,30px); }
+      .riding-plus { color:var(--red); font-size:22px; }
+      .rider-role { margin-top:18px; padding:22px; border-top:1px solid var(--line); }
+      .rider-role > b { display:block; margin-bottom:14px; font-size:20px; }
+      .rider-tags { display:flex; flex-wrap:wrap; gap:7px; }
+      .rider-tags > span { padding:9px 12px; border-radius:18px; border:1px solid rgba(255,255,255,.9); background:rgba(242,242,242,.72); box-shadow:0 8px 28px rgba(0,0,0,.04); backdrop-filter:blur(16px); font-size:12px; font-weight:600; }
+      .rider-role > b .i18n-translation { margin-top:5px; font-size:11px; line-height:1.3; font-weight:500; }
+      .rider-tags > span .i18n-translation { margin-top:3px; font-size:9px; line-height:1.2; font-weight:500; }
+      .eyebrow { display:inline-flex; width:max-content; padding:7px 10px; border-radius:999px; font-size:10px; }
+      .level { padding:6px 8px; border-radius:999px; }
+      .tool-grid { grid-template-columns:repeat(4,1fr); }
+      .tool { min-height:230px; display:flex; flex-direction:column; color:var(--ink); text-decoration:none; transition:transform .18s ease,border-color .18s ease; }
+      .tool:hover { transform:translateY(-4px); border-color:rgba(15,15,15,.28); }
+      .tool-logo { height:72px; margin-bottom:22px; display:flex; align-items:center; justify-content:flex-start; }
+      .tool-logo img { display:block; width:62px; height:62px; object-fit:contain; }
+      .tool-logo img.wide { width:104px; height:54px; object-position:left center; }
+      .tool-company { margin:7px 0 2px; font:10px "DM Mono",monospace; color:var(--muted); letter-spacing:.06em; }
+      .tool-arrow { margin-top:auto; padding-top:18px; font:11px "DM Mono",monospace; color:var(--red); }
+      .model-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+      .model-card { min-height:210px; padding:22px; background:#fff; border:1px solid var(--line); }
+      .model-logo { height:58px; margin-bottom:18px; display:flex; align-items:center; }
+      .model-logo img { display:block; width:54px; height:54px; object-fit:contain; object-position:left center; }
+      .model-logo img.seedance { width:150px; height:54px; }
+      .model-card h3 { font-size:22px; margin:14px 0; }
+      .model-card p { color:var(--muted); font-size:13px; line-height:1.65; }
+      .model-owner { font:10px "DM Mono",monospace; color:var(--red); letter-spacing:.06em; }
+      .ai-logic-grid { display:grid; grid-template-columns:.8fr 1.2fr; gap:16px; }
+      .logic-column { padding:24px; border:1px solid var(--line); background:#fff; }
+      .logic-kicker { display:inline-flex; margin-bottom:22px; padding:7px 10px; border-radius:999px; background:rgba(242,242,242,.72); border:1px solid rgba(255,255,255,.86); box-shadow:0 8px 28px rgba(0,0,0,.04); backdrop-filter:blur(16px); font:10px "DM Mono",monospace; color:var(--red); }
+      .logic-stack { display:flex; flex-direction:column; }
+      .logic-node { padding:15px 0; border-top:1px solid var(--line); }
+      .logic-node b { font-size:18px; letter-spacing:-.03em; }
+      .logic-node p { max-width:520px; margin:8px 0 0; color:var(--muted); font-size:13px; line-height:1.6; }
+      .concept-trigger { cursor:pointer; transition:background .18s ease,padding .18s ease; }
+      .concept-trigger:hover { padding-left:12px; background:#fafafa; }
+      .logic-arrow { height:16px; color:var(--red); font:12px "DM Mono",monospace; }
+      .generative-types { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+      #ai-basics { position:relative; overflow:hidden; }
+      .reveal-logic { margin-top:28px; padding:10px 14px; border:1px solid rgba(255,255,255,.88); border-radius:999px; background:rgba(242,242,242,.68); color:var(--ink); box-shadow:0 10px 32px rgba(0,0,0,.07); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); font:600 13px inherit; cursor:pointer; }
+      .ai-concept-layer { position:absolute; z-index:80; inset:0; display:none; overflow:hidden; pointer-events:none; background:rgba(255,255,255,.2); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); }
+      .ai-concept-layer.active { display:block; }
+      .concept-close { position:absolute; z-index:90; right:24px; top:24px; width:42px; height:42px; border:1px solid rgba(255,255,255,.92); border-radius:50%; background:rgba(242,242,242,.7); color:var(--ink); box-shadow:0 12px 34px rgba(0,0,0,.1); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); font:18px/1 Manrope,sans-serif; cursor:pointer; pointer-events:auto; }
+      .concept-card { position:absolute; width:min(470px,42vw); margin:0; padding:12px; background:rgba(255,255,255,.64); border:1px solid rgba(255,255,255,.94); box-shadow:0 24px 80px rgba(0,0,0,.18); backdrop-filter:blur(28px) saturate(125%); -webkit-backdrop-filter:blur(28px) saturate(125%); cursor:grab; touch-action:none; user-select:none; pointer-events:auto; }
+      .concept-card:active { cursor:grabbing; }
+      .concept-card img { display:block; width:100%; pointer-events:none; }
+      .concept-card figcaption { padding:10px 5px 3px; color:#444; font-size:11px; line-height:1.5; }
+      .concept-one { left:7vw; top:17vh; }
+      .concept-two { right:7vw; top:48vh; }
+      .library-page { display:grid; grid-template-columns:minmax(320px,.8fr) minmax(360px,1.2fr); gap:clamp(28px,6vw,92px); align-items:center; }
+      .library-copy { max-width:620px; }
+      .library-copy h2 { margin-bottom:22px; }
+      .library-copy .tags { margin:24px 0; }
+      .library-image { height:min(72svh,760px); display:flex; align-items:center; justify-content:center; position:relative; }
+      .library-image img { display:block; max-width:100%; max-height:100%; object-fit:contain; }
+      .library-page:not(.original-page) .library-image:after,
+      .library-page:not(.original-page) .library-image:before { display:none; }
+      .before-card { position:absolute; z-index:5; right:0; bottom:0; width:clamp(92px,17%,150px); padding:7px; background:rgba(255,255,255,.84); box-shadow:0 14px 38px rgba(0,0,0,.16); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); cursor:grab; touch-action:none; user-select:none; }
+      .before-card:active { cursor:grabbing; }
+      .before-card img { display:block; width:100%; max-width:none; max-height:none; pointer-events:none; }
+      .before-card > span { position:absolute; right:10px; bottom:10px; padding:5px 7px; border:1px solid rgba(255,255,255,.9); border-radius:999px; background:rgba(245,245,245,.74); backdrop-filter:blur(12px); font:500 8px "DM Mono",monospace; letter-spacing:.08em; pointer-events:none; }
+      .original-page .library-image img { box-shadow:0 18px 55px rgba(0,0,0,.08); }
+      .library-page.graphic .library-image { height:min(62svh,640px); }
+      @media(max-width:850px){
+        .ai-tool-menu { right:-54px; width:calc(100vw - 28px); max-height:72vh; overflow:auto; grid-template-columns:1fr 1fr; }
+        .library-page { grid-template-columns:1fr; align-content:start; gap:22px; }
+        .library-copy h2 { margin-bottom:16px; }
+        .library-image { height:48svh; }
+        .library-page.graphic .library-image { height:38svh; }
+        .before-card { width:82px; padding:5px; }
+        .tool-grid,.model-grid { grid-template-columns:1fr 1fr; }
+        .ai-logic-grid { grid-template-columns:1fr; }
+        .generative-types { grid-template-columns:1fr 1fr; }
+        .concept-card { width:min(86vw,440px); }
+        .concept-one { left:6vw; top:14vh; }
+        .concept-two { right:6vw; top:52vh; }
+        .course-label.brand-mark { width:205px; height:46px; padding:2px 10px; }
+        .course-label.brand-mark img { width:170px; height:42px; }
+        .summary-tags { grid-template-columns:1fr 1fr; }
+        .lighting-summary .summary-tags { grid-template-columns:1fr 1fr; }
+        .summary-tag { min-height:100px; }
+        .summary-tag img { height:94px; }
+        .camera-overview { grid-template-columns:1fr; align-content:start; }
+        .camera-collage { height:48svh; }
+        .lighting-overview { grid-template-columns:1fr; align-content:start; }
+        .lighting-collage { height:54svh; }
+        .reference-gallery { grid-template-columns:1fr; align-content:start; gap:24px; }
+        .reference-grid { height:auto; grid-template-columns:1fr 1fr; grid-template-rows:none; }
+        .reference-grid figure { height:44svh; }
+        .reference-grid.two { grid-template-columns:1fr 1fr; }
+        .reference-video { height:58svh; }
+        .gallery-lightbox { padding:76px 18px 24px; }
+        .gallery-lightbox:before { inset:8px; border-radius:18px; }
+        .gallery-back { left:18px; top:18px; }
+        .gallery-lightbox-frame img { max-width:94vw; max-height:82vh; }
+        .prologue,.prologue-two,.prologue-three { grid-template-columns:1fr; align-content:center; gap:26px; }
+        .prologue-rider { grid-template-columns:1fr; }
+        .prologue-rider-image { height:42svh; }
+        .prologue-warmth { grid-template-columns:1fr; }
+        .prologue-warmth-image { height:46svh; min-height:0; }
+        .ability-panel { grid-template-columns:1fr 1fr; }
+        .ability-column { min-height:auto; padding:18px; }
+        .prologue-quote { grid-column:auto; }
+        .riding-card { min-height:120px; }
+      }
+      @media(max-width:850px){ section{min-height:100svh} }
+
+      /* Bilingual classroom mode */
+      .language-gate { position:fixed; inset:0; z-index:120; display:grid; place-items:center; padding:24px; background:rgba(248,248,246,.74); backdrop-filter:blur(28px); -webkit-backdrop-filter:blur(28px); transition:opacity .25s ease,visibility .25s ease; }
+      .language-gate.hidden { opacity:0; visibility:hidden; pointer-events:none; }
+      .language-panel { width:min(720px,94vw); padding:34px; border:1px solid rgba(255,255,255,.92); background:rgba(255,255,255,.78); box-shadow:0 28px 90px rgba(0,0,0,.12); }
+      .language-panel h2 { margin:14px 0 16px; font-size:clamp(42px,7vw,82px); max-width:none; }
+      .language-panel > p { max-width:560px; color:var(--muted); line-height:1.65; }
+      .language-options { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:28px 0 22px; }
+      .language-option { min-height:104px; padding:18px; border:1px solid var(--line); background:rgba(255,255,255,.62); text-align:left; cursor:pointer; font:600 17px Manrope,sans-serif; }
+      .language-option span { display:block; margin-top:8px; color:var(--muted); font:11px "DM Mono",monospace; }
+      .language-option.selected { color:#fff; background:#111; border-color:#111; }
+      .language-option.selected span { color:rgba(255,255,255,.64); }
+      .api-field { display:block; color:var(--muted); font-size:11px; font-weight:700; }
+      .api-field input { width:100%; margin-top:8px; padding:13px 14px; border:1px solid var(--line); background:rgba(255,255,255,.8); font:13px "DM Mono",monospace; }
+      .api-note { margin:8px 0 0; color:var(--muted); font-size:11px; line-height:1.5; }
+      .language-actions { display:flex; align-items:center; gap:10px; margin-top:22px; flex-wrap:wrap; }
+      .language-start,.language-skip { border:1px solid #111; padding:12px 16px; cursor:pointer; font:600 12px Manrope,sans-serif; }
+      .language-start { background:#111; color:#fff; }
+      .language-skip { background:transparent; color:#111; }
+      .language-status { min-height:18px; margin:12px 0 0; color:var(--red); font-size:11px; }
+      .classroom-controls { position:fixed; z-index:75; right:24px; bottom:22px; display:flex; gap:7px; padding:6px; border:1px solid rgba(255,255,255,.86); border-radius:999px; background:rgba(255,255,255,.72); box-shadow:0 12px 36px rgba(0,0,0,.1); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); }
+      .classroom-controls button { min-width:42px; height:36px; padding:0 12px; border:0; border-radius:999px; background:transparent; cursor:pointer; color:#111; font:600 10px "DM Mono",monospace; }
+      .classroom-controls button:hover,.classroom-controls button.active { color:#fff; background:#111; }
+      .classroom-controls .caption-toggle.active { background:var(--red); }
+      .classroom-controls .caption-toggle.unsupported { min-width:88px; color:#777; background:rgba(242,242,242,.9); cursor:help; }
+      .live-caption { position:fixed; z-index:70; left:50%; bottom:20px; width:min(1000px,calc(100vw - 260px)); transform:translate(-50%,18px); padding:15px 22px 17px; text-align:left; border:1px solid rgba(255,255,255,.9); background:rgba(255,255,255,.78); box-shadow:0 18px 60px rgba(0,0,0,.13); backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px); opacity:0; visibility:hidden; pointer-events:none; transition:.2s ease; }
+      .live-caption.visible { opacity:1; visibility:visible; transform:translate(-50%,0); }
+      .caption-source { display:block; min-height:15px; margin-bottom:5px; color:var(--muted); font-size:11px; }
+      .caption-target { display:block; font-size:clamp(18px,2vw,28px); line-height:1.25; letter-spacing:-.025em; }
+      .caption-state { display:inline-block; width:6px; height:6px; margin-right:7px; border-radius:50%; background:var(--red); vertical-align:middle; }
+      .caption-label { display:none; }
+      :root { --caption-rail-width:clamp(320px,26vw,440px); }
+      body.caption-dock-active main { max-width:min(1500px,calc(100vw - var(--caption-rail-width))); transform:translateX(calc(var(--caption-rail-width) / -2)); transition:max-width .24s ease,transform .24s ease; }
+      body.caption-dock-active nav { right:calc(var(--caption-rail-width) + 22px); }
+      body.caption-dock-active .classroom-controls { right:calc(var(--caption-rail-width) + 24px); }
+      body.caption-dock-active .live-caption {
+        inset:0 0 0 auto;
+        width:var(--caption-rail-width);
+        height:100svh;
+        padding:88px 30px 110px;
+        overflow-y:auto;
+        border:0;
+        border-left:1px solid var(--line);
+        background:rgba(255,255,255,.94);
+        box-shadow:-22px 0 60px rgba(0,0,0,.06);
+        transform:translateX(100%);
+        opacity:0;
+        visibility:hidden;
+        pointer-events:auto;
+      }
+      body.caption-dock-active .live-caption.visible { transform:translateX(0); opacity:1; visibility:visible; }
+      body.caption-dock-active .caption-label { display:block; margin-bottom:44px; color:var(--red); font:500 11px "DM Mono",monospace; letter-spacing:.08em; }
+      body.caption-dock-active .caption-source { margin-bottom:22px; color:#555; font-size:clamp(16px,1.25vw,21px); line-height:1.55; overflow-wrap:anywhere; }
+      body.caption-dock-active .caption-target { font-size:clamp(24px,2.05vw,35px); line-height:1.3; overflow-wrap:anywhere; }
+      .i18n-pair { display:inline-flex; max-width:100%; flex-direction:column; align-items:flex-start; vertical-align:top; }
+      .i18n-translation { display:block; margin-top:.28em; color:#777; font-family:Manrope,Arial,sans-serif; font-size:.46em; font-weight:500; line-height:1.3; letter-spacing:0; text-transform:none; }
+      .i18n-translation:empty { display:none; }
+      html.chinese-only .i18n-translation,html.chinese-only .input-translation { display:none !important; }
+      p .i18n-translation,.lead .i18n-translation,.prompt .i18n-translation,.small .i18n-translation { font-size:.68em; }
+      .tags .i18n-translation,.pill .i18n-translation,nav .i18n-translation,.eyebrow .i18n-translation,.copy-button .i18n-translation { font-size:7px; line-height:1.15; }
+      .menu-group .i18n-translation { font-size:8px; }
+      .i18n-loading .i18n-translation:empty:after { content:"…"; color:#aaa; }
+      .input-translation { display:block; margin-top:5px; color:#777; font-size:9px; line-height:1.35; }
+      @media(max-width:850px){
+        .language-panel { padding:24px; }
+        .language-options { grid-template-columns:1fr; }
+        .classroom-controls { right:12px; bottom:12px; }
+        .live-caption { bottom:62px; width:calc(100vw - 24px); padding:13px 16px; }
+        body.caption-dock-active main { max-width:none; transform:none; }
+        body.caption-dock-active nav { right:13px; }
+        body.caption-dock-active .classroom-controls { right:12px; }
+        body.caption-dock-active .live-caption { inset:auto auto 62px 50%; width:calc(100vw - 24px); height:auto; max-height:42svh; padding:13px 16px; border:1px solid rgba(255,255,255,.9); transform:translate(-50%,18px); }
+        body.caption-dock-active .live-caption.visible { transform:translate(-50%,0); }
+        body.caption-dock-active .caption-label { display:none; }
+        body.caption-dock-active .caption-source { margin-bottom:5px; font-size:11px; }
+        body.caption-dock-active .caption-target { font-size:clamp(18px,4.8vw,25px); }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="course-label brand-mark"><img src="assets/brand/instituto-marangoni.png" alt="Istituto Marangoni enhancing talent since 1935" /></div>
+    <nav><a href="#top" data-range="top">首页</a><a href="#ai-prologue-1" data-range="ai-prologue-1">Storytelling</a><div class="nav-menu" id="ai-tool-nav"><button id="ai-tool-toggle" data-range="visual-original" aria-expanded="false" aria-controls="ai-tool-menu">AI Tool</button><div class="ai-tool-menu" id="ai-tool-menu"><div class="menu-group"><b>视觉资料</b><a href="#visual-original">AI 后期处理与创意</a><a href="#visual-library">发型结构</a><a href="#visual-face">人物与面部</a><a href="#visual-camera">姿态与镜头</a><a href="#visual-lighting">灯光设计</a><a href="#visual-scene">场景世界</a><a href="#visual-material">材质语言</a><a href="#visual-graphic">平面排版</a><a href="#visual-summary">视觉标签汇总</a></div><div class="menu-group"><b>拍摄角度</b><a href="#lab">镜头总览</a><a href="#camera-front">正面平视</a><a href="#camera-profile">侧面</a><a href="#camera-three">四分之三侧面</a><a href="#camera-high">俯拍</a><a href="#camera-low">仰拍</a></div><div class="menu-group"><b>灯光</b><a href="#lighting">灯光总览</a><a href="#lighting-before">原始灯光</a><a href="#lighting-soft">柔和正面光</a><a href="#lighting-hard">侧面硬光</a><a href="#lighting-rim">轮廓光与发丝光</a><a href="#lighting-top">顶光</a><a href="#lighting-window">窗光</a><a href="#lighting-color">彩色灯光</a><a href="#lighting-summary">灯光效果汇总</a></div><div class="menu-group"><b>创意参考</b><a href="#reference-scene-material">场景与材质</a><a href="#reference-digital-hair">数字发型</a><a href="#reference-makeup">特殊妆容</a><a href="#reference-advertising">视觉广告</a></div><div class="menu-group"><b>工具与模型</b><a href="#tool-library">工具入口</a><a href="#model-library">模型能力</a><a href="#ai-basics">AI 基础逻辑</a></div></div></div><a href="#workflow" data-range="workflow">Workflow</a></nav>
+    <main>
+      <section class="hero" id="top">
+        <div class="hero-copy"><div class="eyebrow">AI visual storytelling workshop / 01</div><h1>THE STORY<br>BEHIND <em>IMAGE</em></h1><p class="lead">从拍摄作品到一张有世界观的视觉广告</p><div class="actions"><a class="btn" href="#ai-prologue-1">开始课程</a><a class="btn light" href="#workflow">查看工作流</a><a class="btn light" href="../">← 返回书架</a></div><div class="hero-meta"><span class="pill">Storytelling</span><span class="pill">AI IMAGE</span><span class="pill">VISUAL SYSTEM</span></div></div>
+        <div class="hero-visual" aria-label="抽象化的发丝与几何广告视觉"></div>
+      </section>
+
+      <section class="prologue" id="ai-prologue-1"><div><div class="eyebrow">Prologue / 01</div><h2>AI 像一匹马<br>来到了这个时代<br><span class="red-title">人要重新学习<br>如何驾驭</span></h2></div><div class="prologue-copy"><p class="prologue-statement">每一次技术革命<br>都重新定义了人的能力</p><div class="prologue-lines"><p>火 让人类延长了白昼</p><p>互联网 让知识脱离了地点</p><p>AI 让一部分思考 表达和执行脱离了人本身</p></div></div></section>
+
+      <section class="prologue prologue-rider" id="ai-prologue-2"><div class="rider-copy"><div class="eyebrow">Prologue / 02</div><h2>如果 AI 是马<br>Agent 是缰绳与马鞍</h2><div class="riding-system"><div class="riding-equation"><div class="riding-card"><span>POWER</span><b>AI 马</b></div><span class="riding-plus">＋</span><div class="riding-card"><span>CONTROL</span><b>AGENT<br>缰绳与马鞍</b></div></div><div class="rider-role"><b>骑手 人类需要负责</b><div class="rider-tags"><span>目标</span><span>判断</span><span>审美</span><span>责任</span><span>最终决定</span></div></div></div></div><div class="prologue-rider-image"><img src="assets/prologue/horse-wizard.png" alt="骑着马前进的蓝色魔法师油画"></div></section>
+
+      <section class="prologue prologue-two" id="ai-prologue-3"><div><div class="eyebrow">Prologue / 03</div><h2>AI 像一匹马<br>但 TA 不知道方向</h2></div><div class="ability-panel"><div class="ability-column"><b>AI 拥有</b><span>速度</span><span>力量</span><span>记忆</span><span>模仿能力</span><span>持续工作的能力</span></div><div class="ability-column"><b>但它不知道</b><span>你要去哪里</span><span>为什么出发</span><span>如何出发</span></div></div><p class="prologue-quote">会使用 AI 不等于会创作<br>就像坐在马上 不等于会骑马</p></section>
+
+      <section class="prologue prologue-warmth" id="ai-prologue-4"><div class="warmth-copy"><div class="eyebrow">Prologue / 04</div><h2>人类独有的温度</h2><p class="prologue-definition">AI 通常指一组使计算机能够模拟或完成部分人类智能任务的技术</p><div class="prologue-reflection"><p>对于创意者来说 AI 拥有大量经验的压缩 但它没有属于自己的生命经验 人的审美 感受和判断不会因此失去价值 反而会变得更加重要</p><strong>当生产能力变得普遍<br>选择什么 为什么选择<br>便成为新的稀缺能力</strong></div></div><div class="prologue-warmth-image"><img src="assets/prologue/human-warmth.png" alt="蓝袍人物置身羊群中的油画"></div></section>
+
+      <section id="story"><div class="eyebrow">Module 01 / Storytelling</div><h2>海报背后的故事<br>视觉构建桥梁</h2><p class="lead">Storytelling 是为发型建立人物、情绪、场景与视觉符号之间的关系，让作品变得可理解、可记住、可传播。</p><div class="formula glass"><span>发型结构</span><b>＋</b><span>人物性格</span><b>＋</b><span>情绪氛围</span><b>＋</b><span>场景世界</span><b>＋</b><span>视觉符号</span><b>＝</b><span>品牌作品</span></div></section>
+
+      <section><div class="eyebrow">Module 01.3 / Brand cases</div><h2>三个不同的<br>叙事入口</h2><div class="grid"><a class="case card glass case-link" href="https://www.prada.com/us/en/pradasphere/campaigns/2021/holiday.html" target="_blank" rel="noopener noreferrer"><div><span class="num">CASE A</span><h3>Prada Holiday 2021</h3><strong>先做故事<br>再提取海报</strong></div><div><p>建立人物 空间与未完成情节 从连续画面中选取最有悬念的一帧</p><div class="tags"><span>CINEMA</span><span>SUSPENSE</span><span>NIGHT</span></div></div></a><a class="case card glass case-link" href="https://www.gucci.com/ca/en/st/stories/advertising-campaign/article/the-spring-summer-2025-campaign" target="_blank" rel="noopener noreferrer"><div><span class="num">CASE B</span><h3>Gucci SS25</h3><strong>让一个元素<br>成为故事主角</strong></div><div><p>把光从装饰变为叙事角色 发型也可以由风 水 影子或红色来讲述</p><div class="tags"><span>LIGHT</span><span>MOVEMENT</span><span>TENDERNESS</span></div></div></a><a class="case card glass case-link" href="https://www.dior.com/en_int/fashion/news-savoir-faire/folder-news-and-events/cruise-2026-womens-campaign" target="_blank" rel="noopener noreferrer"><div><span class="num">CASE C</span><h3>Dior Cruise 2026</h3><strong>地点不是背景<br>是世界观</strong></div><div><p>用城市 时代与文化建立作品的来处 你的发型属于哪里</p><div class="tags"><span>ROME</span><span>MEMORY</span><span>DREAM</span></div></div></a></div></section>
+
+      <section class="library-page original-page" id="visual-original"><div class="library-copy"><div class="eyebrow">Module 02 / Visual library · Original</div><h2>AI POST PRODUCTION<br>AI 后期处理与创意</h2><p class="lead">从同一张原始人物照片出发 分别实验发型 人物 镜头 灯光 场景 材质与排版 每次只改变一个变量</p><div class="tags"><span>保留主体</span><span>控制变量</span><span>视觉实验</span><span>创意延展</span></div></div><div class="library-image"><img src="assets/visual-library/00-original.png" alt="AI 后期处理使用的原始人物照片" /></div></section>
+
+      <section class="library-page" id="visual-library"><div class="library-copy"><div class="eyebrow">Module 02 / Visual library · 01</div><h2>HAIR<br>发型结构</h2><p class="lead">先判断轮廓、长度与发丝运动。告诉模型哪些发型细节必须保持不变。</p><div class="tags"><span>结构</span><span>刘海</span><span>轮廓</span><span>发色</span><span>发丝运动</span></div><div class="prompt">保持参考图中人物、拍摄角度、姿势、背景和光线完全一致。只调整发型，保留真实的发际线、发丝纹理和头发体积，确保头发与额头、耳朵和脸部自然连接。发型轮廓清晰，单根发丝细节真实，不改变人物身份与五官。</div><button class="copy-button" data-copy="#visual-library .prompt">复制提示词</button></div><div class="library-image"><img src="assets/visual-library/01-hair.png" alt="Hair 发型结构视觉资料图" /></div></section>
+
+      <section class="library-page" id="visual-face"><div class="library-copy"><div class="eyebrow">Module 02 / Visual library · 02</div><h2>FACE MODEL<br>人物与面部</h2><p class="lead">拆解人物气质、脸型、表情与妆容。需要一致性时，明确要求保留身份和真实面部细节。</p><div class="tags"><span>脸型</span><span>气质</span><span>表情</span><span>妆容</span><span>皮肤质感</span></div><div class="prompt">保持原图的发型、头部角度、人物姿势、背景和灯光一致。只调整模特的面部与人物气质，保留自然的脸型比例、眼睛、鼻子、嘴唇和真实皮肤纹理。五官细节清晰，妆容克制，不要过度磨皮，不要改变发型轮廓。</div><button class="copy-button" data-copy="#visual-face .prompt">复制提示词</button></div><div class="library-image"><img src="assets/visual-library/02-face-model.png" alt="Face and Model 人物与面部视觉资料图" /></div></section>
+
+      <section class="library-page" id="visual-camera"><div class="library-copy"><div class="eyebrow">Module 02 / Visual library · 03</div><h2>POSE CAMERA<br>姿态与镜头</h2><p class="lead">镜头决定观众如何看见发型。分别指定姿态、头部角度、景别与相机高度。</p><div class="tags"><span>正面</span><span>侧面</span><span>四分之三</span><span>俯拍</span><span>仰拍</span></div><div class="prompt">保持原图模特的长相、发型、发色、背景和灯光一致。将拍摄角度调整为四分之三侧面，人物头部轻微转向一侧，同时清楚展示面部结构与发型体积。使用平视机位和美妆近景构图，在发型轮廓周围保留适合排版的留白。</div><button class="copy-button" data-copy="#visual-camera .prompt">复制提示词</button></div><div class="library-image"><img src="assets/visual-library/03-pose-camera.jpg" alt="Pose and Camera 姿态与镜头视觉资料图" /></div></section>
+
+      <section class="library-page" id="visual-lighting"><div class="library-copy"><div class="eyebrow">Module 02 / Visual library · 04</div><h2>LIGHTING<br>灯光设计</h2><p class="lead">描述光源从哪里来、软硬程度、阴影边缘以及它如何强调发型。</p><div class="tags"><span>柔光</span><span>硬光</span><span>侧光</span><span>轮廓光</span><span>顶光</span></div><div class="prompt">保持人物长相、发型、姿势、拍摄角度和背景不变。只重新设计灯光：使用从侧面照射的硬光形成清晰阴影边缘，强调面部骨骼和发型轮廓；在头发后方增加轻微轮廓光，照亮单根发丝。保持真实肤色和受控高光，呈现高级美妆广告质感。</div><button class="copy-button" data-copy="#visual-lighting .prompt">复制提示词</button></div><div class="library-image"><img src="assets/visual-library/04-lighting.png" alt="Lighting 灯光设计视觉资料图" /></div></section>
+
+      <section class="library-page" id="visual-scene"><div class="library-copy"><div class="eyebrow">Module 02 / Visual library · 05</div><h2>SCENE<br>场景世界</h2><p class="lead">场景不是漂亮背景，而是人物与发型所属的时间、地点和空间逻辑。</p><div class="tags"><span>影棚</span><span>建筑</span><span>自然</span><span>城市</span><span>未来</span></div><div class="prompt">保持同一个人物、面部长相、发型、头部角度和身体姿势。只将背景替换为安静的现代主义混凝土室内空间，使新背景的透视、光线方向和人物原图准确匹配。空间极简、干净、有建筑感，不增加多余装饰，不重新设计发型。</div><button class="copy-button" data-copy="#visual-scene .prompt">复制提示词</button></div><div class="library-image"><img src="assets/visual-library/05-scene.png" alt="Scene 场景世界视觉资料图" /></div></section>
+
+      <section class="library-page" id="visual-material"><div class="library-copy"><div class="eyebrow">Module 02 / Visual library · 06</div><h2>MATERIAL<br>材质语言</h2><p class="lead">用材质建立触感和世界观。每张参考图只负责一种明确的表面质感。</p><div class="tags"><span>金属</span><span>玻璃</span><span>水</span><span>混凝土</span><span>烟雾</span></div><div class="prompt">保持模特的面部长相、发型、姿势、光线和画面构图不变。只将人物皮肤材质转换为光滑的抛光银色金属，保留原有五官结构、毛孔起伏和真实面部细节。金属反射与原图光源方向一致，高光受控，不影响头发材质，不改变人物身份。</div><button class="copy-button" data-copy="#visual-material .prompt">复制提示词</button></div><div class="library-image"><img src="assets/visual-library/06-material.png" alt="Material 材质语言视觉资料图" /></div></section>
+
+      <section class="library-page graphic" id="visual-graphic"><div class="library-copy"><div class="eyebrow">Module 02 / Visual library · 07</div><h2>GRAPHIC<br>平面排版</h2><p class="lead">最后再决定文字 网格 留白和信息层级 不要让排版遮挡关键发型轮廓</p><div class="tags"><span>字体</span><span>网格</span><span>留白</span><span>色彩</span><span>Logo</span></div></div><div class="library-image"><img src="assets/visual-library/07-graphic.png" alt="Graphic 平面排版视觉资料图" /></div></section>
+
+      <section class="summary-page" id="visual-summary"><div class="eyebrow">Module 02 / Visual library · Summary</div><h2>VISUAL LIBRARY<br>视觉标签汇总</h2><div class="summary-tags"><a class="summary-tag" href="#visual-original"><span>ORIGINAL</span><img src="assets/visual-library/00-original.png" alt="AI 后期处理与创意原始图"><b>AI 后期处理与创意</b></a><a class="summary-tag" href="#visual-library"><span>01</span><img src="assets/visual-library/01-hair.png" alt="发型结构"><b>HAIR 发型结构</b></a><a class="summary-tag" href="#visual-face"><span>02</span><img src="assets/visual-library/02-face-model.png" alt="人物气质"><b>FACE 人物气质</b></a><a class="summary-tag" href="#visual-camera"><span>03</span><img src="assets/visual-library/03-pose-camera.jpg" alt="镜头角度"><b>CAMERA 镜头角度</b></a><a class="summary-tag" href="#visual-lighting"><span>04</span><img src="assets/visual-library/04-lighting.png" alt="灯光设计"><b>LIGHTING 灯光设计</b></a><a class="summary-tag" href="#visual-scene"><span>05</span><img src="assets/visual-library/05-scene.png" alt="场景世界"><b>SCENE 场景世界</b></a><a class="summary-tag" href="#visual-material"><span>06</span><img src="assets/visual-library/06-material.png" alt="材质语言"><b>MATERIAL 材质语言</b></a><a class="summary-tag" href="#visual-graphic"><span>07</span><img src="assets/visual-library/07-graphic.png" alt="平面排版"><b>GRAPHIC 平面排版</b></a></div></section>
+
+      <section id="lab" class="camera-overview"><div class="camera-overview-copy"><div class="eyebrow">Module 03 / Camera explorer</div><h2>镜头决定你如何<br>看见发型</h2><p class="lead">保持人物与发型一致 每次只改变一个拍摄角度 观察轮廓 体积与人物气质如何发生变化</p><div class="tags"><span>侧面</span><span>四分之三</span><span>俯拍</span><span>仰拍</span></div></div><div class="camera-collage"><a href="#camera-profile"><img src="assets/camera/profile.png" alt="侧面拍摄角度" /></a><a href="#camera-three"><img src="assets/camera/three-quarter.png" alt="四分之三拍摄角度" /></a><a href="#camera-high"><img src="assets/camera/high-angle.png" alt="俯拍拍摄角度" /></a><a href="#camera-low"><img src="assets/camera/low-angle.png" alt="仰拍拍摄角度" /></a></div></section>
+
+      <section class="library-page camera-page" id="camera-front"><div class="library-copy"><div class="eyebrow">Module 03 / Camera · 01</div><h2>FRONT VIEW<br>正面平视</h2><p class="lead">适合展示对称发型 刘海 整体轮廓与品牌主视觉</p><div class="tags"><span>正面</span><span>平视</span><span>对称</span><span>居中</span></div><div class="prompt">保持原图模特的长相 发型 发色 背景和灯光完全一致 只将拍摄角度调整为人物正面平视 模特直视镜头 头部保持端正 使用对称居中的美妆近景构图 清楚展示刘海 脸型和完整发型轮廓 不改变人物身份与发型结构</div><button class="copy-button" data-copy="#camera-front .prompt">复制提示词</button></div><div class="library-image"><img src="assets/camera/front.png" alt="正面平视拍摄角度示例" /></div></section>
+
+      <section class="library-page camera-page" id="camera-profile"><div class="library-copy"><div class="eyebrow">Module 03 / Camera · 02</div><h2>PROFILE VIEW<br>侧面</h2><p class="lead">适合展示后脑弧度 Bob 结构 下颌线与颈部轮廓</p><div class="tags"><span>侧面</span><span>轮廓</span><span>下颌线</span><span>后脑弧度</span></div><div class="prompt">保持原图模特的长相 发型 发色 背景和灯光完全一致 只将拍摄角度调整为人物侧面 以九十度侧面视角呈现 清楚展示鼻梁 下颌线 颈部 发型外轮廓和后脑弧度 保持真实面部比例 不改变发型长度与结构</div><button class="copy-button" data-copy="#camera-profile .prompt">复制提示词</button></div><div class="library-image"><img src="assets/camera/profile.png" alt="侧面拍摄角度示例" /></div></section>
+
+      <section class="library-page camera-page" id="camera-three"><div class="library-copy"><div class="eyebrow">Module 03 / Camera · 03</div><h2>THREE QUARTER VIEW<br>四分之三侧面</h2><p class="lead">同时展示面部结构与发型体积 是最常见的商业广告角度</p><div class="tags"><span>四分之三</span><span>面部结构</span><span>发型体积</span><span>广告角度</span></div><div class="prompt">保持原图模特的长相 发型 发色 背景和灯光完全一致 只将拍摄角度调整为四分之三侧面 人物头部轻微转向一侧 同时清楚展示面部结构和发型体积 使用平视机位与美妆近景构图 保持自然真实的五官比例</div><button class="copy-button" data-copy="#camera-three .prompt">复制提示词</button></div><div class="library-image"><img src="assets/camera/three-quarter.png" alt="四分之三侧面拍摄角度示例" /></div></section>
+
+      <section class="library-page camera-page" id="camera-high"><div class="library-copy"><div class="eyebrow">Module 03 / Camera · 04</div><h2>HIGH ANGLE<br>俯拍</h2><p class="lead">突出头顶结构 分区与发丝方向 带来轻盈或实验感</p><div class="tags"><span>俯拍</span><span>头顶结构</span><span>分区</span><span>发丝方向</span></div><div class="prompt">保持原图模特的长相 发型 发色 背景和灯光完全一致 只将相机移动到人物上方进行俯拍 镜头朝向头顶 清楚展示发型顶部结构 分区和发丝方向 保持面部自然比例 不改变发型轮廓与人物身份</div><button class="copy-button" data-copy="#camera-high .prompt">复制提示词</button></div><div class="library-image"><img src="assets/camera/high-angle.png" alt="俯拍拍摄角度示例" /></div></section>
+
+      <section class="library-page camera-page" id="camera-low"><div class="library-copy"><div class="eyebrow">Module 03 / Camera · 05</div><h2>LOW ANGLE<br>仰拍</h2><p class="lead">强化下颌线 力量感与雕塑感 适合未来视觉</p><div class="tags"><span>仰拍</span><span>力量感</span><span>雕塑感</span><span>未来</span></div><div class="prompt">保持原图模特的长相 发型 发色 背景和灯光完全一致 只将相机移动到人物下方进行仰拍 镜头向上 清楚展示下颌线和发型雕塑感 呈现克制而有力量的人物状态 保持真实五官比例 不改变发型结构与人物身份</div><button class="copy-button" data-copy="#camera-low .prompt">复制提示词</button></div><div class="library-image"><img src="assets/camera/low-angle.png" alt="仰拍拍摄角度示例" /></div></section>
+
+      <section id="lighting" class="lighting-overview"><div class="lighting-overview-copy"><div class="eyebrow">Module 04 / Lighting lab</div><h2>不是变亮<br>而是设计光线</h2><p class="lead">灯光决定面部的立体感 发型边缘的清晰度与整个画面的情绪 每次只改变光源方向 软硬和颜色</p><div class="tags"><span>柔和正面光</span><span>侧面硬光</span><span>轮廓光</span><span>顶光</span><span>窗光</span><span>彩色光</span></div></div><div class="lighting-collage"><a href="#lighting-soft"><img src="assets/lighting/soft-front.png" alt="柔和正面光"></a><a href="#lighting-hard"><img src="assets/lighting/hard-side.png" alt="侧面硬光"></a><a href="#lighting-rim"><img src="assets/lighting/rim-light.png" alt="轮廓光与发丝光"></a><a href="#lighting-top"><img src="assets/lighting/top-light.png" alt="顶光"></a><a href="#lighting-window"><img src="assets/lighting/window-light.png" alt="窗光"></a><a href="#lighting-color"><img src="assets/lighting/color-light.png" alt="彩色灯光"></a></div></section>
+
+      <section class="library-page original-page lighting-before" id="lighting-before"><div class="library-copy"><div class="eyebrow">Module 04 / Lighting · 原图</div><h2>ORIGINAL IMAGE<br>原始灯光</h2><p class="lead">这是灯光实验的统一基准图 后续六种效果只改变光线 保持人物 发型 姿势 角度和背景一致</p><div class="tags"><span>基准图</span><span>原始光线</span><span>人物一致</span><span>发型一致</span></div></div><div class="library-image"><img src="assets/lighting/before.jpg" alt="灯光实验原始基准图" /></div></section>
+
+      <section class="library-page lighting-page" id="lighting-soft"><div class="library-copy"><div class="eyebrow">Module 04 / Lighting · 01</div><h2>SOFT FRONT LIGHT<br>柔和正面光</h2><p class="lead">均匀照亮面部与发型 适合干净的商业美妆视觉</p><div class="tags"><span>柔光</span><span>正面</span><span>均匀</span><span>商业美妆</span></div><div class="prompt">保持原图人物长相、发型、姿势、拍摄角度、服装和背景完全一致。只重新设计灯光，使用位于人物正前方的大型柔光箱，让柔和均匀的光线照亮面部和发型，减少明显阴影，保持真实肤色与自然皮肤纹理，呈现干净克制的商业美妆广告质感。</div><button class="copy-button" data-copy="#lighting-soft .prompt">复制提示词</button></div><div class="library-image"><img src="assets/lighting/soft-front.png" alt="柔和正面光效果示例" /></div></section>
+
+      <section class="library-page lighting-page" id="lighting-hard"><div class="library-copy"><div class="eyebrow">Module 04 / Lighting · 02</div><h2>HARD SIDE LIGHT<br>侧面硬光</h2><p class="lead">形成清晰明暗边界 强调发型剪裁与面部骨骼</p><div class="tags"><span>硬光</span><span>侧面</span><span>高对比</span><span>结构</span></div><div class="prompt">保持原图人物长相、发型、姿势、拍摄角度、服装和背景完全一致。只重新设计灯光，从人物侧面使用方向明确的硬光，形成清晰锐利的阴影边缘和高对比明暗关系，强调面部骨骼、下颌线与发型剪裁轮廓，保持皮肤和发丝细节真实。</div><button class="copy-button" data-copy="#lighting-hard .prompt">复制提示词</button></div><div class="library-image"><img src="assets/lighting/hard-side.png" alt="侧面硬光效果示例" /></div></section>
+
+      <section class="library-page lighting-page" id="lighting-rim"><div class="library-copy"><div class="eyebrow">Module 04 / Lighting · 03</div><h2>RIM LIGHT<br>轮廓光与发丝光</h2><p class="lead">让头发从背景中分离 清楚展示发丝边缘</p><div class="tags"><span>轮廓光</span><span>发丝光</span><span>逆光</span><span>边缘</span></div><div class="prompt">保持原图人物长相、发型、姿势、拍摄角度、服装和背景完全一致。只重新设计灯光，在人物头部后方增加窄而受控的轮廓光，沿发型外缘和单根发丝形成清晰高光，使头发与背景自然分离。面部仍保持柔和可见，避免过曝和不真实的发光边缘。</div><button class="copy-button" data-copy="#lighting-rim .prompt">复制提示词</button></div><div class="library-image"><img src="assets/lighting/rim-light.png" alt="轮廓光与发丝光效果示例" /></div></section>
+
+      <section class="library-page lighting-page" id="lighting-top"><div class="library-copy"><div class="eyebrow">Module 04 / Lighting · 04</div><h2>TOP LIGHT<br>顶光</h2><p class="lead">强调头顶表面与发型体积 营造戏剧化阴影</p><div class="tags"><span>顶光</span><span>头顶结构</span><span>戏剧化</span><span>阴影</span></div><div class="prompt">保持原图人物长相、发型、姿势、拍摄角度、服装和背景完全一致。只重新设计灯光，在人物正上方设置聚光灯，让光线重点照亮头顶、发型表面和发丝纹理，同时在眼窝和下颌下方形成自然的戏剧化阴影。控制对比度，保留真实面部细节。</div><button class="copy-button" data-copy="#lighting-top .prompt">复制提示词</button></div><div class="library-image"><img src="assets/lighting/top-light.png" alt="顶光效果示例" /></div></section>
+
+      <section class="library-page lighting-page" id="lighting-window"><div class="library-copy"><div class="eyebrow">Module 04 / Lighting · 05</div><h2>WINDOW LIGHT<br>窗光</h2><p class="lead">自然安静 适合具有生活感和叙事感的人像</p><div class="tags"><span>窗光</span><span>自然光</span><span>柔和衰减</span><span>安静</span></div><div class="prompt">保持原图人物长相、发型、姿势、拍摄角度、服装和背景完全一致。只重新设计灯光，模拟从人物一侧窗户进入的自然日光，让柔和光线照到模特脸部和头发，阴影平缓自然地衰减。保持真实肤色、发丝纹理和安静的电影感室内氛围。</div><button class="copy-button" data-copy="#lighting-window .prompt">复制提示词</button></div><div class="library-image"><img src="assets/lighting/window-light.png" alt="窗光效果示例" /></div></section>
+
+      <section class="library-page lighting-page" id="lighting-color"><div class="library-copy"><div class="eyebrow">Module 04 / Lighting · 06</div><h2>COLOR LIGHT<br>彩色灯光</h2><p class="lead">用颜色改变普通棚拍的空间感 情绪与夜间氛围</p><div class="tags"><span>彩色光</span><span>冷暖对比</span><span>夜间</span><span>未来</span></div><div class="prompt">保持原图人物长相、发型、姿势、拍摄角度和服装完全一致。只重新设计灯光与空间色调，使用蓝紫色主光和少量洋红色辅助光，从不同方向照亮面部和发丝，形成克制的冷暖色彩对比与真实反射高光，营造夜间酒吧般的电影氛围，不改变人物和发型结构。</div><button class="copy-button" data-copy="#lighting-color .prompt">复制提示词</button></div><div class="library-image"><img src="assets/lighting/color-light.png" alt="彩色灯光效果示例" /></div></section>
+
+      <section class="summary-page lighting-summary" id="lighting-summary"><div class="eyebrow">Module 04 / Lighting · Summary</div><h2>LIGHTING<br>灯光效果汇总</h2><div class="summary-tags"><a class="summary-tag" href="#lighting-before"><span>ORIGINAL</span><img src="assets/lighting/before.jpg" alt="原始灯光"><b>原始灯光</b></a><a class="summary-tag" href="#lighting-soft"><span>01</span><img src="assets/lighting/soft-front.png" alt="柔和正面光"><b>柔和正面光</b></a><a class="summary-tag" href="#lighting-hard"><span>02</span><img src="assets/lighting/hard-side.png" alt="侧面硬光"><b>侧面硬光</b></a><a class="summary-tag" href="#lighting-rim"><span>03</span><img src="assets/lighting/rim-light.png" alt="轮廓光与发丝光"><b>轮廓光与发丝光</b></a><a class="summary-tag" href="#lighting-top"><span>04</span><img src="assets/lighting/top-light.png" alt="顶光"><b>顶光</b></a><a class="summary-tag" href="#lighting-window"><span>05</span><img src="assets/lighting/window-light.png" alt="窗光"><b>窗光</b></a><a class="summary-tag" href="#lighting-color"><span>06</span><img src="assets/lighting/color-light.png" alt="彩色灯光"><b>彩色灯光</b></a></div></section>
+
+      <section class="reference-gallery" id="reference-scene-material"><div class="reference-copy"><div class="eyebrow">Reference library / 01</div><h2>SCENE<br>MATERIAL<br>场景与材质</h2><p class="lead">观察空间 材质 光泽与人物之间的关系</p><span class="reference-count">06 IMAGES</span></div><div class="reference-grid"><figure><img src="assets/gallery/scene-material/01.jpeg" alt="场景与材质参考图一"></figure><figure><img src="assets/gallery/scene-material/02.jpeg" alt="场景与材质参考图二"></figure><figure><img src="assets/gallery/scene-material/03.jpeg" alt="场景与材质参考图三"></figure><figure><img src="assets/gallery/scene-material/04.jpeg" alt="场景与材质参考图四"></figure><figure><img src="assets/gallery/scene-material/05.png" alt="场景与材质参考图五"></figure><figure><img src="assets/gallery/scene-material/06.png" alt="场景与材质参考图六"></figure></div></section>
+
+      <section class="reference-gallery" id="reference-digital-hair"><div class="reference-copy"><div class="eyebrow">Reference library / 02</div><h2>DIGITAL<br>HAIR<br>数字发型</h2><p class="lead">从真实发丝到数字结构 探索发型的形态边界</p><span class="reference-count">06 IMAGES</span></div><div class="reference-grid"><figure><img src="assets/gallery/digital-hair/01.jpeg" alt="数字发型参考图一"></figure><figure><img src="assets/gallery/digital-hair/02.png" alt="数字发型参考图二"></figure><figure><img src="assets/gallery/digital-hair/03.png" alt="数字发型参考图三"></figure><figure><img src="assets/gallery/digital-hair/04.png" alt="数字发型参考图四"></figure><figure><img src="assets/gallery/digital-hair/05.png" alt="数字发型参考图五"></figure><figure><img src="assets/gallery/digital-hair/06.png" alt="数字发型参考图六"></figure></div></section>
+
+      <section class="reference-gallery" id="reference-makeup"><div class="reference-copy"><div class="eyebrow">Reference library / 03</div><h2>SPECIAL<br>MAKEUP<br>特殊妆容</h2><p class="lead">用色彩 纹理与非日常细节重新定义人物气质</p><span class="reference-count">02 IMAGES</span></div><div class="reference-grid two"><figure><img src="assets/gallery/makeup/01.jpeg" alt="特殊妆容参考图一"></figure><figure><img src="assets/gallery/makeup/02.png" alt="特殊妆容参考图二"></figure></div></section>
+
+      <section class="reference-gallery" id="reference-advertising"><div class="reference-copy"><div class="eyebrow">Reference library / 04</div><h2>VISUAL<br>ADVERTISING<br>视觉广告</h2><p class="lead">让静态视觉进入时间与运动 建立连续的广告表达</p><span class="reference-count">LOOP VIDEO</span></div><div class="reference-video"><video id="advertising-video" autoplay muted loop playsinline controls preload="auto" aria-label="视觉广告循环视频"><source src="assets/gallery/advertising/01-browser.m4v" type="video/mp4"></video></div></section>
+
+      <section id="ai-basics"><div class="eyebrow">Module 07 / AI basics</div><h2>理解能力结构<br>再选择工作方式</h2><div class="ai-logic-grid"><div class="logic-column"><span class="logic-kicker">理解与执行</span><div class="logic-stack"><article class="logic-node"><b>AI</b><p>人工智能的总称 包含语言 图像 视频 识别 推荐与自动化</p></article><span class="logic-arrow">↓</span><article class="logic-node"><b>LLM</b><p>理解与生成语言 用来梳理主题 分析参考图 写文案和提示词</p></article><span class="logic-arrow">↓</span><article class="logic-node"><b>AGENT</b><p>接收一个目标 调用模型与工具 分步骤完成连续任务</p></article></div></div><div class="logic-column generative-column"><span class="logic-kicker">生成式 AI 与 Agent</span><div class="generative-types"><article class="logic-node concept-trigger" tabindex="0" role="button"><b>IMAGE MODEL</b><p>生成 重绘和编辑人物 发型 场景 光线与材质</p></article><article class="logic-node concept-trigger" tabindex="0" role="button"><b>VIDEO MODEL</b><p>将文字 图片或视频延展为动作 镜头 声音与连续叙事</p></article></div><button class="reveal-logic" id="reveal-ai-logic">查看生成逻辑 ↗</button><p class="small">点击文字显示配图 图片出现后可以自由拖动</p></div></div><div class="ai-concept-layer" id="ai-concept-layer" aria-hidden="true"><button class="concept-close" id="close-ai-logic" aria-label="退出生成逻辑">×</button><figure class="concept-card concept-one"><img src="assets/ai-basics/diffusion.png" alt="扩散过程示意图"><figcaption>扩散模型的灵感受到非平衡热力学 (Non-equilibrium thermodynamics) 的影响</figcaption></figure><figure class="concept-card concept-two"><img src="assets/ai-basics/sde.png" alt="正向加噪与反向去噪过程示意图"><figcaption>正向过程将数据逐渐变为噪声 反向过程从噪声逐步恢复结构</figcaption></figure></div></section>
+
+      <section id="workflow"><div class="eyebrow">Module 08 / Workflow</div><h2>从一张普通作品照<br>到一张广告主视觉</h2><div class="flow"><div><b>02</b><span>自我探索</span></div><div><b>03</b><span>Mini Moodboard</span></div><div><b>04</b><span>生成故事方向</span></div><div><b>05</b><span>视觉草图</span></div><div><b>06</b><span>实操拍摄</span></div><div><b>07</b><span>人工后期</span></div><div><b>08</b><span>完成海报</span></div></div></section>
+
+      <section><div class="eyebrow">Module 09 / Prompt composer</div><h2>把视觉决策<br>变成清晰指令</h2><div class="composer"><div class="fields glass"><label>发型<input id="hair" value="精准的几何短发 发型轮廓干净利落" /></label><label>镜头<select id="angle"><option>四分之三侧面人像</option><option>侧面人像</option><option>正面平视人像</option><option>俯拍人像</option><option>仰拍人像</option></select></label><label>灯光<select id="light"><option>侧面硬光</option><option>柔和正面美妆光</option><option>轮廓光与发丝光</option><option>自然窗光</option><option>蓝紫彩色灯光</option></select></label><label>场景<select id="scene"><option>极简现代主义混凝土室内</option><option>干净白色影棚</option><option>深色电影感室内</option><option>夜间城市反射空间</option></select></label><label>情绪<input id="mood" value="冷静 精准 有力量" /></label><label>输出<select id="format"><option>三比四竖版发型广告海报</option><option>编辑式美妆近景</option><option>横版广告电影静帧</option></select></label></div><div class="result"><div class="eyebrow" style="color:#ff6b6f">生成方向</div><h3>你的提示词</h3><div class="prompt" id="prompt-output"></div><button class="copy-button" data-copy="#prompt-output">复制提示词</button></div></div></section>
+
+      <section id="tool-library"><div class="eyebrow">Module 05 / Tool library</div><h2>先认识工具<br>再理解模型</h2><div class="tool-grid" id="tool-grid"></div></section><section id="model-library"><div class="eyebrow">Module 06 / Model library</div><h2>工具是入口<br>模型是能力</h2><div class="model-grid" id="model-grid"><article class="model-card"><div class="model-logo"><img src="assets/tools/chatgpt.png" alt="GPT 5.6 Logo"></div><span class="model-owner">OPENAI</span><h3>GPT 5.6</h3><p>负责理解创意需求 分析参考图 整理故事 写文案并规划多步骤工作流</p></article><article class="model-card"><div class="model-logo"><img src="assets/tools/chatgpt.png" alt="GPT Image 2 Logo"></div><span class="model-owner">OPENAI</span><h3>GPT Image 2</h3><p>面向图像生成与编辑 适合局部修改 人物一致性和广告视觉制作</p></article><article class="model-card"><div class="model-logo"><img src="assets/tools/gemini.png" alt="Gemini 3.5 Logo"></div><span class="model-owner">GOOGLE</span><h3>Gemini 3.5</h3><p>多模态理解与推理模型 适合同时理解文字 图片 视频和复杂创意任务</p></article><article class="model-card"><div class="model-logo"><img src="assets/tools/gemini.png" alt="Nano Banana 2 Lite Logo"></div><span class="model-owner">GOOGLE</span><h3>Nano Banana 2 Lite</h3><p>适合高频图像生成 多参考图理解与自然语言编辑</p></article><article class="model-card"><div class="model-logo"><img src="assets/tools/gemini.png" alt="Gemini Omni Flash Logo"></div><span class="model-owner">GOOGLE</span><h3>Gemini Omni Flash</h3><p>支持通过自然语言对已有视频进行多轮编辑并保持场景一致</p></article><article class="model-card"><div class="model-logo"><img src="assets/tools/midjourney.png" alt="Midjourney V8.1 Logo"></div><span class="model-owner">MIDJOURNEY</span><h3>Midjourney V8.1</h3><p>适合时尚氛围 艺术风格 高清图像和 Campaign 方向探索</p></article><article class="model-card"><div class="model-logo"><img src="assets/tools/jimeng.png" alt="Seedream 5.0 Lite Logo"></div><span class="model-owner">字节跳动</span><h3>Seedream 5.0 Lite</h3><p>统一的图像生成与编辑模型 适合高清视觉 多模态参考与商业内容生产</p></article><article class="model-card"><div class="model-logo"><img class="seedance" src="assets/models/seedance-2.png" alt="Seedance 2.0 Logo"></div><span class="model-owner">字节跳动</span><h3>Seedance 2.0</h3><p>支持文字 图片 音频和视频输入 可进行多镜头生成 视频延展与指定内容修改</p></article></div></section>
+
+      <section id="project"><div class="eyebrow">Final project / Your campaign</div><h2>最后请让一张发型作品<br>属于你自己的世界</h2><div class="project"><div class="checklist glass"><h3>交付清单</h3><div>个人视觉 Moodboard <span>01</span></div><div>Storytelling 创意卡 <span>02</span></div><div>一套视觉关键词 <span>03</span></div><div>广告视觉主图 <span>04</span></div><div>完整主题海报 <span>05</span></div><div>可复用提示词模板 <span>06</span></div></div><div class="poster"><div class="poster-top"><span>2026 / PERSONAL CAMPAIGN</span><span>01—01</span></div><h3>SILENT<br>ARCHI<br>TECTURE</h3><p>HAIR AS MODERN DESIGN</p></div></div></section>
+      <footer class="footer"><span>THE STORY BEHIND IMAGE</span><span>Storytelling × AI visual advertising workshop</span></footer>
+    </main>
+    <div class="gallery-lightbox" id="gallery-lightbox" aria-hidden="true"><button class="gallery-back" id="gallery-back" type="button">← 返回</button><div class="gallery-lightbox-frame"><img id="gallery-lightbox-image" alt=""></div></div>
+    <script>
+      const cleanHeading=node=>node.childNodes.forEach(child=>child.nodeType===3?child.textContent=child.textContent.replace(/[。，、！？；：”“‘’·&]/g,''):cleanHeading(child));
+      document.querySelectorAll('h1,h2').forEach(cleanHeading);
+      const toolData=[
+        {name:'ChatGPT',company:'OpenAI',logo:'assets/tools/chatgpt.png',task:'故事梳理 图片分析 提示词 图像编辑',text:'适合从主题构思到多轮图像修改的完整对话式工作流',url:'https://chatgpt.com/'},
+        {name:'Gemini',company:'Google',logo:'assets/tools/gemini.png',task:'多图参考 人物一致性 自然语言修改',text:'适合理解多张参考图之间的关系并进行连续视觉实验',url:'https://gemini.google.com/'},
+        {name:'Midjourney',company:'Midjourney Inc',logo:'assets/tools/midjourney.png',task:'概念探索 时尚氛围 艺术风格',text:'适合从零寻找视觉方向并快速生成具有风格感的画面',url:'https://www.midjourney.com/'},
+        {name:'即梦',company:'字节跳动',logo:'assets/tools/jimeng.png',task:'中文创作 图片 视频 社交内容',text:'中文操作入口集中 适合课堂演示和快速生成视觉素材',url:'https://www.jimeng.com/'},
+        {name:'Lovart',company:'LiblibAI',logo:'assets/tools/lovart.png',wide:true,task:'设计智能体 品牌 海报 多步骤执行',text:'从创意简报出发组织画板 品牌视觉和系列设计物料',url:'https://www.lovart.ai/'},
+        {name:'TapNow',company:'TapNow',logo:'assets/tools/tapnow.png',task:'商业视觉 无限画布 工作流组合',text:'适合广告 电商和连续视觉内容的节点式创作流程',url:'https://app.tapnow.ai/'},
+        {name:'Pinterest',company:'Pinterest Inc',logo:'assets/tools/pinterest.png',task:'视觉搜索 灵感扩散 资料库',text:'用于查找相似图和建立参考资料库 收藏后仍需分类与拆解',url:'https://www.pinterest.com/'}
+      ];
+      document.querySelector('#tool-grid').innerHTML=toolData.map(tool=>`<a class="tool glass" href="${tool.url}" target="_blank" rel="noopener noreferrer"><div class="tool-logo"><img class="${tool.wide?'wide':''}" src="${tool.logo}" alt="${tool.name} Logo"></div><b>${tool.name}</b><span class="tool-company">${tool.company}</span><span class="task">${tool.task}</span><small>${tool.text}</small><span class="tool-arrow">访问官网 ↗</span></a>`).join('');
+      const modelData=[
+        {owner:'OPENAI',name:'GPT 5.6',logo:'assets/tools/chatgpt.png',text:'负责理解创意需求 分析参考图 整理故事 写文案并规划多步骤工作流'},
+        {owner:'OPENAI',name:'GPT Image 2',logo:'assets/tools/chatgpt.png',text:'面向图像生成与编辑 适合根据文字和参考图完成局部修改 人物一致性和广告视觉制作'},
+        {owner:'GOOGLE',name:'Gemini 3.5',logo:'assets/tools/gemini.png',text:'多模态理解与推理模型 适合同时理解文字 图片 视频和复杂创意任务'},
+        {owner:'GOOGLE',name:'Nano Banana 2 Lite',logo:'assets/tools/gemini.png',text:'Google 图像模型 适合高频图像生成 多参考图理解与自然语言编辑'},
+        {owner:'GOOGLE',name:'Gemini Omni Flash',logo:'assets/tools/gemini.png',text:'面向视频生成与连续修改 可以通过自然语言对已有视频进行多轮编辑并保持场景一致'},
+        {owner:'MIDJOURNEY',name:'Midjourney V8.1',logo:'assets/tools/midjourney.png',text:'图像生成模型 适合时尚氛围 艺术风格 高清图像和 Campaign 方向探索'},
+        {owner:'字节跳动',name:'Seedream 5.0 Lite',logo:'assets/tools/jimeng.png',text:'统一的图像生成与编辑模型 适合高清视觉 多模态参考与商业内容生产'},
+        {owner:'字节跳动',name:'Seedance 2.0',logo:'assets/models/seedance-2.png',seedance:true,text:'音视频联合生成模型 支持文字 图片 音频和视频输入 可进行多镜头生成 视频延展与指定内容修改'}
+      ];
+      document.querySelector('#model-grid').innerHTML=modelData.map(model=>`<article class="model-card"><div class="model-logo"><img class="${model.seedance?'seedance':''}" src="${model.logo}" alt="${model.name} Logo"></div><span class="model-owner">${model.owner}</span><h3>${model.name}</h3><p>${model.text}</p></article>`).join('');
+      const toolSection=document.querySelector('#tool-library');
+      const modelSection=document.querySelector('#model-library');
+      const aiBasics=document.querySelector('#ai-basics');
+      aiBasics.before(toolSection,modelSection);
+      const conceptLayer=document.querySelector('#ai-concept-layer');
+      const revealLogic=document.querySelector('#reveal-ai-logic');
+      const toggleConceptLayer=()=>{
+        const visible=conceptLayer.classList.toggle('active');
+        conceptLayer.setAttribute('aria-hidden',String(!visible));
+        revealLogic.textContent=visible?'收起生成逻辑 ↙':'查看生成逻辑 ↗';
+      };
+      revealLogic.addEventListener('click',toggleConceptLayer);
+      document.querySelectorAll('.concept-trigger').forEach(trigger=>{
+        trigger.addEventListener('click',toggleConceptLayer);
+        trigger.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleConceptLayer()}});
+      });
+      const closeConceptLayer=()=>{
+        conceptLayer.classList.remove('active');
+        conceptLayer.setAttribute('aria-hidden','true');
+        revealLogic.textContent='查看生成逻辑 ↗';
+      };
+      document.querySelector('#close-ai-logic').addEventListener('click',closeConceptLayer);
+      document.addEventListener('keydown',event=>{if(event.key==='Escape')closeConceptLayer()});
+      conceptLayer.querySelectorAll('.concept-card').forEach(card=>card.addEventListener('pointerdown',event=>{
+        event.preventDefault();
+        card.setPointerCapture(event.pointerId);
+        const rect=card.getBoundingClientRect();
+        const offsetX=event.clientX-rect.left;
+        const offsetY=event.clientY-rect.top;
+        card.style.right='auto'; card.style.bottom='auto';
+        const move=point=>{
+          const layerRect=conceptLayer.getBoundingClientRect();
+          const left=Math.max(0,Math.min(conceptLayer.clientWidth-card.offsetWidth,point.clientX-layerRect.left-offsetX));
+          const top=Math.max(0,Math.min(conceptLayer.clientHeight-card.offsetHeight,point.clientY-layerRect.top-offsetY));
+          card.style.left=left+'px'; card.style.top=top+'px';
+        };
+        const finish=()=>{card.removeEventListener('pointermove',move);card.removeEventListener('pointerup',finish);card.removeEventListener('pointercancel',finish)};
+        card.addEventListener('pointermove',move); card.addEventListener('pointerup',finish); card.addEventListener('pointercancel',finish);
+      }));
+      document.querySelectorAll('.library-page:not(.original-page):not(#camera-front) .library-image').forEach(stage=>{
+        const page=stage.closest('.library-page');
+        const beforeSource=page.classList.contains('camera-page')?'assets/camera/front.png':page.classList.contains('lighting-page')?'assets/lighting/before.jpg':'assets/visual-library/00-original.png';
+        const card=document.createElement('div');
+        card.className='before-card';
+        card.innerHTML='<img src="'+beforeSource+'" alt="原始图片对比"><span>原图</span>';
+        stage.appendChild(card);
+        card.addEventListener('pointerdown',event=>{
+          event.preventDefault();
+          card.setPointerCapture(event.pointerId);
+          const stageRect=stage.getBoundingClientRect();
+          const cardRect=card.getBoundingClientRect();
+          const offsetX=event.clientX-cardRect.left;
+          const offsetY=event.clientY-cardRect.top;
+          card.style.right='auto'; card.style.bottom='auto';
+          const move=point=>{
+            const left=Math.max(0,Math.min(stage.clientWidth-card.offsetWidth,point.clientX-stageRect.left-offsetX));
+            const top=Math.max(0,Math.min(stage.clientHeight-card.offsetHeight,point.clientY-stageRect.top-offsetY));
+            card.style.left=left+'px'; card.style.top=top+'px';
+          };
+          const finish=()=>{card.removeEventListener('pointermove',move);card.removeEventListener('pointerup',finish);card.removeEventListener('pointercancel',finish)};
+          card.addEventListener('pointermove',move); card.addEventListener('pointerup',finish); card.addEventListener('pointercancel',finish);
+        });
+      });
+      const ids=['hair','angle','light','scene','mood','format'];function compose(){const val=id=>document.querySelector('#'+id).value;document.querySelector('#prompt-output').textContent=`发型为${val('hair')}。使用${val('angle')}，灯光为${val('light')}，场景为${val('scene')}，整体情绪${val('mood')}。保持人物身份、真实皮肤纹理和单根发丝细节，在发型轮廓周围保留可用于排版的留白，不增加多余装饰。最终输出为${val('format')}。`}; ids.forEach(id=>document.querySelector('#'+id).addEventListener('input',compose));compose();
+      document.addEventListener('click',e=>{const button=e.target.closest('[data-copy]');if(button){const el=document.querySelector(button.dataset.copy);navigator.clipboard.writeText(el.textContent);const original=button.textContent;button.textContent='已复制';setTimeout(()=>button.textContent=original,1200)}});
+      const advertisingVideo=document.querySelector('#advertising-video');
+      const playAdvertisingVideo=()=>{
+        advertisingVideo.muted=true;
+        advertisingVideo.defaultMuted=true;
+        advertisingVideo.loop=true;
+        advertisingVideo.playsInline=true;
+        const playback=advertisingVideo.play();
+        if(playback) playback.catch(()=>{});
+      };
+      if(advertisingVideo.readyState>=2) playAdvertisingVideo();
+      else advertisingVideo.addEventListener('loadeddata',playAdvertisingVideo,{once:true});
+      const videoObserver=new IntersectionObserver(entries=>entries.forEach(entry=>entry.isIntersecting?playAdvertisingVideo():advertisingVideo.pause()),{threshold:.15});
+      videoObserver.observe(advertisingVideo);
+      const lightbox=document.querySelector('#gallery-lightbox');
+      const lightboxImage=document.querySelector('#gallery-lightbox-image');
+      const lightboxBack=document.querySelector('#gallery-back');
+      const zoomSelector='.library-image > img,.summary-tag img,.camera-collage img,.lighting-collage img,.reference-grid img,.prologue-rider-image img,.prologue-warmth-image img';
+      const openLightbox=image=>{
+        lightboxImage.src=image.currentSrc||image.src;
+        lightboxImage.alt=image.alt||'放大图片';
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden','false');
+        document.body.classList.add('lightbox-open');
+        lightboxBack.focus();
+      };
+      const closeLightbox=()=>{
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden','true');
+        document.body.classList.remove('lightbox-open');
+      };
+      document.querySelectorAll(zoomSelector).forEach(image=>{
+        image.classList.add('zoomable-image');
+        image.tabIndex=0;
+        image.setAttribute('role','button');
+        image.setAttribute('aria-label','放大查看 '+(image.alt||'图片'));
+        image.addEventListener('click',event=>{event.preventDefault();event.stopPropagation();openLightbox(image)});
+        image.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();openLightbox(image)}});
+      });
+      lightboxBack.addEventListener('click',closeLightbox);
+      lightbox.addEventListener('click',event=>{if(event.target===lightbox||event.target.classList.contains('gallery-lightbox-frame')) closeLightbox()});
+      document.addEventListener('keydown',event=>{if(event.key==='Escape'&&lightbox.classList.contains('open'))closeLightbox()});
+      const aiToolNav=document.querySelector('#ai-tool-nav');
+      const aiToolToggle=document.querySelector('#ai-tool-toggle');
+      const closeToolMenu=()=>{aiToolNav.classList.remove('open');aiToolToggle.setAttribute('aria-expanded','false')};
+      aiToolToggle.addEventListener('click',event=>{event.stopPropagation();const open=aiToolNav.classList.toggle('open');aiToolToggle.setAttribute('aria-expanded',String(open))});
+      aiToolNav.querySelectorAll('.ai-tool-menu a').forEach(link=>link.addEventListener('click',closeToolMenu));
+      document.addEventListener('click',event=>{if(!aiToolNav.contains(event.target)) closeToolMenu()});
+      document.addEventListener('keydown',event=>{if(event.key==='Escape') closeToolMenu()});
+      const navLinks=[...document.querySelectorAll('nav [data-range]')];
+      const updateActiveNav=()=>{
+        const marker=window.scrollY+window.innerHeight*.38;
+        let current=navLinks[0];
+        navLinks.forEach(link=>{
+          const target=document.getElementById(link.dataset.range);
+          if(target&&target.offsetTop<=marker) current=link;
+        });
+        navLinks.forEach(link=>link.classList.toggle('active',link===current));
+      };
+      window.addEventListener('scroll',updateActiveNav,{passive:true});
+      window.addEventListener('resize',updateActiveNav);
+      requestAnimationFrame(updateActiveNav);
+
+    </script>
+  </body>
+</html>
