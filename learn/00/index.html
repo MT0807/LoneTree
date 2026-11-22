@@ -359,11 +359,24 @@
       .soul-references .reference-grid { height:auto; grid-template-rows:none; }
       .soul-references .reference-grid figure { height:clamp(180px,29vw,440px); background:var(--glass); border:1px solid var(--line); }
       @media (max-width:640px) { .soul-references .reference-grid figure { height:auto; aspect-ratio:3/4; } }
+      .course-languages { display:flex; align-items:center; gap:2px; padding-left:4px; border-left:1px solid var(--line); }
+      .course-languages a { padding:7px 8px; font-weight:700; white-space:nowrap; }
+      .course-languages a[aria-current="true"] { background:var(--ink); color:#fff; }
+      .ai-tool-menu { right:-164px; }
+      @media (max-width:850px) { .ai-tool-menu { right:-124px; } }
+      @media (max-width:550px) {
+        .course-label.brand-mark { width:118px; height:39px; padding:2px 7px; }
+        .course-label.brand-mark img { width:102px; height:32px; }
+        .course-languages a { padding-inline:6px; }
+        nav { gap:3px; }
+        nav > a, nav .nav-menu > button { padding-inline:8px; }
+        .ai-tool-menu { right:-112px; }
+      }
     </style>
   </head>
   <body>
     <div class="course-label brand-mark"><img src="assets/brand/instituto-marangoni.png" alt="Istituto Marangoni enhancing talent since 1935" /></div>
-    <nav><a href="#top" data-range="top">首页</a><a href="#ai-prologue-1" data-range="ai-prologue-1">Storytelling</a><div class="nav-menu" id="ai-tool-nav"><button id="ai-tool-toggle" data-range="image-model-logic" aria-expanded="false" aria-controls="ai-tool-menu">AI Tool</button><div class="ai-tool-menu" id="ai-tool-menu"><div class="menu-group"><b>视觉资料</b><a href="#image-model-logic">图像模型生成逻辑</a><a href="#visual-original">AI 后期处理与创意</a><a href="#visual-library">发型结构</a><a href="#visual-face">人物与面部</a><a href="#visual-camera">姿态与镜头</a><a href="#visual-lighting">灯光设计</a><a href="#visual-scene">场景世界</a><a href="#visual-material">材质语言</a><a href="#visual-graphic">平面排版</a><a href="#visual-summary">视觉标签汇总</a></div><div class="menu-group"><b>拍摄角度</b><a href="#lab">镜头总览</a><a href="#camera-front">正面平视</a><a href="#camera-profile">侧面</a><a href="#camera-three">四分之三侧面</a><a href="#camera-high">俯拍</a><a href="#camera-low">仰拍</a></div><div class="menu-group"><b>灯光</b><a href="#lighting">灯光总览</a><a href="#lighting-before">原始灯光</a><a href="#lighting-soft">柔和正面光</a><a href="#lighting-hard">侧面硬光</a><a href="#lighting-rim">轮廓光与发丝光</a><a href="#lighting-top">顶光</a><a href="#lighting-window">窗光</a><a href="#lighting-color">彩色灯光</a><a href="#lighting-summary">灯光效果汇总</a></div><div class="menu-group"><b>创意参考</b><a href="#reference-scene-material">场景与材质</a><a href="#reference-digital-hair">数字发型</a><a href="#reference-makeup">特殊妆容</a><a href="#reference-advertising">视觉广告</a></div><div class="menu-group"><b>工具与模型</b><a href="#tool-library">工具入口</a><a href="#model-library">模型能力</a><a href="#ai-basics">AI 基础逻辑</a><a href="#agent-direction">Agent 与创意决策</a></div></div></div><a href="#workflow" data-range="workflow">Workflow</a></nav>
+    <nav><a href="#top" data-range="top">首页</a><a href="#ai-prologue-1" data-range="ai-prologue-1">Storytelling</a><div class="nav-menu" id="ai-tool-nav"><button id="ai-tool-toggle" data-range="image-model-logic" aria-expanded="false" aria-controls="ai-tool-menu">AI Tool</button><div class="ai-tool-menu" id="ai-tool-menu"><div class="menu-group"><b>视觉资料</b><a href="#image-model-logic">图像模型生成逻辑</a><a href="#visual-original">AI 后期处理与创意</a><a href="#visual-library">发型结构</a><a href="#visual-face">人物与面部</a><a href="#visual-camera">姿态与镜头</a><a href="#visual-lighting">灯光设计</a><a href="#visual-scene">场景世界</a><a href="#visual-material">材质语言</a><a href="#visual-graphic">平面排版</a><a href="#visual-summary">视觉标签汇总</a></div><div class="menu-group"><b>拍摄角度</b><a href="#lab">镜头总览</a><a href="#camera-front">正面平视</a><a href="#camera-profile">侧面</a><a href="#camera-three">四分之三侧面</a><a href="#camera-high">俯拍</a><a href="#camera-low">仰拍</a></div><div class="menu-group"><b>灯光</b><a href="#lighting">灯光总览</a><a href="#lighting-before">原始灯光</a><a href="#lighting-soft">柔和正面光</a><a href="#lighting-hard">侧面硬光</a><a href="#lighting-rim">轮廓光与发丝光</a><a href="#lighting-top">顶光</a><a href="#lighting-window">窗光</a><a href="#lighting-color">彩色灯光</a><a href="#lighting-summary">灯光效果汇总</a></div><div class="menu-group"><b>创意参考</b><a href="#reference-scene-material">场景与材质</a><a href="#reference-digital-hair">数字发型</a><a href="#reference-makeup">特殊妆容</a><a href="#reference-advertising">视觉广告</a></div><div class="menu-group"><b>工具与模型</b><a href="#tool-library">工具入口</a><a href="#model-library">模型能力</a><a href="#ai-basics">AI 基础逻辑</a><a href="#agent-direction">Agent 与创意决策</a></div></div></div><a href="#workflow" data-range="workflow">Workflow</a><span class="course-languages" role="group" aria-label="课件语言"><a href="?lang=zh" hreflang="zh-CN" lang="zh-CN" aria-current="true">中文</a><a href="?lang=en" hreflang="en" lang="en" aria-label="English">EN</a></span></nav>
     <main>
       <section class="hero" id="top">
         <div class="hero-copy"><div class="eyebrow">AI visual storytelling workshop / 01</div><h1>THE STORY<br>BEHIND <em>IMAGE</em></h1><p class="lead">从拍摄作品到一张有世界观的视觉广告</p><div class="actions"><a class="btn" href="#ai-prologue-1">开始课程</a><a class="btn light" href="#workflow">查看工作流</a><a class="btn light" href="../">← 返回书架</a></div><div class="hero-meta"><span class="pill">Storytelling</span><span class="pill">AI IMAGE</span><span class="pill">VISUAL SYSTEM</span></div></div>
@@ -645,9 +658,11 @@
       <footer class="footer"><span>THE STORY BEHIND IMAGE</span><span>Storytelling × AI visual advertising workshop</span></footer>
     </main>
     <div class="gallery-lightbox" id="gallery-lightbox" aria-hidden="true"><button class="gallery-back" id="gallery-back" type="button">← 返回</button><div class="gallery-lightbox-frame"><img id="gallery-lightbox-image" alt=""></div></div>
+    <script src="course-language.js"></script>
     <script>
       const cleanHeading=node=>node.childNodes.forEach(child=>child.nodeType===3?child.textContent=child.textContent.replace(/[。，、！？；：”“‘’·&]/g,''):cleanHeading(child));
-      document.querySelectorAll('h1,h2').forEach(cleanHeading);
+      const {english:courseEnglish,translate:courseText}=typeof courseLanguage==='undefined'?{english:false,translate:text=>text}:courseLanguage;
+      if(!courseEnglish) document.querySelectorAll('h1,h2').forEach(cleanHeading);
       const toolData=[
         {name:'ChatGPT',company:'OpenAI',logo:'assets/tools/chatgpt.png',task:'故事梳理 图片分析 提示词 图像编辑',text:'适合从主题构思到多轮图像修改的完整对话式工作流',url:'https://chatgpt.com/'},
         {name:'Gemini',company:'Google',logo:'assets/tools/gemini.png',task:'多图参考 人物一致性 自然语言修改',text:'适合理解多张参考图之间的关系并进行连续视觉实验',url:'https://gemini.google.com/'},
@@ -662,18 +677,18 @@
       ];
       document.querySelector('#tool-grid').innerHTML=toolData.map(tool=>{
         const logo=tool.logo?`<img class="${tool.wide?'wide':''}" src="${tool.logo}" alt="">`:`<span class="tool-mark" aria-hidden="true">${tool.mark}</span>`;
-        const content=`<div class="tool-logo">${logo}</div><b>${tool.name}</b><span class="tool-company">${tool.company}</span><span class="task">${tool.task}</span><small>${tool.text}</small>`;
+        const content=`<div class="tool-logo">${logo}</div><b>${courseText(tool.name)}</b><span class="tool-company">${courseText(tool.company)}</span><span class="task">${courseText(tool.task)}</span><small>${courseText(tool.text)}</small>`;
         if(tool.reference){
-          return `<article class="tool glass">${content}<div class="tool-links"><a class="tool-arrow" href="${tool.url}" target="_blank" rel="noopener noreferrer">访问官网 ↗</a><a class="tool-arrow" href="${tool.reference}">查看参考图 ↓</a></div></article>`;
+          return `<article class="tool glass">${content}<div class="tool-links"><a class="tool-arrow" href="${tool.url}" target="_blank" rel="noopener noreferrer">${courseText('访问官网 ↗')}</a><a class="tool-arrow" href="${tool.reference}">${courseText('查看参考图 ↓')}</a></div></article>`;
         }
-        return `<a class="tool glass" href="${tool.url}" target="_blank" rel="noopener noreferrer">${content}<span class="tool-arrow">访问官网 ↗</span></a>`;
+        return `<a class="tool glass" href="${tool.url}" target="_blank" rel="noopener noreferrer">${content}<span class="tool-arrow">${courseText('访问官网 ↗')}</span></a>`;
       }).join('');
       const conceptLayer=document.querySelector('#ai-concept-layer');
       const revealLogic=document.querySelector('#reveal-ai-logic');
       const toggleConceptLayer=()=>{
         const visible=conceptLayer.classList.toggle('active');
         conceptLayer.setAttribute('aria-hidden',String(!visible));
-        revealLogic.textContent=visible?'收起生成逻辑 ↙':'查看生成逻辑 ↗';
+        revealLogic.textContent=courseText(visible?'收起生成逻辑 ↙':'查看生成逻辑 ↗');
       };
       revealLogic.addEventListener('click',toggleConceptLayer);
       document.querySelectorAll('.concept-trigger').forEach(trigger=>{
@@ -683,7 +698,7 @@
       const closeConceptLayer=()=>{
         conceptLayer.classList.remove('active');
         conceptLayer.setAttribute('aria-hidden','true');
-        revealLogic.textContent='查看生成逻辑 ↗';
+        revealLogic.textContent=courseText('查看生成逻辑 ↗');
       };
       document.querySelector('#close-ai-logic').addEventListener('click',closeConceptLayer);
       document.addEventListener('keydown',event=>{if(event.key==='Escape')closeConceptLayer()});
@@ -708,7 +723,7 @@
         const beforeSource=page.classList.contains('camera-page')?'assets/camera/front.png':page.classList.contains('lighting-page')?'assets/lighting/before.jpg':'assets/visual-library/00-original.png';
         const card=document.createElement('div');
         card.className='before-card';
-        card.innerHTML='<img src="'+beforeSource+'" alt="原始图片对比"><span>原图</span>';
+        card.innerHTML=`<img src="${beforeSource}" alt="${courseText('原始图片对比')}"><span>${courseText('原图')}</span>`;
         stage.appendChild(card);
         card.addEventListener('pointerdown',event=>{
           event.preventDefault();
@@ -727,8 +742,8 @@
           card.addEventListener('pointermove',move); card.addEventListener('pointerup',finish); card.addEventListener('pointercancel',finish);
         });
       });
-      const ids=['hair','angle','light','scene','mood','format'];function compose(){const val=id=>document.querySelector('#'+id).value;document.querySelector('#prompt-output').textContent=`发型为${val('hair')}。使用${val('angle')}，灯光为${val('light')}，场景为${val('scene')}，整体情绪${val('mood')}。保持人物身份、真实皮肤纹理和单根发丝细节，在发型轮廓周围保留可用于排版的留白，不增加多余装饰。最终输出为${val('format')}。`}; ids.forEach(id=>document.querySelector('#'+id).addEventListener('input',compose));compose();
-      document.addEventListener('click',e=>{const button=e.target.closest('[data-copy]');if(button){const el=document.querySelector(button.dataset.copy);navigator.clipboard.writeText(el.textContent);const original=button.textContent;button.textContent='已复制';setTimeout(()=>button.textContent=original,1200)}});
+      const ids=['hair','angle','light','scene','mood','format'];function compose(){const val=id=>document.querySelector('#'+id).value;document.querySelector('#prompt-output').textContent=courseEnglish?`Hair: ${val('hair')}. Camera: ${val('angle')}. Lighting: ${val('light')}. Setting: ${val('scene')}. Mood: ${val('mood')}. Preserve the subject’s identity, natural skin texture, and individual strands of hair. Leave negative space around the hair silhouette for typography and omit unnecessary decoration. Deliver a ${val('format')}.`:`发型为${val('hair')}。使用${val('angle')}，灯光为${val('light')}，场景为${val('scene')}，整体情绪${val('mood')}。保持人物身份、真实皮肤纹理和单根发丝细节，在发型轮廓周围保留可用于排版的留白，不增加多余装饰。最终输出为${val('format')}。`}; ids.forEach(id=>document.querySelector('#'+id).addEventListener('input',compose));compose();
+      document.addEventListener('click',e=>{const button=e.target.closest('[data-copy]');if(button){const el=document.querySelector(button.dataset.copy);navigator.clipboard.writeText(el.textContent);const original=button.textContent;button.textContent=courseText('已复制');setTimeout(()=>button.textContent=original,1200)}});
       const advertisingVideo=document.querySelector('#advertising-video');
       const playAdvertisingVideo=()=>{
         advertisingVideo.muted=true;
@@ -748,7 +763,7 @@
       const zoomSelector='.library-image > img,.summary-tag img,.camera-collage img,.lighting-collage img,.reference-grid img,.image-model-references img,.prologue-rider-image img,.prologue-warmth-image img';
       const openLightbox=image=>{
         lightboxImage.src=image.currentSrc||image.src;
-        lightboxImage.alt=image.alt||'放大图片';
+        lightboxImage.alt=image.alt||courseText('放大图片');
         lightbox.classList.add('open');
         lightbox.setAttribute('aria-hidden','false');
         document.body.classList.add('lightbox-open');
@@ -763,7 +778,7 @@
         image.classList.add('zoomable-image');
         image.tabIndex=0;
         image.setAttribute('role','button');
-        image.setAttribute('aria-label','放大查看 '+(image.alt||'图片'));
+        image.setAttribute('aria-label',courseText('放大查看')+' '+(image.alt||courseText('图片')));
         image.addEventListener('click',event=>{event.preventDefault();event.stopPropagation();openLightbox(image)});
         image.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();openLightbox(image)}});
       });
