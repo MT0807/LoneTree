@@ -1,10 +1,10 @@
 (() => {
   const locales = {
-    zh: {html:'zh-CN',label:'语言',title:'CLO3D · 第一章'},
+    zh: {html:'zh-CN',label:'Language',title:'CLO3D · 第一章'},
     en: {html:'en',label:'Language',title:'CLO3D · Chapter 01'},
-    id: {html:'id',label:'Bahasa',title:'CLO3D · Bab 01'},
-    ru: {html:'ru',label:'Язык',title:'CLO3D · Глава 01'},
-    de: {html:'de',label:'Sprache',title:'CLO3D · Kapitel 01'}
+    id: {html:'id',label:'Language',title:'CLO3D · Bab 01'},
+    ru: {html:'ru',label:'Language',title:'CLO3D · Глава 01'},
+    de: {html:'de',label:'Language',title:'CLO3D · Kapitel 01'}
   };
   const picker = document.querySelector('.language-picker');
   const trigger = document.getElementById('languageToggle');

@@ -1,10 +1,10 @@
 (() => {
   const locales = {
-    zh:{html:'zh-CN',label:'语言',title:'一起来做一件男士衬衫吧 · CLO3D'},
+    zh:{html:'zh-CN',label:'Language',title:'一起来做一件男士衬衫吧 · CLO3D'},
     en:{html:'en',label:'Language',title:"Let's make a men's shirt · CLO3D"},
-    id:{html:'id',label:'Bahasa',title:'Mari membuat kemeja pria · CLO3D'},
-    ru:{html:'ru',label:'Язык',title:'Делаем мужскую рубашку · CLO3D'},
-    de:{html:'de',label:'Sprache',title:'Wir gestalten ein Herrenhemd · CLO3D'}
+    id:{html:'id',label:'Language',title:'Mari membuat kemeja pria · CLO3D'},
+    ru:{html:'ru',label:'Language',title:'Делаем мужскую рубашку · CLO3D'},
+    de:{html:'de',label:'Language',title:'Wir gestalten ein Herrenhemd · CLO3D'}
   };
   const picker = document.querySelector('.language-picker');
   const trigger = document.getElementById('languageToggle');
