@@ -47,11 +47,13 @@
     return terms[code] ? code : 'zh';
   };
   const translate = (entry, code, field) => {
+    const trouserNames = {zh:'裤子平裁打板',en:'Trouser drafting',id:'Pola celana',ru:'Построение брюк',de:'Hosenschnitt'};
+    if (field === 'title' && entry.page.startsWith('trousers-lesson/')) return trouserNames[code];
     if (field === 'title' && entry.headingEn === "Men's shirt pattern design") return terms[code].pages[entry.page];
     if (code === 'zh') return entry[field === 'title' ? 'headingZh' : 'zh'];
     const source = entry[field === 'title' ? 'headingEn' : 'en'];
     if (code === 'en') return source;
-    const translations = entry.page.startsWith('shirt-lesson/') ? window.SHIRT_TRANSLATIONS : window.CLO_TRANSLATIONS;
+    const translations = entry.page.startsWith('shirt-lesson/') ? window.SHIRT_TRANSLATIONS : entry.page.startsWith('trousers-lesson/') ? window.TROUSERS_TRANSLATIONS : window.CLO_TRANSLATIONS;
     return translations?.[code]?.[source] || source;
   };
   const icon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="10.8" cy="10.8" r="7.2"/><path d="m16.2 16.2 5 5"/></svg>';
@@ -82,7 +84,7 @@
     const title = document.createElement('strong');
     title.textContent = translate(entry,code,'title');
     const pageName = document.createElement('small');
-    pageName.textContent = terms[code].pages[entry.page];
+    pageName.textContent = terms[code].pages[entry.page] || ({zh:'裤子平裁打板',en:'Trouser drafting',id:'Pola celana',ru:'Построение брюк',de:'Hosenschnitt'}[code]);
     head.append(title,pageName);
     const excerpt = document.createElement('p');
     excerpt.textContent = translate(entry,code,'text');

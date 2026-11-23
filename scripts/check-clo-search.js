@@ -9,9 +9,10 @@ const context = {window:{}};
 vm.runInNewContext(fs.readFileSync(path.join(chapter,'search-index.js'),'utf8'),context);
 vm.runInNewContext(fs.readFileSync(path.join(chapter,'translations.js'),'utf8'),context);
 vm.runInNewContext(fs.readFileSync(path.join(root,'shirt-lesson','shirt-translations.js'),'utf8'),context);
+vm.runInNewContext(fs.readFileSync(path.join(root,'trousers-lesson','trousers-translations.js'),'utf8'),context);
 const index = context.window.CLO_SEARCH_INDEX;
 assert(index.length > 250,'Index should cover the instructional copy');
-for (const page of ['chapter-01/index.html','chapter-01/about-clo3d.html','chapter-01/reset-3d-pattern.html','shirt-lesson/index.html']) {
+for (const page of ['chapter-01/index.html','chapter-01/about-clo3d.html','chapter-01/reset-3d-pattern.html','shirt-lesson/index.html','trousers-lesson/index.html']) {
   const html = fs.readFileSync(path.join(root,page),'utf8');
   const elements = (html.match(/<[^>]*>/g)||[]).filter(tag => /\sdata-zh=/.test(tag)&&/\sdata-en=/.test(tag));
   const entries = index.filter(entry => entry.page===page);
@@ -29,7 +30,7 @@ for (const page of ['chapter-01/index.html','chapter-01/about-clo3d.html','chapt
 }
 for (const language of ['id','ru','de']) {
   assert(context.window.CLO_TRANSLATIONS[language],`Missing ${language} translation`);
-  const missing = index.filter(entry => !(entry.page.startsWith('shirt-lesson/') ? context.window.SHIRT_TRANSLATIONS[language] : context.window.CLO_TRANSLATIONS[language])[entry.en]);
+  const missing = index.filter(entry => !(entry.page.startsWith('shirt-lesson/') ? context.window.SHIRT_TRANSLATIONS[language] : entry.page.startsWith('trousers-lesson/') ? context.window.TROUSERS_TRANSLATIONS[language] : context.window.CLO_TRANSLATIONS[language])[entry.en]);
   assert.equal(missing.length,0,`${language} has ${missing.length} untranslated passages`);
 }
-console.log(`Search index verified: ${index.length} passages, 4 pages, 5 languages.`);
+console.log(`Search index verified: ${index.length} passages, 5 pages, 5 languages.`);
