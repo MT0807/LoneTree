@@ -47,7 +47,7 @@
     return terms[code] ? code : 'zh';
   };
   const translate = (entry, code, field) => {
-    const trouserNames = {zh:'裤子平裁打板',en:'Trouser drafting',id:'Pola celana',ru:'Построение брюк',de:'Hosenschnitt'};
+    const trouserNames = {zh:'CLO中的平面制版',en:'Flat Pattern Drafting in CLO',id:'Pembuatan Pola Datar di CLO',ru:'Плоское конструирование в CLO',de:'Flachschnitt in CLO'};
     if (field === 'title' && entry.page.startsWith('trousers-lesson/')) return trouserNames[code];
     if (field === 'title' && entry.headingEn === "Men's shirt pattern design") return terms[code].pages[entry.page];
     if (code === 'zh') return entry[field === 'title' ? 'headingZh' : 'zh'];
@@ -84,7 +84,7 @@
     const title = document.createElement('strong');
     title.textContent = translate(entry,code,'title');
     const pageName = document.createElement('small');
-    pageName.textContent = terms[code].pages[entry.page] || ({zh:'裤子平裁打板',en:'Trouser drafting',id:'Pola celana',ru:'Построение брюк',de:'Hosenschnitt'}[code]);
+    pageName.textContent = terms[code].pages[entry.page] || ({zh:'CLO中的平面制版',en:'Flat Pattern Drafting in CLO',id:'Pembuatan Pola Datar di CLO',ru:'Плоское конструирование в CLO',de:'Flachschnitt in CLO'}[code]);
     head.append(title,pageName);
     const excerpt = document.createElement('p');
     excerpt.textContent = translate(entry,code,'text');

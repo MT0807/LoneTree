@@ -19,8 +19,8 @@ const entries = [];
 for (const page of pages) {
   const html = fs.readFileSync(path.join(cloRoot, page), 'utf8');
   let ordinal = 0;
-  let headingZh = page === 'chapter-01/index.html' ? 'CLO3D 第一章' : page === 'chapter-01/about-clo3d.html' ? '关于 CLO3D' : page === 'shirt-lesson/index.html' ? '男士衬衫版型设计' : page === 'trousers-lesson/index.html' ? '裤子平裁打板' : '重置 3D 版片';
-  let headingEn = page === 'chapter-01/index.html' ? 'CLO3D Chapter 01' : page === 'chapter-01/about-clo3d.html' ? 'About CLO3D' : page === 'shirt-lesson/index.html' ? "Men's shirt pattern design" : page === 'trousers-lesson/index.html' ? 'Trouser flat pattern drafting' : 'Reset 3D Pattern';
+  let headingZh = page === 'chapter-01/index.html' ? 'CLO3D 第一章' : page === 'chapter-01/about-clo3d.html' ? '关于 CLO3D' : page === 'shirt-lesson/index.html' ? '男士衬衫版型设计' : page === 'trousers-lesson/index.html' ? 'CLO中的平面制版' : '重置 3D 版片';
+  let headingEn = page === 'chapter-01/index.html' ? 'CLO3D Chapter 01' : page === 'chapter-01/about-clo3d.html' ? 'About CLO3D' : page === 'shirt-lesson/index.html' ? "Men's shirt pattern design" : page === 'trousers-lesson/index.html' ? 'Flat Pattern Drafting in CLO' : 'Reset 3D Pattern';
   const tags = html.match(/<[^>]*>/g) || [];
   for (const tag of tags) {
     const zh = attr(tag, 'data-zh');
