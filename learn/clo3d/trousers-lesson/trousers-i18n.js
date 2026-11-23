@@ -9,7 +9,7 @@
   const picker=document.querySelector('.language-picker'),toggle=document.getElementById('languageToggle'),menu=document.getElementById('languageMenu');
   function setLanguage(lang){
     if(!labels[lang]) lang='zh';
-    document.querySelectorAll('[data-zh][data-en]').forEach((el,i)=>{el.textContent=lang==='zh'?el.dataset.zh:lang==='en'?english[i]:translations[lang][i]||english[i]});
+    document.querySelectorAll('[data-zh][data-en]').forEach((el,i)=>{el.textContent=lang==='zh'?el.dataset.zh:lang==='en'?el.dataset.en:window.TROUSERS_TRANSLATIONS?.[lang]?.[el.dataset.en]||translations[lang][i]||el.dataset.en});
     document.documentElement.lang={zh:'zh-CN',en:'en',id:'id',ru:'ru',de:'de'}[lang];
     document.getElementById('languageLabel').textContent=labels[lang];
     document.querySelectorAll('.step-copy [data-zh][data-en],.trousers-intro>p[data-zh]').forEach(el=>{el.innerHTML=el.textContent.replace(/「[^」]+」|\b(?:Edit Pattern|Rectangle|Offset as Internal Line)\b/g,m=>`<strong class="tool-term">${m}</strong>`)});
