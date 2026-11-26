@@ -1,0 +1,264 @@
+{
+  "syllabus": [
+    [
+      "品牌与产品",
+      "介绍品牌定位、新系列、设计特点"
+    ],
+    [
+      "消费者与趋势",
+      "描述目标客群、消费习惯与流行趋势"
+    ],
+    [
+      "内容与社交媒体",
+      "讨论选题、内容风格、文案与发布安排"
+    ],
+    [
+      "达人与媒体合作",
+      "沟通合作需求、确认交付内容"
+    ],
+    [
+      "上新与营销活动",
+      "讨论活动目标、渠道、预算与时间表"
+    ],
+    [
+      "创意与团队协作",
+      "写创意简报、给设计反馈、解释修改意见"
+    ],
+    [
+      "数据与复盘",
+      "汇报互动、流量、销售与改进建议"
+    ],
+    [
+      "综合提案",
+      "介绍新品推广方案并回答问题"
+    ]
+  ],
+  "lessons": [
+    {
+      "date": "2026-11-26",
+      "title": "介绍品牌与讨论推广方向",
+      "subtitle": "Day 01 / Brand & Product",
+      "intro": "从品牌是谁、吸引谁，到内容应该突出什么。今天把常见的品牌讨论，变成可以直接使用的英文。",
+      "note": "以下品牌例句均为模拟工作场景，不代表 Prada 或 The Row 的实际营销计划。",
+      "items": [
+        {
+          "type": "word",
+          "term": "positioning",
+          "meaning": "定位",
+          "en": "We need to clarify the positioning of the new collection.",
+          "zh": "我们需要明确新系列的定位。",
+          "variants": [
+            "brand positioning — 品牌定位",
+            "market positioning — 市场定位"
+          ],
+          "note": "",
+          "id": "d01-1"
+        },
+        {
+          "type": "word",
+          "term": "audience",
+          "meaning": "受众",
+          "en": "Who is the target audience for this campaign?",
+          "zh": "这次营销活动的目标受众是谁？",
+          "variants": [
+            "target audience — 目标受众",
+            "a wider audience — 更广泛的受众"
+          ],
+          "note": "",
+          "id": "d01-2"
+        },
+        {
+          "type": "word",
+          "term": "collection",
+          "meaning": "（服装或产品）系列",
+          "en": "We are preparing content for the new collection.",
+          "zh": "我们正在为新系列准备内容。",
+          "variants": [
+            "launch a new collection — 推出新系列"
+          ],
+          "note": "collection 是产品系列；campaign 是营销活动或传播企划。",
+          "id": "d01-3"
+        },
+        {
+          "type": "word",
+          "term": "aesthetic",
+          "meaning": "美学风格；审美",
+          "en": "The images should reflect a minimalist aesthetic.",
+          "zh": "这些图像应该体现极简的美学风格。",
+          "variants": [
+            "a minimalist aesthetic — 极简美学风格"
+          ],
+          "note": "",
+          "id": "d01-4"
+        },
+        {
+          "type": "word",
+          "term": "versatile",
+          "meaning": "百搭的；适用场景多的",
+          "en": "We want to show how versatile this jacket is.",
+          "zh": "我们希望展示这件夹克有多百搭。",
+          "variants": [
+            "versatile pieces — 百搭单品"
+          ],
+          "note": "",
+          "id": "d01-5"
+        },
+        {
+          "type": "word",
+          "term": "premium",
+          "meaning": "高品质的；高端的",
+          "en": "The copy should explain why we chose premium fabrics.",
+          "zh": "文案应该解释我们为什么选择高品质面料。",
+          "variants": [
+            "premium fabrics — 高品质面料"
+          ],
+          "note": "",
+          "id": "d01-6"
+        },
+        {
+          "type": "word",
+          "term": "craftsmanship",
+          "meaning": "工艺；制作技艺",
+          "en": "Close-up shots can show the craftsmanship behind each piece.",
+          "zh": "特写镜头可以展现每件单品背后的工艺。",
+          "variants": [
+            "highlight the craftsmanship — 突出工艺"
+          ],
+          "note": "",
+          "id": "d01-7"
+        },
+        {
+          "type": "word",
+          "term": "campaign",
+          "meaning": "营销活动；传播企划",
+          "en": "The goal of this campaign is to build brand awareness.",
+          "zh": "这次营销活动的目标是建立品牌认知。",
+          "variants": [
+            "a launch campaign — 上新营销活动"
+          ],
+          "note": "",
+          "id": "d01-8"
+        },
+        {
+          "type": "phrase",
+          "term": "be known for…",
+          "meaning": "以……而闻名",
+          "en": "We want the brand to be known for its distinctive designs.",
+          "zh": "我们希望这个品牌以独特的设计而闻名。",
+          "variants": [
+            "be known for its craftsmanship — 以工艺而闻名",
+            "be known for its minimalist aesthetic — 以极简美学风格而闻名"
+          ],
+          "note": "现有特点：The brand is known for…；希望建立的形象：We want the brand to be known for…",
+          "id": "d01-9"
+        },
+        {
+          "type": "phrase",
+          "term": "appeal to…",
+          "meaning": "吸引……；受到……喜爱",
+          "en": "For this exercise, let’s create a Prada campaign that appeals to younger consumers.",
+          "zh": "这次练习，我们来设计一个吸引年轻消费者的 Prada 营销活动。",
+          "variants": [
+            "appeal to fashion-conscious consumers — 吸引注重时尚的消费者",
+            "appeal to customers who value quality — 吸引重视品质的客户"
+          ],
+          "note": "强调让对方感兴趣、喜欢。",
+          "id": "d01-10"
+        },
+        {
+          "type": "phrase",
+          "term": "reach a wider audience",
+          "meaning": "触达更广泛的受众",
+          "en": "We could use short-form videos to reach a wider audience.",
+          "zh": "我们可以通过短视频触达更广泛的受众。",
+          "variants": [
+            "reach a younger audience — 触达更年轻的受众",
+            "reach potential customers — 触达潜在客户"
+          ],
+          "note": "reach 强调接触到；appeal to 强调感兴趣。",
+          "id": "d01-11"
+        },
+        {
+          "type": "phrase",
+          "term": "focus on…",
+          "meaning": "聚焦于……；重点呈现……",
+          "en": "For our mock campaign for The Row, let’s focus on fabric, fit, and movement.",
+          "zh": "在我们为 The Row 构思的模拟营销活动中，重点呈现面料、版型和动态效果吧。",
+          "variants": [
+            "focus on product details — 聚焦产品细节",
+            "focus on the story behind the collection — 聚焦系列背后的故事"
+          ],
+          "note": "开会提建议时可以直接用 Let’s focus on…",
+          "id": "d01-12"
+        },
+        {
+          "type": "phrase",
+          "term": "highlight…",
+          "meaning": "突出……；重点展示……",
+          "en": "The visuals should highlight the texture of the fabric.",
+          "zh": "这些视觉素材应该突出面料的质感。",
+          "variants": [
+            "highlight the craftsmanship — 突出工艺",
+            "highlight the key pieces in the collection — 重点展示系列中的核心单品"
+          ],
+          "note": "highlight 后面直接接内容，不加 on。",
+          "id": "d01-13"
+        },
+        {
+          "type": "phrase",
+          "term": "position A as B",
+          "meaning": "将 A 定位为 B",
+          "en": "We could position this bag as an everyday essential rather than a special-occasion piece.",
+          "zh": "我们可以将这款包定位为日常必备单品，而不是只在特殊场合使用的单品。",
+          "variants": [
+            "position the collection as a modern wardrobe foundation — 将系列定位为现代衣橱的基础",
+            "position the product as a premium option — 将产品定位为高端之选"
+          ],
+          "note": "适合讨论：我们希望消费者如何看待这个产品？",
+          "id": "d01-14"
+        },
+        {
+          "type": "phrase",
+          "term": "stand out from…",
+          "meaning": "从……中脱颖而出",
+          "en": "What makes this collection stand out from competitors?",
+          "zh": "是什么让这个系列从竞品中脱颖而出？",
+          "variants": [
+            "stand out from the crowd — 从众多选择中脱颖而出"
+          ],
+          "note": "",
+          "id": "d01-15"
+        },
+        {
+          "type": "phrase",
+          "term": "relaxed tailoring",
+          "meaning": "宽松剪裁",
+          "en": "The collection combines relaxed tailoring with soft fabrics.",
+          "zh": "这个系列将宽松剪裁与柔软面料相结合。",
+          "variants": [
+            "a relaxed fit — 宽松版型"
+          ],
+          "note": "",
+          "id": "d01-16"
+        },
+        {
+          "type": "phrase",
+          "term": "wardrobe staple",
+          "meaning": "衣橱必备单品",
+          "en": "We want to present this shirt as a wardrobe staple.",
+          "zh": "我们希望将这件衬衫呈现为衣橱必备单品。",
+          "variants": [
+            "an everyday essential — 日常必备单品"
+          ],
+          "note": "",
+          "id": "d01-17"
+        }
+      ],
+      "reading": {
+        "en": "For our mock campaign for The Row, I think we should focus on product details. The visuals could highlight the fabric and fit. This could help us appeal to customers who value quality.",
+        "zh": "在我们为 The Row 构思的模拟营销活动中，我认为应该聚焦产品细节。视觉素材可以突出面料和版型，这样有助于吸引重视品质的客户。"
+      },
+      "review": "先朗读例句，再用自己的话介绍一个熟悉的产品。不必填空，也不必逐字背诵；重点回顾 focus on、highlight 和 appeal to 的用法。"
+    }
+  ]
+}
